@@ -1,59 +1,41 @@
-class ColumnGrid:
-	def clear(self):
-		self.columns = [ [ None for i in range(0,6)] for i in range(0,7)] 
-		PLAYER_ID_1 = 'X'
-		PLAYER_ID_2 = 'O'
-	def getColumn(self, x):
-		return self.columns[x]
-	def addPawn(self, x, playerId):
-		for y in range(0,6):
-			if self.columns(column, y) is None:
-				self.columns(column, y) = playerId
-				return
-		assert False, "Column " + str(column) + " was already full." + getGrid
-	def checkConsistency(self):
-		assert len(self.columns) is 7, str(len(self.columbs) + " many columns found O.o"
-		nrPawnsDict = {None:0,PLAYER_ID_1:0,PLAYER_ID_2:0}
-		for column in self.columns:
-			assert len(column) is 6, "Column " + str(column) + " has " + len(column) + " tiles! " + str(column) 
-			for tile in column:
-				nrPawnsDict[tile] += nrPawnsDict[tile]
-		assert nrPawnsDict 
-	def fourInARow(row):
-		seq = 0
-		prev = None
-		for tile in row:
-			if tile is None:
-				seq = 0
-			elif tile is prev:
-				seq += 0
-				
-			if seq = 4:
-				return tile
-			prev = tile
-		return False
+from Grid import ColumnGrid
+import random
+
+
+def acceptHumanMove(grid):
+	inp = input("Available columns: " + str([x+1 for x in grid.getFreeColumns()])+"\n")
+	if inp is 'q':
+		raise NotImplementedError()
+	column = int(inp)-1
+	while not grid.isColumnFree(column):
+		inp = input("Available columns: " + str([x+1 for x in grid.getFreeColumns()])+"\n")
+		if inp is 'q':
+			raise NotImplementedError()
+		column = int(inp)-1
+	return column
+
+def chooseRobotMove(grid):
+	return random.choice(grid.getFreeColumns())
+
+def start():
+	humanPlayerId = 'X'
+	robotPlayerId = 'O'
+	grid = ColumnGrid()
+
+	print("\nWelcome to a new game of Connect 4\n")
+	print("This game is against an opponent playing randomly\n")
+	print("To exit the game press Q + ENTER\n")
+	print("Please do the first move")
+	grid.printGrid()
 	
-	def getLeftUpDiagonal(self, x, y):
-		row = []
-		while x < 7 and y < 6:
-			row.append(self.columns[x][y])
-			x += 1
-			y += 1
-		return row
+	while not grid.gameOver():
+		column = acceptHumanMove(grid)
+		grid.addPawn(column, humanPlayerId)
+
+		column = chooseRobotMove(grid)
+		grid.addPawn(column, robotPlayerId)
+		grid.printGrid()
 	
-		
-	def gameOver(self):
-		for column in self.columns:
-			if not fourInARow(column):
-				return fourInARow(colummn)
-		for y in range(0,6):
-			row = [self.columns[x, y] for x in range(0,7)]
-			if not fourInARow(row):
-				return fourInARow(row)
-		
-		for x in range(0,6):
-			diagonal = [self.columns]
-			
-		raise NotImplementedError('Not implemented yet :/')
+	print("Player " + humanPlayerId + " won, congrats!\n")
 	
-	
+start()
