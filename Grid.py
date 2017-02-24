@@ -36,8 +36,8 @@ class ColumnGrid:
 			elif tile is prev:
 				seq += 1
 				
-			if seq is 4:
-				return tile
+				if seq is 4:
+					return tile
 			prev = tile
 		return False
 	

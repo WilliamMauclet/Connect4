@@ -5,12 +5,12 @@ import random
 def acceptHumanMove(grid):
 	inp = input("Available columns: " + str([x+1 for x in grid.getFreeColumns()])+"\n")
 	if inp is 'q':
-		raise NotImplementedError()
+		raise Exception("Problem")
 	column = int(inp)-1
 	while not grid.isColumnFree(column):
 		inp = input("Available columns: " + str([x+1 for x in grid.getFreeColumns()])+"\n")
 		if inp is 'q':
-			raise NotImplementedError()
+			raise ArithmeticError ()
 		column = int(inp)-1
 	return column
 
@@ -28,14 +28,19 @@ def start():
 	print("Please do the first move")
 	grid.printGrid()
 	
-	while not grid.gameOver():
-		column = acceptHumanMove(grid)
-		grid.addPawn(column, humanPlayerId)
+	try:
+		while not grid.gameOver():
+			column = acceptHumanMove(grid)
+			grid.addPawn(column, humanPlayerId)
+			
+			if grid.gameOver():
+				break
 
-		column = chooseRobotMove(grid)
-		grid.addPawn(column, robotPlayerId)
-		grid.printGrid()
-	
-	print("Player " + humanPlayerId + " won, congrats!\n")
-	
+			column = chooseRobotMove(grid)
+			grid.addPawn(column, robotPlayerId)
+			grid.printGrid()
+		
+		print("\nPlayer " + humanPlayerId + " won, congrats!\n")
+	except Exception as exc:
+		print(exc.__str__())
 start()
