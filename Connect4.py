@@ -26,10 +26,10 @@ def start():
 	print("This game is against an opponent playing randomly\n")
 	print("To exit the game press Q + ENTER\n")
 	print("Please do the first move")
-	grid.printGrid()
 	
 	try:
 		while not grid.gameOver():
+			grid.printGrid()
 			column = acceptHumanMove(grid)
 			grid.addPawn(column, humanPlayerId)
 			
@@ -38,9 +38,9 @@ def start():
 
 			column = chooseRobotMove(grid)
 			grid.addPawn(column, robotPlayerId)
-			grid.printGrid()
-		
-		print("\nPlayer " + humanPlayerId + " won, congrats!\n")
+			
+		grid.printGrid()
+		print("\nPlayer " + grid.gameOver() + " won, congrats!\n")
 	except Exception as exc:
 		print(exc.__str__())
 start()
