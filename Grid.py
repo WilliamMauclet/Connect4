@@ -28,7 +28,7 @@ class ColumnGrid:
 		#assert nrPawnsDict 
 	
 	def fourInARow(self, row):
-		raise Exception("This method is dangerous since 0 is falsey")
+		#raise Exception("This method is dangerous since 0 is falsey")
 		seq = 1
 		prev = None
 		for tile in row:

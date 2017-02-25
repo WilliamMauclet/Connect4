@@ -1,0 +1,29 @@
+feedback Vital:
+	- BUG:
+		_______________
+		|_|_|_|_|_|_|_|
+		|_|_|_|_|_|_|_|
+		|_|_|_|_|_|_|_|
+		|_|_|O|_|_|_|_|
+		|_|_|X|X|_|_|_|
+		|X|_|O|X|O|_|O|
+		---------------
+		Available columns: [1, 2, 3, 4, 5, 6, 7]
+		5
+		FOUND DIAGONAL THREAT IN COLUMN 5
+		FOUND DIAGONAL THREAT IN COLUMN 5
+		_______________
+		|_|_|_|_|_|_|_|
+		|_|_|_|_|_|_|_|
+		|_|_|_|_|_|_|_|
+		|_|_|O|_|_|_|_|
+		|_|_|X|X|X|_|_|
+		|X|_|O|X|O|O|O|
+		---------------
+	- domme zet: zelf een threat veroorzaakt: de situatie ná de eigen zet zou ook gechecked moeten worden
+	                   (dus twee keer: bestaande threats blokkeren en checken dat je er zelf geen veroorzaakt)
+	- IDEE: logica opsplitsen in twee delen:
+	    * één deel dat een situatie een score geeft (bv. heel negatief als de tegenpartij in één zet kan winnen)
+	    * een ander deel dat dat eerste deel gebruikt om hypothetische zetten te scoren en zo de beste te kiezen
+	    (nadeel: indien eerste deel stateless kan die moeilijk lange termijn strategie (>1 beurt) laten uitvoeren)
+	
