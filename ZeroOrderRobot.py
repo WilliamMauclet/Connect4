@@ -60,4 +60,3 @@ class ZeroOrderRobot():
 			return self.checkColumns(grid, freeColumns)
 		else:
 			return random.choice(freeColumns)
-	
