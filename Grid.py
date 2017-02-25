@@ -31,13 +31,13 @@ class ColumnGrid:
 		seq = 1
 		prev = None
 		for tile in row:
-			if tile is None:
+			if tile is None or not tile == prev:
 				seq = 1
-			elif tile is prev:
+			elif tile == prev:
 				seq += 1
-				
-				if seq is 4:
-					return tile
+			
+			if seq is 4:
+				return tile
 			prev = tile
 		return False
 	

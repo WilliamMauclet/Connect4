@@ -1,4 +1,6 @@
 from Grid import ColumnGrid
+from MinusFirstOrderRobot import MinusFirstOrderRobot
+from ZeroOrderRobot import ZeroOrderRobot
 import random
 
 
@@ -13,9 +15,18 @@ def acceptHumanMove(grid):
 			raise ArithmeticError ()
 		column = int(inp)-1
 	return column
-
-def chooseRobotMove(grid):
-	return random.choice(grid.getFreeColumns())
+	
+def chooseOpponent():
+	print("Choose an opponent against whom to play:\n")
+	inp = None
+	while not inp == '-1' and not inp == '0':
+		inp = input("-1 for MinusOneOrderRobot or 0 for ZeroOrderRobot: ")
+	if inp is '-1':
+		print("This game is against an opponent playing randomly.\n")
+		return MinusOneOrderRobot()
+	else:
+		print("This game is against an opponent playing randomly but avoiding simple traps.\n")
+		return ZeroOrderRobot()
 
 def start():
 	humanPlayerId = 'X'
@@ -23,24 +34,26 @@ def start():
 	grid = ColumnGrid()
 
 	print("\nWelcome to a new game of Connect 4\n")
-	print("This game is against an opponent playing randomly\n")
+	
+	robot = chooseOpponent()
+	
 	print("To exit the game press Q + ENTER\n")
 	print("Please do the first move")
 	
-	try:
-		while not grid.gameOver():
-			grid.printGrid()
-			column = acceptHumanMove(grid)
-			grid.addPawn(column, humanPlayerId)
-			
-			if grid.gameOver():
-				break
-
-			column = chooseRobotMove(grid)
-			grid.addPawn(column, robotPlayerId)
-			
+	#try:
+	while not grid.gameOver():
 		grid.printGrid()
-		print("\nPlayer " + grid.gameOver() + " won, congrats!\n")
-	except Exception as exc:
-		print(exc.__str__())
+		column = acceptHumanMove(grid)
+		grid.addPawn(column, humanPlayerId)
+		
+		if grid.gameOver():
+			break
+
+		column = robot.chooseMove(grid)
+		grid.addPawn(column, robotPlayerId)
+		
+	grid.printGrid()
+	print("\nPlayer " + grid.gameOver() + " won, congrats!\n")
+	#except Exception as exc:
+		#print(exc.__str__())
 start()

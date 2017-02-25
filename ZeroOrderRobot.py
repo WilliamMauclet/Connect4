@@ -3,27 +3,9 @@ import random
 class ZeroOrderRobot():
 	"""This robot DOES NOT LEARN. 
 	It applies simple algorithms to see if it can avoid a four in a row.
-	Except for that, it just plays randomly."""
-	def chooseMove(self, grid):
-		freeColumns = grid.getFreeColumns()
-		if checkColumns(grid, freeColumns):
-			return checkColumns(grid, freeColumns)
-		else:
-			return random.choice(freeColumns)
-		
-	def checkColumns(self, grid, freeColumns):
-		for x in freeColumns:
-			y= findTopEmpty(grid.columns[x])
-			if hasTopEmptyWithTripletBelow(grid.columns[x]):
-				return x
-			elif hasTopEmptyWithAdjacentTriplets(grid, x, y):
-				return x
-			elif hasTopEmptyWithDiagonalTriplets(grid, x, y):
-				return x
-		return False
-	
+	Except for that, it just plays randomly."""		
 	def findTopEmpty(self, column):
-		y = 6
+		y = 5
 		while column[y] is None and y >= 0:
 			y -= 1
 		return y + 1 
@@ -57,4 +39,25 @@ class ZeroOrderRobot():
 				return True
 		else:
 			return False
+		
+	def checkColumns(self, grid, freeColumns):
+		for x in freeColumns:
+			y= self.findTopEmpty(grid.columns[x])
+			if self.hasTopEmptyWithTripletBelow(grid.columns[x], y):
+				print("FOUND VERTICAL THREAT IN COLUMN " + str(x))
+				return x
+			elif self.hasTopEmptyWithAdjacentTriplets(grid, x, y):
+				print("FOUND HORIZONTAL THREAT IN COLUMN " + str(x))
+				return x
+			elif self.hasTopEmptyWithDiagonalTriplets(grid, x, y):
+				print("FOUND DIAGONAL THREAT IN COLUMN " + str(x))
+				return x
+		return -1
+		
+	def chooseMove(self, grid):
+		freeColumns = grid.getFreeColumns()
+		if not self.checkColumns(grid, freeColumns) == -1:
+			return self.checkColumns(grid, freeColumns)
+		else:
+			return random.choice(freeColumns)
 	
