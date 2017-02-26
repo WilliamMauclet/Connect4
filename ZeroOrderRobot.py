@@ -15,24 +15,21 @@ class ZeroOrderRobot():
 			return False
 		if column[y-1] == column[y-2] == column[y-3] is not None:
 			return True
-		else:
-			return False
+		return False
 			
 	def hasTopEmptyWithAdjacentTriplets(self, grid, x, y):
 		if x <= 3 and grid.columns[x+1][y] == grid.columns[x+2][y] == grid.columns[x+3][y] is not None:
 			return True
-		elif x >= 3 and grid.columns[x-1][y] == grid.columns[x-2][y] == grid.columns[x-3][y] is not None:
+		if x >= 3 and grid.columns[x-1][y] == grid.columns[x-2][y] == grid.columns[x-3][y] is not None:
 			return True
-		else:
-			return False
+		return False
 	
 	def hasTopEmptyWithAdjacentDoubleAndSingle(self, grid, x, y):
 		if 1 <= x <= 4 and grid.columns[x-1][y] == grid.columns[x+1][y] == grid.columns[x+2][y] is not None:
 			return True
-		elif 2 <= x <= 5 and grid.columns[x-2][y] == grid.columns[x-1][y] == grid.columns[x+1][y] is not None:
+		if 2 <= x <= 5 and grid.columns[x-2][y] == grid.columns[x-1][y] == grid.columns[x+1][y] is not None:
 			return True
-		else:
-			return False
+		return False
 	
 	def hasTopEmptyWithDiagonalTriplets(self, grid, x, y):
 		# look up
@@ -41,15 +38,14 @@ class ZeroOrderRobot():
 			if x <= 3 and grid.columns[x+1][y+1] == grid.columns[x+2][y+2] == grid.columns[x+3][y+3] is not None:
 				return True
 			# look left
-			elif x >= 3 and grid.columns[x-1][y+1] == grid.columns[x-2][y+2] == grid.columns[x-3][y+3] is not None:
+			if x >= 3 and grid.columns[x-1][y+1] == grid.columns[x-2][y+2] == grid.columns[x-3][y+3] is not None:
 				return True
-		elif y >= 3:
+		if y >= 3:
 			if x <= 3 and grid.columns[x+1][y-1] == grid.columns[x+2][y-2] == grid.columns[x+3][y-3] is not None:
 				return True
-			elif x >= 3 and grid.columns[x-1][y-1] == grid.columns[x-2][y-2] == grid.columns[x-3][y-3] is not None:
+			if x >= 3 and grid.columns[x-1][y-1] == grid.columns[x-2][y-2] == grid.columns[x-3][y-3] is not None:
 				return True
-		else:
-			return False
+		return False
 	
 	def hasTopEmptyWithDiagonalDoubleAndSingle(self, grid, x, y):
 		# look up (= long tail to the right)
@@ -58,20 +54,19 @@ class ZeroOrderRobot():
 			if grid.columns[x-1][y+1] == grid.columns[x-2][y+2] == grid.columns[x+1][y-1] is not None:
 				return True
 			# look right
-		elif 0 < y <= 3 and 1 <= x <= 4:
+		if 0 < y <= 3 and 1 <= x <= 4:
 			if grid.columns[x-1][y+1] == grid.columns[x+1][y+1] == grid.columns[x+2][y+2] is not None:
 				return True
 		#look down
 			# look left
-		elif 2 <= y <= 4 and 2 <= x <= 5:
+		if 2 <= y <= 4 and 2 <= x <= 5:
 			if grid.columns[x-2][y-2] == grid.columns[x-1][y-1] == grid.columns[x+1][y+1] is not None:
 				return True
 			# look right
-		elif 2 <= y <= 4 and 1 <= x <= 4:
+		if 2 <= y <= 4 and 1 <= x <= 4:
 			if grid.columns[x-1][y+1] == grid.columns[x+1][y-1] == grid.columns[x+2][y-2] is not None:
 				return True
-		else:
-			return False
+		return False
 				
 	def checkColumns(self, grid, freeColumns):
 		for x in freeColumns:
@@ -79,16 +74,16 @@ class ZeroOrderRobot():
 			if self.hasTopEmptyWithTripletBelow(grid.columns[x], y):
 				print("FOUND VERTICAL THREAT AT (" + str(x) + "," + str(y) + ")")
 				return x
-			elif self.hasTopEmptyWithAdjacentTriplets(grid, x, y):
+			if self.hasTopEmptyWithAdjacentTriplets(grid, x, y):
 				print("FOUND 3-0 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
 				return x
-			elif self.hasTopEmptyWithAdjacentDoubleAndSingle(grid, x, y):
+			if self.hasTopEmptyWithAdjacentDoubleAndSingle(grid, x, y):
 				print("FOUND 2-1 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
 				return x
-			elif self.hasTopEmptyWithDiagonalTriplets(grid, x, y):
+			if self.hasTopEmptyWithDiagonalTriplets(grid, x, y):
 				print("FOUND 3-0 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
 				return x
-			elif self.hasTopEmptyWithDiagonalDoubleAndSingle(grid, x, y):
+			if self.hasTopEmptyWithDiagonalDoubleAndSingle(grid, x, y):
 				print("FOUND 2-1 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
 				return x
 		return -1

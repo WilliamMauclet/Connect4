@@ -31,13 +31,22 @@ feedback Vital:
 OTHER BUG:
 
 	_______________
-	|_|_|_|_|_|_|_|
-	|_|_|_|_|_|_|_|
-	|_|_|_|O|_|_|_|
-	|_|X|O|X|_|_|_|
-	|_|O|X|X|X|_|_|
-	|O|X|O|X|O|_|O|
+	|_|_|_|X|_|_|_|
+	|_|_|_|O|_|O|_|
+	|X|_|_|O|X|O|_|
+	|X|_|_|O|O|X|_|
+	|O|O|X|X|O|X|_|
+	|O|X|X|X|O|X|O|
 	---------------
-	Available columns: [1, 2, 3, 4, 5, 6, 7]
-
->>> no win for O!
+	Available columns: [1, 2, 3, 5, 6, 7]
+	6
+	_______________
+	|_|_|_|X|_|X|_|
+	|O|_|_|O|_|O|_|
+	|X|_|_|O|X|O|_|
+	|X|?|_|O|O|X|_|
+	|O|O|X|X|O|X|_|
+	|O|X|X|X|O|X|O|
+	---------------
+	
+>>> Robot didn't detect 2-1 diagonal danger at (1,2)
