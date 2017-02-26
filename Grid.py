@@ -43,7 +43,7 @@ class ColumnGrid:
 	
 	def getRightUpDiagonal(self, x, y):
 		row = []
-		while x < 6 and y < 5:
+		while x <= 6 and y <= 5:
 			row.append(self.columns[x][y])
 			x += 1
 			y += 1
@@ -51,7 +51,7 @@ class ColumnGrid:
 	
 	def getLeftUpDiagonal(self, x, y):
 		row = []
-		while x > 0 and y < 5:
+		while x >= 0 and y <= 5:
 			row.append(self.columns[x][y])
 			x -= 1
 			y += 1
