@@ -58,14 +58,14 @@ class ColumnGrid:
 		return row
 	
 	def checkAllDiagonalsForWin(self):
-		for i in range(0,6):
-			diagonals = [self.getRightUpDiagonal(0,i), self.getLeftUpDiagonal(6,i)]
+		for y in range(0,6):
+			diagonals = [self.getRightUpDiagonal(0,y), self.getLeftUpDiagonal(6,y)]
 			
 			for diagonal in diagonals:
 				if self.fourInARow(diagonal) != -1:
 					return self.fourInARow(diagonal)
-		for i in range(0,7):
-			diagonals = [self.getLeftUpDiagonal(i,0), self.getRightUpDiagonal(i,0)]
+		for x in range(0,7):
+			diagonals = [self.getLeftUpDiagonal(x,0), self.getRightUpDiagonal(x,0)]
 			
 			for diagonal in diagonals:
 				if self.fourInARow(diagonal) != -1:
@@ -74,13 +74,12 @@ class ColumnGrid:
 	
 	def gameOver(self):
 		for column in self.columns:
-			if self.fourInARow(column):
+			if self.fourInARow(column) != -1:
 				return self.fourInARow(column)
 		for y in range(0,6):
 			row = [self.columns[x][y] for x in range(0,7)]
-			if self.fourInARow(row):
+			if self.fourInARow(row) != -1:
 				return self.fourInARow(row)
-		
 		if self.checkAllDiagonalsForWin() != -1:
 			return self.checkAllDiagonalsForWin()
 			
