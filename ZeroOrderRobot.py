@@ -67,27 +67,37 @@ class ZeroOrderRobot():
 			if grid.columns[x-1][y+1] == grid.columns[x+1][y-1] == grid.columns[x+2][y-2] is not None:
 				return True
 		return False
-				
+	
+	def checkAdjacents(self, grid, x, y):
+		if self.hasTopEmptyWithAdjacentTriplets(grid, x, y):
+			print("FOUND 3-0 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
+			return x
+		if self.hasTopEmptyWithAdjacentDoubleAndSingle(grid, x, y):
+			print("FOUND 2-1 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
+			return x
+		return -1
+		
+	def checkDiagonals(self, grid, x, y):
+		if self.hasTopEmptyWithDiagonalTriplets(grid, x, y):
+			print("FOUND 3-0 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
+			return x
+		if self.hasTopEmptyWithDiagonalDoubleAndSingle(grid, x, y):
+			print("FOUND 2-1 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
+			return x
+		return -1
+		
 	def checkColumns(self, grid, freeColumns):
 		for x in freeColumns:
 			y= self.findTopEmpty(grid.columns[x])
 			if self.hasTopEmptyWithTripletBelow(grid.columns[x], y):
 				print("FOUND VERTICAL THREAT AT (" + str(x) + "," + str(y) + ")")
 				return x
-			if self.hasTopEmptyWithAdjacentTriplets(grid, x, y):
-				print("FOUND 3-0 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
-				return x
-			if self.hasTopEmptyWithAdjacentDoubleAndSingle(grid, x, y):
-				print("FOUND 2-1 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
-				return x
-			if self.hasTopEmptyWithDiagonalTriplets(grid, x, y):
-				print("FOUND 3-0 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
-				return x
-			if self.hasTopEmptyWithDiagonalDoubleAndSingle(grid, x, y):
-				print("FOUND 2-1 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
-				return x
+			if self.checkAdjacents(grid, x, y) != -1:
+				return self.checkAdjacents(grid, x, y)
+			if self.checkDiagonals(grid, x, y) != -1:
+				return self.checkDiagonals(grid, x, y)
 		return -1
-		
+	
 	def chooseMove(self, grid):
 		freeColumns = grid.getFreeColumns()
 		if self.checkColumns(grid, freeColumns) != -1:

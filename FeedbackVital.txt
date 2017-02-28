@@ -1,0 +1,7 @@
+feedback Vital:
+	- IDEE: logica opsplitsen in twee delen:
+	    * één deel dat een situatie een score geeft (bv. heel negatief als de tegenpartij in één zet kan winnen)
+	    * een ander deel dat dat eerste deel gebruikt om hypothetische zetten te scoren en zo de beste te kiezen
+	    (nadeel: indien eerste deel stateless kan die moeilijk lange termijn strategie (>1 beurt) laten uitvoeren)
+	    
+	   
