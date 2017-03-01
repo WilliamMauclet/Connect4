@@ -1,6 +1,7 @@
 from Grid import ColumnGrid
 from MinusFirstOrderRobot import MinusFirstOrderRobot
 from ZeroOrderRobot import ZeroOrderRobot
+from FirstOrderRobot import FirstOrderRobot
 import random
 
 def acceptHumanMove(grid):
@@ -29,14 +30,22 @@ def acceptHumanMovePrev(grid):
 def chooseOpponent():
 	print("Choose an opponent against whom to play:\n")
 	inp = None
-	while not inp == '-1' and not inp == '0':
-		inp = input("-1 for MinusOneOrderRobot or 0 for ZeroOrderRobot: ")
+	acceptedInputs= ['','-1','0','1']
+	while inp not in acceptedInputs:
+		inp = input("-1 for MinusOneOrderRobot, 0 for ZeroOrderRobot and 1 for FirstOrderRobot (last=default): ")
+	if inp is "":
+		inp = acceptedInputs[-1]
 	if inp is '-1':
-		print("This game is against an opponent playing randomly.\n")
+		print("\nThis game is against an opponent playing randomly.\n")
 		return MinusOneOrderRobot()
-	else:
-		print("This game is against an opponent playing randomly but avoiding simple traps.\n")
+	elif inp is '0':
+		print("\nThis game is against an opponent playing randomly but avoiding simple traps.\n")
 		return ZeroOrderRobot()
+	elif inp is '1':
+		print("\nThis game is against an opponen playing randomly but avoiding (/to make) simple traps.\n")
+		return FirstOrderRobot()
+	else:
+		raise Exception("Did not recognise robot id: '" + inp + "'")
 
 def start():
 	humanPlayerId = 'X'
