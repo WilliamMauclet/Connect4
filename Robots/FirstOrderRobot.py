@@ -109,11 +109,10 @@ class FirstOrderRobot(Robot):
 
     def choose_move_that_does_not_help_opponent(self, grid):
         freeColumns = grid.get_free_columns()
-        # random.shuffle(freeColumns)
         dangerousColumns = []
         for x in freeColumns:
             y = self.find_top_empty(grid.columns[x])
-            if y == 6:
+            if y == 5:
                 continue
             y += 1
             if self.check_adjacents(grid, x, y) != -1 and self.check_adjacents(grid, x, y)['player'] != self.robotId:
@@ -127,7 +126,8 @@ class FirstOrderRobot(Robot):
                 # estimate if gives threat to opponent
                 # else:
                 #	return x
-        print("DANGEROUS COLUMNS: " + str(dangerousColumns))
+        if len(freeColumns) == 0:
+            return random.choice(freeColumns)
         return random.choice([i for i in freeColumns if i not in dangerousColumns])
 
     def choose_move(self, grid):

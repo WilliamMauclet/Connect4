@@ -73,6 +73,8 @@ class ColumnGrid:
         return -1
 
     def game_over(self):
+        if self.get_free_columns() == []:
+            return "exaequo"
         for column in self.columns:
             if self.four_in_a_row(column) != -1:
                 return self.four_in_a_row(column)
