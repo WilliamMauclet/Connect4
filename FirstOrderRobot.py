@@ -62,16 +62,16 @@ class FirstOrderRobot():
         if 0 < y <= 3 and 2 <= x <= 5:
             if grid.columns[x - 1][y + 1] == grid.columns[x - 2][y + 2] == grid.columns[x + 1][y - 1] is not None:
                 return grid.columns[x - 1][y + 1]
-            # look right
+                # look right
         if 0 < y <= 3 and 1 <= x <= 4:
             if grid.columns[x - 1][y + 1] == grid.columns[x + 1][y + 1] == grid.columns[x + 2][y + 2] is not None:
                 return grid.columns[x - 1][y + 1]
-            # look down
-            # look left
+                # look down
+                # look left
         if 2 <= y <= 4 and 2 <= x <= 5:
             if grid.columns[x - 2][y - 2] == grid.columns[x - 1][y - 1] == grid.columns[x + 1][y + 1] is not None:
                 return grid.columns[x - 2][y - 2]
-            # look right
+                # look right
         if 2 <= y <= 4 and 1 <= x <= 4:
             if grid.columns[x - 1][y + 1] == grid.columns[x + 1][y - 1] == grid.columns[x + 2][y - 2] is not None:
                 return grid.columns[x - 1][y + 1]
@@ -113,10 +113,10 @@ class FirstOrderRobot():
         dangerousColumns = []
         for x in freeColumns:
             y = self.find_top_empty(grid.columns[x])
-            if y == 7:
+            if y == 6:
                 continue
             y += 1
-            if self.check_adjacents(grid, x, y) != -1 and self.check_adjacents(grid, x, y) == OPPONENT_PLAYER_ID:
+            if self.check_adjacents(grid, x, y) != -1 and self.check_adjacents(grid, x, y)['player'] == OPPONENT_PLAYER_ID:
                 print("AVOIDING TO CREATE ADJACENT TRAP AT (" + str(x) + "," + str(y) + ")")
                 dangerousColumns.append(x)
                 continue
@@ -124,9 +124,9 @@ class FirstOrderRobot():
                 print("AVOIDING TO CREATE DIAGONAL TRAP AT (" + str(x) + "," + str(y) + ")")
                 dangerousColumns.append(x)
                 continue
-            # estimate if gives threat to opponent
-            # else:
-            #	return x
+                # estimate if gives threat to opponent
+                # else:
+                #	return x
         print("DANGEROUS COLUMNS: " + str(dangerousColumns))
         return random.choice([i for i in freeColumns if i not in dangerousColumns])
 
