@@ -107,25 +107,26 @@ class FirstOrderRobot(Robot):
                 return self.check_diagonals(grid, x, y)
         return -1
 
+    def evaluate_column_does_not_help_opponent(self, grid, x):
+        y = self.find_top_empty(grid.columns[x])
+        if y == 5:
+            return None
+        y += 1
+        if self.check_adjacents(grid, x, y) != -1 and self.check_adjacents(grid, x, y)['player'] != self.robotId:
+            print("AVOIDING TO CREATE ADJACENT TRAP AT (" + str(x) + "," + str(y) + ")")
+            return x
+        elif self.check_diagonals(grid, x, y) != -1 and self.check_diagonals(grid, x, y) != self.robotId:
+            print("AVOIDING TO CREATE DIAGONAL TRAP AT (" + str(x) + "," + str(y) + ")")
+            return x
+
+
     def choose_move_that_does_not_help_opponent(self, grid):
         freeColumns = grid.get_free_columns()
         dangerousColumns = []
         for x in freeColumns:
-            y = self.find_top_empty(grid.columns[x])
-            if y == 5:
-                continue
-            y += 1
-            if self.check_adjacents(grid, x, y) != -1 and self.check_adjacents(grid, x, y)['player'] != self.robotId:
-                print("AVOIDING TO CREATE ADJACENT TRAP AT (" + str(x) + "," + str(y) + ")")
-                dangerousColumns.append(x)
-                continue
-            elif self.check_diagonals(grid, x, y) != -1 and self.check_diagonals(grid, x, y) != self.robotId:
-                print("AVOIDING TO CREATE DIAGONAL TRAP AT (" + str(x) + "," + str(y) + ")")
-                dangerousColumns.append(x)
-                continue
-                # estimate if gives threat to opponent
-                # else:
-                #	return x
+            column =  self.evaluate_column_does_not_help_opponent(grid, x)
+            if column is not None:
+                dangerousColumns.append(column)
         if len(freeColumns) == len(dangerousColumns):
             return random.choice(freeColumns)
         return random.choice([i for i in freeColumns if i not in dangerousColumns])
