@@ -1,9 +1,10 @@
 from Grid import ColumnGrid
-from MinusFirstOrderRobot import MinusFirstOrderRobot
-from ZeroOrderRobot import ZeroOrderRobot
-from FirstOrderRobot import FirstOrderRobot
-import random
+from Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
+from Robots.FirstOrderRobot import FirstOrderRobot
+from Robots.ZeroOrderRobot import ZeroOrderRobot
 
+humanPlayerId = 'X'
+robotPlayerId = 'O'
 
 def accept_human_move(grid):
     inp = input("Available columns: " + str([x + 1 for x in grid.get_free_columns()]) + "\n")
@@ -40,20 +41,18 @@ def choose_opponent():
         inp = acceptedInputs[-1]
     if inp is '-1':
         print("\nThis game is against an opponent playing randomly.\n")
-        return MinusFirstOrderRobot()
+        return MinusFirstOrderRobot(robotPlayerId)
     elif inp is '0':
         print("\nThis game is against an opponent playing randomly but avoiding simple traps.\n")
-        return ZeroOrderRobot()
+        return ZeroOrderRobot(robotPlayerId)
     elif inp is '1':
         print("\nThis game is against an opponen playing randomly but avoiding (/to make) simple traps.\n")
-        return FirstOrderRobot()
+        return FirstOrderRobot(robotPlayerId)
     else:
         raise Exception("Did not recognise robot id: '" + inp + "'")
 
 
 def start():
-    humanPlayerId = 'X'
-    robotPlayerId = 'O'
     grid = ColumnGrid()
 
     print("\nWelcome to a new game of Connect 4\n")
