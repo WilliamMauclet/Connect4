@@ -1,14 +1,14 @@
 from Grid import ColumnGrid
-from Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
+#from Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
 from Robots.FirstOrderRobot import FirstOrderRobot
-#from Robots.ZeroOrderRobot import ZeroOrderRobot
+from Robots.ZeroOrderRobot import ZeroOrderRobot
 import random
 
 
 ROBOT_1 = FirstOrderRobot('X')
-ROBOT_2 = MinusFirstOrderRobot('O')
+ROBOT_2 = ZeroOrderRobot('O')
 
-NR_OF_GAMES = 250
+NR_OF_GAMES = 1000
 
 def getRobotFromId(dict, id):
     if id == 'exaequo':
@@ -22,8 +22,6 @@ def start(NR_OF_GAMES):
 
     victoriesDict = {ROBOT_1:0, ROBOT_2:0, 'exaequo':0}
 
-
-
     while NR_OF_GAMES > 0:
         print(str(NR_OF_GAMES))
         grid = ColumnGrid()
@@ -34,7 +32,6 @@ def start(NR_OF_GAMES):
         try:
             while grid.game_over() == -1 and grid.get_free_columns() != []:
                 i = (i+1)%2
-
                 column = players[i].choose_move(grid)
                 grid.add_pawn(column, players[i].robotId)
 
@@ -43,9 +40,9 @@ def start(NR_OF_GAMES):
                     victoriesDict[robot] = victoriesDict[robot]+1
                     break
             NR_OF_GAMES -= 1
-        except Exception:
+        except Exception as ex:
             grid.print_grid()
-
+            raise ex
 
     robots = list(victoriesDict.keys())
     print(str(NR_OF_GAMES) + " games played.\n")

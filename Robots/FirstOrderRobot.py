@@ -126,7 +126,7 @@ class FirstOrderRobot(Robot):
                 # estimate if gives threat to opponent
                 # else:
                 #	return x
-        if len(freeColumns) == 0:
+        if len(freeColumns) == len(dangerousColumns):
             return random.choice(freeColumns)
         return random.choice([i for i in freeColumns if i not in dangerousColumns])
 
