@@ -2,7 +2,6 @@ import random
 
 OPPONENT_PLAYER_ID = 'X'
 
-
 class FirstOrderRobot():
     """This robot DOES NOT LEARN.
     It applies simple algorithms to see if it can avoid a four in a row.
