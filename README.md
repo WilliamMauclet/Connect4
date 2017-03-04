@@ -5,6 +5,4 @@ On the other, the ConNET project uses a pattern-matching algorithm.
 
 The shape of the grid is as following:
 
-https://goo.gl/IyOTCv
-
 > ![The grid coordinates.](https://raw.githubusercontent.com/WilliamMauclet/Connect4/master/grid.png)
