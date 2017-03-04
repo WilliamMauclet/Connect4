@@ -7,4 +7,4 @@ The shape of the grid is as following:
 
 https://goo.gl/IyOTCv
 
-> ![The grid coordinates.](https://goo.gl/IyOTCvg)
+> ![The grid coordinates.](https://raw.githubusercontent.com/WilliamMauclet/Connect4/master/grid.png)
