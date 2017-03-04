@@ -3,7 +3,7 @@ import random
 from Grid import ColumnGrid
 from Robots.ZeroOrderRobot import ZeroOrderRobot
 
-from WilliamM.Robots.FirstOrderRobot import FirstOrderRobot
+from PygmyPython.Robots.FirstOrderRobot import FirstOrderRobot
 
 ROBOT_1 = FirstOrderRobot('X')
 ROBOT_2 = ZeroOrderRobot('O')

@@ -1,6 +1,6 @@
 import random
 
-from WilliamM.Robots.FirstOrderRobot import FirstOrderRobot
+from PygmyPython.Robots.FirstOrderRobot import FirstOrderRobot
 
 
 class ManyOrderRobot(FirstOrderRobot):

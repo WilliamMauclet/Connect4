@@ -2,7 +2,7 @@ from Grid import ColumnGrid
 from Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
 from Robots.ZeroOrderRobot import ZeroOrderRobot
 
-from WilliamM.Robots.FirstOrderRobot import FirstOrderRobot
+from PygmyPython.Robots.FirstOrderRobot import FirstOrderRobot
 
 humanPlayerId = 'X'
 robotPlayerId = 'O'
