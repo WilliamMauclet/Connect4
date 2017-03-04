@@ -1,15 +1,10 @@
-# Connect4
-Connect Four in python for future ML experiment.
+# Connect4: PygmyPython
+This project is about facing off two AI approaches to the Connect 4 game.
+On the one hand, the PygmyPython project uses a min-max algorithm.
+On the other, the ConNET project uses a pattern-matching algorithm.
 
-## TODO
-The current aim is to make a min-max implementation, using recursion.
-* Refactoring: push down method implementations.
-* Trivial case where a (simple) heuristic is used to evaluate a grid-situation.
-* Recursive case, where child branches are merged.
+The shape of the grid is as following:
 
+https://goo.gl/IyOTCv
 
-## TODO PREVIOUSLY
-* Game keeps history of moves
-* Robot accepts history of moves to machine learn
-* Replay possibility (for debugging) OR alternatively give grid start configuration
-
+> ![The grid coordinates.](https://goo.gl/IyOTCvg)
