@@ -14,6 +14,7 @@ ROBOT_2 = ManyOrderRobot('O')
 
 NR_OF_GAMES = 3
 
+
 def getRobotFromId(dict, id):
     if id == 'exaequo':
         return 'exaequo'
@@ -49,12 +50,12 @@ def get_name_player(player):
     else:
         return str(player.__class__.__name__)
 
+
 def print_end_score_to_console(NR_OF_GAMES, robots, victoriesDict, time):
     print(str(NR_OF_GAMES) + " games played.\n")
     print("End score:\n")
     for robot in robots:
         print(get_name_player(robot) + " : " + str(victoriesDict.get(robot)) + "\n")
-
 
     print("Time: " + str(time))
 
@@ -77,7 +78,6 @@ def start(NR_OF_GAMES):
 
     start = datetime.now().timestamp()
 
-
     victoriesDict = {ROBOT_1: 0, ROBOT_2: 0, 'exaequo': 0}
 
     while NR_OF_GAMES > 0:
@@ -88,9 +88,7 @@ def start(NR_OF_GAMES):
     end = datetime.now().timestamp()
 
     robots = list(victoriesDict.keys())
-    print_end_score_to_console(NR_OF_GAMES, robots, victoriesDict, end-start)
+    print_end_score_to_console(NR_OF_GAMES, robots, victoriesDict, end - start)
 
 
-# except Exception as exc:
-# print(exc.__str__())
 start(NR_OF_GAMES)

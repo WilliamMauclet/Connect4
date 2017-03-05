@@ -99,8 +99,6 @@ class ColumnGrid:
                 else:
                     image += self.columns[x][y] + '|'
         image += '\n'
-        for x in range(0, 15):
-            image += "-"
         print(image)
 
     def clone(self):
