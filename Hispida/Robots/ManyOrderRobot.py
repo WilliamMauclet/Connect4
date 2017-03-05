@@ -9,7 +9,7 @@ class ManyOrderRobot(FirstOrderRobot):
     In addition, it looks to see if the move it wants to make does create a future win possibility for the opponent.
     Except for that, it just plays randomly."""
 
-    #TODO
+    # TODO
     def apply_leaf_heuristic(self, grid, playerId):
         return 0
 
@@ -34,36 +34,39 @@ class ManyOrderRobot(FirstOrderRobot):
 
         return max(moves_scores)
 
+    def evaluate_move_in_recursion(self, grid, lookAheadsLeft, move, playerId):
+        opponent_id = self.get_id_opponent()
+        new_grid = grid.clone()
+        new_grid.add_pawn(move, playerId)
+        if new_grid.game_over() == playerId:
+            return 1
+        elif new_grid.game_over() == opponent_id:
+            return -1
+        else:
+            if lookAheadsLeft == 1:
+                return -1 * self.trivial_case_recursion(new_grid, opponent_id)
+            else:
+                return -1 * self.recursive_case_recursion(new_grid, opponent_id, lookAheadsLeft - 1)
+
     def recursive_case_recursion(self, grid, playerId, lookAheadsLeft):
         """Trunk of the recursion. Should combine the scores from further recursion executions."""
         moves_scores = []
-        opponent_id = self.get_id_opponent()
-        if grid.get_free_columns() == 0:
+        if len(grid.get_free_columns()) == 0:
             return 0
         for move in grid.get_free_columns():
-            new_grid = grid.clone()
-            new_grid.add_pawn(move, playerId)
-            if new_grid.game_over() == playerId:
-                moves_scores.append(1)
-            elif new_grid.game_over() == opponent_id:
-                moves_scores.append(-1)
-            else:
-                if lookAheadsLeft == 1:
-                    moves_scores.append(-1 * self.trivial_case_recursion(new_grid, opponent_id))
-                else:
-                    moves_scores.append(-1 * self.recursive_case_recursion(new_grid, opponent_id, lookAheadsLeft-1))
+            moves_scores.append(self.evaluate_move_in_recursion(grid, lookAheadsLeft, move, playerId))
 
         return max(moves_scores)
 
     def find_move_corresponding_to_max(self, moves_scores):
-        max_move = {'score':-9999999,'move':-1}
+        max_move = {'score': -9999999, 'move': -1}
         for x in moves_scores.keys():
             if moves_scores[x] > max_move['score']:
-                max_move = {'score': moves_scores[x], 'move':x}
+                max_move = {'score': moves_scores[x], 'move': x}
         return max_move['move']
 
     def start_recursion(self, grid, safeMoves):
-        look_ahead_depth = 3
+        look_ahead_depth = 5
 
         moves_scores = {}
         for move in safeMoves:
@@ -80,7 +83,8 @@ class ManyOrderRobot(FirstOrderRobot):
                     moves_scores[move] = self.recursive_case_recursion(new_grid, self.robotId, look_ahead_depth - 1)
 
         return self.find_move_corresponding_to_max(moves_scores)
-    #TODO
+
+    # TODO
 
     def choose_move_that_does_not_help_opponent(self, grid):
         """TODO Should give score to every column > choose (randomly from) column(s) with highest score"""
@@ -97,7 +101,7 @@ class ManyOrderRobot(FirstOrderRobot):
         else:
             return self.start_recursion(grid, [i for i in freeColumns if i not in dangerousColumns])
 
-            #random.choice([i for i in freeColumns if i not in dangerousColumns])
+            # random.choice([i for i in freeColumns if i not in dangerousColumns])
 
     def choose_move(self, grid):
         freeColumns = grid.get_free_columns()

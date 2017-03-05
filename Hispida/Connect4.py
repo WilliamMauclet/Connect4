@@ -7,6 +7,7 @@ from Hispida.Robots.ManyOrderRobot import ManyOrderRobot
 humanPlayerId = 'X'
 robotPlayerId = 'O'
 
+
 def accept_human_move(grid):
     inp = input("Available columns: " + str([x + 1 for x in grid.get_free_columns()]) + "\n")
     acceptedInputs = ['q', 'Q'] + [str(x + 1) for x in grid.get_free_columns()]
@@ -35,9 +36,10 @@ def accept_human_move_prev(grid):
 def choose_opponent():
     print("Choose an opponent against whom to play:\n")
     inp = None
-    acceptedInputs = ['', '-1', '0', '1','2']
+    acceptedInputs = ['', '-1', '0', '1', '2']
     while inp not in acceptedInputs:
-        inp = input("-1 for MinusOneOrderRobot, 0 for ZeroOrderRobot, 1 for FirstOrderRobot and 2 for ManyOrderRobot (last=default): ")
+        inp = input(
+            "-1 for MinusOneOrderRobot, 0 for ZeroOrderRobot, 1 for FirstOrderRobot and 2 for ManyOrderRobot (last=default): ")
     if inp is "":
         inp = acceptedInputs[-1]
     if inp is '-1':
