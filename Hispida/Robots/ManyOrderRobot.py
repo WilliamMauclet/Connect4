@@ -9,7 +9,7 @@ class ManyOrderRobot(FirstOrderRobot):
     In addition, it looks to see if the move it wants to make does create a future win possibility for the opponent.
     Except for that, it just plays randomly."""
 
-    #TODO
+    # TODO
     def apply_leaf_heuristic(self, grid, playerId):
         return 0
 
@@ -59,10 +59,10 @@ class ManyOrderRobot(FirstOrderRobot):
         return max(moves_scores)
 
     def find_move_corresponding_to_max(self, moves_scores):
-        max_move = {'score':-9999999,'move':-1}
+        max_move = {'score': -9999999, 'move': -1}
         for x in moves_scores.keys():
             if moves_scores[x] > max_move['score']:
-                max_move = {'score': moves_scores[x], 'move':x}
+                max_move = {'score': moves_scores[x], 'move': x}
         return max_move['move']
 
     def start_recursion(self, grid, safeMoves):
@@ -83,7 +83,8 @@ class ManyOrderRobot(FirstOrderRobot):
                     moves_scores[move] = self.recursive_case_recursion(new_grid, self.robotId, look_ahead_depth - 1)
 
         return self.find_move_corresponding_to_max(moves_scores)
-    #TODO
+
+    # TODO
 
     def choose_move_that_does_not_help_opponent(self, grid):
         """TODO Should give score to every column > choose (randomly from) column(s) with highest score"""
@@ -100,7 +101,7 @@ class ManyOrderRobot(FirstOrderRobot):
         else:
             return self.start_recursion(grid, [i for i in freeColumns if i not in dangerousColumns])
 
-            #random.choice([i for i in freeColumns if i not in dangerousColumns])
+            # random.choice([i for i in freeColumns if i not in dangerousColumns])
 
     def choose_move(self, grid):
         freeColumns = grid.get_free_columns()

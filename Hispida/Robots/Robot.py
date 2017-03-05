@@ -1,7 +1,7 @@
 import logging
 
-class Robot():
 
+class Robot():
     def __init__(self, robotId):
         if robotId is None:
             raise Exception('Please provide an id to the robot.')

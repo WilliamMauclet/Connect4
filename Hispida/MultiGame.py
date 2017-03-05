@@ -9,6 +9,7 @@ ROBOT_2 = ManyOrderRobot('O')
 
 NR_OF_GAMES = 200
 
+
 def getRobotFromId(dict, id):
     if id == 'exaequo':
         return 'exaequo'
@@ -16,6 +17,7 @@ def getRobotFromId(dict, id):
     for robot in robots:
         if robot.robotId == id:
             return robot
+
 
 def run_game(victoriesDict):
     grid = ColumnGrid()
@@ -36,9 +38,9 @@ def run_game(victoriesDict):
         grid.print_grid()
         raise ex
 
-def start(NR_OF_GAMES):
 
-    victoriesDict = {ROBOT_1:0, ROBOT_2:0, 'exaequo':0}
+def start(NR_OF_GAMES):
+    victoriesDict = {ROBOT_1: 0, ROBOT_2: 0, 'exaequo': 0}
 
     while NR_OF_GAMES > 0:
         print(str(NR_OF_GAMES))
@@ -48,8 +50,9 @@ def start(NR_OF_GAMES):
     robots = list(victoriesDict.keys())
     print(str(NR_OF_GAMES) + " games played.\n")
     print("End score:\n")
-    for r in range(0,len(robots)):
+    for r in range(0, len(robots)):
         print(str(robots[r]) + " : " + str(victoriesDict.get(robots[r])))
+
 
 # except Exception as exc:
 # print(exc.__str__())

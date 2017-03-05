@@ -1,6 +1,4 @@
 import random
-
-import logging
 from Hispida.Robots.ZeroOrderRobot import ZeroOrderRobot
 
 
@@ -26,7 +24,7 @@ class FirstOrderRobot(ZeroOrderRobot):
         freeColumns = grid.get_free_columns()
         dangerousColumns = []
         for x in freeColumns:
-            column =  self.evaluate_column_does_not_help_opponent(grid, x)
+            column = self.evaluate_column_does_not_help_opponent(grid, x)
             if column is not None:
                 dangerousColumns.append(column)
         if len(freeColumns) == len(dangerousColumns):

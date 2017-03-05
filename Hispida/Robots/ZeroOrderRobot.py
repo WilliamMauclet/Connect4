@@ -1,6 +1,4 @@
 import random
-
-import logging
 from Hispida.Robots.Robot import Robot
 
 
