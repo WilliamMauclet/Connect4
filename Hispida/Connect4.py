@@ -18,7 +18,6 @@ def accept_human_move(grid):
     else:
         return int(inp) - 1
 
-
 def accept_human_move_prev(grid):
     inp = input("Available columns: " + str([x + 1 for x in grid.get_free_columns()]) + "\n")
     if inp is 'q':
@@ -30,7 +29,6 @@ def accept_human_move_prev(grid):
             raise Exception("Game aborted")
         column = int(inp) - 1
     return column
-
 
 def choose_opponent():
     print("Choose an opponent against whom to play:\n")
@@ -54,7 +52,6 @@ def choose_opponent():
         return ManyOrderRobot(robotPlayerId)
     else:
         raise Exception("Did not recognise robot id: '" + inp + "'")
-
 
 def start():
     grid = ColumnGrid()
@@ -80,7 +77,6 @@ def start():
 
     grid.print_grid()
     print("\nPlayer " + str(grid.game_over()) + " won, congrats!\n")
-
 
 # except Exception as exc:
 # print(exc.__str__())
