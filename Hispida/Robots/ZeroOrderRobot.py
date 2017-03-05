@@ -1,6 +1,6 @@
 import random
 
-from PygmyPython.Robots.Robot import Robot
+from Hispida.Robots.Robot import Robot
 
 
 class ZeroOrderRobot(Robot):

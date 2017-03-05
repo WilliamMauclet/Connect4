@@ -1,14 +1,14 @@
 import random
 
-from Grid import ColumnGrid
-from Robots.ZeroOrderRobot import ZeroOrderRobot
+from Hispida.Grid import ColumnGrid
+from Hispida.Robots.ManyOrderRobot import ManyOrderRobot
 
-from PygmyPython.Robots.FirstOrderRobot import FirstOrderRobot
+from Hispida.Robots.FirstOrderRobot import FirstOrderRobot
 
 ROBOT_1 = FirstOrderRobot('X')
-ROBOT_2 = ZeroOrderRobot('O')
+ROBOT_2 = ManyOrderRobot('O')
 
-NR_OF_GAMES = 500
+NR_OF_GAMES = 100
 
 def getRobotFromId(dict, id):
     if id == 'exaequo':
