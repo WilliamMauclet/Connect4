@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConNET.model {
+namespace ConNET.game {
 
     public enum CellState {
         Empty = ' ',
-        Filled = 'X',
-        DontCare = '?',
         EvenDisk = 'E',
-        UnevenDisk = 'U'
+        UnevenDisk = 'U',
+        Filled = 'X',
+        DontCare = '?'
     }
 
     public static class CellStateMethods {

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConNET.model {
+namespace ConNET.game {
         
-    public class Game {
+    public class DefaultGame : Game {
 
         private int[,] disks; // disks[turn,0] = x; disks[turn,1] = y; player = turn / 2;
 
@@ -16,20 +16,31 @@ namespace ConNET.model {
             }
         }
 
-        public Game() {
-            disks = createDisks(null);
-        }
+        private Player evenPlayer;
+        private Player unevenPlayer;
 
-        public Game(int[] drops) {
+        private Player currentPlayer; // the player that can enter a disk now
+
+        public DefaultGame(Player evenPlayer, Player unevenPlayer, int[] drops = null){
+            this.evenPlayer = this.currentPlayer = evenPlayer;
+            this.unevenPlayer = unevenPlayer;
             disks = createDisks(drops);
+            evenPlayer.signalJoin(this);
+            unevenPlayer.signalJoin(this);
         }
 
-        public void dropDisk(int x) {
-            int turn = 0;
-            while(disks[turn,0] != -1) {
-                turn++;
+        public void start() {
+            currentPlayer.signalTurn(this.Grid);
+        }
+
+        public void putDisk(Player player, int x) {
+            dropDisk(x, disks);
+            if(currentPlayer == evenPlayer) {
+                currentPlayer = unevenPlayer;
+            } else {
+                currentPlayer = evenPlayer;
             }
-            setTurn(turn, x, getNewY(disks, x));
+            currentPlayer.signalTurn(this.Grid);
         }
 
         public bool isWon() {
@@ -50,11 +61,11 @@ namespace ConNET.model {
         private static int[,] createDisks(int[] drops) {
             int[,] disks = new int[6 * 7, 2];
             for (int turn = 0; turn < 6 * 7; turn++) {
+                disks[turn, 0] = -1;
+                disks[turn, 1] = -1;
                 if (drops != null && turn < drops.Length) {
                     disks[turn, 0] = drops[turn];
                     disks[turn, 1] = getNewY(disks, drops[turn]);
-                } else {
-                    disks[turn, 0] = disks[turn, 1] = -1;
                 }
             }
             return disks;
@@ -63,7 +74,7 @@ namespace ConNET.model {
         private static int getNewY(int[,] disks, int x) {
             int nbDropsInColumn = 0;
             int turn = 0;
-            while (disks[turn, 0] != -1) {
+            while (turn < 6*7 && disks[turn, 1] != -1) {
                 if (disks[turn, 0] == x) {
                     nbDropsInColumn++;
                 }
@@ -75,7 +86,7 @@ namespace ConNET.model {
         private static CellState[,] toGrid(int[,] disks) {
             CellState[,] grid = new CellState[7, 6];
             int turn = 0;
-            while (disks[turn, 0] != -1) {
+            while (turn < 6 * 7 && disks[turn, 0] != -1) {
                 int x = disks[turn, 0];
                 int y = disks[turn, 1];
                 if(turn % 2 == 0) { // even
@@ -86,6 +97,16 @@ namespace ConNET.model {
                 turn++;
             }
             return grid;
+        }
+        
+        public static int[,] dropDisk(int x, int[,] disks) {
+            int turn = 0;
+            while (disks[turn, 0] != -1) {
+                turn++;
+            }
+            disks[turn, 0] = x;
+            disks[turn, 1] = getNewY(disks, x);
+            return disks;
         }
 
         #endregion

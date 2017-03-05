@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConNET", "ConNET\ConNET.csproj", "{E131B3B6-416B-445E-8B69-8F1FB089B56C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConNETTest", "ConNETTest\ConNETTest.csproj", "{652116FD-12D4-486F-B66E-52DAD3B523A7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E131B3B6-416B-445E-8B69-8F1FB089B56C} = {E131B3B6-416B-445E-8B69-8F1FB089B56C}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{E131B3B6-416B-445E-8B69-8F1FB089B56C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E131B3B6-416B-445E-8B69-8F1FB089B56C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E131B3B6-416B-445E-8B69-8F1FB089B56C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{652116FD-12D4-486F-B66E-52DAD3B523A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{652116FD-12D4-486F-B66E-52DAD3B523A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{652116FD-12D4-486F-B66E-52DAD3B523A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{652116FD-12D4-486F-B66E-52DAD3B523A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
