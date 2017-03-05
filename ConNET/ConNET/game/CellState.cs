@@ -6,18 +6,53 @@ using System.Threading.Tasks;
 
 namespace ConNET.game {
 
-    public enum CellState {
-        Empty = ' ',
-        EvenDisk = 'E',
-        UnevenDisk = 'U',
-        Filled = 'X',
-        DontCare = '?'
-    }
+    public class CellState {
 
-    public static class CellStateMethods {
+        public static readonly CellState DontCare = new CellState(null, "DontCare");
+        public static readonly CellState Filled = new CellState(DontCare, "Filled");
+        public static readonly CellState Empty = new CellState(DontCare, "Empty");
+        public static readonly CellState EvenDisk = new CellState(Filled, "EvenDisk");
+        public static readonly CellState UnevenDisk = new CellState(Filled, "UnevenDisk");
 
-        public static char getChar(this CellState state) {
-            return Char.ConvertFromUtf32((int) state)[0];
+        private readonly CellState superState; // this relation defines a tree on the CellStates
+        public CellState SuperState {
+            get {
+                return superState;
+            }
+        }
+
+        private string stringRep;
+
+        public CellState(CellState superState, string stringRep) {
+            this.superState = superState;
+            this.stringRep = stringRep;
+        }
+
+        public bool hasSuperState() {
+            return superState != null;
+        }
+
+        public bool canBe(CellState other) {
+            if(other.Equals(this)) {
+                return true;
+            }
+            if (! other.hasSuperState()) {
+                return false;
+            }
+            if(other.SuperState.Equals(this)) {
+                return true;
+            }
+            if(other.SuperState.SuperState == null) {
+                return false;
+            }
+            if(other.SuperState.SuperState.Equals(this)) {
+                return true;
+            }
+            return false;
+        }
+
+        public override string ToString() {
+            return stringRep;
         }
 
     }

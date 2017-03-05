@@ -7,8 +7,8 @@ namespace ConNETTest {
     [TestClass]
     public class GameTest {
         [TestMethod]
-        public void TestCreateDisks() {
-            DefaultGame game = new DefaultGame(new DummyPlayer(), new DummyPlayer(),
+        public void testCreateDisks() {
+            DefaultGame game = new DefaultGame(new TestPlayer(true), new TestPlayer(false),
                 new int[12] { 0,1,2,3,4,5,6,5,4,3,2,1 });
             Assert.AreEqual(CellState.EvenDisk, game.Grid[0, 0]);
             Assert.AreEqual(CellState.UnevenDisk, game.Grid[1, 0]);
@@ -25,19 +25,4 @@ namespace ConNETTest {
         }
     }
 
-    public class DummyPlayer : Player {
-
-        public DummyPlayer() {
-            // do nothing
-        }
-
-        public void signalJoin(Game game) {
-            // do nothing
-        }
-
-        public void signalTurn(CellState[,] grid) {
-            // do nothing
-        }
-
-    }
 }

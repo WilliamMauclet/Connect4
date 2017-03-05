@@ -11,6 +11,12 @@ namespace ConNET.players {
     class ConsolePlayer : Player {
 
         private Game game;
+        private bool even;
+        public bool Even {
+            get {
+                return even;
+            }
+        }
 
         private string name;
 
@@ -18,8 +24,11 @@ namespace ConNET.players {
             this.name = name;
         }
 
-        public void signalJoin(Game game) {
-            this.game = game;
+        public void signalJoin(Game game, bool even) {
+            if(game == null) {
+                this.game = game;
+                this.even = even;
+            }
         }
 
         public void signalTurn(CellState[,] grid) {

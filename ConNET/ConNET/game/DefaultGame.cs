@@ -25,8 +25,8 @@ namespace ConNET.game {
             this.evenPlayer = this.currentPlayer = evenPlayer;
             this.unevenPlayer = unevenPlayer;
             disks = createDisks(drops);
-            evenPlayer.signalJoin(this);
-            unevenPlayer.signalJoin(this);
+            evenPlayer.signalJoin(this, true);
+            unevenPlayer.signalJoin(this, false);
         }
 
         public void start() {
@@ -83,8 +83,18 @@ namespace ConNET.game {
             return nbDropsInColumn;
         }
 
-        private static CellState[,] toGrid(int[,] disks) {
+        public static CellState[,] createEmptyGrid() {
             CellState[,] grid = new CellState[7, 6];
+            for(int y = 0; y < 6; y++) {
+                for(int x = 0; x < 7; x++) {
+                    grid[x, y] = CellState.Empty;
+                }
+            }
+            return grid;
+        }
+
+        private static CellState[,] toGrid(int[,] disks) {
+            CellState[,] grid = createEmptyGrid();
             int turn = 0;
             while (turn < 6 * 7 && disks[turn, 0] != -1) {
                 int x = disks[turn, 0];

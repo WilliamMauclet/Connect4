@@ -8,7 +8,11 @@ namespace ConNET.game {
 
     public interface Player {
 
-        void signalJoin(Game game);
+        bool Even {
+            get;
+        }
+
+        void signalJoin(Game game, bool isEven);
 
         void signalTurn(CellState[,] grid);
 
