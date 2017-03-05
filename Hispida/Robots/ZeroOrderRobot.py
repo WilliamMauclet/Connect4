@@ -1,5 +1,5 @@
 import random
-from Hispida.Robots.Robot import Robot
+from Robots.Robot import Robot
 
 
 class ZeroOrderRobot(Robot):

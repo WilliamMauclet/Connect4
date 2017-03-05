@@ -1,8 +1,8 @@
-from Hispida.Grid import ColumnGrid
-from Hispida.Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
-from Hispida.Robots.ZeroOrderRobot import ZeroOrderRobot
-from Hispida.Robots.FirstOrderRobot import FirstOrderRobot
-from Hispida.Robots.ManyOrderRobot import ManyOrderRobot
+from Grid import ColumnGrid
+from Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
+from Robots.ZeroOrderRobot import ZeroOrderRobot
+from Robots.FirstOrderRobot import FirstOrderRobot
+from Robots.ManyOrderRobot import ManyOrderRobot
 
 humanPlayerId = 'X'
 robotPlayerId = 'O'
@@ -68,7 +68,6 @@ def start():
     print("To exit the game press Q + ENTER\n")
     print("Please do the first move")
 
-    # try:
     while grid.game_over() == -1:
         grid.print_grid()
         column = accept_human_move(grid)
@@ -83,7 +82,9 @@ def start():
     grid.print_grid()
     print("\nPlayer " + str(grid.game_over()) + " won, congrats!\n")
 
-
+# change here if you want to get more messages.
+import logging
+logging.getLogger().setLevel(logging.CRITICAL)
 # except Exception as exc:
 # print(exc.__str__())
 start()

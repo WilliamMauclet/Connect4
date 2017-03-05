@@ -1,6 +1,6 @@
 import random
 
-from Hispida.Robots.FirstOrderRobot import FirstOrderRobot
+from Robots.FirstOrderRobot import FirstOrderRobot
 
 
 class ManyOrderRobot(FirstOrderRobot):
@@ -86,7 +86,7 @@ class ManyOrderRobot(FirstOrderRobot):
 
     # TODO
 
-    def choose_move_that_does_not_help_opponent(self, grid):
+    def choose_move_look_ahead(self, grid):
         """TODO Should give score to every column > choose (randomly from) column(s) with highest score"""
         freeColumns = grid.get_free_columns()
         dangerousColumns = []
@@ -101,11 +101,9 @@ class ManyOrderRobot(FirstOrderRobot):
         else:
             return self.start_recursion(grid, [i for i in freeColumns if i not in dangerousColumns])
 
-            # random.choice([i for i in freeColumns if i not in dangerousColumns])
-
     def choose_move(self, grid):
         freeColumns = grid.get_free_columns()
         if self.check_columns(grid, freeColumns) != -1:
             return self.check_columns(grid, freeColumns)['column']
         else:
-            return self.choose_move_that_does_not_help_opponent(grid)
+            return self.choose_move_look_ahead(grid)
