@@ -2,13 +2,12 @@ import random
 
 from Hispida.Grid import ColumnGrid
 from Hispida.Robots.ManyOrderRobot import ManyOrderRobot
-
 from Hispida.Robots.FirstOrderRobot import FirstOrderRobot
 
 ROBOT_1 = FirstOrderRobot('X')
 ROBOT_2 = ManyOrderRobot('O')
 
-NR_OF_GAMES = 100
+NR_OF_GAMES = 200
 
 def getRobotFromId(dict, id):
     if id == 'exaequo':

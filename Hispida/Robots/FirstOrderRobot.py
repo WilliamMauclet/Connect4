@@ -1,5 +1,6 @@
 import random
 
+import logging
 from Hispida.Robots.ZeroOrderRobot import ZeroOrderRobot
 
 
@@ -73,19 +74,19 @@ class FirstOrderRobot(ZeroOrderRobot):
 
     def check_adjacents(self, grid, x, y):
         if self.has_adjacent_triplet(grid, x, y):
-            # print("FOUND 3-0 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
+            # logging.debug("FOUND 3-0 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
             return {'column': x, 'player': self.has_adjacent_triplet(grid, x, y)}
         if self.has_adjacent_double_and_single(grid, x, y):
-            # print("FOUND 2-1 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
+            # logging.debug("FOUND 2-1 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
             return {'column': x, 'player': self.has_adjacent_double_and_single(grid, x, y)}
         return -1
 
     def check_diagonals(self, grid, x, y):
         if self.has_diagonal_triplet(grid, x, y):
-            # print("FOUND 3-0 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
+            # logging.debug("FOUND 3-0 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
             return {'column': x, 'player': self.has_diagonal_triplet(grid, x, y)}
         if self.has_diagonal_double_and_single(grid, x, y):
-            # print("FOUND 2-1 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
+            # logging.debug("FOUND 2-1 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
             return {'column': x, 'player': self.has_diagonal_triplet(grid, x, y)}
         return -1
 
@@ -93,7 +94,7 @@ class FirstOrderRobot(ZeroOrderRobot):
         for x in freeColumns:
             y = self.find_top_empty(grid.columns[x])
             if self.has_triplet_below(grid.columns[x], y):
-                # print("FOUND VERTICAL THREAT AT (" + str(x) + "," + str(y) + ")")
+                # logging.debug("FOUND VERTICAL THREAT AT (" + str(x) + "," + str(y) + ")")
                 return {'column': x, 'player': self.has_triplet_below(grid.columns[x], y)}
             if self.check_adjacents(grid, x, y) != -1:
                 return self.check_adjacents(grid, x, y)
@@ -107,10 +108,10 @@ class FirstOrderRobot(ZeroOrderRobot):
             return None
         y += 1
         if self.check_adjacents(grid, x, y) != -1 and self.check_adjacents(grid, x, y)['player'] != self.robotId:
-            print("AVOIDING TO CREATE ADJACENT TRAP AT (" + str(x) + "," + str(y) + ")")
+            logging.debug("AVOIDING TO CREATE ADJACENT TRAP AT (" + str(x) + "," + str(y) + ")")
             return x
         elif self.check_diagonals(grid, x, y) != -1 and self.check_diagonals(grid, x, y) != self.robotId:
-            print("AVOIDING TO CREATE DIAGONAL TRAP AT (" + str(x) + "," + str(y) + ")")
+            logging.debug("AVOIDING TO CREATE DIAGONAL TRAP AT (" + str(x) + "," + str(y) + ")")
             return x
 
 

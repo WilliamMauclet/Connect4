@@ -1,5 +1,6 @@
 import random
 
+import logging
 from Hispida.Robots.Robot import Robot
 
 
@@ -79,19 +80,19 @@ class ZeroOrderRobot(Robot):
 
     def check_adjacents(self, grid, x, y):
         if self.has_adjacent_triplet(grid, x, y):
-            print("FOUND 3-0 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
+            logging.debug("FOUND 3-0 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
             return x
         if self.has_adjacent_double_and_single(grid, x, y):
-            print("FOUND 2-1 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
+            logging.debug("FOUND 2-1 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
             return x
         return -1
 
     def check_diagonals(self, grid, x, y):
         if self.has_diagonal_triplet(grid, x, y):
-            print("FOUND 3-0 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
+            logging.debug("FOUND 3-0 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
             return x
         if self.has_diagonal_double_and_single(grid, x, y):
-            print("FOUND 2-1 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
+            logging.debug("FOUND 2-1 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
             return x
         return -1
 
