@@ -1,6 +1,6 @@
 import random
 
-from WilliamM.Robots.Robot import Robot
+from Hispida.Robots.Robot import Robot
 
 class MinusFirstOrderRobot(Robot):
 

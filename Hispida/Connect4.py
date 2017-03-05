@@ -1,8 +1,8 @@
-from Grid import ColumnGrid
-from Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
-from Robots.ZeroOrderRobot import ZeroOrderRobot
-
-from WilliamM.Robots.FirstOrderRobot import FirstOrderRobot
+from Hispida.Grid import ColumnGrid
+from Hispida.Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
+from Hispida.Robots.ZeroOrderRobot import ZeroOrderRobot
+from Hispida.Robots.FirstOrderRobot import FirstOrderRobot
+from Hispida.Robots.ManyOrderRobot import ManyOrderRobot
 
 humanPlayerId = 'X'
 robotPlayerId = 'O'
@@ -35,9 +35,9 @@ def accept_human_move_prev(grid):
 def choose_opponent():
     print("Choose an opponent against whom to play:\n")
     inp = None
-    acceptedInputs = ['', '-1', '0', '1']
+    acceptedInputs = ['', '-1', '0', '1','2']
     while inp not in acceptedInputs:
-        inp = input("-1 for MinusOneOrderRobot, 0 for ZeroOrderRobot and 1 for FirstOrderRobot (last=default): ")
+        inp = input("-1 for MinusOneOrderRobot, 0 for ZeroOrderRobot, 1 for FirstOrderRobot and 2 for ManyOrderRobot (last=default): ")
     if inp is "":
         inp = acceptedInputs[-1]
     if inp is '-1':
@@ -47,8 +47,11 @@ def choose_opponent():
         print("\nThis game is against an opponent playing randomly but avoiding simple traps.\n")
         return ZeroOrderRobot(robotPlayerId)
     elif inp is '1':
-        print("\nThis game is against an opponen playing randomly but avoiding (/to make) simple traps.\n")
+        print("\nThis game is against an opponent playing randomly but avoiding (/to make) simple traps.\n")
         return FirstOrderRobot(robotPlayerId)
+    elif inp is '2':
+        print("\nThis game is against an opponent avoiding traps and using a minmax algorithm.\n")
+        return ManyOrderRobot(robotPlayerId)
     else:
         raise Exception("Did not recognise robot id: '" + inp + "'")
 

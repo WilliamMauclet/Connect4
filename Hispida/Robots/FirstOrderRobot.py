@@ -1,6 +1,6 @@
 import random
 
-from WilliamM.Robots import ZeroOrderRobot
+from Hispida.Robots.ZeroOrderRobot import ZeroOrderRobot
 
 
 class FirstOrderRobot(ZeroOrderRobot):
