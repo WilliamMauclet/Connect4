@@ -10,7 +10,8 @@ using ConNET.gui;
 namespace ConNET.players {
     class ConsolePlayer : Player {
 
-        private Game game;
+        private Game game = null;
+
         private bool even;
         public bool Even {
             get {
@@ -25,7 +26,7 @@ namespace ConNET.players {
         }
 
         public void signalJoin(Game game, bool even) {
-            if(game == null) {
+            if(this.game == null) {
                 this.game = game;
                 this.even = even;
             }
