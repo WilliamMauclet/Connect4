@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConNET.model {
+namespace ConNET.game {
         
-    public class Game {
+    public class DefaultGame : Game {
 
         private int[,] disks; // disks[turn,0] = x; disks[turn,1] = y; player = turn / 2;
 
@@ -16,16 +16,31 @@ namespace ConNET.model {
             }
         }
 
-        public Game() {
-            disks = createDisks(null);
-        }
+        private Player evenPlayer;
+        private Player unevenPlayer;
 
-        public Game(int[] drops) {
+        private Player currentPlayer; // the player that can enter a disk now
+
+        public DefaultGame(Player evenPlayer, Player unevenPlayer, int[] drops = null){
+            this.evenPlayer = this.currentPlayer = evenPlayer;
+            this.unevenPlayer = unevenPlayer;
             disks = createDisks(drops);
+            evenPlayer.signalJoin(this);
+            unevenPlayer.signalJoin(this);
         }
 
-        public void dropDisk(int x) {
+        public void start() {
+            currentPlayer.signalTurn(this.Grid);
+        }
+
+        public void putDisk(Player player, int x) {
             dropDisk(x, disks);
+            if(currentPlayer == evenPlayer) {
+                currentPlayer = unevenPlayer;
+            } else {
+                currentPlayer = evenPlayer;
+            }
+            currentPlayer.signalTurn(this.Grid);
         }
 
         public bool isWon() {

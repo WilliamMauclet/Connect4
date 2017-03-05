@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using ConNET.model;
+using ConNET.game;
 
 namespace ConNET.gui {
     public abstract class ConsoleTools {
