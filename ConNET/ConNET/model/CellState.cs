@@ -8,10 +8,10 @@ namespace ConNET.model {
 
     public enum CellState {
         Empty = ' ',
-        Filled = 'X',
-        DontCare = '?',
         EvenDisk = 'E',
-        UnevenDisk = 'U'
+        UnevenDisk = 'U',
+        Filled = 'X',
+        DontCare = '?'
     }
 
     public static class CellStateMethods {

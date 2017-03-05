@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using ConNET.model;
+using ConNET.gui;
 
 namespace ConNET
 {
@@ -16,24 +17,14 @@ namespace ConNET
             Game game = new Game();
             while(! game.isWon()) {
                 System.Console.WriteLine("Type number to drop disk in column.");
-                char inp = (char)System.Console.Read();
-                double inpD = Char.GetNumericValue(inp);
+                string inp = System.Console.ReadLine();
+                double inpD = Char.GetNumericValue(inp, 0);
                 if(inpD > -1
                     && inpD < 7
                     && (inpD % 1) == 0) {
                     game.dropDisk((int)inpD);
                 }
-                printGrid(game.Grid);
-            }
-        }
-
-        private static void printGrid(CellState[,] grid) {
-            for(int y = 5; y > -1; y--) {
-                string rowString = " |";
-                for (int x = 0; x < 7; x++) {
-                    rowString += " " + grid[x, y].getChar() + " |";
-                }
-                System.Console.WriteLine(rowString);
+                ConsoleTools.printGrid(game.Grid);
             }
         }
 

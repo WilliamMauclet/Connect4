@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="gui\ConsoleTools.cs" />
     <Compile Include="model\CellState.cs" />
     <Compile Include="model\Game.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Connect4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
