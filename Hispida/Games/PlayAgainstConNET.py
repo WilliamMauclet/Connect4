@@ -1,18 +1,14 @@
-from Grid import ColumnGrid
+from Grid.Grid import ColumnGrid
 from Robots.FirstOrderRobot import FirstOrderRobot
+import socket
 
-def play(firstNotSecond):
-    grid = ColumnGrid()
-    robot = FirstOrderRobot('X')
+# TODO both first and second player must connect and listen!
 
-    import socket
-
+def make_connection(firstNotSecond):
     # create a socket object
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
     # get local machine name
     host = socket.gethostname()
-
     if firstNotSecond:
         port = 9998
         # bind to the port
@@ -21,10 +17,19 @@ def play(firstNotSecond):
         s.listen(1)
         s = s.accept()
 
+        # TODO
         s.send(str.encode("CHOSEN FIRST MOVE"))
     else:
         port = 9999
-        s.connect((host,port))
+        s.connect((host, port))
+    return s
+
+def play(firstNotSecond):
+    grid = ColumnGrid()
+    robot = FirstOrderRobot('X')
+
+
+    s = make_connection(firstNotSecond)
 
     while not grid.game_over():
 
@@ -40,5 +45,9 @@ def play(firstNotSecond):
         break
 
     s.close()
+
+
+
+
 
 play(True)

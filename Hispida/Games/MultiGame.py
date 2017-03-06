@@ -1,11 +1,6 @@
-import sys
-
-sys.path.append("C:/Users/williamm/PycharmProjects/Connect4/Hispida")
-sys.path.append("C:\\Users\\williamm\\PycharmProjects\\Connect4\\Hispida")
-
 import random
 
-from Grid import ColumnGrid
+from Grid.Grid import ColumnGrid
 from Robots.ManyOrderRobot import ManyOrderRobot
 from Robots.FirstOrderRobot import FirstOrderRobot
 

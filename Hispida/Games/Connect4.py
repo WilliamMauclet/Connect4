@@ -1,4 +1,4 @@
-from Grid import ColumnGrid
+from Grid.Grid import ColumnGrid
 from Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
 from Robots.ZeroOrderRobot import ZeroOrderRobot
 from Robots.FirstOrderRobot import FirstOrderRobot
