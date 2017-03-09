@@ -9,5 +9,6 @@ The shape of the grid is as following:
 
 > ![The grid coordinates.](https://raw.githubusercontent.com/WilliamMauclet/Connect4/master/grid.png)
 
-The first player listens on port 9998, the other on port 9999. The first player is listens for connections, 
-the other player connects and the first player makes the first move.
+Host = host and port = 9999.
+The first player listens. The second player connects and from there the bi-directional communication begins.
+The first player makes the first move.
