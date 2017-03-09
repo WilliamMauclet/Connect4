@@ -23,9 +23,6 @@ class ColumnGrid:
         # nrPawnsDict = {None:0,PLAYER_ID_1:0,PLAYER_ID_2:0}
         for column in self.columns:
             assert len(column) is 6, "Column " + str(column) + " has " + str(len(column)) + " tiles! " + str(column)
-        #	for tile in column:
-        #		nrPawnsDict[tile] += nrPawnsDict[tile]
-        # assert nrPawnsDict
 
     def four_in_a_row(self, row):
         seq = 1
@@ -103,5 +100,5 @@ class ColumnGrid:
 
     def clone(self):
         clone = ColumnGrid()
-        clone.columns = [ [tile for tile in column] for column in self.columns]
+        clone.columns = [[tile for tile in column] for column in self.columns]
         return clone

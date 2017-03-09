@@ -1,11 +1,12 @@
+import sys, os
+
+sys.path.insert(0, os.path.abspath("."))
+
 from Grid.Grid import ColumnGrid
 from Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
 from Robots.ZeroOrderRobot import ZeroOrderRobot
 from Robots.FirstOrderRobot import FirstOrderRobot
 from Robots.ManyOrderRobot import ManyOrderRobot
-
-humanPlayerId = 'X'
-robotPlayerId = 'O'
 
 
 def accept_human_move(grid):
@@ -82,9 +83,14 @@ def start():
     grid.print_grid()
     print("\nPlayer " + str(grid.game_over()) + " won, congrats!\n")
 
+
 # change here if you want to get more messages.
 import logging
+
 logging.getLogger().setLevel(logging.CRITICAL)
 # except Exception as exc:
 # print(exc.__str__())
+
+humanPlayerId = 'X'
+robotPlayerId = 'O'
 start()

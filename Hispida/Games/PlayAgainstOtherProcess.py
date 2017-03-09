@@ -1,8 +1,15 @@
+import sys,os
+sys.path.insert(0, os.path.abspath("."))
+
 from Grid.Grid import ColumnGrid
 from Robots.FirstOrderRobot import FirstOrderRobot
 import socket
 
 # TODO both first and second player must connect and listen!
+# TODO is socket bi-directional? YES
+# 1) P1 starts and listens
+# 2) P2 starts and makes connection
+#
 
 def make_connection(firstNotSecond):
     # create a socket object
@@ -23,6 +30,22 @@ def make_connection(firstNotSecond):
         port = 9999
         s.connect((host, port))
     return s
+
+def first_player_make_connection():
+    # create a socket object
+    serversocket = socket.socket(
+        socket.AF_INET, socket.SOCK_STREAM)
+
+    # get local machine name
+    host = socket.gethostname()
+
+    port = 9999
+
+    # bind to the port
+    serversocket.bind((host, port))
+
+    # queue up to 1 requests
+    serversocket.listen(1)
 
 def play(firstNotSecond):
     grid = ColumnGrid()

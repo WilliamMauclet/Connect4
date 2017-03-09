@@ -11,6 +11,8 @@ class ManyOrderRobot(FirstOrderRobot):
 
     # TODO
     def apply_leaf_heuristic(self, grid, playerId):
+        # IDEA Heuristic: (nr of tiles with same color around this tile)/8 = max 7/8
+        grid
         return 0
 
     def evaluate_tail(self, grid, playerId):
