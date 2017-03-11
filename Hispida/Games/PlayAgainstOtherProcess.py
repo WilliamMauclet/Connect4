@@ -4,6 +4,7 @@ sys.path.insert(0, os.path.abspath("."))
 
 from Grid.Grid import ColumnGrid
 from Robots.FirstOrderRobot import FirstOrderRobot
+from Robots.ManyOrderRobot import ManyOrderRobot
 import socket
 from threading import Thread
 
@@ -63,28 +64,37 @@ def get_order_from_id(id):
 
 def play(firstNotSecond):
     grid = ColumnGrid()
-    robot = FirstOrderRobot(get_id_from_order(firstNotSecond))
-
+    if firstNotSecond:
+        robot = FirstOrderRobot(get_id_from_order(firstNotSecond))
+    else:
+        robot = ManyOrderRobot(get_id_from_order(firstNotSecond))
     s = make_connection(firstNotSecond)
 
     if firstNotSecond:
-        robot_move = str(robot.choose_move(grid))
-        s.send(robot_move.encode("ascii"))
-
-    while grid.game_over() == -1:
-        opponent_move = int(s.recv(1024).decode("ascii"))  # even 8 (or even 1) should be enough!
-        grid.add_pawn(opponent_move, robot.get_id_opponent())
-
-        if grid.game_over() != -1:
-            break
-
         robot_move = robot.choose_move(grid)
         grid.add_pawn(robot_move, robot.robotId)
-        s.send(str(robot_move).encode('ascii'))
+        s.send(str(robot_move).encode("ascii"))
 
-    print("Winner: " + get_order_from_id(str(grid.game_over())) + " player: " + str(grid.game_over()))
-    print(grid.print_grid())
-    s.close()
+    try:
+        while grid.game_over() == -1:
+            opponent_move = int(s.recv(1024).decode("ascii"))  # even 8 (or even 1) should be enough!
+            grid.add_pawn(opponent_move, robot.get_id_opponent())
+
+            if grid.game_over() != -1:
+                break
+
+            robot_move = robot.choose_move(grid)
+            grid.add_pawn(robot_move, robot.robotId)
+            s.send(str(robot_move).encode('ascii'))
+
+        print("Winner: " + get_order_from_id(str(grid.game_over())) + " player: " + str(grid.game_over()))
+        print("logs: " + str(grid.logs))
+        grid.print_grid()
+        s.close()
+    except Exception as exc:
+        grid.print_grid()
+        print("logs: " + str(grid.logs))
+        print(exc)
 
 
 def play_multi():
@@ -93,5 +103,7 @@ def play_multi():
     thread_second = Thread(target=play, kwargs={'firstNotSecond': False})
     thread_second.start()
 
+
+# TODO try-catch in play() to have both robots print their grid so errors can make sense.
 
 play_multi()

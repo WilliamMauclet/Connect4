@@ -1,6 +1,7 @@
 class ColumnGrid:
     def __init__(self):
         self.columns = [[None for i in range(0, 6)] for j in range(0, 7)]
+        self.logs = []
 
     def get_column(self, x):
         return self.columns[x]
@@ -12,6 +13,7 @@ class ColumnGrid:
         return self.columns[x][-1] is None
 
     def add_pawn(self, x, playerId):
+        self.logs.append((x, playerId))
         for y in range(0, 6):
             if self.columns[x][y] is None:
                 self.columns[x][y] = playerId
