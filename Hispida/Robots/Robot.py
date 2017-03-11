@@ -17,4 +17,4 @@ class Robot():
         if self.robotId == 'X':
             return 'O'
         else:
-            'X'
+            return 'X'
