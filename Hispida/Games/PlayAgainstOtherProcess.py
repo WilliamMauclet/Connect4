@@ -5,13 +5,8 @@ sys.path.insert(0, os.path.abspath("."))
 from Grid.Grid import ColumnGrid
 from Robots.FirstOrderRobot import FirstOrderRobot
 import socket
+from threading import Thread
 
-
-# TODO both first and second player must connect and listen!
-# TODO is socket bi-directional? YES
-# 1) P1 starts and listens
-# 2) P2 starts and makes connection
-#
 
 def get_host_and_port():
     # get local machine name
@@ -52,20 +47,15 @@ def second_player_connection():
     return s
 
 
-#def play_game():
-    # Send no more than 1024 bytes
-#    msg = "From client to server"
-#    s.send(msg.encode('ascii'))
-
-
 def get_id_from_order(firstNotSecond):
     if firstNotSecond:
         return 'X'
     else:
         return 'O'
 
+
 def get_order_from_id(id):
-    if 'X':
+    if id == 'X':
         return 'first'
     else:
         return 'second'
@@ -88,14 +78,20 @@ def play(firstNotSecond):
         if grid.game_over() != -1:
             break
 
-
         robot_move = robot.choose_move(grid)
         grid.add_pawn(robot_move, robot.robotId)
         s.send(str(robot_move).encode('ascii'))
 
-    print("Winner: " + get_order_from_id(str(grid.game_over())) + " player")
+    print("Winner: " + get_order_from_id(str(grid.game_over())) + " player: " + str(grid.game_over()))
     print(grid.print_grid())
     s.close()
 
 
-play(False)
+def play_multi():
+    thread_first = Thread(target=play, kwargs={'firstNotSecond': True})
+    thread_first.start()
+    thread_second = Thread(target=play, kwargs={'firstNotSecond': False})
+    thread_second.start()
+
+
+play_multi()
