@@ -1,6 +1,8 @@
 class ColumnGrid:
     def __init__(self):
-        self.columns = [[None for i in range(0, 6)] for j in range(0, 7)]
+        self.width = 7
+        self.height = 6
+        self.columns = [ [None] * self.height] * self.width
         self.logs = []
 
     def get_column(self, x):

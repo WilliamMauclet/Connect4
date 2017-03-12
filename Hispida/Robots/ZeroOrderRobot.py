@@ -14,12 +14,13 @@ class ZeroOrderRobot(Robot):
             y -= 1
         return y + 1
 
-    def has_triplet_below(self, column, y):
+    def has_triplet_below(self, grid, x, y):
+        column = grid.columns[x]
         if y < 3:
-            return False
+            return -1
         if column[y - 1] == column[y - 2] == column[y - 3] is not None:
-            return column[y - 1]
-        return False
+            return {'column': x, 'player': column[y - 1]}
+        return -1
 
     def has_adjacent_triplet(self, grid, x, y):
         if x <= 3 and grid.columns[x + 1][y] == grid.columns[x + 2][y] == grid.columns[x + 3][y] is not None:
@@ -94,11 +95,11 @@ class ZeroOrderRobot(Robot):
             return {'column': x, 'player': self.has_diagonal_double_and_single(grid, x, y)}
         return -1
 
-    def check_columns(self, grid, freeColumns):
+    def check_if_immediate_win_possible(self, grid, freeColumns):
         for x in freeColumns:
             y = self.find_top_empty(grid.columns[x])
-            if self.has_triplet_below(grid.columns[x], y):
-                return {'column': x, 'player': self.has_triplet_below(grid.columns[x], y)}
+            if self.has_triplet_below(grid, x, y) != -1:
+                return self.has_triplet_below(grid, x, y)
             if self.check_adjacents(grid, x, y) != -1:
                 return self.check_adjacents(grid, x, y)
             if self.check_diagonals(grid, x, y) != -1:
@@ -107,7 +108,7 @@ class ZeroOrderRobot(Robot):
 
     def choose_move(self, grid):
         freeColumns = grid.get_free_columns()
-        if self.check_columns(grid, freeColumns) != -1:
-            return self.check_columns(grid, freeColumns)['column']
+        if self.check_if_immediate_win_possible(grid, freeColumns) != -1:
+            return self.check_if_immediate_win_possible(grid, freeColumns)['column']
         else:
             return random.choice(freeColumns)

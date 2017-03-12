@@ -4,13 +4,13 @@ sys.path.insert(0, os.path.abspath("."))
 import random
 
 from Grid.Grid import ColumnGrid
-from Robots.ManyOrderRobot import ManyOrderRobot
+from Robots.ZeroOrderRobot import ZeroOrderRobot
 from Robots.FirstOrderRobot import FirstOrderRobot
 
 ROBOT_1 = FirstOrderRobot('X')
-ROBOT_2 = ManyOrderRobot('O')
+ROBOT_2 = ZeroOrderRobot('O')
 
-NR_OF_GAMES = 3
+NR_OF_GAMES = 1000
 
 
 def getRobotFromId(dict, id):

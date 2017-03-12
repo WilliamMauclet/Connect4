@@ -4,15 +4,18 @@ from Robots.FirstOrderRobot import FirstOrderRobot
 
 
 class ManyOrderRobot(FirstOrderRobot):
-    """This robot DOES NOT LEARN.
-    It applies simple algorithms to see if it can avoid a four in a row.
+    """It applies simple algorithms to see if it can avoid a four in a row.
     In addition, it looks to see if the move it wants to make does create a future win possibility for the opponent.
     Except for that, it just plays randomly."""
 
-    # TODO
     def apply_leaf_heuristic(self, grid, playerId):
-        # IDEA Heuristic: (nr of tiles with same color around this tile)/8 = max 7/8
-        grid
+        # OLD IDEA Heuristic: (nr of tiles with same color around this tile)/8 = max 7/8
+        # NEW IDEA: player tile +2, opponent tile -1
+        neighbour_tiles = []
+        for y in range(-1,2):
+            for x in range(-1,2):
+                neighbour_tiles.append(grid.columns[x][y])
+        #grid.columns
         return 0
 
     def evaluate_tail(self, grid, playerId):
@@ -58,7 +61,10 @@ class ManyOrderRobot(FirstOrderRobot):
         for move in grid.get_free_columns():
             moves_scores.append(self.evaluate_move_in_recursion(grid, lookAheadsLeft, move, playerId))
 
-        return max(moves_scores)
+        if playerId == self.robotId:
+            return max(moves_scores)
+        else:
+            return min(moves_scores)
 
     def find_move_corresponding_to_max(self, moves_scores):
         max_move = {'score': -9999999, 'move': -1}
