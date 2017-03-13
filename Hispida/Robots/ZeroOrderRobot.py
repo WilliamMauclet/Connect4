@@ -1,3 +1,4 @@
+
 import random
 from Robots.Robot import Robot
 
@@ -14,101 +15,100 @@ class ZeroOrderRobot(Robot):
             y -= 1
         return y + 1
 
-    def has_triplet_below(self, grid, x, y):
+    def check_response(self, column, player) -> dict:
+        return {'column': column, 'player': player}
+
+    def check_triplet_below(self, grid, x, y) -> dict:
         column = grid.columns[x]
         if y < 3:
-            return -1
+            return {}
         if column[y - 1] == column[y - 2] == column[y - 3] is not None:
-            return {'column': x, 'player': column[y - 1]}
-        return -1
+            return self.check_response(x, column[y - 1])
+        return {}
 
-    def has_adjacent_triplet(self, grid, x, y):
+    def check_adjacent_triplet(self, grid, x, y) -> dict:
         if x <= 3 and grid.columns[x + 1][y] == grid.columns[x + 2][y] == grid.columns[x + 3][y] is not None:
-            return grid.columns[x + 1][y]
+            return self.check_response(x, grid.columns[x + 1][y])
         if x >= 3 and grid.columns[x - 1][y] == grid.columns[x - 2][y] == grid.columns[x - 3][y] is not None:
-            return grid.columns[x - 1][y]
-        return False
+            return self.check_response(x, grid.columns[x - 1][y])
+        return {}
 
-    def has_adjacent_double_and_single(self, grid, x, y):
+    def check_adjacent_double_and_single(self, grid, x, y) -> dict:
         if 1 <= x <= 4 and grid.columns[x - 1][y] == grid.columns[x + 1][y] == grid.columns[x + 2][y] is not None:
-            return grid.columns[x - 1][y]
+            return self.check_response(x, grid.columns[x - 1][y])
         if 2 <= x <= 5 and grid.columns[x - 2][y] == grid.columns[x - 1][y] == grid.columns[x + 1][y] is not None:
-            return grid.columns[x - 2][y]
-        return False
+            return self.check_response(x, grid.columns[x - 2][y])
+        return {}
 
-    def has_diagonal_triplet(self, grid, x, y):
+    def check_diagonal_triplet(self, grid, x, y) -> dict:
         # look up
         if y <= 2:
             # look right
-            if x <= 3 and grid.columns[x + 1][y + 1] == grid.columns[x + 2][y + 2] == grid.columns[x + 3][
-                        y + 3] is not None:
-                return grid.columns[x + 1][y + 1]
+            if x <= 3 and grid.columns[x + 1][y + 1] == grid.columns[x + 2][y + 2] == grid.columns[x + 3][y + 3] is not None:
+                return self.check_response(x, grid.columns[x + 1][y + 1])
             # look left
-            if x >= 3 and grid.columns[x - 1][y + 1] == grid.columns[x - 2][y + 2] == grid.columns[x - 3][
-                        y + 3] is not None:
-                return grid.columns[x - 1][y + 1]
+            if x >= 3 and grid.columns[x - 1][y + 1] == grid.columns[x - 2][y + 2] == grid.columns[x - 3][y + 3] is not None:
+                return self.check_response(x, grid.columns[x - 1][y + 1])
         if y >= 3:
-            if x <= 3 and grid.columns[x + 1][y - 1] == grid.columns[x + 2][y - 2] == grid.columns[x + 3][
-                        y - 3] is not None:
-                return grid.columns[x + 1][y - 1]
-            if x >= 3 and grid.columns[x - 1][y - 1] == grid.columns[x - 2][y - 2] == grid.columns[x - 3][
-                        y - 3] is not None:
-                return grid.columns[x - 1][y - 1]
-        return False
+            if x <= 3 and grid.columns[x + 1][y - 1] == grid.columns[x + 2][y - 2] == grid.columns[x + 3][y - 3] is not None:
+                return self.check_response(x, grid.columns[x + 1][y - 1])
+            if x >= 3 and grid.columns[x - 1][y - 1] == grid.columns[x - 2][y - 2] == grid.columns[x - 3][y - 3] is not None:
+                return self.check_response(x, grid.columns[x - 1][y - 1])
+        return {}
 
-    def has_diagonal_double_and_single(self, grid, x, y):
+    def check_diagonal_double_and_single(self, grid, x, y) -> dict:
         # look up (= long tail to the right)
-        # look left
+            # look left
         if 0 < y <= 3 and 2 <= x <= 5:
             if grid.columns[x - 1][y + 1] == grid.columns[x - 2][y + 2] == grid.columns[x + 1][y - 1] is not None:
-                return grid.columns[x - 1][y + 1]
-                # look right
+                return self.check_response(x, grid.columns[x - 1][y + 1])
+            # look right
         if 0 < y <= 3 and 1 <= x <= 4:
-            if grid.columns[x - 1][y + 1] == grid.columns[x + 1][y + 1] == grid.columns[x + 2][y + 2] is not None:
-                return grid.columns[x - 1][y + 1]
-                # look down
-                # look left
+            if grid.columns[x - 1][y - 1] == grid.columns[x + 1][y + 1] == grid.columns[x + 2][y + 2] is not None:
+                return self.check_response(x, grid.columns[x - 1][y - 1])
+        # look down
+            # look left
         if 2 <= y <= 4 and 2 <= x <= 5:
             if grid.columns[x - 2][y - 2] == grid.columns[x - 1][y - 1] == grid.columns[x + 1][y + 1] is not None:
-                return grid.columns[x - 2][y - 2]
-                # look right
+                return self.check_response(x, grid.columns[x - 2][y - 2])
+            # look right
         if 2 <= y <= 4 and 1 <= x <= 4:
             if grid.columns[x - 1][y + 1] == grid.columns[x + 1][y - 1] == grid.columns[x + 2][y - 2] is not None:
-                return grid.columns[x - 1][y + 1]
-        return False
+                return self.check_response(x, grid.columns[x - 1][y + 1])
+        return {}
 
-    def check_adjacents(self, grid, x, y):
-        if self.has_adjacent_triplet(grid, x, y):
+    def check_adjacents(self, grid, x, y) -> dict:
+        if self.check_adjacent_triplet(grid, x, y):
             self.log("FOUND 3-0 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
-            return {'column': x, 'player': self.has_adjacent_triplet(grid, x, y)}
-        if self.has_adjacent_double_and_single(grid, x, y):
+            return self.check_adjacent_triplet(grid, x, y)
+        if self.check_adjacent_double_and_single(grid, x, y):
             self.log("FOUND 2-1 HORIZONTAL THREAT AT (" + str(x) + "," + str(y) + ")")
-            return {'column': x, 'player': self.has_adjacent_double_and_single(grid, x, y)}
-        return -1
+            return self.check_adjacent_double_and_single(grid, x, y)
+        return {}
 
-    def check_diagonals(self, grid, x, y):
-        if self.has_diagonal_triplet(grid, x, y):
+    def check_diagonals(self, grid, x, y) -> dict:
+        if self.check_diagonal_triplet(grid, x, y):
             self.log("FOUND 3-0 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
-            return {'column': x, 'player': self.has_diagonal_triplet(grid, x, y)}
-        if self.has_diagonal_double_and_single(grid, x, y):
+            return self.check_diagonal_triplet(grid, x, y)
+        if self.check_diagonal_double_and_single(grid, x, y):
             self.log("FOUND 2-1 DIAGONAL THREAT AT (" + str(x) + "," + str(y) + ")")
-            return {'column': x, 'player': self.has_diagonal_double_and_single(grid, x, y)}
-        return -1
+            return self.check_diagonal_double_and_single(grid, x, y)
+        return {}
 
-    def check_if_immediate_win_possible(self, grid, freeColumns):
+    def check_if_immediate_win_possible(self, grid, freeColumns) -> dict:
         for x in freeColumns:
             y = self.find_top_empty(grid.columns[x])
-            if self.has_triplet_below(grid, x, y) != -1:
-                return self.has_triplet_below(grid, x, y)
-            if self.check_adjacents(grid, x, y) != -1:
+            if self.check_triplet_below(grid, x, y):
+                return self.check_triplet_below(grid, x, y)
+            if self.check_adjacents(grid, x, y):
                 return self.check_adjacents(grid, x, y)
-            if self.check_diagonals(grid, x, y) != -1:
+            if self.check_diagonals(grid, x, y):
                 return self.check_diagonals(grid, x, y)
-        return -1
+        return {}
 
-    def choose_move(self, grid):
+    def choose_move(self, grid) -> int:
         freeColumns = grid.get_free_columns()
-        if self.check_if_immediate_win_possible(grid, freeColumns) != -1:
+        if self.check_if_immediate_win_possible(grid, freeColumns):
             return self.check_if_immediate_win_possible(grid, freeColumns)['column']
         else:
             return random.choice(freeColumns)

@@ -10,7 +10,7 @@ from Robots.FirstOrderRobot import FirstOrderRobot
 ROBOT_1 = FirstOrderRobot('X')
 ROBOT_2 = ZeroOrderRobot('O')
 
-NR_OF_GAMES = 1000
+NR_OF_GAMES = 10000
 
 
 def getRobotFromId(dict, id):
