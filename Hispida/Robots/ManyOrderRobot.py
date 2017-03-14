@@ -4,8 +4,7 @@ from Robots.FirstOrderRobot import FirstOrderRobot
 
 
 class ManyOrderRobot(FirstOrderRobot):
-    """This robot DOES NOT LEARN.
-    It applies simple algorithms to see if it can avoid a four in a row.
+    """This robot applies simple algorithms to see if it can avoid a four in a row.
     In addition, it looks to see if the move it wants to make does create a future win possibility for the opponent.
     Except for that, it just plays randomly."""
 
@@ -104,8 +103,7 @@ class ManyOrderRobot(FirstOrderRobot):
             return self.start_recursion(grid, [i for i in freeColumns if i not in dangerousColumns])
 
     def choose_move(self, grid):
-        freeColumns = grid.get_free_columns()
-        if self.check_if_immediate_win_possible(grid, freeColumns) != -1:
-            return self.check_if_immediate_win_possible(grid, freeColumns)['column']
+        if self.check_if_immediate_win_possible(grid) != -1:
+            return self.check_if_immediate_win_possible(grid)['column']
         else:
             return self.choose_move_look_ahead(grid)

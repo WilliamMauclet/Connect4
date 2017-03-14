@@ -95,8 +95,8 @@ class ZeroOrderRobot(Robot):
             return self.check_diagonal_double_and_single(grid, x, y)
         return {}
 
-    def check_if_immediate_win_possible(self, grid, freeColumns) -> dict:
-        for x in freeColumns:
+    def check_if_immediate_win_possible(self, grid) -> dict:
+        for x in grid.get_free_columns():
             y = self.find_top_empty(grid.columns[x])
             if self.check_triplet_below(grid, x, y):
                 return self.check_triplet_below(grid, x, y)
@@ -107,8 +107,7 @@ class ZeroOrderRobot(Robot):
         return {}
 
     def choose_move(self, grid) -> int:
-        freeColumns = grid.get_free_columns()
-        if self.check_if_immediate_win_possible(grid, freeColumns):
-            return self.check_if_immediate_win_possible(grid, freeColumns)['column']
+        if self.check_if_immediate_win_possible(grid):
+            return self.check_if_immediate_win_possible(grid)['column']
         else:
-            return random.choice(freeColumns)
+            return random.choice(grid.get_free_columns())

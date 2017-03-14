@@ -110,8 +110,7 @@ class ManyOrderRobot(FirstOrderRobot):
             return self.start_recursion(grid, [i for i in freeColumns if i not in dangerousColumns])
 
     def choose_move(self, grid):
-        freeColumns = grid.get_free_columns()
-        if self.check_if_immediate_win_possible(grid, freeColumns) != -1:
-            return self.check_if_immediate_win_possible(grid, freeColumns)['column']
+        if self.check_if_immediate_win_possible(grid) != -1:
+            return self.check_if_immediate_win_possible(grid)['column']
         else:
             return self.choose_move_look_ahead(grid)
