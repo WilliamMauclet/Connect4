@@ -3,7 +3,7 @@ import random
 from Robots.FirstOrderRobot import FirstOrderRobot
 
 
-class ManyOrderRobot_b(FirstOrderRobot):
+class ManyOrderRobot_C(FirstOrderRobot):
     """It applies simple algorithms to see if it can avoid a four in a row.
     In addition, it looks to see if the move it wants to make does create a future win possibility for the opponent.
     Except for that, it just plays randomly."""
@@ -16,31 +16,32 @@ class ManyOrderRobot_b(FirstOrderRobot):
     # should only work for values 2n+1
     LOOK_AHEADS = 5
 
-    def apply_leaf_heuristic(self, grid):
-        # TODO Wrongly implemented.
-        heuristic_score = -2 # for position own's tile
-        for y in range(-1,2):
-            for x in range(-1,2):
-                if grid.columns[x][y] == self.robotId:
-                    heuristic_score += 2
-                elif grid.columns[x][y] == self.get_id_opponent():
-                    heuristic_score += 1
+    def apply_leaf_heuristic(self, grid, xCo, yCo):
+        heuristic_score = 0
+        for tile in grid.get_bordering_tiles(xCo, yCo):
+            if tile == self.robotId:
+                heuristic_score += 2
+            elif tile == self.get_id_opponent():
+                heuristic_score += 1
         return heuristic_score
 
-    def evaluate_leaf_move(self, grid):
-        result = grid.game_over()
-        if result == self.robotId:
+    def evaluate_leaf_move(self, grid, x):
+        height = 'placeholder'
+        for y in range(6):
+            if grid.columns[x][y] is None:
+                height = y
+        new_grid = grid.clone_with_move(x, self.robotId)
+        if new_grid.game_over() == self.robotId:
             return 20
         else:
-            return self.apply_leaf_heuristic(grid)
+            return self.apply_leaf_heuristic(new_grid, x, height)
 
     def leaf_iteration(self, grid):
         """Tail of the recursion. Should return a dictionary with keys from 0 to 6 and a score for each.
         If victory possible for player: +1, if not: 0. In negative if opponent."""
         moves_scores = []
         for move in grid.get_free_columns():
-            new_grid = grid.clone_with_move(move, self.robotId)
-            moves_scores.append(self.evaluate_leaf_move(new_grid))
+            moves_scores.append(self.evaluate_leaf_move(grid, move))
 
         return max(moves_scores)
 

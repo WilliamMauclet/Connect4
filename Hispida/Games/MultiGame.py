@@ -4,13 +4,13 @@ sys.path.insert(0, os.path.abspath("."))
 import random
 
 from Grid.Grid import ColumnGrid
-from Robots.ZeroOrderRobot import ZeroOrderRobot
-from Robots.FirstOrderRobot import FirstOrderRobot
+from Robots.ManyOrderRobot_b import ManyOrderRobot_b as second_robot
+from Robots.ManyOrderRobot_c import ManyOrderRobot_C as first_robot
 
-ROBOT_1 = FirstOrderRobot('X')
-ROBOT_2 = ZeroOrderRobot('O')
+ROBOT_2 = second_robot('O')
+ROBOT_1 = first_robot('X')
 
-NR_OF_GAMES = 10000
+NR_OF_GAMES = 5
 
 
 def getRobotFromId(dict, id):
@@ -38,6 +38,7 @@ def run_game(victoriesDict):
                 victoriesDict[robot] = victoriesDict[robot] + 1
                 break
     except Exception as ex:
+        print_end_score_to_console(0, players, victoriesDict, 0)
         grid.print_grid()
         raise ex
 

@@ -11,7 +11,6 @@ class ManyOrderRobot(FirstOrderRobot):
     # TODO
     def apply_leaf_heuristic(self, grid, playerId):
         # IDEA Heuristic: (nr of tiles with same color around this tile)/8 = max 7/8
-        grid
         return 0
 
     def evaluate_tail(self, grid, playerId):
@@ -28,8 +27,7 @@ class ManyOrderRobot(FirstOrderRobot):
         If victory possible for player: +1, if not: 0. In negative if opponent."""
         moves_scores = []
         for move in grid.get_free_columns():
-            new_grid = grid.clone()
-            new_grid.add_pawn(move, self.robotId)
+            new_grid = grid.clone_with_move(move, self.robotId)
 
             moves_scores.append(self.evaluate_tail(new_grid, playerId))
 
@@ -37,8 +35,7 @@ class ManyOrderRobot(FirstOrderRobot):
 
     def evaluate_move_in_recursion(self, grid, lookAheadsLeft, move, playerId):
         opponent_id = self.get_id_opponent()
-        new_grid = grid.clone()
-        new_grid.add_pawn(move, playerId)
+        new_grid = grid.clone_with_move(move, playerId)
         if new_grid.game_over() == playerId:
             return 1
         elif new_grid.game_over() == opponent_id:
@@ -71,8 +68,7 @@ class ManyOrderRobot(FirstOrderRobot):
 
         moves_scores = {}
         for move in safeMoves:
-            new_grid = grid.clone()
-            new_grid.add_pawn(move, self.robotId)
+            new_grid = grid.clone_with_move(move, self.robotId)
             if new_grid.game_over() == self.robotId:
                 moves_scores[move] = 1
             elif new_grid.game_over() == self.robotId:

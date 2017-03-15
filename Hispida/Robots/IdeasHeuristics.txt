@@ -1,0 +1,3 @@
+# IDEA A:Heuristic: (nr of tiles with same color around this tile)/8 = max 7/8
+# IDEA B: player tile +2, opponent tile -1
+# IDEA C: player tile +2, opponent tile +1, because if position completely surrounded by enemy = good. Max = 16
