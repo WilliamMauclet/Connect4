@@ -16,3 +16,6 @@ class Robot():
             return 'O'
         else:
             return 'X'
+
+    def get_advanced_description(self):
+        return None

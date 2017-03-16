@@ -7,6 +7,12 @@ class ColumnGrid:
         # self.columns = [ [None] * self.height] * self.width => CAUSES PROBLEMS!!!!!
         self.logs = []
 
+    def get_empty_top_index(self, x):
+        for y in range(6):
+            if self.columns[x][y] is None:
+                return y
+        return None
+
     def get_column(self, x):
         return self.columns[x]
 
@@ -18,11 +24,8 @@ class ColumnGrid:
 
     def add_pawn(self, x, playerId):
         self.logs.append((x, playerId))
-        for y in range(6):
-            if self.columns[x][y] is None:
-                self.columns[x][y] = playerId
-                return
-        assert False, "Column " + str(x) + " was already full." + str(self.columns)
+        y = self.get_empty_top_index(x)
+        self.columns[x][y] = playerId
 
     def check_consistency(self):
         # assert len(self.columns) is 7, str(len(self.columbs) + " many columns found O.o"
