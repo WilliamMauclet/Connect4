@@ -7,12 +7,12 @@ from Games.ProgressBar import ProgressBar
 
 from Grid.Grid import ColumnGrid
 from Robots.FirstOrderRobot import FirstOrderRobot as second_robot
-from Robots.ManyOrderRobot_c import ManyOrderRobot_C as first_robot
+from Robots.MinmaxRobot import MinmaxRobot as first_robot
 
 ROBOT_2 = second_robot('O')
 ROBOT_1 = first_robot('X')
 
-NR_OF_GAMES = 3
+NR_OF_GAMES = 1
 TO_FILE = True
 
 
@@ -81,10 +81,15 @@ def print_end_score_to_file(robots, victoriesDict, time):
 
     writer.write(str(NR_OF_GAMES) + " games played.\n")
     writer.write("End score:\n")
-    for robot in robots:
-        writer.write(get_name_player(robot) + " : " + str(victoriesDict.get(robot)) + "\n")
+    for index in range(len(robots)):
+        writer.write(get_name_player(robots[index]) + " : " + str(victoriesDict.get(robots[index])) + "\n")
 
-    writer.write("Time: " + str(time))
+    writer.write("Time: " + str(time) + "\n")
+
+    writer.write("Additional details robots:\n")
+    for index in range(len(robots)):
+        if robots[index] != 'exaequo':
+            writer.write(get_name_player(robots[index]) + " : " + robots[index].get_advanced_description() + "\n")
     writer.close()
 
 

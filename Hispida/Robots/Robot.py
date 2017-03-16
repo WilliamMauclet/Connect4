@@ -18,4 +18,4 @@ class Robot():
             return 'X'
 
     def get_advanced_description(self):
-        return None
+        return " - "

@@ -3,7 +3,7 @@ import random
 from Robots.FirstOrderRobot import FirstOrderRobot
 
 
-class ManyOrderRobot_C(FirstOrderRobot):
+class MinmaxRobot(FirstOrderRobot):
     """Applies simple algorithms to see if it can avoid a four in a row.
     In addition, it looks to see if the move it wants to make does create a future win possibility for the opponent.
     Except for that, it just plays randomly."""
@@ -17,7 +17,10 @@ class ManyOrderRobot_C(FirstOrderRobot):
     LOOK_AHEADS = 5
 
     def get_advanced_description(self):
-        return "WIN_SCORE=20/LOSE_SCORE=-1/EXAEQUO_SCORE=0/LOOK_AHEADS=5"
+        return "WIN_SCORE=" + str(self.WIN_SCORE) + \
+               "/LOSE_SCORE=" + str(self.LOSE_SCORE) + \
+               "/EXAEQUO_SCORE=" + str(self.EXAEQUO_SCORE) +\
+               "/LOOK_AHEADS=" + str(self.LOOK_AHEADS)
 
     def apply_leaf_heuristic(self, grid, xCo, yCo):
         heuristic_score = 0
