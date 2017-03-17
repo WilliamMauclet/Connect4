@@ -1,5 +1,5 @@
 # Connect4: Hispida
-Connect 4 in python for ML experiment. Using a minmax algorithm.
+Connect 4 in python for AI experiment. Using a minmax algorithm.
 
 ### START
 To play against one of the robots, run Games/Connect4.py
@@ -9,9 +9,7 @@ run Games/MultiGame.py
 
 
 ### TODO
-The current aim is to make a min-max implementation, using recursion.
-* Trivial case where a (simple) heuristic is used to evaluate a grid-situation.
-* Recursive case, where child branches are merged.
+* Jsonfication
 
 ### TODO PREVIOUSLY
 * Game keeps history of moves
@@ -22,3 +20,5 @@ The current aim is to make a min-max implementation, using recursion.
 * Robots.
 * Use logger.
 * Refactoring: push down method implementations.
+* Minmax: Trivial case where a (simple) heuristic is used to evaluate a grid-situation.
+* Minmax: Recursive case, where child branches are merged.

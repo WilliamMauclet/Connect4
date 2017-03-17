@@ -3,8 +3,8 @@ import sys, os
 sys.path.insert(0, os.path.abspath("."))
 
 from Grid.Grid import ColumnGrid
-from Robots.FirstOrderRobot import FirstOrderRobot
-from Robots.ManyOrderRobot import ManyOrderRobot
+from Robots.FirstOrderRobot import FirstOrderRobot as first_robot
+from Robots.MinmaxRobot import MinmaxRobot as second_robot
 import socket
 from threading import Thread
 
@@ -65,9 +65,9 @@ def get_order_from_id(id):
 def play(firstNotSecond):
     grid = ColumnGrid()
     if firstNotSecond:
-        robot = FirstOrderRobot(get_id_from_order(firstNotSecond))
+        robot = first_robot(get_id_from_order(firstNotSecond))
     else:
-        robot = ManyOrderRobot(get_id_from_order(firstNotSecond))
+        robot = second_robot(get_id_from_order(firstNotSecond))
     s = make_connection(firstNotSecond)
 
     if firstNotSecond:

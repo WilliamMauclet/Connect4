@@ -22,10 +22,10 @@ class ColumnGrid:
     def is_column_free(self, x):
         return self.columns[x][-1] is None
 
-    def add_pawn(self, x, playerId):
-        self.logs.append((x, playerId))
+    def add_pawn(self, x, player_id):
+        self.logs.append((x, player_id))
         y = self.get_empty_top_index(x)
-        self.columns[x][y] = playerId
+        self.columns[x][y] = player_id
 
     def check_consistency(self):
         # assert len(self.columns) is 7, str(len(self.columbs) + " many columns found O.o"
