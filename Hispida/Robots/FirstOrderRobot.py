@@ -8,32 +8,24 @@ class FirstOrderRobot(ZeroOrderRobot):
     In addition, it looks to see if the move it wants to make does create an immediate win possibility for the opponent.
     Except for that, it just plays randomly."""
 
-    def evaluate_column_does_not_help_opponent(self, grid, x):
-        y = self.find_top_empty(grid.columns[x])
-        if y == 5:
-            return None
-        y += 1
-        if self.check_adjacents(grid, x, y) != -1 and self.check_adjacents(grid, x, y)['player'] != self.robotId:
-            self.log("AVOIDING TO CREATE ADJACENT TRAP AT (" + str(x) + "," + str(y) + ")")
-            return x
-        elif self.check_diagonals(grid, x, y) != -1 and self.check_diagonals(grid, x, y) != self.robotId:
-            self.log("AVOIDING TO CREATE DIAGONAL TRAP AT (" + str(x) + "," + str(y) + ")")
-            return x
+    def does_move_help_opponent(self, grid, x) -> bool:
+        new_grid = grid.clone_with_move(x, self.robotId)
+        return self.check_if_immediate_win_possible(new_grid) \
+               and self.check_if_immediate_win_possible(new_grid)['player'] == self.get_id_opponent()
 
-    def choose_move_that_does_not_help_opponent(self, grid):
+    def choose_move_that_does_not_help_opponent(self, grid) -> int:
         freeColumns = grid.get_free_columns()
         dangerousColumns = []
         for x in freeColumns:
-            column = self.evaluate_column_does_not_help_opponent(grid, x)
-            if column is not None:
-                dangerousColumns.append(column)
+            if self.does_move_help_opponent(grid, x):
+                dangerousColumns.append(x)
         if len(freeColumns) == len(dangerousColumns):
+            self.log("GAME IS LOST WHATEVER MOVE I MAKE")
             return random.choice(freeColumns)
         return random.choice([i for i in freeColumns if i not in dangerousColumns])
 
     def choose_move(self, grid):
-        freeColumns = grid.get_free_columns()
-        if self.check_columns(grid, freeColumns) != -1:
-            return self.check_columns(grid, freeColumns)['column']
+        if self.check_if_immediate_win_possible(grid):
+            return self.check_if_immediate_win_possible(grid)['column']
         else:
             return self.choose_move_that_does_not_help_opponent(grid)
