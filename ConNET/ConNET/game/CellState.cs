@@ -32,6 +32,12 @@ namespace ConNET.game {
             return superState != null;
         }
 
+        /**
+         * Returns true if and only if te other CellState is a more specific description than this description.
+         * E.g.:
+         *     Filled.canBe(EvenDisk) == true;
+         *     UnevenDisk.canBe(Filled) == false;
+         */
         public bool canBe(CellState other) {
             if(other.Equals(this)) {
                 return true;
