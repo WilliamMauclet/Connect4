@@ -1,39 +1,45 @@
-import random
-
 from Robots.FirstOrderRobot import FirstOrderRobot
 
 
 class MinmaxRobot(FirstOrderRobot):
-    """Applies simple algorithms to see if it can avoid a four in a row.
-    In addition, it looks to see if the move it wants to make does create a future win possibility for the opponent.
-    Except for that, it just plays randomly."""
+    """Applies a minmax algorithm. Only 2n+1 iterations considered. should only work for values 2n+1."""
 
     WIN_SCORE = 20
     LOSE_SCORE = -1
     EXAEQUO_SCORE = 0
-    # only 2n+1 iterations considered
-    # 1 should be just as good as FirstOrderRobot
-    # should only work for values 2n+1
     LOOK_AHEADS = 5
+    HEURISTIC_ROBOT = 2
+    HEURISTIC_OPPONENT = 1
+
+    def set_parameters(self, win_score=WIN_SCORE, exaequo_score=EXAEQUO_SCORE, look_aheads=LOOK_AHEADS):
+        self.WIN_SCORE = win_score
+        self.EXAEQUO_SCORE = exaequo_score
+        self.LOOK_AHEADS = look_aheads
+
+    def set_heuristic_parameters(self, heuristic_robot=HEURISTIC_ROBOT, heuristic_opponent=HEURISTIC_OPPONENT):
+        self.HEURISTIC_ROBOT = heuristic_robot
+        self.HEURISTIC_OPPONENT = heuristic_opponent
 
     def get_advanced_description(self):
         return "WIN_SCORE=" + str(self.WIN_SCORE) + \
                "/LOSE_SCORE=" + str(self.LOSE_SCORE) + \
-               "/EXAEQUO_SCORE=" + str(self.EXAEQUO_SCORE) +\
-               "/LOOK_AHEADS=" + str(self.LOOK_AHEADS)
+               "/EXAEQUO_SCORE=" + str(self.EXAEQUO_SCORE) + \
+               "/LOOK_AHEADS=" + str(self.LOOK_AHEADS) + \
+               "/HEURISTIC_ROBOT=" + str(self.HEURISTIC_ROBOT) + \
+               "/HEURISTIC_OPPONENT" + str(self.HEURISTIC_OPPONENT)
 
-    def apply_leaf_heuristic(self, grid, xCo, yCo):
+    def apply_leaf_heuristic(self, grid, xCo, yCo) -> int:
         heuristic_score = 0
         for tile in grid.get_bordering_tiles(xCo, yCo):
-            if tile == self.robotId:
-                heuristic_score += 2
+            if tile == self.robot_id:
+                heuristic_score += self.HEURISTIC_ROBOT
             elif tile == self.get_id_opponent():
-                heuristic_score += 1
+                heuristic_score += self.HEURISTIC_OPPONENT
         return heuristic_score
 
     def evaluate_leaf_move(self, grid, x):
-        new_grid = grid.clone_with_move(x, self.robotId)
-        if new_grid.game_over() == self.robotId:
+        new_grid = grid.clone_with_move(x, self.robot_id)
+        if new_grid.game_over() == self.robot_id:
             return 20
         else:
             return self.apply_leaf_heuristic(new_grid, x, grid.get_empty_top_index(x))
@@ -47,8 +53,8 @@ class MinmaxRobot(FirstOrderRobot):
     def max_iteration(self, grid, look_aheads_left) -> int:
         moves_scores = []
         for x in grid.get_free_columns():
-            new_grid = grid.clone_with_move(x, self.robotId)
-            if new_grid.game_over() == self.robotId:
+            new_grid = grid.clone_with_move(x, self.robot_id)
+            if new_grid.game_over() == self.robot_id:
                 return self.WIN_SCORE
             elif new_grid.game_over() == 'exaequo':
                 moves_scores.append(self.EXAEQUO_SCORE)
@@ -56,7 +62,8 @@ class MinmaxRobot(FirstOrderRobot):
                 moves_scores.append(self.min_iteration(new_grid, look_aheads_left - 1))
 
         return max(moves_scores)
-    #TODO merge max_ and min_ iteration methods
+
+    # TODO merge max_ and min_ iteration methods
     def min_iteration(self, grid, look_aheads_left) -> int:
         moves_scores = []
         for x in grid.get_free_columns():
@@ -73,18 +80,16 @@ class MinmaxRobot(FirstOrderRobot):
         return min(moves_scores)
 
     def choose_move_with_minmax(self, grid) -> int:
-        #TODO like max iteration except must remember move
+        # Like max iteration except must remember move
         moves_scores = []
 
         for x in grid.get_free_columns():
-            new_grid = grid.clone_with_move(x, self.robotId)
-            #if new_grid.game_over(): -> IMPOSSIBLE
-            #    return x
-            #else:
-            if len(new_grid.get_free_columns()) == 0: # TODO because check_if_immediate_win_possible does not check on exaequo! OR DOES IT??? TODO
-                moves_scores.append({'move':x, 'score':0})
+            new_grid = grid.clone_with_move(x, self.robot_id)
+            # new_grid.game_over() -> IMPOSSIBLE
+            if len(new_grid.get_free_columns()) == 0:  # check_if_immediate_win_possible does not check on exaequo
+                moves_scores.append({'move': x, 'score': 0})
             else:
-                moves_scores.append({'move':x,'score':self.min_iteration(new_grid, self.LOOK_AHEADS -1)})
+                moves_scores.append({'move': x, 'score': self.min_iteration(new_grid, self.LOOK_AHEADS - 1)})
 
         return max(moves_scores, key=lambda move: move['score'])['move']
 

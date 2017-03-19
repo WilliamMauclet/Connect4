@@ -72,7 +72,7 @@ def play(firstNotSecond):
 
     if firstNotSecond:
         robot_move = robot.choose_move(grid)
-        grid.add_pawn(robot_move, robot.robotId)
+        grid.add_pawn(robot_move, robot.robot_id)
         s.send(str(robot_move).encode("ascii"))
 
     try:
@@ -84,7 +84,7 @@ def play(firstNotSecond):
                 break
 
             robot_move = robot.choose_move(grid)
-            grid.add_pawn(robot_move, robot.robotId)
+            grid.add_pawn(robot_move, robot.robot_id)
             s.send(str(robot_move).encode('ascii'))
 
         print("Winner: " + get_order_from_id(str(grid.game_over())) + " player: " + str(grid.game_over()))

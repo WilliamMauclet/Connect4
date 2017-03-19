@@ -1,4 +1,3 @@
-
 import random
 from Robots.Robot import Robot
 
@@ -44,34 +43,38 @@ class ZeroOrderRobot(Robot):
         # look up
         if y <= 2:
             # look right
-            if x <= 3 and grid.columns[x + 1][y + 1] == grid.columns[x + 2][y + 2] == grid.columns[x + 3][y + 3] is not None:
+            if x <= 3 and grid.columns[x + 1][y + 1] == grid.columns[x + 2][y + 2] == grid.columns[x + 3][
+                        y + 3] is not None:
                 return self.check_response(x, grid.columns[x + 1][y + 1])
             # look left
-            if x >= 3 and grid.columns[x - 1][y + 1] == grid.columns[x - 2][y + 2] == grid.columns[x - 3][y + 3] is not None:
+            if x >= 3 and grid.columns[x - 1][y + 1] == grid.columns[x - 2][y + 2] == grid.columns[x - 3][
+                        y + 3] is not None:
                 return self.check_response(x, grid.columns[x - 1][y + 1])
         if y >= 3:
-            if x <= 3 and grid.columns[x + 1][y - 1] == grid.columns[x + 2][y - 2] == grid.columns[x + 3][y - 3] is not None:
+            if x <= 3 and grid.columns[x + 1][y - 1] == grid.columns[x + 2][y - 2] == grid.columns[x + 3][
+                        y - 3] is not None:
                 return self.check_response(x, grid.columns[x + 1][y - 1])
-            if x >= 3 and grid.columns[x - 1][y - 1] == grid.columns[x - 2][y - 2] == grid.columns[x - 3][y - 3] is not None:
+            if x >= 3 and grid.columns[x - 1][y - 1] == grid.columns[x - 2][y - 2] == grid.columns[x - 3][
+                        y - 3] is not None:
                 return self.check_response(x, grid.columns[x - 1][y - 1])
         return {}
 
     def check_diagonal_double_and_single(self, grid, x, y) -> dict:
         # look up (= long tail to the right)
-            # look left
+        # look left
         if 0 < y <= 3 and 2 <= x <= 5:
             if grid.columns[x - 1][y + 1] == grid.columns[x - 2][y + 2] == grid.columns[x + 1][y - 1] is not None:
                 return self.check_response(x, grid.columns[x - 1][y + 1])
-            # look right
+                # look right
         if 0 < y <= 3 and 1 <= x <= 4:
             if grid.columns[x - 1][y - 1] == grid.columns[x + 1][y + 1] == grid.columns[x + 2][y + 2] is not None:
                 return self.check_response(x, grid.columns[x - 1][y - 1])
-        # look down
-            # look left
+                # look down
+                # look left
         if 2 <= y <= 4 and 2 <= x <= 5:
             if grid.columns[x - 2][y - 2] == grid.columns[x - 1][y - 1] == grid.columns[x + 1][y + 1] is not None:
                 return self.check_response(x, grid.columns[x - 2][y - 2])
-            # look right
+                # look right
         if 2 <= y <= 4 and 1 <= x <= 4:
             if grid.columns[x - 1][y + 1] == grid.columns[x + 1][y - 1] == grid.columns[x + 2][y - 2] is not None:
                 return self.check_response(x, grid.columns[x - 1][y + 1])

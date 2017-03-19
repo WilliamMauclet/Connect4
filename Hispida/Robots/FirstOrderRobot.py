@@ -9,7 +9,7 @@ class FirstOrderRobot(ZeroOrderRobot):
     Except for that, it just plays randomly."""
 
     def does_move_help_opponent(self, grid, x) -> bool:
-        new_grid = grid.clone_with_move(x, self.robotId)
+        new_grid = grid.clone_with_move(x, self.robot_id)
         return self.check_if_immediate_win_possible(new_grid) \
                and self.check_if_immediate_win_possible(new_grid)['player'] == self.get_id_opponent()
 
