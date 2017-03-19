@@ -26,7 +26,7 @@ class MinmaxRobot(FirstOrderRobot):
                "/EXAEQUO_SCORE=" + str(self.EXAEQUO_SCORE) + \
                "/LOOK_AHEADS=" + str(self.LOOK_AHEADS) + \
                "/HEURISTIC_ROBOT=" + str(self.HEURISTIC_ROBOT) + \
-               "/HEURISTIC_OPPONENT" + str(self.HEURISTIC_OPPONENT)
+               "/HEURISTIC_OPPONENT=" + str(self.HEURISTIC_OPPONENT)
 
     def apply_leaf_heuristic(self, grid, xCo, yCo) -> int:
         heuristic_score = 0

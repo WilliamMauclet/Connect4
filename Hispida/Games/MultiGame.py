@@ -125,7 +125,7 @@ def start(robots, nr_of_games):
 # start([MinmaxRobot('X'), MinmaxRobot_ZeroHeuristic('O')], STANDARD_NR_OF_GAMES)
 
 
-def run_multiple_tests():
+def run_multiple_tests_A():
     independent_variable = MinmaxRobot_ZeroHeuristic('O')
     dependent_variable = MinmaxRobot('X')
 
@@ -138,5 +138,17 @@ def run_multiple_tests():
 
     sys.stdout.write("\n\nMultiple tests done.")
 
+def run_multiple_tests_B():
+    independent_variable = MinmaxRobot_ZeroHeuristic('O')
+    dependent_variable = MinmaxRobot('X')
 
-run_multiple_tests()
+    for heuristic_robot in range(0, 4):
+        for heuristic_opponent in range(-3, 1):
+            dependent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
+                                                        heuristic_opponent=heuristic_opponent)
+
+            start([independent_variable, dependent_variable], nr_of_games=25)
+
+    sys.stdout.write("\n\nMultiple tests done.")
+
+run_multiple_tests_B()

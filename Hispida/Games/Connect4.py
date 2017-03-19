@@ -54,7 +54,9 @@ def choose_opponent():
         return FirstOrderRobot(ROBOT_PLAYER_ID)
     elif inp is '2':
         print("\nThis game is against an opponent using a minmax algorithm.\n")
-        return MinmaxRobot(ROBOT_PLAYER_ID)
+        m = MinmaxRobot(ROBOT_PLAYER_ID)
+        m.set_heuristic_parameters(heuristic_robot=2, heuristic_opponent=0)
+        return m
     else:
         raise Exception("Did not recognise robot id: '" + inp + "'")
 
