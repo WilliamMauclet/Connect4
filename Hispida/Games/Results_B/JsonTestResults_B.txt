@@ -1,0 +1,420 @@
+{
+    "tests": [
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_11h13m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "15",
+                "MinmaxRobot_ZeroHeuristic": "0",
+                "MinmaxRobot": "15"
+            },
+            "duration": "0.0h 10.0m 4.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "0",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_11h23m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "16",
+                "MinmaxRobot_ZeroHeuristic": "0",
+                "MinmaxRobot": "14"
+            },
+            "duration": "0.0h 10.0m 2.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "0",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_11h34m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "13",
+                "MinmaxRobot_ZeroHeuristic": "0",
+                "MinmaxRobot": "17"
+            },
+            "duration": "0.0h 10.0m 23.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "0",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_11h43m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "0",
+                "MinmaxRobot_ZeroHeuristic": "16",
+                "MinmaxRobot": "14"
+            },
+            "duration": "0.0h 9.0m 40.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "0",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_11h53m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "0",
+                "MinmaxRobot_ZeroHeuristic": "0",
+                "MinmaxRobot": "30"
+            },
+            "duration": "0.0h 9.0m 28.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "1",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_12h13m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "0",
+                "MinmaxRobot_ZeroHeuristic": "30",
+                "MinmaxRobot": "0"
+            },
+            "duration": "0.0h 10.0m 6.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "1",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_12h23m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "0",
+                "MinmaxRobot_ZeroHeuristic": "0",
+                "MinmaxRobot": "30"
+            },
+            "duration": "0.0h 10.0m 13.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "1",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_12h2m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "0",
+                "MinmaxRobot_ZeroHeuristic": "0",
+                "MinmaxRobot": "30"
+            },
+            "duration": "0.0h 9.0m 43.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "1",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_12h33m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "0",
+                "MinmaxRobot_ZeroHeuristic": "15",
+                "MinmaxRobot": "15"
+            },
+            "duration": "0.0h 10.0m 32.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "2",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_12h43m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "0",
+                "MinmaxRobot_ZeroHeuristic": "30",
+                "MinmaxRobot": "0"
+            },
+            "duration": "0.0h 10.0m 2.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "2",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_12h53m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "0",
+                "MinmaxRobot_ZeroHeuristic": "0",
+                "MinmaxRobot": "30"
+            },
+            "duration": "0.0h 9.0m 21.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "2",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_13h13m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "0",
+                "MinmaxRobot_ZeroHeuristic": "30",
+                "MinmaxRobot": "0"
+            },
+            "duration": "0.0h 10.0m 5.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "3",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_13h23m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "0",
+                "MinmaxRobot_ZeroHeuristic": "19",
+                "MinmaxRobot": "11"
+            },
+            "duration": "0.0h 10.0m 33.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "3",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_13h32m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "0",
+                "MinmaxRobot_ZeroHeuristic": "0",
+                "MinmaxRobot": "30"
+            },
+            "duration": "0.0h 8.0m 57.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "3",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_13h3m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "0",
+                "MinmaxRobot_ZeroHeuristic": "0",
+                "MinmaxRobot": "30"
+            },
+            "duration": "0.0h 10.0m 3.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "2",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        },
+        {
+            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M20D_13h43m.txt",
+            "games played": 50,
+            "end_scores": {
+                "exaequo": "0",
+                "MinmaxRobot_ZeroHeuristic": "0",
+                "MinmaxRobot": "30"
+            },
+            "duration": "0.0h 10.0m 8.0s",
+            "additional_details": {
+                "MinmaxRobot_ZeroHeuristic": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5"
+                },
+                "MinmaxRobot": {
+                    "WIN_SCORE": "20",
+                    "LOSE_SCORE": "-1",
+                    "EXAEQUO_SCORE": "0",
+                    "LOOK_AHEADS": "5",
+                    "HEURISTIC_ROBOT": "3",
+                    "HEURISTIC_OPPONENT": ""
+                }
+            }
+        }
+    ]
+}

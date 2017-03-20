@@ -16,4 +16,3 @@ class ProgressBar():
     def end(self):
         sys.stdout.write("#" * self.total + "]\n")
         sys.stdout.flush()
-

@@ -12,6 +12,7 @@ from Robots.MinmaxRobot import MinmaxRobot
 
 STANDARD_NR_OF_GAMES = 1
 TO_FILE = True
+PRINT_FOLDER = "Results_B/" #TODO doesn't work
 
 
 # TODO JSONification
@@ -58,7 +59,7 @@ def print_end_score_to_console(victoriesDict, time):
 def print_end_score_to_file(victoriesDict, time):
     victors = list(victoriesDict.keys())
     victor_names = [robot.__class__.__name__ for robot in victors if type(robot) != str]
-    file_name = "Results/" + victor_names[0] + "_vs_" + victor_names[1] + "@" + get_time() + ".txt"
+    file_name = PRINT_FOLDER + victor_names[0] + "_vs_" + victor_names[1] + "@" + get_time() + ".txt"
 
     writer = open(file_name, 'w')
     writer.write(str(STANDARD_NR_OF_GAMES) + " games played.\n")
@@ -110,6 +111,7 @@ def run_games(nr_of_games, robots) -> dict:
 
 
 def start(robots, nr_of_games):
+    PRINT_FOLDER = "Single_Games/"
     from datetime import datetime
     start = datetime.now().timestamp()
 
@@ -138,17 +140,20 @@ def run_multiple_tests_A():
 
     sys.stdout.write("\n\nMultiple tests done.")
 
+
 def run_multiple_tests_B():
+    PRINT_FOLDER = "Results_B/"
     independent_variable = MinmaxRobot_ZeroHeuristic('O')
     dependent_variable = MinmaxRobot('X')
 
-    for heuristic_robot in range(0, 4):
-        for heuristic_opponent in range(-3, 1):
+    for heuristic_robot in range(0, 4):#0,4
+        for heuristic_opponent in range(-3, 1):#-3,1
             dependent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
                                                         heuristic_opponent=heuristic_opponent)
 
-            start([independent_variable, dependent_variable], nr_of_games=25)
+            start([independent_variable, dependent_variable], nr_of_games=30)
 
     sys.stdout.write("\n\nMultiple tests done.")
+
 
 run_multiple_tests_B()
