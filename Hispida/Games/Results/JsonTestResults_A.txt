@@ -1,4 +1,5 @@
 {
+    "description": "MinmaxRobot_ZeroHeuristic vs MinmaxRobots with heuristic_robot e [-2,2] and heuristic_opponent e [-2,2]",
     "tests": [
         {
             "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M18D_23h49m.txt",

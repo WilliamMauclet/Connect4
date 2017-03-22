@@ -15,6 +15,8 @@ def read_file(title):
     result['end_scores'] = {}
     for i in range(3):
         line = reader.readline().split(" : ")
+        if line[0] == 'MinmaxRobot':
+            line[0] += str(i - 1)
         result['end_scores'][line[0]] = line[1].replace("\n", "")
 
     reader.readline()  # empty line
@@ -24,8 +26,6 @@ def read_file(title):
 
     def read_description(desc_string):
         desc_string = desc_string.replace("\n", "")
-        desc_string = desc_string.replace("HEURISTIC_ROBOT", "/HEURISTIC_ROBOT")
-        desc_string = desc_string.replace("HEURISTIC_OPPONENT", "/HEURISTIC_OPPONENT=")
         result = {}
         descs = desc_string.split("/")
         for desc in descs:
@@ -38,24 +38,23 @@ def read_file(title):
     result['additional_details'] = {}
     for i in range(2):
         descr = reader.readline().split(" : ")
+        if descr[0] == 'MinmaxRobot':
+            descr[0] += str(i)
         result['additional_details'][descr[0]] = read_description(descr[1])
 
     return result
 
 
-RESULTS_DIRECTORY = "Games/Results_B/"
-FILE_NAME = "JsonTestResults_B.txt"
-
-import sys, os, glob
+import sys, os, glob, json
 
 sys.path.insert(0, os.path.abspath("."))
 
 
 def print_best_scores():
-    for file in glob.glob("Games/Results/*.txt"):
+    for file in glob.glob(RESULTS_DIRECTORY + "*.txt"):
         reading = read_file(file)
-        if int(reading['end_scores']['MinmaxRobot']) == 50:
-            print(file + " " + str(reading['additional_details']['MinmaxRobot']))
+        if int(reading['end_scores']['MinmaxRobot1']) == 50:
+            print(file + " " + str(reading['additional_details']['MinmaxRobot1']))
 
 
 def print_sorted_by_score():
@@ -65,11 +64,11 @@ def print_sorted_by_score():
         if "JsonTestResults" in file:
             continue
         reading = read_file(file)
-        score = reading['end_scores']['MinmaxRobot']
+        score = reading['end_scores']['MinmaxRobot1']
         if score in scores:
-            scores[score].append(reading['additional_details']['MinmaxRobot'])
+            scores[score].append(reading['additional_details']['MinmaxRobot1'])
         else:
-            scores[score] = [reading['additional_details']['MinmaxRobot']]
+            scores[score] = [reading['additional_details']['MinmaxRobot1']]
 
     for key in sorted(scores):
         print(key)
@@ -86,12 +85,47 @@ def print_to_one_file_with_json():
             reading = read_file(file)
             result['tests'].append(reading)
 
-    import json
     result_json = json.dumps(result, indent=4)
 
-    with open(FILE_NAME, 'w') as writer:
+    with open(TEST_RESULTS_FILE_NAME, 'w') as writer:
         writer.write(result_json)
 
+
+def calculate_total_score_of_players():
+    os.chdir("../" + RESULTS_DIRECTORY)
+    with open(TEST_RESULTS_FILE_NAME, 'r') as reader:
+        a = json.loads(reader.read())
+
+        print(str(a))
+        pass
+
+
+TEST = ''
+RESULTS_DIRECTORY = "Games/Results" + ("_" + TEST if TEST else "") + "/"
+TEST_RESULTS_FILE_NAME = "JsonTestResults" + ("_" + TEST if TEST else "") + ".txt"
+
+
+def print_sorted_by_score_C():
+    scores = {}
+
+    for file in glob.glob("../" + RESULTS_DIRECTORY + "*.txt"):
+        if TEST_RESULTS_FILE_NAME in file:
+            continue
+        reading = read_file(file)
+        score = reading['end_scores']['MinmaxRobot0']
+        if score in scores:
+            scores[score].append(
+                reading['additional_details']['MinmaxRobot0'] + " vs " + reading['additional_details']['MinmaxRobot1'])
+        else:  # TODO
+            scores[score] = [
+                reading['additional_details']['MinmaxRobot0'] + " vs " + reading['additional_details']['MinmaxRobot1']]
+
+    for key in sorted(scores):
+        print(key)
+        for value in scores[key]:
+            print("\t" + str(value))
+
+# TODO refactoring
 
 print_sorted_by_score()
 

@@ -12,7 +12,6 @@ from Robots.MinmaxRobot import MinmaxRobot
 
 STANDARD_NR_OF_GAMES = 1
 TO_FILE = True
-PRINT_FOLDER = "Results_B/" #TODO doesn't work
 
 
 # TODO JSONification
@@ -56,10 +55,10 @@ def print_end_score_to_console(victoriesDict, time):
     print("\nDuration: " + format_time(time))
 
 
-def print_end_score_to_file(victoriesDict, time):
+def print_end_score_to_file(victoriesDict, time, print_folder):
     victors = list(victoriesDict.keys())
     victor_names = [robot.__class__.__name__ for robot in victors if type(robot) != str]
-    file_name = PRINT_FOLDER + victor_names[0] + "_vs_" + victor_names[1] + "@" + get_time() + ".txt"
+    file_name = print_folder + victor_names[0] + "_vs_" + victor_names[1] + "@" + get_time() + ".txt"
 
     writer = open(file_name, 'w')
     writer.write(str(STANDARD_NR_OF_GAMES) + " games played.\n")
@@ -110,7 +109,7 @@ def run_games(nr_of_games, robots) -> dict:
     return victoriesDict
 
 
-def start(robots, nr_of_games):
+def start(robots, nr_of_games, print_folder):
     PRINT_FOLDER = "Single_Games/"
     from datetime import datetime
     start = datetime.now().timestamp()
@@ -120,7 +119,7 @@ def start(robots, nr_of_games):
     end = datetime.now().timestamp()
 
     if TO_FILE:
-        print_end_score_to_file(victories, end - start)
+        print_end_score_to_file(victories, end - start, print_folder)
     print_end_score_to_console(victories, end - start)
 
 
@@ -128,6 +127,7 @@ def start(robots, nr_of_games):
 
 
 def run_multiple_tests_A():
+    PRINT_FOLDER_A = "Results_A/"
     independent_variable = MinmaxRobot_ZeroHeuristic('O')
     dependent_variable = MinmaxRobot('X')
 
@@ -136,24 +136,42 @@ def run_multiple_tests_A():
             dependent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
                                                         heuristic_opponent=heuristic_opponent)
 
-            start([independent_variable, dependent_variable], nr_of_games=50)
+            start([independent_variable, dependent_variable], nr_of_games=50, print_folder=PRINT_FOLDER_A)
 
     sys.stdout.write("\n\nMultiple tests done.")
 
 
 def run_multiple_tests_B():
-    PRINT_FOLDER = "Results_B/"
+    PRINT_FOLDER_B = "Results_B/"
     independent_variable = MinmaxRobot_ZeroHeuristic('O')
     dependent_variable = MinmaxRobot('X')
 
-    for heuristic_robot in range(0, 4):#0,4
-        for heuristic_opponent in range(-3, 1):#-3,1
+    for heuristic_robot in range(0, 4):  # 0,4
+        for heuristic_opponent in range(-3, 1):  # -3,1
             dependent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
                                                         heuristic_opponent=heuristic_opponent)
 
-            start([independent_variable, dependent_variable], nr_of_games=30)
+            start([independent_variable, dependent_variable], nr_of_games=30, print_folder=PRINT_FOLDER_B)
 
     sys.stdout.write("\n\nMultiple tests done.")
 
 
-run_multiple_tests_B()
+def run_multiple_tests_C():
+    PRINT_FOLDER_C = "Results_C/"
+    var_1 = MinmaxRobot('O')
+    var_2 = MinmaxRobot('X')
+
+    winner_heuristic_scores = [(1, -3), (1, 0), (1, -2), (2, -1), (2, 0), (3, -1), (3, 0)]
+
+    for i in range(len(winner_heuristic_scores)):
+        for j in range(i + 1, len(winner_heuristic_scores)):
+            var_1.set_heuristic_parameters(heuristic_robot=winner_heuristic_scores[i][0],
+                                           heuristic_opponent=winner_heuristic_scores[i][1])
+            var_2.set_heuristic_parameters(heuristic_robot=winner_heuristic_scores[j][0],
+                                           heuristic_opponent=winner_heuristic_scores[j][1])
+            start([var_1, var_2], nr_of_games=30, print_folder=PRINT_FOLDER_C)
+
+    sys.stdout.write("\n\nMultiple tests done.")
+
+
+run_multiple_tests_C()
