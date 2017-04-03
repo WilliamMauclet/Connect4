@@ -14,7 +14,7 @@ run Games/MultiGame.py
 ### TODO PREVIOUSLY
 * Game keeps history of moves
 * Robot accepts history of moves to machine learn
-* Replay possibility (for debugging) OR alternatively give grid start configuration
+* Replay possibility (for debugging) OR alternatively give grid run_test configuration
 
 ### DONE
 * Robots.

@@ -17,5 +17,5 @@ class Robot():
         else:
             return 'X'
 
-    def get_advanced_description(self) -> str:
-        return " - "
+    def get_configuration(self) -> dict:
+        return {}

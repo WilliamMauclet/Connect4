@@ -20,13 +20,15 @@ class MinmaxRobot(FirstOrderRobot):
         self.HEURISTIC_ROBOT = heuristic_robot
         self.HEURISTIC_OPPONENT = heuristic_opponent
 
-    def get_advanced_description(self):
-        return "WIN_SCORE=" + str(self.WIN_SCORE) + \
-               "/LOSE_SCORE=" + str(self.LOSE_SCORE) + \
-               "/EXAEQUO_SCORE=" + str(self.EXAEQUO_SCORE) + \
-               "/LOOK_AHEADS=" + str(self.LOOK_AHEADS) + \
-               "/HEURISTIC_ROBOT=" + str(self.HEURISTIC_ROBOT) + \
-               "/HEURISTIC_OPPONENT=" + str(self.HEURISTIC_OPPONENT)
+    def get_configuration(self) -> dict:
+        return {
+            "WIN_SCORE": self.WIN_SCORE,
+            "LOSE_SCORE": self.LOSE_SCORE,
+            "EXAEQUO_SCORE": self.EXAEQUO_SCORE,
+            "LOOK_AHEADS": self.LOOK_AHEADS,
+            "HEURISTIC_ROBOT": self.HEURISTIC_ROBOT,
+            "HEURISTIC_OPPONENT": self.HEURISTIC_OPPONENT,
+        }
 
     def apply_leaf_heuristic(self, grid, xCo, yCo) -> int:
         heuristic_score = 0

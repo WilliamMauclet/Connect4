@@ -72,7 +72,7 @@ def print_end_score_to_file(victoriesDict, time, print_folder):
     for index in range(len(victors)):
         if victors[index] != 'exaequo':
             writer.write(
-                get_class_name_player(victors[index]) + " : " + victors[index].get_advanced_description() + "\n")
+                get_class_name_player(victors[index]) + " : " + str(victors[index].get_configuration()) + "\n")
     writer.close()
 
 

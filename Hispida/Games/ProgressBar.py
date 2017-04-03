@@ -3,7 +3,7 @@ import sys
 class ProgressBar():
 
     def __init__(self):
-        self.total = 42
+        self.total = 43
         sys.stdout.write("[" + " "*self.total + "]")
         sys.stdout.flush()
         sys.stdout.write("\b"*(self.total+2) + "[")
