@@ -44,11 +44,8 @@ def get_time():
 
 
 def print_end_score_to_console(victoriesDict, time):
-    # victors = list(victoriesDict.keys())
     print(str(len(victoriesDict['games'])) + " games played.\n")
     print("End score:\n")
-    # for victor in victors:
-    #    print(get_class_name_player(victor) + " : " + str(victoriesDict.get(victor)))
     victories_json = json.dumps(victoriesDict, indent=4)
     print(victories_json)
     print("\nDuration: " + pretty_print_time(time))
@@ -122,6 +119,15 @@ def run_games(nr_of_games, robots) -> list:
         victoriesDict[robot] = victoriesDict[robot] + 1
     return game_results
 
+def find_end_scores_winners_2(scores):
+    highest_score = scores[max(scores, key=lambda score: scores[score])]
+
+    if len([score for score in scores if scores[score] == highest_score]) == 1:
+        return max(scores, key=lambda score: scores[score])
+    else:
+        return [score for score in scores if scores[score] == highest_score]
+
+@DeprecationWarning
 def find_end_scores_winners(scores, robots):
     highest_score = scores[max(scores, key=lambda score: scores[score])]
 
@@ -207,10 +213,8 @@ def calc_test_round_end_scores(test_results):
 def test_round_result(test_results, time) -> dict:
     test_round_result = {}
     test_round_result['time'] = pretty_print_time(time)
-
     test_round_result['tests'] = test_results
-    # TODO additional calculations to find which robot was the winner?
-    # end scores
+    test_round_result['end_scores'] = calc_test_round_end_scores(test_results)
     return test_round_result
 
 
