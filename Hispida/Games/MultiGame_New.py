@@ -4,6 +4,7 @@ sys.path.insert(0, os.path.abspath("."))
 
 import random, json
 from time import localtime
+from datetime import datetime
 from Games.ProgressBar import ProgressBar
 
 from Grid.Grid import ColumnGrid
@@ -11,9 +12,10 @@ from Robots.MinmaxRobot_ZeroHeuristic import MinmaxRobot_ZeroHeuristic
 from Robots.MinmaxRobot import MinmaxRobot
 
 STANDARD_NR_OF_GAMES = 3
+TEST_ROUND_RESULTS_FOLDER = "test_round_results/"
 
 
-def get_robot_from_id(robots, id:str):
+def get_robot_from_id(robots, id: str):
     if id == 'exaequo':
         return 'exaequo'
     for robot in robots:
@@ -119,13 +121,12 @@ def run_games(nr_of_games, robots) -> list:
         victoriesDict[robot] = victoriesDict[robot] + 1
     return game_results
 
-def find_end_scores_winners_2(scores):
-    highest_score = scores[max(scores, key=lambda score: scores[score])]
 
-    if len([score for score in scores if scores[score] == highest_score]) == 1:
-        return max(scores, key=lambda score: scores[score])
-    else:
-        return [score for score in scores if scores[score] == highest_score]
+def find_end_scores_winners_2(scores):
+    highest_score = max(scores.values())
+
+    return [score for score in scores if scores[score] == highest_score]
+
 
 @DeprecationWarning
 def find_end_scores_winners(scores, robots):
@@ -193,8 +194,9 @@ def run_test(robots, nr_of_games) -> dict:
 
     return test_json
 
+
 def calc_test_round_end_scores(test_results):
-    # TODO re-use find_end_scores_winners
+    # TODO re-use find_end_scores_winners?
     scores = {}
 
     for test_result in test_results:
@@ -206,13 +208,14 @@ def calc_test_round_end_scores(test_results):
 
     return {
         'scores': scores,
-        'winner': max()
+        'ranking': sorted(scores)
     }
 
+
 # 1 test -> n games
-def test_round_result(test_results, time) -> dict:
+def test_round_result(test_results, start_time) -> dict:
     test_round_result = {}
-    test_round_result['time'] = pretty_print_time(time)
+    test_round_result['time'] = start_time
     test_round_result['tests'] = test_results
     test_round_result['end_scores'] = calc_test_round_end_scores(test_results)
     return test_round_result
@@ -239,10 +242,10 @@ def run_test_test_round():
             test_results.append(test_result)
 
     sys.stdout.write("\n\nMultiple tests done.")
-    FILE_NAME = "test_round_results/test_test_round.json"
+    file_name = "test_round_results/test_test_round.json"
     import json
     results_json = json.dumps(test_round_result(test_results, start_time), indent=4)
-    print_to_file(FILE_NAME, results_json)
+    print_to_file(file_name, results_json)
 
 
 # STRUCTURE
@@ -254,10 +257,9 @@ def run_test_round_A():
     independent_variable = MinmaxRobot_ZeroHeuristic('O')
     dependent_variable = MinmaxRobot('X')
 
-    from datetime import datetime
-    start_time = datetime.now().timestamp()
-    test_results = []
+    start_time = datetime.now().isoformat()
 
+    test_results = []
     for heuristic_robot in range(-2, 3):
         for heuristic_opponent in range(-2, 3):
             dependent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
@@ -266,26 +268,29 @@ def run_test_round_A():
             test_results.append(test_result)
 
     sys.stdout.write("\n\nMultiple tests done.")
-    FILE_NAME = "test_round_results/test_round_A.json"
-    import json
+    file_name = "test_round_A.json"
     results_json = json.dumps(test_round_result(test_results, start_time), indent=4)
-    print_to_file(FILE_NAME, results_json)
+    print_to_file(TEST_ROUND_RESULTS_FOLDER + file_name, results_json)
 
 
 def run_test_round_B():
-    PRINT_FOLDER_B = "Results_B/"
     independent_variable = MinmaxRobot_ZeroHeuristic('O')
     dependent_variable = MinmaxRobot('X')
 
+    start_time = datetime.now().isoformat()
+
+    test_results = []
     for heuristic_robot in range(0, 4):  # 0,4
         for heuristic_opponent in range(-3, 1):  # -3,1
             dependent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
                                                         heuristic_opponent=heuristic_opponent)
-
-            run_test([independent_variable, dependent_variable], nr_of_games=30,
-                     print_folder=PRINT_FOLDER_B)
+            test_result = run_test((independent_variable, dependent_variable), nr_of_games=30)
+            test_results.append(test_result)
 
     sys.stdout.write("\n\nMultiple tests done.")
+    file_name = "test_round_B.json"
+    results_json = json.dumps(test_round_result(test_results, start_time), indent=4)
+    print_to_file(TEST_ROUND_RESULTS_FOLDER + file_name, results_json)
 
 
 def run_test_round_C():
