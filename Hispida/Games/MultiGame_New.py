@@ -23,11 +23,22 @@ def get_robot_from_id(robots, id: str):
             return robot
 
 
+def get_full_robot_description_from_id(robots, id: str):
+    if id == 'exaequo':
+        return 'exaequo'
+    for robot in robots:
+        if robot.robot_id == id:
+            return {
+                'class': robot.__class__.__name__,
+                'configuration': robot.get_configuration()
+            }
+
+
 def get_class_name_player(player):
     if player == 'exaequo':
         return player
     else:
-        return str(player.__class__.__name__)
+        return player.__class__.__name__
 
 
 def pretty_print_time(time):
@@ -122,26 +133,10 @@ def run_games(nr_of_games, robots) -> list:
     return game_results
 
 
-def find_end_scores_winners_2(scores):
+def find_end_scores_winners(scores):
     highest_score = max(scores.values())
 
     return [score for score in scores if scores[score] == highest_score]
-
-
-@DeprecationWarning
-def find_end_scores_winners(scores, robots):
-    highest_score = scores[max(scores, key=lambda score: scores[score])]
-
-    if len([score for score in scores if scores[score] == highest_score]) == 1:
-        winner_robot = get_robot_from_id(robots, max(scores, key=lambda score: scores[score]))
-        return {
-            'class': winner_robot.__class__.__name__,
-            'configuration': winner_robot.get_configuration()
-        }
-    else:
-        return {
-            'exaequo': [get_robot_from_id(robots, score) for score in scores if scores[score] == highest_score]
-        }
 
 
 def calculate_end_scores(game_results, robots):
@@ -153,7 +148,7 @@ def calculate_end_scores(game_results, robots):
     for game_result in game_results:
         scores[game_result['winner']] += 1
 
-    scores['winner'] = find_end_scores_winners(scores, robots)
+    scores['winner'] = [get_full_robot_description_from_id(robots, id) for id in find_end_scores_winners(scores)]
 
     return scores
 
