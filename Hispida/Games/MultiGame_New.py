@@ -254,13 +254,21 @@ def run_test_round_A():
 
     start_time = datetime.now().isoformat()
 
+    # TODO: say how far along
+    heuristic_robot_range = range(-2,3)
+    heuristic_opponent_range = range(-2,3)
+    total_number_of_tests = len(heuristic_robot_range) * len(heuristic_opponent_range)
+    test_number = 0
     test_results = []
-    for heuristic_robot in range(-2, 3):
-        for heuristic_opponent in range(-2, 3):
+    for heuristic_robot in heuristic_robot_range:
+        for heuristic_opponent in heuristic_opponent_range:
+            test_number += 1
+            sys.stdout.write("TEST " + str(test_number) + "/" + str(total_number_of_tests))
             dependent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
                                                         heuristic_opponent=heuristic_opponent)
-            test_result = run_test((independent_variable, dependent_variable), nr_of_games=30)
+            test_result = run_test((independent_variable, dependent_variable), nr_of_games=5)
             test_results.append(test_result)
+
 
     sys.stdout.write("\n\nMultiple tests done.")
     file_name = "test_round_A.json"
