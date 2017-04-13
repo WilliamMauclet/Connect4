@@ -1,5 +1,5 @@
 {
-    "description":
+    "description": "MinmaxRobot vs MinmaxRobot, both with changing configurations. Configuration of robots saved in individual test results."
     "tests": [
         {
             "title": "MinmaxRobot_vs_MinmaxRobot@3M20D_22h15m.txt",

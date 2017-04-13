@@ -1,3 +1,5 @@
 # IDEA A: (nr of tiles with same color around this tile)/8 = max 7/8
 # IDEA B: neighbouring player tile +2, opponent tile -1
 # IDEA C: neighbouring player tile +2, opponent tile +1, because if position completely surrounded by enemy = good. Max = 16
+
+# IDEA D: tile-position heuristic: the closer to the center, the better. Or: the more 4-rows that it can be part of, the better!

@@ -65,7 +65,7 @@ class MinmaxRobot(FirstOrderRobot):
 
         return max(moves_scores)
 
-    # TODO merge max_ and min_ iteration methods
+    # TODO merge max_ and min_ iteration methods?
     def min_iteration(self, grid, look_aheads_left) -> int:
         moves_scores = []
         for x in grid.get_free_columns():

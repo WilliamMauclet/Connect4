@@ -195,16 +195,24 @@ def calc_test_round_end_scores(test_results):
     scores = {}
 
     for test_result in test_results:
-        winner = test_result['winner']
-        if winner in scores:
-            scores[winner] += 1
-        else:
-            scores[winner] = 1
+        winners = test_result['end_scores']['winner']
+
+        for winner in winners:
+            desc_winner = get_description_winner(winner)
+            if desc_winner in scores:
+                scores[desc_winner] += 1
+            else:
+                scores[desc_winner] = 1
 
     return {
         'scores': scores,
         'ranking': sorted(scores)
     }
+
+def get_description_winner(winner: dict) -> str:
+    if winner == 'exaequo':
+        return 'exaequo'
+    return winner['class'] + ":" + str(winner['configuration'])
 
 
 # 1 test -> n games
@@ -243,35 +251,54 @@ def run_test_test_round():
     print_to_file(file_name, results_json)
 
 
+def calculate_where_left_off(file_name) -> int:
+    try:
+        with open(file_name, 'r') as reader:
+            return reader.read().count("\n")
+    except FileNotFoundError:
+        return 0
+
+
 # STRUCTURE
 # 1 test round = n tests
 # 1 test = 2 robots with configs = m games
-def run_test_round_A():
+def run_test_round_A(file_name="test_round_A_2.json"):
     """1 test round = n tests (each with robot-config-pair) = n*m games"""
+    # TODO test should resume where left off. => user calculate_Where_left_off NOT YET IMPLEMENTED !!!!!!!!!!!!!
+    # e.g. count nr of lines in file and calculate modulo first range
+
 
     independent_variable = MinmaxRobot_ZeroHeuristic('O')
     dependent_variable = MinmaxRobot('X')
 
     start_time = datetime.now().isoformat()
 
-    # TODO: say how far along
-    heuristic_robot_range = range(-2,3)
-    heuristic_opponent_range = range(-2,3)
+    # TODO: refactor how to say how far along (cf. ProgressBar)
+    heuristic_robot_range = range(-2, 3)
+    heuristic_opponent_range = range(-2, 3)
     total_number_of_tests = len(heuristic_robot_range) * len(heuristic_opponent_range)
     test_number = 0
     test_results = []
+    left_off_line = calculate_where_left_off(TEST_ROUND_RESULTS_FOLDER + file_name)
     for heuristic_robot in heuristic_robot_range:
         for heuristic_opponent in heuristic_opponent_range:
             test_number += 1
-            sys.stdout.write("TEST " + str(test_number) + "/" + str(total_number_of_tests))
+            if test_number < left_off_line:
+                continue
+
+            sys.stdout.write("TEST " + str(test_number) + "/" + str(total_number_of_tests) + "\n")
             dependent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
                                                         heuristic_opponent=heuristic_opponent)
-            test_result = run_test((independent_variable, dependent_variable), nr_of_games=5)
+            test_result = run_test((independent_variable, dependent_variable), nr_of_games=30)
             test_results.append(test_result)
+            # temporary save
+            with open(TEST_ROUND_RESULTS_FOLDER + file_name, 'a') as writer:
+                writer.write(str(test_results).replace("{'robots'", "\n{'robots'"))  # 1 line per test result
 
-
+    with open(TEST_ROUND_RESULTS_FOLDER + file_name, 'r') as reader:
+        st = reader.read().replace("\'","\"").replace("\n","")
+        test_results = json.loads(st)
     sys.stdout.write("\n\nMultiple tests done.")
-    file_name = "test_round_A.json"
     results_json = json.dumps(test_round_result(test_results, start_time), indent=4)
     print_to_file(TEST_ROUND_RESULTS_FOLDER + file_name, results_json)
 
@@ -314,4 +341,5 @@ def run_test_round_C():
     sys.stdout.write("\n\nMultiple tests done.")
 
 
+#TODO When printing json:
 run_test_round_A()
