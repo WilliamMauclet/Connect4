@@ -9,10 +9,8 @@ run Games/MultiGame.py
 
 
 ### TODO
-* Jsonfication
 
 ### TODO PREVIOUSLY
-* Game keeps history of moves
 * Robot accepts history of moves to machine learn
 * Replay possibility (for debugging) OR alternatively give grid run_test configuration
 
@@ -22,3 +20,6 @@ run Games/MultiGame.py
 * Refactoring: push down method implementations.
 * Minmax: Trivial case where a (simple) heuristic is used to evaluate a grid-situation.
 * Minmax: Recursive case, where child branches are merged.
+* Jsonfication
+* Minmax: alpha-beta-pruning
+* Game keeps history of moves

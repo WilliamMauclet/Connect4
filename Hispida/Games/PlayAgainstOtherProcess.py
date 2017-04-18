@@ -2,7 +2,7 @@ import sys, os
 
 sys.path.insert(0, os.path.abspath("."))
 
-from Grid.Grid import ColumnGrid
+from Grid.Grid import Grid
 from Robots.FirstOrderRobot import FirstOrderRobot as first_robot
 from Robots.MinmaxRobot import MinmaxRobot as second_robot
 import socket
@@ -63,7 +63,7 @@ def get_order_from_id(id):
 
 
 def play(firstNotSecond):
-    grid = ColumnGrid()
+    grid = Grid()
     if firstNotSecond:
         robot = first_robot(get_id_from_order(firstNotSecond))
     else:

@@ -6,7 +6,7 @@ import random
 from time import localtime
 from Games.ProgressBar import ProgressBar
 
-from Grid.Grid import ColumnGrid
+from Grid.Grid import Grid
 from Robots.MinmaxRobot_ZeroHeuristic import MinmaxRobot_ZeroHeuristic
 from Robots.MinmaxRobot import MinmaxRobot
 
@@ -77,7 +77,7 @@ def print_end_score_to_file(victoriesDict, time, print_folder):
 
 
 def run_one_game(robots) -> str:
-    grid = ColumnGrid()
+    grid = Grid()
     players = [robot for robot in robots]
     random.shuffle(players)
     i = 0

@@ -2,14 +2,14 @@ import sys, os
 
 sys.path.insert(0, os.path.abspath("."))
 
-import random, json
+import random, json, time
 from time import localtime
 from datetime import datetime
 from Games.ProgressBar import ProgressBar
 
-from Grid.Grid import ColumnGrid
-from Robots.MinmaxRobot_ZeroHeuristic import MinmaxRobot_ZeroHeuristic
+from Grid.Grid import Grid
 from Robots.MinmaxRobot import MinmaxRobot
+from Robots.OLD_MinmaxRobot import OLD_MinmaxRobot as OLD_MinmaxRobot
 
 STANDARD_NR_OF_GAMES = 3
 TEST_ROUND_RESULTS_FOLDER = "test_round_results/"
@@ -97,7 +97,8 @@ def game_result(robots, grid) -> dict:
 
 
 def run_one_game(robots) -> dict:
-    grid = ColumnGrid()
+
+    grid = Grid()
     players = [robot for robot in robots]  # clone
     random.shuffle(players)
 
@@ -106,7 +107,11 @@ def run_one_game(robots) -> dict:
     i = 0
     while grid.game_over() == -1 and grid.get_free_columns() != []:
         i = (i + 1) % 2
+        start = time.time()
         column = players[i].choose_move(grid)
+        end = time.time()
+        with open("test_round_results/times.txt", 'a') as writer:
+            writer.write(str(players[i]) + " : " + str(end - start) + "\n")
         grid.add_pawn(column, players[i].robot_id)
         progress.next()
     progress.end()
@@ -230,22 +235,49 @@ def print_to_file(file_name, json):
 
 
 def run_test_test_round():
-    independent_variable = MinmaxRobot_ZeroHeuristic('O')
+    independent_variable = OLD_MinmaxRobot('O')
     dependent_variable = MinmaxRobot('X')
 
     from datetime import datetime
     start_time = datetime.now().timestamp()
     test_results = []
 
-    for heuristic_robot in range(-2, -1):
-        for heuristic_opponent in range(-2, 0):
+    for heuristic_robot in range(2, 3):
+        for heuristic_opponent in range(1, 2):
             dependent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
                                                         heuristic_opponent=heuristic_opponent)
-            test_result = run_test((independent_variable, dependent_variable), nr_of_games=2)
+            independent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
+                                                        heuristic_opponent=heuristic_opponent)
+            test_result = run_test((independent_variable, dependent_variable), nr_of_games=30)
             test_results.append(test_result)
 
     sys.stdout.write("\n\nMultiple tests done.")
     file_name = "test_round_results/test_test_round.json"
+    import json
+    results_json = json.dumps(test_round_result(test_results, start_time), indent=4)
+    print_to_file(file_name, results_json)
+
+
+def run_alphabeta_test_round():
+    old_robot = OLD_MinmaxRobot('O')
+    from Robots.MinmaxRobot_AlphaBeta import MinmaxRobot_AlphaBeta
+    alphabeta_robot = MinmaxRobot_AlphaBeta('X')
+
+    from datetime import datetime
+    start_time = datetime.now().timestamp()
+    test_results = []
+
+    for heuristic_robot in range(2, 3):
+        for heuristic_opponent in range(1, 2):
+            alphabeta_robot.set_heuristic_parameters(heuristic_robot=heuristic_robot,
+                                                        heuristic_opponent=heuristic_opponent)
+            old_robot.set_heuristic_parameters(heuristic_robot=heuristic_robot,
+                                                        heuristic_opponent=heuristic_opponent)
+            test_result = run_test((old_robot, alphabeta_robot), nr_of_games=5)
+            test_results.append(test_result)
+
+    sys.stdout.write("\n\nMultiple tests done.")
+    file_name = "test_round_results/alphabeta_test_round.json"
     import json
     results_json = json.dumps(test_round_result(test_results, start_time), indent=4)
     print_to_file(file_name, results_json)
@@ -268,7 +300,7 @@ def run_test_round_A(file_name="test_round_A_2.json"):
     # e.g. count nr of lines in file and calculate modulo first range
 
 
-    independent_variable = MinmaxRobot_ZeroHeuristic('O')
+    independent_variable = OLD_MinmaxRobot('O')
     dependent_variable = MinmaxRobot('X')
 
     start_time = datetime.now().isoformat()
@@ -302,44 +334,6 @@ def run_test_round_A(file_name="test_round_A_2.json"):
     results_json = json.dumps(test_round_result(test_results, start_time), indent=4)
     print_to_file(TEST_ROUND_RESULTS_FOLDER + file_name, results_json)
 
-
-def run_test_round_B():
-    independent_variable = MinmaxRobot_ZeroHeuristic('O')
-    dependent_variable = MinmaxRobot('X')
-
-    start_time = datetime.now().isoformat()
-
-    test_results = []
-    for heuristic_robot in range(0, 4):  # 0,4
-        for heuristic_opponent in range(-3, 1):  # -3,1
-            dependent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
-                                                        heuristic_opponent=heuristic_opponent)
-            test_result = run_test((independent_variable, dependent_variable), nr_of_games=30)
-            test_results.append(test_result)
-
-    sys.stdout.write("\n\nMultiple tests done.")
-    file_name = "test_round_B.json"
-    results_json = json.dumps(test_round_result(test_results, start_time), indent=4)
-    print_to_file(TEST_ROUND_RESULTS_FOLDER + file_name, results_json)
-
-
-def run_test_round_C():
-    PRINT_FOLDER_C = "Results_C/"
-    var_1 = MinmaxRobot('O')
-    var_2 = MinmaxRobot('X')
-
-    winner_heuristic_scores = [(1, -3), (1, 0), (1, -2), (2, -1), (2, 0), (3, -1), (3, 0)]
-
-    for i in range(len(winner_heuristic_scores)):
-        for j in range(i + 1, len(winner_heuristic_scores)):
-            var_1.set_heuristic_parameters(heuristic_robot=winner_heuristic_scores[i][0],
-                                           heuristic_opponent=winner_heuristic_scores[i][1])
-            var_2.set_heuristic_parameters(heuristic_robot=winner_heuristic_scores[j][0],
-                                           heuristic_opponent=winner_heuristic_scores[j][1])
-            run_test([var_1, var_2], nr_of_games=30, print_folder=PRINT_FOLDER_C)
-
-    sys.stdout.write("\n\nMultiple tests done.")
-
-
-#TODO When printing json:
-run_test_round_A()
+#run_test_round_A()
+#run_test_test_round()
+run_alphabeta_test_round()

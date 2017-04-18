@@ -2,7 +2,7 @@ import sys, os
 
 sys.path.insert(0, os.path.abspath("."))
 
-from Grid.Grid import ColumnGrid
+from Grid.Grid import Grid
 from Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
 from Robots.ZeroOrderRobot import ZeroOrderRobot
 from Robots.FirstOrderRobot import FirstOrderRobot
@@ -62,7 +62,7 @@ def choose_opponent():
 
 
 def start():
-    grid = ColumnGrid()
+    grid = Grid()
 
     print("\nWelcome to a new game of Connect 4\n")
 
