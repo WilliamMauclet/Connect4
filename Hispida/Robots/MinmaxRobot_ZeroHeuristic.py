@@ -4,7 +4,7 @@ from Robots.MinmaxRobot import MinmaxRobot
 class MinmaxRobot_ZeroHeuristic(MinmaxRobot):
     """Heuristic: no heuristic."""
 
-    def apply_leaf_heuristic(self, grid, xCo) -> int:
+    def apply_leaf_heuristic(self, grid) -> int:
         return 0
 
     def get_configuration(self):
@@ -12,5 +12,5 @@ class MinmaxRobot_ZeroHeuristic(MinmaxRobot):
             "WIN_SCORE": self.WIN_SCORE,
             "LOSE_SCORE": self.LOSE_SCORE,
             "EXAEQUO_SCORE": self.EXAEQUO_SCORE,
-            "LOOK_AHEADS": self.LOOK_AHEADS
+            "DEPTH": self.DEPTH
         }

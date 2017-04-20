@@ -9,7 +9,6 @@ from Games.ProgressBar import ProgressBar
 
 from Grid.Grid import Grid
 from Robots.MinmaxRobot import MinmaxRobot
-from Robots.OLD_MinmaxRobot import OLD_MinmaxRobot as OLD_MinmaxRobot
 
 STANDARD_NR_OF_GAMES = 3
 TEST_ROUND_RESULTS_FOLDER = "test_round_results/"
@@ -97,7 +96,6 @@ def game_result(robots, grid) -> dict:
 
 
 def run_one_game(robots) -> dict:
-
     grid = Grid()
     players = [robot for robot in robots]  # clone
     random.shuffle(players)
@@ -209,10 +207,11 @@ def calc_test_round_end_scores(test_results):
             else:
                 scores[desc_winner] = 1
 
-    return {
-        'scores': scores,
-        'ranking': sorted(scores)
-    }
+    import operator
+    return sorted(scores.items(), key=operator.itemgetter(1), reverse=True)
+    #  'scores': scores,
+    #  'ranking': sorted(scores, key= lambda score: scores[score])
+
 
 def get_description_winner(winner: dict) -> str:
     if winner == 'exaequo':
@@ -247,37 +246,12 @@ def run_test_test_round():
             dependent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
                                                         heuristic_opponent=heuristic_opponent)
             independent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
-                                                        heuristic_opponent=heuristic_opponent)
+                                                          heuristic_opponent=heuristic_opponent)
             test_result = run_test((independent_variable, dependent_variable), nr_of_games=30)
             test_results.append(test_result)
 
     sys.stdout.write("\n\nMultiple tests done.")
     file_name = "test_round_results/test_test_round.json"
-    import json
-    results_json = json.dumps(test_round_result(test_results, start_time), indent=4)
-    print_to_file(file_name, results_json)
-
-
-def run_alphabeta_test_round():
-    old_robot = OLD_MinmaxRobot('O')
-    from Robots.MinmaxRobot_AlphaBeta import MinmaxRobot_AlphaBeta
-    alphabeta_robot = MinmaxRobot_AlphaBeta('X')
-
-    from datetime import datetime
-    start_time = datetime.now().timestamp()
-    test_results = []
-
-    for heuristic_robot in range(2, 3):
-        for heuristic_opponent in range(1, 2):
-            alphabeta_robot.set_heuristic_parameters(heuristic_robot=heuristic_robot,
-                                                        heuristic_opponent=heuristic_opponent)
-            old_robot.set_heuristic_parameters(heuristic_robot=heuristic_robot,
-                                                        heuristic_opponent=heuristic_opponent)
-            test_result = run_test((old_robot, alphabeta_robot), nr_of_games=5)
-            test_results.append(test_result)
-
-    sys.stdout.write("\n\nMultiple tests done.")
-    file_name = "test_round_results/alphabeta_test_round.json"
     import json
     results_json = json.dumps(test_round_result(test_results, start_time), indent=4)
     print_to_file(file_name, results_json)
@@ -294,13 +268,13 @@ def calculate_where_left_off(file_name) -> int:
 # STRUCTURE
 # 1 test round = n tests
 # 1 test = 2 robots with configs = m games
-def run_test_round_A(file_name="test_round_A_2.json"):
+def run_test_round(file_name="TODO_RENAME.json"):
     """1 test round = n tests (each with robot-config-pair) = n*m games"""
     # TODO test should resume where left off. => user calculate_Where_left_off NOT YET IMPLEMENTED !!!!!!!!!!!!!
     # e.g. count nr of lines in file and calculate modulo first range
 
-
-    independent_variable = OLD_MinmaxRobot('O')
+    from Robots.MinmaxRobot import MinmaxRobot
+    independent_variable = MinmaxRobot('O')
     dependent_variable = MinmaxRobot('X')
 
     start_time = datetime.now().isoformat()
@@ -328,12 +302,42 @@ def run_test_round_A(file_name="test_round_A_2.json"):
                 writer.write(str(test_results).replace("{'robots'", "\n{'robots'"))  # 1 line per test result
 
     with open(TEST_ROUND_RESULTS_FOLDER + file_name, 'r') as reader:
-        st = reader.read().replace("\'","\"").replace("\n","")
+        st = reader.read().replace("\'", "\"").replace("\n", "")
         test_results = json.loads(st)
     sys.stdout.write("\n\nMultiple tests done.")
     results_json = json.dumps(test_round_result(test_results, start_time), indent=4)
     print_to_file(TEST_ROUND_RESULTS_FOLDER + file_name, results_json)
 
-#run_test_round_A()
-#run_test_test_round()
-run_alphabeta_test_round()
+
+# def match_off(robots):
+#    left_off_line = calculate_where_left_off(TEST_ROUND_RESULTS_FOLDER + file_name)
+#    for heuristic_robot in heuristic_robot_range:
+#        for heuristic_opponent in heuristic_opponent_range:
+#            test_number += 1
+#            if test_number < left_off_line:
+#                continue
+#
+#            sys.stdout.write("TEST " + str(test_number) + "/" + str(total_number_of_tests) + "\n")
+#            dependent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
+#                                                        heuristic_opponent=heuristic_opponent)
+#            test_result = run_test((independent_variable, dependent_variable), nr_of_games=30)
+#            test_results.append(test_result)
+#            # temporary save
+#            with open(TEST_ROUND_RESULTS_FOLDER + file_name, 'a') as writer:
+#                writer.write(str(test_results).replace("{'robots'", "\n{'robots'"))  # 1 line per test result
+#
+#    with open(TEST_ROUND_RESULTS_FOLDER + file_name, 'r') as reader:
+#        st = reader.read().replace("\'", "\"").replace("\n", "")
+#        test_results = json.loads(st)
+#    sys.stdout.write("\n\nMultiple tests done.")
+#    results_json = json.dumps(test_round_result(test_results, start_time), indent=4)
+#    print_to_file(TEST_ROUND_RESULTS_FOLDER + file_name, results_json)
+
+
+def match_off_test_round():
+    pass
+
+
+# run_test_round_A()
+# run_test_test_round()
+run_test_round_alphabeta()

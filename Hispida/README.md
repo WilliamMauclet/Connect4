@@ -9,6 +9,7 @@ run Games/MultiGame.py
 
 
 ### TODO
+* First checks when choosing moves are make the robot play worse! => remove
 
 ### TODO PREVIOUSLY
 * Robot accepts history of moves to machine learn
@@ -21,5 +22,5 @@ run Games/MultiGame.py
 * Minmax: Trivial case where a (simple) heuristic is used to evaluate a grid-situation.
 * Minmax: Recursive case, where child branches are merged.
 * Jsonfication
-* Minmax: alpha-beta-pruning
+* Minmax: alpha-beta pruning
 * Game keeps history of moves

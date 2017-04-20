@@ -3,10 +3,6 @@ import sys, os
 sys.path.insert(0, os.path.abspath("."))
 
 from Grid.Grid import Grid
-from Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
-from Robots.ZeroOrderRobot import ZeroOrderRobot
-from Robots.FirstOrderRobot import FirstOrderRobot
-from Robots.MinmaxRobot import MinmaxRobot
 
 
 def accept_human_move(grid):
@@ -36,26 +32,38 @@ def accept_human_move_prev(grid):
 
 def choose_opponent():
     print("Choose an opponent against whom to play:\n")
+
     inp = None
-    acceptedInputs = ['', '-1', '0', '1', '2']
+    acceptedInputs = ['', '-1', '0', '1', '2', '3']
     while inp not in acceptedInputs:
         inp = input(
-            "-1 for MinusOneOrderRobot, 0 for ZeroOrderRobot, 1 for FirstOrderRobot and 2 for ManyOrderRobot (last=default): ")
+            "-1 for MinusOneOrderRobot, 0 for ZeroOrderRobot, 1 for FirstOrderRobot, 2 for MinmaxRobot, 3 for MinmaxRobot(alpha-beta) (last=default): ")
     if inp is "":
         inp = acceptedInputs[-1]
     if inp is '-1':
         print("\nThis game is against an opponent playing randomly.\n")
+        from Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
         return MinusFirstOrderRobot(ROBOT_PLAYER_ID)
     elif inp is '0':
         print("\nThis game is against an opponent playing randomly but avoiding simple traps.\n")
+        from Robots.ZeroOrderRobot import ZeroOrderRobot
         return ZeroOrderRobot(ROBOT_PLAYER_ID)
     elif inp is '1':
         print("\nThis game is against an opponent playing randomly but avoiding (/to make) simple traps.\n")
+        from Robots.FirstOrderRobot import FirstOrderRobot
         return FirstOrderRobot(ROBOT_PLAYER_ID)
     elif inp is '2':
-        print("\nThis game is against an opponent using a minmax algorithm.\n")
+        print("\nThis game is against an opponent using a minmax algorithm without alpha-beta pruning.\n")
+        from Robots.previous.MinmaxRobot_WithoutAlphaBeta import MinmaxRobot_WithoutAlphaBeta
+        m = MinmaxRobot_WithoutAlphaBeta(ROBOT_PLAYER_ID)
+        m.set_heuristic_parameters(heuristic_robot=2, heuristic_opponent=1)
+        return m
+    elif inp is '3':
+        print("\nThis game is against an opponent using a minmax algorithm with alpha-beta pruning")
+        from Robots.MinmaxRobot import MinmaxRobot
         m = MinmaxRobot(ROBOT_PLAYER_ID)
-        m.set_heuristic_parameters(heuristic_robot=2, heuristic_opponent=0)
+        m.set_heuristic_parameters(heuristic_robot=2, heuristic_opponent=1)
+        m.DEPTH = 7
         return m
     else:
         raise Exception("Did not recognise robot id: '" + inp + "'")
@@ -75,6 +83,7 @@ def start():
         grid.print_grid()
         column = accept_human_move(grid)
         grid.add_pawn(column, HUMAN_PLAYER_ID)
+        print("Robot chooses move: " + str(column))
 
         if grid.game_over() != -1:
             break
