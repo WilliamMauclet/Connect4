@@ -309,35 +309,70 @@ def run_test_round(file_name="TODO_RENAME.json"):
     print_to_file(TEST_ROUND_RESULTS_FOLDER + file_name, results_json)
 
 
-# def match_off(robots):
-#    left_off_line = calculate_where_left_off(TEST_ROUND_RESULTS_FOLDER + file_name)
-#    for heuristic_robot in heuristic_robot_range:
-#        for heuristic_opponent in heuristic_opponent_range:
-#            test_number += 1
-#            if test_number < left_off_line:
-#                continue
-#
-#            sys.stdout.write("TEST " + str(test_number) + "/" + str(total_number_of_tests) + "\n")
-#            dependent_variable.set_heuristic_parameters(heuristic_robot=heuristic_robot,
-#                                                        heuristic_opponent=heuristic_opponent)
-#            test_result = run_test((independent_variable, dependent_variable), nr_of_games=30)
-#            test_results.append(test_result)
-#            # temporary save
-#            with open(TEST_ROUND_RESULTS_FOLDER + file_name, 'a') as writer:
-#                writer.write(str(test_results).replace("{'robots'", "\n{'robots'"))  # 1 line per test result
-#
-#    with open(TEST_ROUND_RESULTS_FOLDER + file_name, 'r') as reader:
-#        st = reader.read().replace("\'", "\"").replace("\n", "")
-#        test_results = json.loads(st)
-#    sys.stdout.write("\n\nMultiple tests done.")
-#    results_json = json.dumps(test_round_result(test_results, start_time), indent=4)
-#    print_to_file(TEST_ROUND_RESULTS_FOLDER + file_name, results_json)
+def match_off(robots, file_name="match_off.json", nr_of_games=30):
+    """The given robots participate in a round-robin tournament to determine a ranking."""
+    total_number_of_tests = len(robots) / 2 * (len(robots) - 1)
+    test_number = 0
+    test_results = []
+    left_off_line = calculate_where_left_off(TEST_ROUND_RESULTS_FOLDER + file_name)
+    for i in range(len(robots)):
+        for j in range(i, len(robots)):
+            if i == j:
+                continue
+            test_number += 1
+            if test_number < left_off_line:
+                continue
+            sys.stdout.write("TEST " + str(test_number) + "/" + str(total_number_of_tests) + "\n")
+
+            robots[i].robot_id = 'X'
+            robots[j].robot_id = 'O'
+
+            test_result = run_test((robots[i], robots[j]), nr_of_games=nr_of_games)
+            test_results.append(test_result)
+        # temporary save
+        with open(TEST_ROUND_RESULTS_FOLDER + file_name, 'a') as writer:
+            writer.write(str(test_results).replace("{'robots'", "\n{'robots'"))  # 1 line per test result
 
 
 def match_off_test_round():
-    pass
+    """Define here the robots you want to test against each other. Use then the function match_off."""
+    robots = []
 
+    for i in range(-2, -1):
+        for j in range(-2, -1):
+            robot = MinmaxRobot('Z')
+            robot.set_heuristic_parameters(heuristic_robot=i, heuristic_opponent=j)
+            robots.append(robot)
+
+    from Robots.MinmaxRobot_ZeroHeuristic import MinmaxRobot_ZeroHeuristic
+    robots.append(MinmaxRobot_ZeroHeuristic('Z'))
+
+    # TODO: see if test round still busy!!!
+    test_number = get_test_number()
+    file_name = "test_" + str(test_number)
+    increment_test_number()
+
+    start_time = datetime.now().isoformat()
+
+    match_off(robots, file_name=file_name)
+
+    with open(TEST_ROUND_RESULTS_FOLDER + file_name, 'r') as reader:
+        st = reader.read().replace("\'", "\"").replace("\n", "")
+        test_results = json.loads(st)
+    sys.stdout.write("\n\nRound-robin match-off done.")
+    results_json = json.dumps(test_round_result(test_results, start_time), indent=4)
+    print_to_file(TEST_ROUND_RESULTS_FOLDER + file_name, results_json)
+
+def get_test_number() -> int:
+    with open(TEST_ROUND_RESULTS_FOLDER + "test_nr.txt",'r') as reader:
+        return int(reader.read())
+
+def increment_test_number():
+    previous = get_test_number()
+    with open(TEST_ROUND_RESULTS_FOLDER + "test_nr.txt",'w') as writer:
+        writer.write(str(previous + 1))
 
 # run_test_round_A()
 # run_test_test_round()
-run_test_round_alphabeta()
+#run_test_round()
+match_off_test_round()
