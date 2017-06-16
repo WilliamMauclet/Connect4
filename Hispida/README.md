@@ -9,11 +9,12 @@ run Games/MultiGame.py
 
 
 ### TODO
-* First checks when choosing moves are make the robot play worse! => remove
+* Better handling of player ending game => exception should be handled
+* Replay possibility (for debugging) OR alternatively give grid run_test configuration
 
 ### TODO PREVIOUSLY
 * Robot accepts history of moves to machine learn
-* Replay possibility (for debugging) OR alternatively give grid run_test configuration
+* First checks when choosing moves are make the robot play worse! => remove
 
 ### DONE
 * Robots.

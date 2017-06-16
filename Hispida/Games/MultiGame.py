@@ -91,7 +91,7 @@ def game_result(robots, grid) -> dict:
         game_result['winner'] = winner
     else:
         game_result['winner'] = winner.robot_id
-    game_result['end_configuration'] = grid.show_state()
+    game_result['end_configuration'] = grid.get_state_string_representation()
     return game_result
 
 

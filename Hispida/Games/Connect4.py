@@ -30,7 +30,7 @@ def accept_human_move_prev(grid):
     return column
 
 
-def choose_opponent():
+def choose_opponent() -> None:
     print("Choose an opponent against whom to play:\n")
 
     inp = None
@@ -40,59 +40,69 @@ def choose_opponent():
             "-1 for MinusOneOrderRobot, 0 for ZeroOrderRobot, 1 for FirstOrderRobot, 2 for MinmaxRobot, 3 for MinmaxRobot(alpha-beta) (last=default): ")
     if inp is "":
         inp = acceptedInputs[-1]
-    if inp is '-1':
+    global ROBOT
+    if inp == '-1':
         print("\nThis game is against an opponent playing randomly.\n")
         from Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
-        return MinusFirstOrderRobot(ROBOT_PLAYER_ID)
-    elif inp is '0':
+        ROBOT = MinusFirstOrderRobot(ROBOT_PLAYER_ID)
+    elif inp == '0':
         print("\nThis game is against an opponent playing randomly but avoiding simple traps.\n")
         from Robots.ZeroOrderRobot import ZeroOrderRobot
-        return ZeroOrderRobot(ROBOT_PLAYER_ID)
-    elif inp is '1':
+        ROBOT = ZeroOrderRobot(ROBOT_PLAYER_ID)
+    elif inp == '1':
         print("\nThis game is against an opponent playing randomly but avoiding (/to make) simple traps.\n")
         from Robots.FirstOrderRobot import FirstOrderRobot
-        return FirstOrderRobot(ROBOT_PLAYER_ID)
-    elif inp is '2':
+        ROBOT = FirstOrderRobot(ROBOT_PLAYER_ID)
+    elif inp == '2':
         print("\nThis game is against an opponent using a minmax algorithm without alpha-beta pruning.\n")
         from Robots.previous.MinmaxRobot_WithoutAlphaBeta import MinmaxRobot_WithoutAlphaBeta
-        m = MinmaxRobot_WithoutAlphaBeta(ROBOT_PLAYER_ID)
-        m.set_heuristic_parameters(heuristic_robot=2, heuristic_opponent=1)
-        return m
-    elif inp is '3':
+        ROBOT = MinmaxRobot_WithoutAlphaBeta(ROBOT_PLAYER_ID)
+        ROBOT.set_heuristic_parameters(heuristic_robot=2, heuristic_opponent=1)
+    elif inp == '3':
         print("\nThis game is against an opponent using a minmax algorithm with alpha-beta pruning")
         from Robots.MinmaxRobot import MinmaxRobot
-        m = MinmaxRobot(ROBOT_PLAYER_ID)
-        m.set_heuristic_parameters(heuristic_robot=2, heuristic_opponent=1)
-        m.DEPTH = 7
-        return m
+        ROBOT = MinmaxRobot(ROBOT_PLAYER_ID)
+        ROBOT.set_heuristic_parameters(heuristic_robot=2, heuristic_opponent=1)
+        ROBOT.DEPTH = 7
     else:
         raise Exception("Did not recognise robot id: '" + inp + "'")
 
 
 def start():
     grid = Grid()
-
     print("\nWelcome to a new game of Connect 4\n")
-
-    robot = choose_opponent()
-
+    choose_opponent()
     print("To exit the game press Q + ENTER\n")
-    print("Please do the first move")
+    print("Please make the first move")
 
+    id_index = 1
+    grid.print_grid()
     while grid.game_over() == -1:
+        id_index = (id_index + 1)%2
+        id = [HUMAN_PLAYER_ID, ROBOT_PLAYER_ID][id_index]
+        accept_move(grid, id)
         grid.print_grid()
-        column = accept_human_move(grid)
-        grid.add_pawn(column, HUMAN_PLAYER_ID)
-        print("Robot chooses move: " + str(column))
-
         if grid.game_over() != -1:
             break
 
-        column = robot.choose_move(grid)
-        grid.add_pawn(column, ROBOT_PLAYER_ID)
+    print(get_player_tag_from_id(str(grid.game_over())) + " won, congrats!\n")
 
-    grid.print_grid()
-    print("\nPlayer " + str(grid.game_over()) + " won, congrats!\n")
+
+def accept_move(grid, id):
+    if id == HUMAN_PLAYER_ID:
+        column = accept_human_move(grid)
+    else:
+        column = ROBOT.choose_move(grid)
+
+    print(get_player_tag_from_id(id) + " played column: " + str(column + 1))
+    grid.add_pawn(column, id)
+
+
+def get_player_tag_from_id(id):
+    if id == HUMAN_PLAYER_ID:
+        return "You"
+    else:
+        return "Robot"
 
 
 # change here if you want to get more messages.
@@ -104,5 +114,6 @@ logging.getLogger().setLevel(logging.CRITICAL)
 
 HUMAN_PLAYER_ID = 'X'
 ROBOT_PLAYER_ID = 'O'
+
 
 start()

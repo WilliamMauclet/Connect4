@@ -103,9 +103,9 @@ class Grid:
         return -1
 
     def print_grid(self):
-        print(self.show_state())
+        print(self.get_state_string_representation())
 
-    def show_state(self) -> str:
+    def get_state_string_representation(self) -> str:
         image = ''
         for x in range(15):
             image += '_'
