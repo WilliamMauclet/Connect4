@@ -6,7 +6,7 @@ class Grid:
         self.columns = [[None for i in range(self.HEIGHT)] for j in range(self.WIDTH)]
         # self.columns = [ [None] * self.height] * self.width => CAUSES PROBLEMS!!!!!
         self.logs = []
-        #TODO add timestamps to logs + first log records creation time?
+        # TODO add timestamps to logs + first log records creation time?
 
     def get_empty_top_index(self, x):
         for y in range(6):
@@ -42,7 +42,8 @@ class Grid:
         for column in self.columns:
             assert len(column) is 6, "Column " + str(column) + " has " + str(len(column)) + " tiles! " + str(column)
 
-    def four_in_a_row(self, row):
+    @staticmethod
+    def four_in_a_row(row):
         seq = 1
         prev = None
         for tile in row:

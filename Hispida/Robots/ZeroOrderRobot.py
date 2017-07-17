@@ -8,13 +8,15 @@ class ZeroOrderRobot(Robot):
     Except for that, it
     just plays randomly."""
 
-    def find_top_empty(self, column):
+    @staticmethod
+    def find_top_empty(column):
         y = 5
         while column[y] is None and y >= 0:
             y -= 1
         return y + 1
 
-    def check_response(self, column, player) -> dict:
+    @staticmethod
+    def check_response(column, player) -> dict:
         return {'column': column, 'player': player}
 
     def check_triplet_below(self, grid, x, y) -> dict:

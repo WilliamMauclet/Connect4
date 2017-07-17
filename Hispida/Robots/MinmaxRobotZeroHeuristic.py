@@ -1,7 +1,7 @@
 from Robots.MinmaxRobot import MinmaxRobot
 
 
-class MinmaxRobot_ZeroHeuristic(MinmaxRobot):
+class MinmaxRobotZeroHeuristic(MinmaxRobot):
     """Heuristic: no heuristic."""
 
     def apply_leaf_heuristic(self, grid) -> int:

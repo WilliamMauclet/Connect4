@@ -3,8 +3,8 @@ import sys, os
 sys.path.insert(0, os.path.abspath("."))
 
 from Grid.Grid import Grid
-from Robots.FirstOrderRobot import FirstOrderRobot as first_robot
-from Robots.MinmaxRobot import MinmaxRobot as second_robot
+from Robots.FirstOrderRobot import FirstOrderRobot as FirstRobotClass
+from Robots.MinmaxRobot import MinmaxRobot as SecondRobotClass
 import socket
 from threading import Thread
 
@@ -13,11 +13,11 @@ def get_host_and_port():
     # get local machine name
     host = socket.gethostname()
     port = 9999
-    return (host, port)
+    return host, port
 
 
-def make_connection(firstNotSecond):
-    if firstNotSecond:
+def make_connection(first_not_second):
+    if first_not_second:
         return first_player_connection()
     else:
         return second_player_connection()
@@ -48,8 +48,8 @@ def second_player_connection():
     return s
 
 
-def get_id_from_order(firstNotSecond):
-    if firstNotSecond:
+def get_id_from_order(first_not_second):
+    if first_not_second:
         return 'X'
     else:
         return 'O'
@@ -62,15 +62,15 @@ def get_order_from_id(id):
         return 'second'
 
 
-def play(firstNotSecond):
+def play(first_not_second):
     grid = Grid()
-    if firstNotSecond:
-        robot = first_robot(get_id_from_order(firstNotSecond))
+    if first_not_second:
+        robot = FirstRobotClass(get_id_from_order(first_not_second))
     else:
-        robot = second_robot(get_id_from_order(firstNotSecond))
-    s = make_connection(firstNotSecond)
+        robot = SecondRobotClass(get_id_from_order(first_not_second))
+    s = make_connection(first_not_second)
 
-    if firstNotSecond:
+    if first_not_second:
         robot_move = robot.choose_move(grid)
         grid.add_pawn(robot_move, robot.robot_id)
         s.send(str(robot_move).encode("ascii"))

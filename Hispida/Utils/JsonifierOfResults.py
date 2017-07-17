@@ -77,8 +77,7 @@ def print_sorted_by_score():
 
 
 def print_to_one_file_with_json():
-    result = {}
-    result['tests'] = []
+    result = {'tests': []}
     os.chdir("../" + RESULTS_DIRECTORY)
     for file in glob.glob("*.txt"):
         if file != 'JsonTestResults_A.txt':
@@ -95,7 +94,6 @@ def calculate_total_score_of_players():
     os.chdir("../" + RESULTS_DIRECTORY)
     with open(TEST_RESULTS_FILE_NAME, 'r') as reader:
         a = json.loads(reader.read())
-
         print(str(a))
         pass
 

@@ -13,12 +13,18 @@ class MinmaxRobot(FirstOrderRobot):
     HEURISTIC_ROBOT = 2
     HEURISTIC_OPPONENT = 1
 
+    def __init__(self, robot_id, heuristic_robot=HEURISTIC_ROBOT, heuristic_opponent=HEURISTIC_OPPONENT, depth=DEPTH):
+        super().__init__(self, robot_id)
+        self.HEURISTIC_ROBOT = heuristic_robot
+        self.HEURISTIC_OPPONENT = heuristic_opponent
+        self.DEPTH = depth
+
     def set_parameters(self, win_score=WIN_SCORE, exaequo_score=EXAEQUO_SCORE, depth=DEPTH):
         self.WIN_SCORE = win_score
         self.EXAEQUO_SCORE = exaequo_score
         self.DEPTH = depth
 
-    def set_heuristic_parameters(self, heuristic_robot=HEURISTIC_ROBOT, heuristic_opponent=HEURISTIC_OPPONENT):
+    def set_heuristic_params(self, heuristic_robot=HEURISTIC_ROBOT, heuristic_opponent=HEURISTIC_OPPONENT):
         self.HEURISTIC_ROBOT = heuristic_robot
         self.HEURISTIC_OPPONENT = heuristic_opponent
 
@@ -83,7 +89,7 @@ class MinmaxRobot(FirstOrderRobot):
 
         return max(moves_scores, key=lambda move: move['score'])['move']
 
-    def choose_move(self, grid):
+    def choose_move(self, grid) -> int:
         # First two checks speed up and make robot better.
         if self.check_if_immediate_win_possible(grid):
             return self.check_if_immediate_win_possible(grid)['column']

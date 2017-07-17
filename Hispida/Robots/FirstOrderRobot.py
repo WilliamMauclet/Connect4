@@ -10,19 +10,19 @@ class FirstOrderRobot(ZeroOrderRobot):
 
     def does_move_help_opponent(self, grid, x) -> bool:
         new_grid = grid.clone_with_move(x, self.robot_id)
-        return self.check_if_immediate_win_possible(new_grid) \
-               and self.check_if_immediate_win_possible(new_grid)['player'] == self.get_id_opponent()
+        return \
+            self.check_if_immediate_win_possible(new_grid) \
+            and self.check_if_immediate_win_possible(new_grid)['player'] == self.get_id_opponent()
 
     def choose_move_that_does_not_help_opponent(self, grid) -> int:
-        freeColumns = grid.get_free_columns()
-        dangerousColumns = []
-        for x in freeColumns:
+        free_columns, dangerous_columns = grid.get_free_columns(), []
+        for x in free_columns:
             if self.does_move_help_opponent(grid, x):
-                dangerousColumns.append(x)
-        if len(freeColumns) == len(dangerousColumns):
+                dangerous_columns.append(x)
+        if len(free_columns) == len(dangerous_columns):
             self.log("GAME IS LOST WHATEVER MOVE I MAKE")
-            return random.choice(freeColumns)
-        return random.choice([i for i in freeColumns if i not in dangerousColumns])
+            return random.choice(free_columns)
+        return random.choice([i for i in free_columns if i not in dangerous_columns])
 
     def choose_move(self, grid):
         if self.check_if_immediate_win_possible(grid):

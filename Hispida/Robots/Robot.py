@@ -1,11 +1,11 @@
 import logging
 
 
-class Robot():
+class Robot:
     def __init__(self, robot_id):
         self.robot_id = robot_id
 
-    def chooseMove(self, grid) -> int:
+    def choose_move(self, grid) -> int:
         raise NotImplementedError('Please implement this method in the robot subclass.')
 
     def log(self, message) -> None:
