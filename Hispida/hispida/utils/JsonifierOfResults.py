@@ -99,7 +99,7 @@ def calculate_total_score_of_players():
 
 
 TEST = ''
-RESULTS_DIRECTORY = "Games/Results" + ("_" + TEST if TEST else "") + "/"
+RESULTS_DIRECTORY = "games/Results" + ("_" + TEST if TEST else "") + "/"
 TEST_RESULTS_FILE_NAME = "JsonTestResults" + ("_" + TEST if TEST else "") + ".txt"
 
 

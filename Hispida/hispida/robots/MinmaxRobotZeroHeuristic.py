@@ -1,4 +1,4 @@
-from Robots.MinmaxRobot import MinmaxRobot
+from hispida.robots import MinmaxRobot
 
 
 class MinmaxRobotZeroHeuristic(MinmaxRobot):

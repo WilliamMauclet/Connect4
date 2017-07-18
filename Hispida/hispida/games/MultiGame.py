@@ -8,10 +8,10 @@ import json
 import time
 from time import localtime
 from datetime import datetime
-from Utils.ProgressBar import ProgressBar
+from hispida.utils import ProgressBar
 
-from Grid.Grid import Grid
-from Robots.MinmaxRobot import MinmaxRobot
+from Grid import Grid
+from hispida.robots import MinmaxRobot
 
 STANDARD_NR_OF_GAMES = 3
 TEST_ROUND_RESULTS_FOLDER = "test_round_results/"
@@ -271,7 +271,7 @@ def run_test_round(file_name="TODO_RENAME.json"):
     # TODO test should resume where left off. => user calculate_Where_left_off NOT YET IMPLEMENTED !!!!!!!!!!!!!
     # e.g. count nr of lines in file and calculate modulo first range
 
-    from Robots.MinmaxRobot import MinmaxRobot
+    from hispida.robots import MinmaxRobot
     independent_variable = MinmaxRobot('O')
     dependent_variable = MinmaxRobot('X')
 
@@ -352,7 +352,7 @@ def competing_robots():
     for i in range(-2, -1):
         for j in range(-2, -1):
             robots.append(MinmaxRobot('Z', heuristic_robot=i, heuristic_opponent=j))
-    from Robots.MinmaxRobotZeroHeuristic import MinmaxRobotZeroHeuristic
+    from hispida.robots import MinmaxRobotZeroHeuristic
     robots.append(MinmaxRobotZeroHeuristic('Z'))
     return robots
 

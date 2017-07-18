@@ -1,6 +1,6 @@
-from Robots.FirstOrderRobot import FirstOrderRobot
-
 from math import inf
+
+from FirstOrderRobot import FirstOrderRobot
 
 
 class MinmaxRobot(FirstOrderRobot):
@@ -14,7 +14,7 @@ class MinmaxRobot(FirstOrderRobot):
     HEURISTIC_OPPONENT = 1
 
     def __init__(self, robot_id, heuristic_robot=HEURISTIC_ROBOT, heuristic_opponent=HEURISTIC_OPPONENT, depth=DEPTH):
-        super().__init__(self, robot_id)
+        super().__init__(robot_id)
         self.HEURISTIC_ROBOT = heuristic_robot
         self.HEURISTIC_OPPONENT = heuristic_opponent
         self.DEPTH = depth

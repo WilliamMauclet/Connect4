@@ -1,10 +1,11 @@
-import sys, os
+import os
+import sys
 
 sys.path.insert(0, os.path.abspath("."))
 
-from Grid.Grid import Grid
-from Robots.FirstOrderRobot import FirstOrderRobot as FirstRobotClass
-from Robots.MinmaxRobot import MinmaxRobot as SecondRobotClass
+from Grid import Grid
+from hispida.robots import FirstOrderRobot as FirstRobotClass
+from hispida.robots import MinmaxRobot as SecondRobotClass
 import socket
 from threading import Thread
 

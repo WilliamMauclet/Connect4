@@ -1,10 +1,10 @@
-import sys
 import os
+import sys
 
 sys.path.insert(0, os.path.abspath("."))
 
 from Robot import Robot
-from Grid.Grid import Grid
+from Grid import Grid
 
 
 def accept_human_move(grid):
@@ -32,36 +32,36 @@ def accept_human_move_prev(grid):
     return column
 
 
+# noinspection PyCallingNonCallable
 def choose_opponent() -> Robot:
     print("Choose an opponent against whom to play:\n")
 
     inp = None
-    accepted_inputs = ['', '-1', '0', '1', '2', '3']
+    accepted_inputs = ['', '-1', '0', '1', '2']
     while inp not in accepted_inputs:
         inp = input(
             "-1 for MinusOneOrderRobot, "
             "0 for ZeroOrderRobot, "
             "1 for FirstOrderRobot, "
-            "2 for MinmaxRobot, "
-            "3 for MinmaxRobot(alpha-beta) (last=default): ")
+            "2 for MinmaxRobot(alpha-beta) (last=default): ")
     if inp is "":
         inp = accepted_inputs[-1]
     if inp == '-1':
         print("\nThis game is against an opponent playing randomly.\n")
-        from Robots.MinusFirstOrderRobot import MinusFirstOrderRobot
+        from hispida.robots.MinusFirstOrderRobot import MinusFirstOrderRobot
         return MinusFirstOrderRobot(ROBOT_PLAYER_ID)
     elif inp == '0':
         print("\nThis game is against an opponent playing randomly but avoiding simple traps.\n")
-        from Robots.ZeroOrderRobot import ZeroOrderRobot
+        from hispida.robots.ZeroOrderRobot import ZeroOrderRobot
         return ZeroOrderRobot(ROBOT_PLAYER_ID)
     elif inp == '1':
         print("\nThis game is against an opponent playing randomly but avoiding (/to make) simple traps.\n")
-        from Robots.FirstOrderRobot import FirstOrderRobot
+        from hispida.robots.FirstOrderRobot import FirstOrderRobot
         return FirstOrderRobot(ROBOT_PLAYER_ID)
     elif inp == '2':
         print("\nThis game is against an opponent using a minmax algorithm with alpha-beta pruning")
-        from Robots.MinmaxRobot import MinmaxRobot
-        robot = MinmaxRobot(ROBOT_PLAYER_ID, heuristic_robot=2, heuristic_opponent=1, depth=7)
+        from hispida.robots import MinmaxRobot
+        robot = MinmaxRobot.MinmaxRobot(ROBOT_PLAYER_ID, heuristic_robot=2, heuristic_opponent=1, depth=7)
         return robot
     else:
         raise Exception("Did not recognise robot id: '" + inp + "'")

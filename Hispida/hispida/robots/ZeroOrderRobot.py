@@ -1,5 +1,6 @@
 import random
-from Robots.Robot import Robot
+
+from Robot import Robot
 
 
 class ZeroOrderRobot(Robot):

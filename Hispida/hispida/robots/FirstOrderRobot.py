@@ -1,8 +1,9 @@
 import random
-from Robots.ZeroOrderRobot import ZeroOrderRobot
+
+from hispida.robots import ZeroOrderRobot
 
 
-class FirstOrderRobot(ZeroOrderRobot):
+class FirstOrderRobot(ZeroOrderRobot.ZeroOrderRobot):
     """This robot DOES NOT LEARN.
     It applies simple algorithms to see if it can avoid a four in a row.
     In addition, it looks to see if the move it wants to make does create an immediate win possibility for the opponent.
