@@ -1,702 +1,702 @@
 {
-    "description": "MinmaxRobot_ZeroHeuristic vs MinmaxRobots with heuristic_robot e [-2,2] and heuristic_opponent e [-2,2]",
+    "description": "MinmaxBot_ZeroHeuristic vs MinmaxBots with heuristic_bot e [-2,2] and heuristic_opponent e [-2,2]",
     "tests": [
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M18D_23h49m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M18D_23h49m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "22",
-                "MinmaxRobot": "28"
+                "MinmaxBot_ZeroHeuristic": "22",
+                "MinmaxBot": "28"
             },
             "duration": "0.0h 16.0m 22.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "-2",
+                    "HEURISTIC_BOT": "-2",
                     "HEURISTIC_OPPONENT": "-2"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_0h22m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_0h22m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "23",
-                "MinmaxRobot": "27"
+                "MinmaxBot_ZeroHeuristic": "23",
+                "MinmaxBot": "27"
             },
             "duration": "0.0h 16.0m 14.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "-2",
+                    "HEURISTIC_BOT": "-2",
                     "HEURISTIC_OPPONENT": "0"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_0h38m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_0h38m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "50",
-                "MinmaxRobot": "0"
+                "MinmaxBot_ZeroHeuristic": "50",
+                "MinmaxBot": "0"
             },
             "duration": "0.0h 16.0m 22.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "-2",
+                    "HEURISTIC_BOT": "-2",
                     "HEURISTIC_OPPONENT": "1"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_0h55m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_0h55m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "30",
-                "MinmaxRobot": "20"
+                "MinmaxBot_ZeroHeuristic": "30",
+                "MinmaxBot": "20"
             },
             "duration": "0.0h 16.0m 23.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "-2",
+                    "HEURISTIC_BOT": "-2",
                     "HEURISTIC_OPPONENT": "2"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_0h6m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_0h6m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "20",
-                "MinmaxRobot": "30"
+                "MinmaxBot_ZeroHeuristic": "20",
+                "MinmaxBot": "30"
             },
             "duration": "0.0h 16.0m 20.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "-2",
+                    "HEURISTIC_BOT": "-2",
                     "HEURISTIC_OPPONENT": "-1"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_1h11m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_1h11m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "25",
-                "MinmaxRobot": "25"
+                "MinmaxBot_ZeroHeuristic": "25",
+                "MinmaxBot": "25"
             },
             "duration": "0.0h 15.0m 55.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "-1",
+                    "HEURISTIC_BOT": "-1",
                     "HEURISTIC_OPPONENT": "-2"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_1h27m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_1h27m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "25",
-                "MinmaxRobot": "25"
+                "MinmaxBot_ZeroHeuristic": "25",
+                "MinmaxBot": "25"
             },
             "duration": "0.0h 16.0m 17.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "-1",
+                    "HEURISTIC_BOT": "-1",
                     "HEURISTIC_OPPONENT": "-1"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_1h43m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_1h43m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "19",
-                "MinmaxRobot": "31"
+                "MinmaxBot_ZeroHeuristic": "19",
+                "MinmaxBot": "31"
             },
             "duration": "0.0h 16.0m 16.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "-1",
+                    "HEURISTIC_BOT": "-1",
                     "HEURISTIC_OPPONENT": "0"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_2h0m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_2h0m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "30",
-                "MinmaxRobot": "20"
+                "MinmaxBot_ZeroHeuristic": "30",
+                "MinmaxBot": "20"
             },
             "duration": "0.0h 16.0m 23.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "-1",
+                    "HEURISTIC_BOT": "-1",
                     "HEURISTIC_OPPONENT": "1"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_2h16m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_2h16m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "27",
-                "MinmaxRobot_ZeroHeuristic": "0",
-                "MinmaxRobot": "23"
+                "MinmaxBot_ZeroHeuristic": "0",
+                "MinmaxBot": "23"
             },
             "duration": "0.0h 16.0m 23.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "-1",
+                    "HEURISTIC_BOT": "-1",
                     "HEURISTIC_OPPONENT": "2"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_2h33m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_2h33m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "29",
-                "MinmaxRobot_ZeroHeuristic": "0",
-                "MinmaxRobot": "21"
+                "MinmaxBot_ZeroHeuristic": "0",
+                "MinmaxBot": "21"
             },
             "duration": "0.0h 17.0m 0.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "0",
+                    "HEURISTIC_BOT": "0",
                     "HEURISTIC_OPPONENT": "-2"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_2h50m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_2h50m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "26",
-                "MinmaxRobot_ZeroHeuristic": "0",
-                "MinmaxRobot": "24"
+                "MinmaxBot_ZeroHeuristic": "0",
+                "MinmaxBot": "24"
             },
             "duration": "0.0h 17.0m 32.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "0",
+                    "HEURISTIC_BOT": "0",
                     "HEURISTIC_OPPONENT": "-1"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_3h22m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_3h22m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "50",
-                "MinmaxRobot": "0"
+                "MinmaxBot_ZeroHeuristic": "50",
+                "MinmaxBot": "0"
             },
             "duration": "0.0h 15.0m 42.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "0",
+                    "HEURISTIC_BOT": "0",
                     "HEURISTIC_OPPONENT": "1"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_3h38m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_3h38m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "50",
-                "MinmaxRobot": "0"
+                "MinmaxBot_ZeroHeuristic": "50",
+                "MinmaxBot": "0"
             },
             "duration": "0.0h 15.0m 42.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "0",
+                    "HEURISTIC_BOT": "0",
                     "HEURISTIC_OPPONENT": "2"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_3h54m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_3h54m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "0",
-                "MinmaxRobot": "50"
+                "MinmaxBot_ZeroHeuristic": "0",
+                "MinmaxBot": "50"
             },
             "duration": "0.0h 16.0m 4.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "1",
+                    "HEURISTIC_BOT": "1",
                     "HEURISTIC_OPPONENT": "-2"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_3h7m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_3h7m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "24",
-                "MinmaxRobot": "26"
+                "MinmaxBot_ZeroHeuristic": "24",
+                "MinmaxBot": "26"
             },
             "duration": "0.0h 16.0m 14.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "0",
+                    "HEURISTIC_BOT": "0",
                     "HEURISTIC_OPPONENT": "0"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_4h11m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_4h11m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "50",
-                "MinmaxRobot": "0"
+                "MinmaxBot_ZeroHeuristic": "50",
+                "MinmaxBot": "0"
             },
             "duration": "0.0h 16.0m 52.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "1",
+                    "HEURISTIC_BOT": "1",
                     "HEURISTIC_OPPONENT": "-1"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_4h28m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_4h28m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "0",
-                "MinmaxRobot": "50"
+                "MinmaxBot_ZeroHeuristic": "0",
+                "MinmaxBot": "50"
             },
             "duration": "0.0h 17.0m 9.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "1",
+                    "HEURISTIC_BOT": "1",
                     "HEURISTIC_OPPONENT": "0"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_4h46m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_4h46m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "25",
-                "MinmaxRobot_ZeroHeuristic": "25",
-                "MinmaxRobot": "0"
+                "MinmaxBot_ZeroHeuristic": "25",
+                "MinmaxBot": "0"
             },
             "duration": "0.0h 17.0m 31.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "1",
+                    "HEURISTIC_BOT": "1",
                     "HEURISTIC_OPPONENT": "1"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_5h20m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_5h20m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "50",
-                "MinmaxRobot": "0"
+                "MinmaxBot_ZeroHeuristic": "50",
+                "MinmaxBot": "0"
             },
             "duration": "0.0h 16.0m 40.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "2",
+                    "HEURISTIC_BOT": "2",
                     "HEURISTIC_OPPONENT": "-2"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_5h36m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_5h36m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "0",
-                "MinmaxRobot": "50"
+                "MinmaxBot_ZeroHeuristic": "0",
+                "MinmaxBot": "50"
             },
             "duration": "0.0h 15.0m 48.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "2",
+                    "HEURISTIC_BOT": "2",
                     "HEURISTIC_OPPONENT": "-1"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_5h4m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_5h4m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "27",
-                "MinmaxRobot": "23"
+                "MinmaxBot_ZeroHeuristic": "27",
+                "MinmaxBot": "23"
             },
             "duration": "0.0h 17.0m 54.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "1",
+                    "HEURISTIC_BOT": "1",
                     "HEURISTIC_OPPONENT": "2"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_5h53m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_5h53m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "0",
-                "MinmaxRobot": "50"
+                "MinmaxBot_ZeroHeuristic": "0",
+                "MinmaxBot": "50"
             },
             "duration": "0.0h 17.0m 0.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "2",
+                    "HEURISTIC_BOT": "2",
                     "HEURISTIC_OPPONENT": "0"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_6h11m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_6h11m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "0",
-                "MinmaxRobot_ZeroHeuristic": "50",
-                "MinmaxRobot": "0"
+                "MinmaxBot_ZeroHeuristic": "50",
+                "MinmaxBot": "0"
             },
             "duration": "0.0h 18.0m 7.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "2",
+                    "HEURISTIC_BOT": "2",
                     "HEURISTIC_OPPONENT": "1"
                 }
             }
         },
         {
-            "title": "MinmaxRobot_ZeroHeuristic_vs_MinmaxRobot@3M19D_6h29m.txt",
+            "title": "MinmaxBot_ZeroHeuristic_vs_MinmaxBot@3M19D_6h29m.txt",
             "games played": 50,
             "end_scores": {
                 "exaequo": "24",
-                "MinmaxRobot_ZeroHeuristic": "26",
-                "MinmaxRobot": "0"
+                "MinmaxBot_ZeroHeuristic": "26",
+                "MinmaxBot": "0"
             },
             "duration": "0.0h 17.0m 33.0s",
             "additional_details": {
-                "MinmaxRobot_ZeroHeuristic": {
+                "MinmaxBot_ZeroHeuristic": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "99",
+                    "HEURISTIC_BOT": "99",
                     "HEURISTIC_OPPONENT": "-88"
                 },
-                "MinmaxRobot": {
+                "MinmaxBot": {
                     "WIN_SCORE": "20",
                     "LOSE_SCORE": "-1",
                     "EXAEQUO_SCORE": "0",
                     "LOOK_AHEADS": "5",
-                    "HEURISTIC_ROBOT": "2",
+                    "HEURISTIC_BOT": "2",
                     "HEURISTIC_OPPONENT": "2"
                 }
             }

@@ -4,8 +4,8 @@ import sys
 sys.path.insert(0, os.path.abspath("."))
 
 from Grid import Grid
-from hispida.robots import FirstOrderRobot as FirstRobotClass
-from hispida.robots import MinmaxRobot as SecondRobotClass
+from hispida.bots import FirstOrderBot as FirstBotClass
+from hispida.bots import MinmaxBot as SecondBotClass
 import socket
 from threading import Thread
 
@@ -66,27 +66,27 @@ def get_order_from_id(id):
 def play(first_not_second):
     grid = Grid()
     if first_not_second:
-        robot = FirstRobotClass(get_id_from_order(first_not_second))
+        bot = FirstBotClass(get_id_from_order(first_not_second))
     else:
-        robot = SecondRobotClass(get_id_from_order(first_not_second))
+        bot = SecondBotClass(get_id_from_order(first_not_second))
     s = make_connection(first_not_second)
 
     if first_not_second:
-        robot_move = robot.choose_move(grid)
-        grid.add_pawn(robot_move, robot.robot_id)
-        s.send(str(robot_move).encode("ascii"))
+        bot_move = bot.choose_move(grid)
+        grid.add_pawn(bot_move, bot.bot_id)
+        s.send(str(bot_move).encode("ascii"))
 
     try:
         while grid.game_over() == -1:
             opponent_move = int(s.recv(1024).decode("ascii"))  # even 8 (or even 1) should be enough!
-            grid.add_pawn(opponent_move, robot.get_id_opponent())
+            grid.add_pawn(opponent_move, bot.get_id_opponent())
 
             if grid.game_over() != -1:
                 break
 
-            robot_move = robot.choose_move(grid)
-            grid.add_pawn(robot_move, robot.robot_id)
-            s.send(str(robot_move).encode('ascii'))
+            bot_move = bot.choose_move(grid)
+            grid.add_pawn(bot_move, bot.bot_id)
+            s.send(str(bot_move).encode('ascii'))
 
         print("Winner: " + get_order_from_id(str(grid.game_over())) + " player: " + str(grid.game_over()))
         print("logs: " + str(grid.logs))
@@ -105,6 +105,6 @@ def play_multi():
     thread_second.start()
 
 
-# TODO try-catch in play() to have both robots print their grid so errors can make sense.
+# TODO try-catch in play() to have both bots print their grid so errors can make sense.
 
 play_multi()

@@ -2,26 +2,37 @@
 Connect 4 in python for AI experiment. Using a minmax algorithm.
 
 ### START
-To play against one of the robots, run Games/Connect4.py
+To play against one of the bots, run hispida/games/Connect4.py
 
-If you want to automatically let robots play a chosen number of times against each other,
+If you want to automatically let bots play a chosen number of times against each other,
 run Games/MultiGame.py
 
+### DOING
+* Replace Bot.get_id_opponent() with Bot.is_id_opponent()
 
 ### TODO
+* Underscore private function names in classes.
+* Big match-off to determine best bot (configuration)
+* Rework JsonifierOfResults.
 * Better handling of player ending game => exception should be handled
 * Replay possibility (for debugging) OR alternatively give grid run_test configuration
 
 ### TODO PREVIOUSLY
-* Robot accepts history of moves to machine learn
-* First checks when choosing moves are make the robot play worse! => remove
+* Bot accepts history of moves to machine learn
+* First checks when choosing moves are make the bot play worse! => remove
+
+### IDEAS
+* Rename MultiGame to Match-off
+* Give Bots integers as ideas instead of just 'X' and 'O'
+
 
 ### DONE
-* Robots.
+* Bots.
 * Use logger.
 * Refactoring: push down method implementations.
 * Minmax: Trivial case where a (simple) heuristic is used to evaluate a grid-situation.
 * Minmax: Recursive case, where child branches are merged.
-* Jsonfication
-* Minmax: alpha-beta pruning
-* Game keeps history of moves
+* Jsonfication.
+* Minmax: alpha-beta pruning.
+* Game keeps history of moves.
+* Rename Bots to Bots.

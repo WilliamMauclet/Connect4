@@ -1,9 +1,10 @@
-from hispida.robots import MinmaxRobot
+from hispida.bots import MinmaxBot
 
 
-class MinmaxRobotZeroHeuristic(MinmaxRobot):
+class MinmaxBotZeroHeuristic(MinmaxBot):
     """Heuristic: no heuristic."""
 
+    # noinspection PyMethodMayBeStatic,PyUnusedLocal
     def apply_leaf_heuristic(self, grid) -> int:
         return 0
 

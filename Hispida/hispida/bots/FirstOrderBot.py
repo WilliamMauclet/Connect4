@@ -1,16 +1,17 @@
 import random
 
-from hispida.robots import ZeroOrderRobot
+from ZeroOrderBot import ZeroOrderBot
 
 
-class FirstOrderRobot(ZeroOrderRobot.ZeroOrderRobot):
-    """This robot DOES NOT LEARN.
+class FirstOrderBot(ZeroOrderBot):
+    """This bot DOES NOT LEARN.
     It applies simple algorithms to see if it can avoid a four in a row.
     In addition, it looks to see if the move it wants to make does create an immediate win possibility for the opponent.
     Except for that, it just plays randomly."""
 
+    # TODO replace "== self.get_id_opponent" => "!= self.get_id() & != '_' "
     def does_move_help_opponent(self, grid, x) -> bool:
-        new_grid = grid.clone_with_move(x, self.robot_id)
+        new_grid = grid.clone_with_move(x, self.bot_id)
         return \
             self.check_if_immediate_win_possible(new_grid) \
             and self.check_if_immediate_win_possible(new_grid)['player'] == self.get_id_opponent()

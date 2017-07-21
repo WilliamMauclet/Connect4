@@ -1,10 +1,10 @@
 import random
 
-from Robot import Robot
+from Bot import Bot
 
 
-class ZeroOrderRobot(Robot):
-    """This robot DOES NOT LEARN.
+class ZeroOrderBot(Bot):
+    """This bot DOES NOT LEARN.
     It applies simple algorithms to see if it can avoid a four in a row.
     Except for that, it
     just plays randomly."""

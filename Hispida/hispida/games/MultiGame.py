@@ -11,28 +11,43 @@ from datetime import datetime
 from hispida.utils import ProgressBar
 
 from Grid import Grid
-from hispida.robots import MinmaxRobot
+from hispida.bots import MinmaxBot
 
 STANDARD_NR_OF_GAMES = 3
 TEST_ROUND_RESULTS_FOLDER = "test_round_results/"
 
+"""
+    HIERARCHY
+    ---------
+    
+    MATCH-OFF   = Lots of Bots against one another in a round-robin tournament
+                = nr_bots*(nr_bots - 1)/2 matches
+    MATCH       = 2 Bots facing off against each other
+                = default 30 games
+    GAME        = 1 game
+                = max 42 moves
+"""
 
-def get_robot_from_id(robots, robot_id: str):
-    if robot_id == 'exaequo':
+
+# TODO wtf is test round?
+
+
+def get_bot_from_id(bots, bot_id: str):
+    if bot_id == 'exaequo':
         return 'exaequo'
-    for robot in robots:
-        if robot.robot_id == robot_id:
-            return robot
+    for bot in bots:
+        if bot.bot_id == bot_id:
+            return bot
 
 
-def get_full_robot_description_from_id(robots, robot_id: str):
-    if robot_id == 'exaequo':
+def get_full_bot_description_from_id(bots, bot_id: str):
+    if bot_id == 'exaequo':
         return 'exaequo'
-    for robot in robots:
-        if robot.robot_id == robot_id:
+    for bot in bots:
+        if bot.bot_id == bot_id:
             return {
-                'class': robot.__class__.__name__,
-                'configuration': robot.get_configuration()
+                'class': bot.__class__.__name__,
+                'configuration': bot.get_configuration()
             }
 
 
@@ -59,7 +74,7 @@ def get_time():
 
 
 def print_end_score_to_console(victories: dict, timestamp):
-    print(str(len(victories['games'])) + " games played.\n")
+    print(len(victories['games']) + " games played.\n")
     print("End score:\n")
     victories_json = json.dumps(victories, indent=4)
     print(victories_json)
@@ -68,7 +83,7 @@ def print_end_score_to_console(victories: dict, timestamp):
 
 def print_end_score_to_file(victories: dict, timestamp, print_folder):
     victors = list(victories.keys())
-    victor_names = [robot.__class__.__name__ for robot in victors if type(robot) != str]
+    victor_names = [bot.__class__.__name__ for bot in victors if type(bot) != str]
     file_name = print_folder + victor_names[0] + "_vs_" + victor_names[1] + "@" + get_time() + ".txt"
 
     writer = open(file_name, 'w')
@@ -79,7 +94,7 @@ def print_end_score_to_file(victories: dict, timestamp, print_folder):
 
     writer.write("\nDuration: " + format_time(timestamp) + "\n")
 
-    writer.write("Additional details robots:\n")
+    writer.write("Additional details bots:\n")
     for index in range(len(victors)):
         if victors[index] != 'exaequo':
             writer.write(
@@ -87,20 +102,20 @@ def print_end_score_to_file(victories: dict, timestamp, print_folder):
     writer.close()
 
 
-def game_result(robots, grid) -> dict:
+def game_result(bots, grid) -> dict:
     game_result = {}
-    winner = get_robot_from_id(robots, grid.game_over())
+    winner = get_bot_from_id(bots, grid.game_over())
     if type(winner) == str:
         game_result['winner'] = winner
     else:
-        game_result['winner'] = winner.robot_id
+        game_result['winner'] = winner.bot_id
     game_result['end_configuration'] = grid.get_state_string_representation()
     return game_result
 
 
-def run_one_game(robots) -> dict:
+def run_one_game(bots) -> dict:
     grid = Grid()
-    players = [robot for robot in robots]  # clone
+    players = [bot for bot in bots]  # clone
     random.shuffle(players)
 
     progress = ProgressBar()
@@ -113,29 +128,29 @@ def run_one_game(robots) -> dict:
         end = time.time()
         with open("test_round_results/times.txt", 'a') as writer:
             writer.write(str(players[i]) + " : " + str(end - start) + "\n")
-        grid.add_pawn(column, players[i].robot_id)
+        grid.add_pawn(column, players[i].bot_id)
         progress.next()
     progress.end()
 
-    return game_result(robots, grid)
+    return game_result(bots, grid)
 
 
-def run_games(nr_of_games, robots) -> list:
+def run_games(nr_of_games, bots) -> list:
     game_results = []
     # TODO rename victories_dict?
     victories_dict = {'exaequo': 0}
-    for robot in robots:
-        victories_dict[robot] = 0
+    for bot in bots:
+        victories_dict[bot] = 0
 
     sys.stdout.write("GAME:\n")
     for i in range(nr_of_games):
         sys.stdout.write("#" + str(i + 1) + " " * (4 - len(str(i + 1))))
 
-        game_results.append(run_one_game(robots))
+        game_results.append(run_one_game(bots))
 
         victor_id = game_results[-1]['winner']
-        robot = get_robot_from_id(robots, victor_id)
-        victories_dict[robot] = victories_dict[robot] + 1
+        bot = get_bot_from_id(bots, victor_id)
+        victories_dict[bot] = victories_dict[bot] + 1
     return game_results
 
 
@@ -145,7 +160,7 @@ def find_end_scores_winners(scores):
     return [score for score in scores if scores[score] == highest_score]
 
 
-def calculate_end_scores(game_results, robots):
+def calculate_end_scores(game_results, bots):
     scores = {
         'X': 0,
         'O': 0,
@@ -154,40 +169,40 @@ def calculate_end_scores(game_results, robots):
     for game_result in game_results:
         scores[game_result['winner']] += 1
 
-    scores['winner'] = [get_full_robot_description_from_id(robots, id) for id in find_end_scores_winners(scores)]
+    scores['winner'] = [get_full_bot_description_from_id(bots, id) for id in find_end_scores_winners(scores)]
 
     return scores
 
 
-def test_result(game_results, robots, duration) -> dict:
+def test_result(game_results, bots, duration) -> dict:
     return {
-        'robots':
+        'bots':
             [{
-                'id': robot.robot_id,
-                'class': robot.__class__.__name__,
-                'configuration': robot.get_configuration()
-            } for robot in robots],
+                'id': bot.bot_id,
+                'class': bot.__class__.__name__,
+                'configuration': bot.get_configuration()
+            } for bot in bots],
         'duration': format_time(duration),
         'game': game_results,
-        'end_scores': calculate_end_scores(game_results, robots)
+        'end_scores': calculate_end_scores(game_results, bots)
     }
 
 
-def run_test(robots, nr_of_games) -> dict:
-    # 1 test (with robot-config-pair) = m games
+def run_test(bots, nr_of_games) -> dict:
+    # 1 test (with bot-config-pair) = m games
 
     start = datetime.now().timestamp()
     # TODO make run_games return (start, game_results, end) !!
-    game_results = run_games(nr_of_games, robots)
+    game_results = run_games(nr_of_games, bots)
     end = datetime.now().timestamp()
 
     test_duration = end - start
 
-    test_json = test_result(game_results, robots, test_duration)
+    test_json = test_result(game_results, bots, test_duration)
 
     print_end_score_to_console(test_json, test_duration)
 
-    # test_result = test_result(game_results, robots, end_scores, test_duration)
+    # test_result = test_result(game_results, bots, end_scores, test_duration)
 
     # for victor in game_results:
     #    test_result['end_scores'][victor] = game_results['victor']
@@ -236,16 +251,16 @@ def print_to_file(file_name, json):
 
 
 def run_test_test_round():
-    dependent_variable, independent_variable = MinmaxRobot('X'), MinmaxRobot('O')
+    dependent_variable, independent_variable = MinmaxBot('X'), MinmaxBot('O')
 
     start_time = datetime.now().timestamp()
     test_results = []
 
-    for heuristic_robot in range(2, 3):
+    for heuristic_bot in range(2, 3):
         for heuristic_opponent in range(1, 2):
-            dependent_variable.set_heuristic_params(heuristic_robot=heuristic_robot,
+            dependent_variable.set_heuristic_params(heuristic_bot=heuristic_bot,
                                                     heuristic_opponent=heuristic_opponent)
-            independent_variable.set_heuristic_params(heuristic_robot=heuristic_robot,
+            independent_variable.set_heuristic_params(heuristic_bot=heuristic_bot,
                                                       heuristic_opponent=heuristic_opponent)
             test_results.append(run_test((independent_variable, dependent_variable), nr_of_games=30))
 
@@ -265,30 +280,30 @@ def calculate_where_left_off(file_name) -> int:
 
 # STRUCTURE
 # 1 test round = n tests
-# 1 test = 2 robots with configs = m games
+# 1 test = 2 bots with configs = m games
 def run_test_round(file_name="TODO_RENAME.json"):
-    """1 test round = n tests (each with robot-config-pair) = n*m games"""
+    """1 test round = n tests (each with bot-config-pair) = n*m games"""
     # TODO test should resume where left off. => user calculate_Where_left_off NOT YET IMPLEMENTED !!!!!!!!!!!!!
     # e.g. count nr of lines in file and calculate modulo first range
 
-    from hispida.robots import MinmaxRobot
-    independent_variable = MinmaxRobot('O')
-    dependent_variable = MinmaxRobot('X')
+    from hispida.bots import MinmaxBot
+    independent_variable = MinmaxBot('O')
+    dependent_variable = MinmaxBot('X')
 
     start_time = datetime.now().isoformat()
 
     # TODO: refactor how to say how far along (cf. ProgressBar)
-    heuristic_robot_range, heuristic_opponent_range = range(-2, 3), range(-2, 3)
-    total_number_of_tests = len(heuristic_robot_range) * len(heuristic_opponent_range)
+    heuristic_bot_range, heuristic_opponent_range = range(-2, 3), range(-2, 3)
+    total_number_of_tests = len(heuristic_bot_range) * len(heuristic_opponent_range)
     test_number, test_results = 0, []
     left_off_line = calculate_where_left_off(TEST_ROUND_RESULTS_FOLDER + file_name)
-    for heuristic_robot in heuristic_robot_range:
+    for heuristic_bot in heuristic_bot_range:
         for heuristic_opponent in heuristic_opponent_range:
             test_number += 1
             if test_number < left_off_line:
                 continue
 
-            run_test_round_test(dependent_variable, file_name, heuristic_opponent, heuristic_robot,
+            run_test_round_test(dependent_variable, file_name, heuristic_opponent, heuristic_bot,
                                 independent_variable, test_number, test_results, total_number_of_tests)
 
     with open(TEST_ROUND_RESULTS_FOLDER + file_name, 'r') as reader:
@@ -299,45 +314,45 @@ def run_test_round(file_name="TODO_RENAME.json"):
     print_to_file(TEST_ROUND_RESULTS_FOLDER + file_name, results_json)
 
 
-def run_test_round_test(dependent_variable, file_name, heuristic_opponent, heuristic_robot, independent_variable,
+def run_test_round_test(dependent_variable, file_name, heuristic_opponent, heuristic_bot, independent_variable,
                         test_number, test_results, total_number_of_tests):
     sys.stdout.write("TEST " + str(test_number) + "/" + str(total_number_of_tests) + "\n")
-    dependent_variable.set_heuristic_params(heuristic_robot=heuristic_robot,
+    dependent_variable.set_heuristic_params(heuristic_bot=heuristic_bot,
                                             heuristic_opponent=heuristic_opponent)
     new_test_result = run_test((independent_variable, dependent_variable), nr_of_games=30)
     test_results.append(new_test_result)
     # temporary save
     with open(TEST_ROUND_RESULTS_FOLDER + file_name, 'a') as writer:
-        writer.write(str(test_results).replace("{'robots'", "\n{'robots'"))  # 1 line per test result
+        writer.write(str(test_results).replace("{'bots'", "\n{'bots'"))  # 1 line per test result
 
 
-def match_off(robots, file_name="match_off.json", nr_of_games=30):
-    """The given robots participate in a round-robin tournament to determine a ranking."""
-    total_number_of_tests = len(robots) / 2 * (len(robots) - 1)
+def match_off(bots, file_name="match_off.json", nr_of_games=30):
+    """The given bots participate in a round-robin tournament to determine a ranking."""
+    total_number_of_tests = len(bots) / 2 * (len(bots) - 1)
     test_number, test_results = 0, []
     left_off_line = calculate_where_left_off(TEST_ROUND_RESULTS_FOLDER + file_name)
-    for i in range(len(robots)):
-        for j in range(i + 1, len(robots)):
+    for i in range(len(bots)):
+        for j in range(i + 1, len(bots)):
             test_number += 1
             if test_number < left_off_line:
                 continue
             sys.stdout.write("TEST " + str(test_number) + "/" + str(total_number_of_tests) + "\n")
-            robots[i].robot_id, robots[j].robot_id = 'X', 'O'
-            test_results.append(run_test((robots[i], robots[j]), nr_of_games=nr_of_games))
+            bots[i].bot_id, bots[j].bot_id = 'X', 'O'
+            test_results.append(run_test((bots[i], bots[j]), nr_of_games=nr_of_games))
         # temporary save of match-off
         with open(TEST_ROUND_RESULTS_FOLDER + file_name, 'a') as writer:
-            writer.write(str(test_results).replace("{'robots'", "\n{'robots'"))  # 1 line per test result
+            writer.write(str(test_results).replace("{'bots'", "\n{'bots'"))  # 1 line per test result
             # TODO re-write this because messy.
 
 
 def match_off_test_round():
-    """Define here the robots you want to test against each other. Use then the function match_off."""
-    robots, file_name, start_time = \
-        competing_robots(), \
+    """Define here the bots you want to test against each other. Use then the function match_off."""
+    bots, file_name, start_time = \
+        competing_bots(), \
         "test_" + str(get_and_increment_test_number), \
         datetime.now().isoformat()
 
-    match_off(robots, file_name=file_name)
+    match_off(bots, file_name=file_name)
 
     with open(TEST_ROUND_RESULTS_FOLDER + file_name, 'r') as reader:
         st = reader.read().replace("\'", "\"").replace("\n", "")
@@ -347,14 +362,14 @@ def match_off_test_round():
     print_to_file(TEST_ROUND_RESULTS_FOLDER + file_name, results_json)
 
 
-def competing_robots():
-    robots = []
+def competing_bots():
+    bots = []
     for i in range(-2, -1):
         for j in range(-2, -1):
-            robots.append(MinmaxRobot('Z', heuristic_robot=i, heuristic_opponent=j))
-    from hispida.robots import MinmaxRobotZeroHeuristic
-    robots.append(MinmaxRobotZeroHeuristic('Z'))
-    return robots
+            bots.append(MinmaxBot('Z', heuristic_bot=i, heuristic_opponent=j))
+    from hispida.bots import MinmaxBotZeroHeuristic
+    bots.append(MinmaxBotZeroHeuristic('Z'))
+    return bots
 
 
 def get_and_increment_test_number() -> int:
