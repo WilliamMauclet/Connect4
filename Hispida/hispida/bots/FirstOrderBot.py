@@ -9,12 +9,11 @@ class FirstOrderBot(ZeroOrderBot):
     In addition, it looks to see if the move it wants to make does create an immediate win possibility for the opponent.
     Except for that, it just plays randomly."""
 
-    # TODO replace "== self.get_id_opponent" => "!= self.get_id() & != '_' "
     def does_move_help_opponent(self, grid, x) -> bool:
         new_grid = grid.clone_with_move(x, self.bot_id)
         return \
             self.check_if_immediate_win_possible(new_grid) \
-            and self.check_if_immediate_win_possible(new_grid)['player'] == self.get_id_opponent()
+            and self.is_id_opponent(self.check_if_immediate_win_possible(new_grid)['player'])
 
     def choose_move_that_does_not_help_opponent(self, grid) -> int:
         free_columns, dangerous_columns = grid.get_free_columns(), []

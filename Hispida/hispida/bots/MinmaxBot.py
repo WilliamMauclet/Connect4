@@ -29,7 +29,7 @@ class MinmaxBot(FirstOrderBot):
         self.HEURISTIC_OPPONENT = heuristic_opponent
 
     def get_configuration(self) -> dict:
-        # TODO: automatically iterate over fields of instance
+        # TODO: automatically iterate over fields of instance?
         return {
             "WIN_SCORE": self.WIN_SCORE,
             "LOSE_SCORE": self.LOSE_SCORE,
@@ -46,7 +46,7 @@ class MinmaxBot(FirstOrderBot):
         for tile in grid.get_bordering_tiles(x_co, y_co):
             if tile == self.bot_id:
                 heuristic_score += self.HEURISTIC_BOT
-            elif tile == self.get_id_opponent():
+            elif self.is_id_opponent(tile):
                 heuristic_score += self.HEURISTIC_OPPONENT
         return heuristic_score
 
@@ -72,7 +72,8 @@ class MinmaxBot(FirstOrderBot):
         else:
             v = +inf
             for x in grid.get_free_columns():
-                new_grid = grid.clone_with_move(x, self.get_id_opponent())
+                new_grid = grid.clone_with_move_opponent(x, self.bot_id)
+
                 v = min(v, self.alpha_beta(new_grid, depth - 1, alpha, beta, True))
                 beta = min(beta, v)
                 if beta <= alpha:
@@ -87,6 +88,7 @@ class MinmaxBot(FirstOrderBot):
 
             moves_scores.append({'move': x, 'score': self.alpha_beta(new_grid, self.DEPTH - 1, -inf, +inf, False)})
 
+        # TODO shuffle moves_scores? => makes it less re-playable!
         return max(moves_scores, key=lambda move: move['score'])['move']
 
     def choose_move(self, grid) -> int:

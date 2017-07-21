@@ -8,7 +8,6 @@ If you want to automatically let bots play a chosen number of times against each
 run Games/MultiGame.py
 
 ### DOING
-* Replace Bot.get_id_opponent() with Bot.is_id_opponent()
 
 ### TODO
 * Underscore private function names in classes.
@@ -24,6 +23,7 @@ run Games/MultiGame.py
 ### IDEAS
 * Rename MultiGame to Match-off
 * Give Bots integers as ideas instead of just 'X' and 'O'
+* Create Game class with Grid and with 2 players(Bots or Bot/human) and resolve()
 
 
 ### DONE
@@ -35,4 +35,5 @@ run Games/MultiGame.py
 * Jsonfication.
 * Minmax: alpha-beta pruning.
 * Game keeps history of moves.
-* Rename Bots to Bots.
+* 2017/07/21: Rename Bots to Bots.
+* 2017/07/21: Removed Bot.get_id_opponent(): No more assumption that only player ids "X" and "O" are used!

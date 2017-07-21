@@ -62,7 +62,7 @@ def choose_opponent() -> Bot:
     elif inp == '2':
         print("\nThis game is against an opponent using a minmax algorithm with alpha-beta pruning.\n")
         from hispida.bots.MinmaxBot import MinmaxBot
-        bot = MinmaxBot(BOT_PLAYER_ID, heuristic_bot=2, heuristic_opponent=1, depth=7)
+        bot = MinmaxBot(BOT_PLAYER_ID, heuristic_bot=0, heuristic_opponent=0, depth=7)
         return bot
     else:
         raise Exception("Did not recognise bot id: '" + inp + "'")
@@ -111,7 +111,7 @@ logging.getLogger().setLevel(logging.CRITICAL)
 # except Exception as exc:
 # print(exc.__str__())
 
-HUMAN_PLAYER_ID = 'X'
-BOT_PLAYER_ID = 'O'
+HUMAN_PLAYER_ID = 'H'
+BOT_PLAYER_ID = 'B'
 
 start()

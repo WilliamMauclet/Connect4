@@ -14,7 +14,6 @@ class Bot:
         logging.debug(str(self.__class__.__name__) + self.bot_id + ": " + message)
 
     # TODO replace with is_id_opponent?
-    @deprecated
     def get_id_opponent(self) -> str:
         """
         TODO: replace with is_id_opponent'

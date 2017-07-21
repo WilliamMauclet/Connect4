@@ -367,8 +367,6 @@ def competing_bots():
     for i in range(-2, -1):
         for j in range(-2, -1):
             bots.append(MinmaxBot('Z', heuristic_bot=i, heuristic_opponent=j))
-    from hispida.bots import MinmaxBotZeroHeuristic
-    bots.append(MinmaxBotZeroHeuristic('Z'))
     return bots
 
 

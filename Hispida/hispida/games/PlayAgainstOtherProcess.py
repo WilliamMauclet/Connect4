@@ -4,11 +4,13 @@ import sys
 sys.path.insert(0, os.path.abspath("."))
 
 from Grid import Grid
-from hispida.bots import FirstOrderBot as FirstBotClass
-from hispida.bots import MinmaxBot as SecondBotClass
+from hispida.bots.FirstOrderBot import FirstOrderBot as FirstBotClass
+from hispida.bots.MinmaxBot import MinmaxBot as SecondBotClass
 import socket
 from threading import Thread
 
+
+# TODO: testing
 
 def get_host_and_port():
     # get local machine name
@@ -49,18 +51,25 @@ def second_player_connection():
     return s
 
 
+bot_ids = ['1', '2']
+
+
+def get_id_opponent(bot_id):
+    index = bot_ids.index(bot_id)
+    return bot_ids(index + 1 % 2)
+
+
 def get_id_from_order(first_not_second):
-    if first_not_second:
-        return 'X'
-    else:
-        return 'O'
+    index = 0 if first_not_second else 1
+    return bot_ids[index]
 
 
-def get_order_from_id(id):
-    if id == 'X':
-        return 'first'
-    else:
+def get_order_from_id(bot_id):
+    index = bot_ids.index(bot_id)
+    if index:
         return 'second'
+    else:
+        return 'first'
 
 
 def play(first_not_second):
@@ -79,7 +88,7 @@ def play(first_not_second):
     try:
         while grid.game_over() == -1:
             opponent_move = int(s.recv(1024).decode("ascii"))  # even 8 (or even 1) should be enough!
-            grid.add_pawn(opponent_move, bot.get_id_opponent())
+            grid.add_pawn(opponent_move, get_id_opponent(bot.bot_id))
 
             if grid.game_over() != -1:
                 break

@@ -6,8 +6,7 @@ from Bot import Bot
 class ZeroOrderBot(Bot):
     """This bot DOES NOT LEARN.
     It applies simple algorithms to see if it can avoid a four in a row.
-    Except for that, it
-    just plays randomly."""
+    Except for that, it just plays randomly."""
 
     @staticmethod
     def find_top_empty(column):

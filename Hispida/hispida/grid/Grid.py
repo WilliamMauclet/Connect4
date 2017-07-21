@@ -89,7 +89,7 @@ class Grid:
         return -1
 
     def game_over(self):
-        if self.get_free_columns() == []:
+        if not self.get_free_columns():
             return "exaequo"
         for column in self.columns:
             if self.four_in_a_row(column) != -1:
@@ -130,12 +130,32 @@ class Grid:
         clone.add_pawn(move, player_id)
         return clone
 
-    def get_bordering_tiles(self, xCo, yCo) -> list:
+    def clone_with_move_opponent(self, move, player_id):
+        clone = self.clone()
+        opponent_id = self.get_id_opponent(player_id)
+        if opponent_id:
+            clone.add_pawn(move, player_id)
+        else:
+            clone.add_pawn(move, 'random')
+        return clone
+
+    def get_id_opponent(self, player_id) -> str:
+        for tile_id in self.get_tiles():
+            if tile_id and tile_id != player_id:
+                return tile_id
+        return ''
+
+    def get_tiles(self):
+        for column in self.columns:
+            for tile in column:
+                yield tile
+
+    def get_bordering_tiles(self, x_co, y_co) -> list:
         bordering_tiles = []
         for y in range(-1, 2):
             for x in range(-1, 2):
-                if 0 <= xCo + x < self.WIDTH and 0 <= yCo + y < self.HEIGHT:
-                    bordering_tiles.append(self.columns[xCo + x][yCo + y])
+                if 0 <= x_co + x < self.WIDTH and 0 <= y_co + y < self.HEIGHT:
+                    bordering_tiles.append(self.columns[x_co + x][y_co + y])
         return bordering_tiles
 
     def get_nr_moves_left(self):
