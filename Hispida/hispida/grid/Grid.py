@@ -88,7 +88,7 @@ class Grid:
                     return self.four_in_a_row(diagonal)
         return -1
 
-    def game_over(self):
+    def game_over(self) -> str:
         if not self.get_free_columns():
             return "exaequo"
         for column in self.columns:
