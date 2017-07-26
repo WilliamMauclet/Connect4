@@ -120,7 +120,7 @@ def _run_one_game(bots) -> dict:
     progress = ProgressBar()
     progress.next()
     i = 0
-    while grid.game_over() == -1 and grid.get_free_columns() != []:
+    while grid.game_over() == -1 and not grid.is_full():
         i = (i + 1) % 2
         start = time.time()
         column = players[i].choose_move(grid)

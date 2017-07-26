@@ -67,6 +67,7 @@ class MinmaxBot(FirstOrderBot):
 
         if max_not_min:
             v = -inf
+            # TODO use generator get_free_columns()
             for x in grid.get_free_columns():
                 new_grid = grid.clone_with_move(x, self.bot_id)
                 v = max(v, self._alpha_beta(new_grid, depth - 1, alpha, beta, False))
@@ -86,7 +87,7 @@ class MinmaxBot(FirstOrderBot):
 
     def _apply_leaf_heuristic(self, grid) -> int:
         x_co = grid.get_last_move()[0]
-        y_co = grid.get_filled_top_index(x_co)
+        y_co = grid.get_empty_top_index(x_co) - 1
         heuristic_score = 0
         for tile in grid.get_bordering_tiles(x_co, y_co):
             if tile == self.bot_id:
