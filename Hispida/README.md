@@ -10,6 +10,7 @@ run Games/MultiGame.py
 ### DOING
 
 ### TODO
+* Complete type hinting for all non-protected methods.
 * MinmaxBot doesn't work.
     * Make test for game with moves 4, 3, 5 & 6 (Bot must always choose column with lowest index)
     * alpha-beta function in MinmaxBot must return predicted history of moves.
