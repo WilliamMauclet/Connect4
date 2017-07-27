@@ -16,7 +16,7 @@ class FirstOrderBot(ZeroOrderBot):
             return self._choose_move_that_does_not_help_opponent(grid)
 
     def _choose_move_that_does_not_help_opponent(self, grid) -> int:
-        free_columns, dangerous_columns = grid.get_free_columns(), []
+        free_columns, dangerous_columns = list(grid.get_free_columns()), []
         for x in free_columns:
             if self._does_move_help_opponent(grid, x):
                 dangerous_columns.append(x)

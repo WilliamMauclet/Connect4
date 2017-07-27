@@ -11,7 +11,7 @@ class ZeroOrderBot(Bot):
         if self._check_if_immediate_win_possible(grid):
             return self._check_if_immediate_win_possible(grid)['column']
         else:
-            return random.choice(grid.get_free_columns())
+            return random.choice(list(grid.get_free_columns()))
 
     def _check_if_immediate_win_possible(self, grid) -> dict:
         for x in grid.get_free_columns():

@@ -11,6 +11,7 @@ run Games/MultiGame.py
 
 ### TODO
 * Complete type hinting for all non-protected methods.
+* Testing
 * MinmaxBot doesn't work.
     * Make test for game with moves 4, 3, 5 & 6 (Bot must always choose column with lowest index)
     * alpha-beta function in MinmaxBot must return predicted history of moves.
@@ -36,7 +37,9 @@ run Games/MultiGame.py
 * 2017/07/21: Removed Bot.get_id_opponent(): No more assumption that only player ids "X" and "O" are used!
 * 2017/07/21: Renamed MultiGame to Match-off
 * 2017/07/22: Underscored private function names in classes and modules.
+* 2017/07/27: Re-factoring Grid
 
 ### ABANDONED IDEAS
 * Bot accepts history of moves to machine learn
-* First checks when choosing moves are make the bot play worse! => Don't do this.
+* First checks when choosing moves are make the bot play worse! => Don't do this ???? TODO
+* Replace list(grid.get_free_columns()) with new function? Uses: 3 / 12 total usages => No

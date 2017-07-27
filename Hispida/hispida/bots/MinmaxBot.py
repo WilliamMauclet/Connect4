@@ -38,7 +38,7 @@ class MinmaxBot(FirstOrderBot):
         if self._check_if_immediate_win_possible(grid):
             return self._check_if_immediate_win_possible(grid)['column']
         elif grid.get_nr_moves_left() == 1:
-            return grid.get_free_columns()[0]
+            return next(grid.get_free_columns())
         else:
             return self._choose_move_with_minmax(grid)
 
