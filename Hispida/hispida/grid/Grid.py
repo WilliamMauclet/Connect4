@@ -1,4 +1,4 @@
-from collections import Iterator
+from typing import Iterator, Optional
 
 
 class Grid:
@@ -10,20 +10,28 @@ class Grid:
         # self.columns = [ [None] * height] * width => CAUSES PROBLEMS!
         self.logs = []
 
-    def get_empty_top_index(self, x: int) -> int:
+    def get_empty_top_index(self, x: int) -> Optional[int]:
         for y in range(6):
             if self.columns[x][y] is None:
                 return y
-        return None
+        return None  # TODO replace with other absent value?
 
     # TODO test OR replace with get_empty_top_index
     def get_filled_top_index(self, x: int) -> int:
-        if self.columns[x][0] is None:
-            raise Exception("Column was empty?")
-        for y in range(6):
-            if self.columns[x][y] is None:
-                return y - 1
-        return 5
+        index = self.get_empty_top_index(x)
+        if not index:
+            return 5
+        if index is 0:
+            raise Exception("Column was empty!")
+        else:
+            return index
+
+            # if self.columns[x][0] is None:
+            #     raise Exception("Column was empty?")
+            # for y in range(6):
+            #     if self.columns[x][y] is None:
+            #         return y - 1
+            # return 5
 
     def get_column(self, x: int) -> [str]:
         return self.columns[x]
@@ -150,7 +158,7 @@ class Grid:
         clone.columns = [[tile for tile in column] for column in self.columns]
         return clone
 
-    def _get_id_opponent(self, player_id) -> str:
+    def _get_id_opponent(self, player_id):
         for column in self.columns:
             for tile_id in column:
                 if tile_id and tile_id != player_id:
