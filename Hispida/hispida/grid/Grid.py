@@ -26,13 +26,6 @@ class Grid:
         else:
             return index
 
-            # if self.columns[x][0] is None:
-            #     raise Exception("Column was empty?")
-            # for y in range(6):
-            #     if self.columns[x][y] is None:
-            #         return y - 1
-            # return 5
-
     def get_column(self, x: int) -> [str]:
         return self.columns[x]
 
