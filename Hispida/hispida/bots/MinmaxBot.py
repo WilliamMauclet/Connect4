@@ -87,7 +87,7 @@ class MinmaxBot(FirstOrderBot):
 
     def _apply_leaf_heuristic(self, grid) -> int:
         x_co = grid.get_last_move()[0]
-        y_co = grid.get_empty_top_index(x_co) - 1
+        y_co = grid.get_filled_top_index(x_co)
         heuristic_score = 0
         for tile in grid.get_bordering_tiles(x_co, y_co):
             if tile == self.bot_id:
