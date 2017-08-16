@@ -21,7 +21,7 @@ class GridTest(unittest.TestCase):
 
     def test_get_empty_top_index_full_column(self):
         for _ in range(6):
-            self.grid.add_pawn(0,'x')
+            self.grid.add_pawn(0, 'x')
 
         self.assertFalse(self.grid.get_empty_top_index(0))
 
@@ -42,7 +42,6 @@ class GridTest(unittest.TestCase):
 
     def get_filled_top_index_empty_column(self):
         self.assertRaises(Exception, self.grid.get_filled_top_index)
-
 
     def test_get_free_columns(self):
         for _ in range(6):
@@ -180,6 +179,7 @@ class GridTest(unittest.TestCase):
         self.assertEqual(self.grid.columns[3][0], 'H')
         self.assertEqual(self.grid.columns[3][1], 'B')
         self.assertEqual(self.grid.columns[4][0], 'H')
+
 
 if __name__ == '__main__':
     unittest.main()
