@@ -48,41 +48,60 @@ class MinmaxBot(FirstOrderBot):
         for x in grid.get_free_columns():
             new_grid = grid.clone_with_move(x, self.bot_id)
 
-            moves_scores.append({'move': x, 'score': self._alpha_beta(new_grid, self.depth - 1, -inf, +inf, False)})
+            moves_scores.append(self._alpha_beta(new_grid, self.depth - 1, -inf, +inf, False, x))
 
         # TODO shuffle moves_scores? => makes it less re-playable!
-        return max(moves_scores, key=lambda move: move['score'])['move']
 
-    # TODO return [{'score': , 'move': }, previous_moves_with_score]
-    def _alpha_beta(self, grid, depth: int, alpha: int, beta: int, max_not_min: bool) -> int:
+        best_move = max(moves_scores, key=lambda move: move['score'])
+
+        minmax_tree = {
+            'score': best_move['score'],
+            'move': best_move['move'],
+            'next': moves_scores
+        }
+        import logging
+        logging.log(logging.DEBUG, minmax_tree)
+
+        return best_move
+
+    # TODO return {'score': int, 'move': int, 'next':[]}
+    def _alpha_beta(self, grid, depth: int, alpha: int, beta: int, max_not_min: bool, move: int) -> {}:
         if depth == 0:
-            return self._apply_leaf_heuristic(grid)
+            return {'score': self._apply_leaf_heuristic(grid), 'move': move}
         if grid.game_over() != -1:
             if grid.game_over() == 'exaequo':
-                return self.exaequo_score
+                return {'score': self.exaequo_score, 'move': move}
             if grid.game_over() == self.bot_id:
-                return self.win_score
+                return {'score': self.win_score, 'move': move}
             if grid.game_over():  # opponent has won
-                return self.lose_score
+                return {'score': self.lose_score, 'move': move}
 
+        next_moves = {}
         if max_not_min:
-            v = -inf
+            v = {'score': -inf}
             # TODO use generator get_free_columns()
             for x in grid.get_free_columns():
                 new_grid = grid.clone_with_move(x, self.bot_id)
-                v = max(v, self._alpha_beta(new_grid, depth - 1, alpha, beta, False))
-                alpha = max(alpha, v)
+                move_score = self._alpha_beta(new_grid, depth - 1, alpha, beta, False, x)
+                next_moves[x] = move_score
+                v = max(v, move_score, key=lambda l: l['score'])
+                alpha = max(alpha, v['score'])
                 if beta <= alpha:
                     break
+
+            v['next'] = next_moves
             return v
         else:
-            v = +inf
+            v = {'score': +inf}
             for x in grid.get_free_columns():
                 new_grid = grid.clone_with_move_opponent(x, self.bot_id)
-                v = min(v, self._alpha_beta(new_grid, depth - 1, alpha, beta, True))
-                beta = min(beta, v)
+                move_score = self._alpha_beta(new_grid, depth - 1, alpha, beta, True, x)
+                next_moves[x] = move_score
+                v = min(v, move_score, key=lambda l: l['score'])
+                beta = min(beta, v['score'])
                 if beta <= alpha:
                     break
+            v['next'] = next_moves
             return v
 
     def _apply_leaf_heuristic(self, grid) -> int:

@@ -11,8 +11,10 @@ run Games/MultiGame.py
 * MinmaxBot doesn't work.
     * Make test for game with moves 4, 3, 5 & 6 (Bot must always choose column with lowest index)
     * alpha-beta function in MinmaxBot must return predicted history of moves.
+* Keep minmax tree.
 
 ### TODO
+* Refactor MinmaxBot.
 * Complete type hinting for all non-protected methods.
     * Re-work absent return types in grid: game_over, _four_in_a_row
 * Testing
