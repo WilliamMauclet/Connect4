@@ -10,7 +10,7 @@ class MinmaxBotReplaysTest(unittest.TestCase):
     def setUp(self):
         self.file_path = '/home/wmclt/Projects/Connect4/Hispida/docs/replays/minmaxBot_{}.txt'
         self.minmaxBot_5 = MinmaxBot('B', depth=5)
-        self.minmaxBot_7 = MinmaxBot('B', depth=7, heuristic_opponent=0, heuristic_bot=0)
+        self.minmaxBot_7 = MinmaxBot('B', heuristic_opponent=0, heuristic_bot=0, depth=7)
         self.grid = Grid()
 
     def test_5_replay_1(self):
@@ -39,18 +39,21 @@ class MinmaxBotReplaysTest(unittest.TestCase):
             replay = ast.literal_eval(reader.read())
             self.grid.add_pawn_history(replay)
 
-            self.assertEqual(self.minmaxBot_5.choose_move(self.grid), 3)
+            self.assertEqual(self.minmaxBot_7.choose_move(self.grid), 3)
 
     def test_7_replay_2(self):
         with open(self.file_path.format(2), "r") as reader:
             replay = ast.literal_eval(reader.read())
             self.grid.add_pawn_history(replay)
 
-            self.assertIn(self.minmaxBot_5.choose_move(self.grid), [2, 5])
+            self.assertIn(self.minmaxBot_7.choose_move(self.grid), [2, 5])
 
     def test_7_replay_3(self):
         with open(self.file_path.format(3), "r") as reader:
             replay = ast.literal_eval(reader.read())
             self.grid.add_pawn_history(replay)
 
-            self.assertNotEqual(self.minmaxBot_5.choose_move(self.grid), 1)
+            self.grid.print_grid()
+
+            # wtf?
+            self.assertNotEqual(self.minmaxBot_7.choose_move(self.grid), 1)

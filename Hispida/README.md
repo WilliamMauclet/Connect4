@@ -8,14 +8,14 @@ If you want to automatically let bots play a chosen number of times against each
 run Games/MultiGame.py
 
 ### DOING
+* MinmaxBot doesn't work.
+    * Make test for game with moves 4, 3, 5 & 6 (Bot must always choose column with lowest index)
+    * alpha-beta function in MinmaxBot must return predicted history of moves.
 
 ### TODO
 * Complete type hinting for all non-protected methods.
     * Re-work absent return types in grid: game_over, _four_in_a_row
 * Testing
-* MinmaxBot doesn't work.
-    * Make test for game with moves 4, 3, 5 & 6 (Bot must always choose column with lowest index)
-    * alpha-beta function in MinmaxBot must return predicted history of moves.
 * Rework match-off module to determine best bot (configuration).
 * Delete JsonifierOfResults?
 * Better handling of player ending game => exception should be handled

@@ -40,7 +40,6 @@ class Grid:
                 return False
         return True
 
-    # TODO use "annotated tuple"?
     def add_pawn(self, x: int, player_id: str) -> None:
         self.logs.append((x, player_id))
         y = self.get_empty_top_index(x)

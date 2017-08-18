@@ -7,7 +7,6 @@ from Bot import Bot
 from Grid import Grid
 
 
-# TODO reorder functions!
 def start():
     grid = Grid()
     print("\nWelcome to a new game of Connect 4\n")
