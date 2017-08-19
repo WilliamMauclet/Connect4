@@ -14,13 +14,20 @@ class ZeroOrderBot(Bot):
             return random.choice(list(grid.get_free_columns()))
 
     def _check_if_immediate_win_possible(self, grid) -> dict:
+        win_possible_for_self = self._check_if_immediate_win_possible_for(grid, lambda x: 'player' in x and x['player'] == self.bot_id)
+        if win_possible_for_self:
+            return win_possible_for_self
+        else:
+            return self._check_if_immediate_win_possible_for(grid, lambda x: x != {})
+
+    def _check_if_immediate_win_possible_for(self, grid, predicate):
         for x in grid.get_free_columns():
             y = self._find_top_empty_tile(grid.columns[x])
-            if self._check_triplet_below(grid, x, y):
+            if predicate(self._check_triplet_below(grid, x, y)):
                 return self._check_triplet_below(grid, x, y)
-            if self._check_adjacents(grid, x, y):
+            if predicate(self._check_adjacents(grid, x, y)):
                 return self._check_adjacents(grid, x, y)
-            if self._check_diagonals(grid, x, y):
+            if predicate(self._check_diagonals(grid, x, y)):
                 return self._check_diagonals(grid, x, y)
         return {}
 

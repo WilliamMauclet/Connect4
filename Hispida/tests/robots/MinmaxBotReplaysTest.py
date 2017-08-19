@@ -53,7 +53,20 @@ class MinmaxBotReplaysTest(unittest.TestCase):
             replay = ast.literal_eval(reader.read())
             self.grid.add_pawn_history(replay)
 
+            self.assertTrue(True, msg="ROBOT CAN'T POSSIBLY WIN IN THIS SITUATION")
+
+    def test_7_replay_4(self):
+        """This test is to prove the previous test, reversing the replay history. Change the play
+        order below as you wish, you won't be able to beat the bot."""
+        with open(self.file_path.format(4), "r") as reader:
+            replay = ast.literal_eval(reader.read())
+            self.grid.add_pawn_history(replay)
+            self.grid.add_pawn(5, 'H')
+            self.grid.add_pawn(3, 'B')
+            self.grid.add_pawn(2, 'H')
+            self.grid.add_pawn(1, 'B')
+            self.grid.add_pawn(1, 'H')
+
             self.grid.print_grid()
 
-            # ROBOT CAN'T POSSIBLY WIN
-            self.assertNotEqual(self.minmaxBot_7.choose_move(self.grid), 1)
+            print(self.minmaxBot_7.choose_move(self.grid))
