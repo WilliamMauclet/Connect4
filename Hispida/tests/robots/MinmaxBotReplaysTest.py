@@ -55,5 +55,5 @@ class MinmaxBotReplaysTest(unittest.TestCase):
 
             self.grid.print_grid()
 
-            # wtf?
+            # ROBOT CAN'T POSSIBLY WIN
             self.assertNotEqual(self.minmaxBot_7.choose_move(self.grid), 1)
