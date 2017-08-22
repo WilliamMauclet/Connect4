@@ -52,11 +52,11 @@ class Grid:
     # TODO absent return type
     def game_over(self) -> str:
         for column in self.columns:
-            if self._four_in_a_row(column) != -1:
+            if self._four_in_a_row(column):
                 return self._four_in_a_row(column)
         for y in range(6):
             row = [self.columns[x][y] for x in range(7)]
-            if self._four_in_a_row(row) != -1:
+            if self._four_in_a_row(row):
                 return self._four_in_a_row(row)
         if self._check_all_diagonals_for_win() != -1:
             return self._check_all_diagonals_for_win()
@@ -98,7 +98,7 @@ class Grid:
             if seq is 4:
                 return tile
             prev = tile
-        return -1
+        return ''
 
     def _get_right_up_diagonal(self, x, y):
         row = []
@@ -121,13 +121,13 @@ class Grid:
             diagonals = (self._get_right_up_diagonal(0, y), self._get_left_up_diagonal(6, y))
 
             for diagonal in diagonals:
-                if self._four_in_a_row(diagonal) != -1:
+                if self._four_in_a_row(diagonal):
                     return self._four_in_a_row(diagonal)
         for x in range(7):
             diagonals = (self._get_left_up_diagonal(x, 0), self._get_right_up_diagonal(x, 0))
 
             for diagonal in diagonals:
-                if self._four_in_a_row(diagonal) != -1:
+                if self._four_in_a_row(diagonal):
                     return self._four_in_a_row(diagonal)
         return -1
 
