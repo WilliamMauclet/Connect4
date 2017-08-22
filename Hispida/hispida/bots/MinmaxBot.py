@@ -1,4 +1,5 @@
 from math import inf
+import logging
 
 from FirstOrderBot import FirstOrderBot
 
@@ -22,17 +23,8 @@ class MinmaxBot(FirstOrderBot):
         self.heuristic_opponent = heuristic_opponent
 
     def get_configuration(self) -> dict:
-        # TODO: automatically iterate over fields of instance?
-        return {
-            "WIN_SCORE": self.win_score,
-            "LOSE_SCORE": self.lose_score,
-            "EXAEQUO_SCORE": self.exaequo_score,
-            "DEPTH": self.depth,
-            "HEURISTIC_BOT": self.heuristic_bot,
-            "HEURISTIC_OPPONENT": self.heuristic_opponent,
-        }
+        return self.__dict__
 
-    # TODO pretty-print to debug
     def choose_move(self, grid) -> int:
         # First two checks speed up and make bot better.
         if self._check_if_immediate_win_possible(grid):
@@ -47,48 +39,43 @@ class MinmaxBot(FirstOrderBot):
         moves_scores = {}
         for x in grid.get_free_columns():
             new_grid = grid.clone_with_move(x, self.bot_id)
-
-            moves_scores[x] = \
-            self._alpha_beta(new_grid, self.depth - 1, -inf, +inf, False)
-                #self._alpha_beta(new_grid, self.depth - 1, -inf, +inf, False)
-
-        # TODO shuffle moves_scores? => makes it less re-playable!
+            moves_scores[x] = self._alpha_beta(new_grid, self.depth - 1, -inf, +inf, True)
 
         best_move = max(moves_scores, key=lambda move: moves_scores[move]['score'])
 
+        self._log_minmax_tree(best_move, grid, moves_scores)
+
+        return best_move
+
+    def _log_minmax_tree(self, best_move, grid, moves_scores):
         minmax_tree = {
             'best_score': moves_scores[best_move]['score'],
             'best_move': best_move,
             'moves': moves_scores
         }
-        import logging
         logging.log(logging.DEBUG, minmax_tree)
-
         if minmax_tree['best_score'] is -1:
             print("Whatever I (={}) do, I will lose within {} turns with this board {}".format(
                 self.bot_id,
                 self.depth / 2,
                 grid.get_state_string_representation()))
-
         if all(x['score'] for x in moves_scores.values()):
             logging.log(logging.DEBUG,
                         "All moves are as good for this grid:\n " + grid.get_state_string_representation())
 
-        return best_move
-
-    def _alpha_beta(self, grid, depth, alpha, beta, max_not_min):
+    def _alpha_beta(self, grid, depth, alpha, beta, min_not_max):
         if depth == 0:
             return {'score': self._apply_leaf_heuristic(grid), 'depth': 0}
         if grid.game_over():
             return self._end_game_score(grid, depth)
 
         next_moves = {}
-        v = {'score': -inf if max_not_min else +inf}
+        v = {'score': +inf if min_not_max else -inf}
         for x in grid.get_free_columns():
-            new_grid = grid.clone_with_move(x, self.bot_id, for_opponent=not max_not_min)
-            move_score = self._alpha_beta(new_grid, depth - 1, alpha, beta, not max_not_min)
+            new_grid = grid.clone_with_move(x, self.bot_id, for_opponent=min_not_max)
+            move_score = self._alpha_beta(new_grid, depth - 1, alpha, beta, not min_not_max)
             next_moves[x] = move_score
-            v, alpha, beta = self._update_values(v, alpha, beta, move_score, max_not_min)
+            v, alpha, beta = self._update_values(v, alpha, beta, move_score, min_not_max)
             if beta <= alpha:
                 break
 
@@ -103,8 +90,8 @@ class MinmaxBot(FirstOrderBot):
             return {'score': self.lose_score, 'depth': depth}
 
     @staticmethod
-    def _update_values(v, alpha, beta, move_score, max_not_min):
-        if not max_not_min:
+    def _update_values(v, alpha, beta, move_score, min_not_max):
+        if min_not_max:
             v = min(v, move_score, key=lambda l: l['score'])
             beta = min(beta, v['score'])
         else:

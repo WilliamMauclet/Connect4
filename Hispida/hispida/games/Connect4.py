@@ -16,12 +16,12 @@ def start():
 
     id_index = 0
     grid.print_grid()
-    while grid.game_over() == -1:
+    while not grid.game_over():
         player_id = [HUMAN_PLAYER_ID, BOT_PLAYER_ID][id_index]
         _accept_move(grid, player_id, bot)
         grid.print_grid()
         id_index = (id_index + 1) % 2
-        if grid.game_over() != -1:
+        if grid.game_over():
             break
 
     print(_get_player_tag_from_id(str(grid.game_over())) + " won, congrats!\n")

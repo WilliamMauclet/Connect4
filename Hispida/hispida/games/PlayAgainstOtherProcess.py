@@ -36,11 +36,11 @@ def play(first_not_second):
         s.send(str(bot_move).encode("ascii"))
 
     try:
-        while grid.game_over() == -1:
+        while not grid.game_over():
             opponent_move = int(s.recv(1024).decode("ascii"))  # even 8 (or even 1) should be enough!
             grid.add_pawn(opponent_move, _get_id_opponent(bot.bot_id))
 
-            if grid.game_over() != -1:
+            if grid.game_over():
                 break
 
             bot_move = bot.choose_move(grid)

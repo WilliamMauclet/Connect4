@@ -70,3 +70,6 @@ class MinmaxBotReplaysTest(unittest.TestCase):
             self.grid.print_grid()
 
             print(self.minmaxBot_7.choose_move(self.grid))
+
+    def test_whatever(self):
+        print(self.minmaxBot_5.get_configuration())

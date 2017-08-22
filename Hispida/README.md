@@ -12,9 +12,10 @@ run Games/MultiGame.py
 ### TODO
 * Testing
 * Rework match-off module to determine best bot (configuration).
+* Even if MinmaxBot sees it's going to lose: don't play randomly, but a move that will make it lose as late as possible.
 * Delete JsonifierOfResults?
 * Better handling of player ending game => exception should be handled
-* Even if MinmaxBot sees it's going to lose: don't play randomly, but a move that will make it lose as late as possible.
+* MinmaxBot: shuffle moves_scores? => makes it less re-playable!
 
 ### IDEAS
 * Give Bots integers as ids instead of just 'X' and 'O'
