@@ -38,7 +38,7 @@ class GridTest(unittest.TestCase):
         for _ in range(6):
             self.grid.add_pawn(0, 'x')
 
-        self.assertEqual(self.grid.get_empty_top_index(0), 5)
+        self.assertEqual(self.grid.get_empty_top_index(0), None)
 
     def test_get_filled_top_index_empty_column(self):
         self.assertRaises(Exception, self.grid.get_filled_top_index)

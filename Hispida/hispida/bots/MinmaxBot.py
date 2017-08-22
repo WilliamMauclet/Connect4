@@ -48,7 +48,9 @@ class MinmaxBot(FirstOrderBot):
         for x in grid.get_free_columns():
             new_grid = grid.clone_with_move(x, self.bot_id)
 
-            moves_scores[x] = self._alpha_beta(new_grid, self.depth - 1, -inf, +inf, False)
+            moves_scores[x] = \
+            self._alpha_beta(new_grid, self.depth - 1, -inf, +inf, False)
+                #self._alpha_beta(new_grid, self.depth - 1, -inf, +inf, False)
 
         # TODO shuffle moves_scores? => makes it less re-playable!
 
@@ -69,48 +71,47 @@ class MinmaxBot(FirstOrderBot):
                 grid.get_state_string_representation()))
 
         if all(x['score'] for x in moves_scores.values()):
-            logging.log(logging.DEBUG, "All moves are as good for this grid:\n " + grid.get_state_string_representation())
+            logging.log(logging.DEBUG,
+                        "All moves are as good for this grid:\n " + grid.get_state_string_representation())
 
         return best_move
 
-    # TODO return {'score': int, 'move': int, 'next':{}}
-    def _alpha_beta(self, grid, depth: int, alpha: int, beta: int, max_not_min: bool) -> {}:
+    def _alpha_beta(self, grid, depth, alpha, beta, max_not_min):
         if depth == 0:
             return {'score': self._apply_leaf_heuristic(grid), 'depth': 0}
         if grid.game_over() != -1:
-            if grid.game_over() == 'exaequo':
-                return {'score': self.exaequo_score, 'depth': depth}
-            if grid.game_over() == self.bot_id:
-                return {'score': self.win_score, 'depth': depth}
-            if grid.game_over():  # opponent has won
-                return {'score': self.lose_score, 'depth': depth}
+            return self._end_game_score(grid, depth)
 
         next_moves = {}
-        if max_not_min:
-            v = {'score': -inf}
-            # TODO use generator get_free_columns()
-            for x in grid.get_free_columns():
-                new_grid = grid.clone_with_move(x, self.bot_id)
-                move_score = self._alpha_beta(new_grid, depth - 1, alpha, beta, False)
-                next_moves[x] = move_score
-                v = max(v, move_score, key=lambda l: l['score'])
-                alpha = max(alpha, v['score'])
-                if beta <= alpha:
-                    break
+        v = {'score': -inf if max_not_min else +inf}
+        for x in grid.get_free_columns():
+            new_grid = grid.clone_with_move(x, self.bot_id, for_opponent=not max_not_min)
+            move_score = self._alpha_beta(new_grid, depth - 1, alpha, beta, not max_not_min)
+            next_moves[x] = move_score
+            v, alpha, beta = self._update_values(v, alpha, beta, move_score, max_not_min)
+            if beta <= alpha:
+                break
 
-            return {'score': v['score'], 'depth': depth, 'next': next_moves}
+        return {'score': v['score'], 'depth': depth, 'next': next_moves}
+
+    def _end_game_score(self, grid, depth):
+        if grid.game_over() == 'exaequo':
+            return {'score': self.exaequo_score, 'depth': depth}
+        if grid.game_over() == self.bot_id:
+            return {'score': self.win_score, 'depth': depth}
+        if grid.game_over():  # opponent has won
+            return {'score': self.lose_score, 'depth': depth}
+
+    @staticmethod
+    def _update_values(v, alpha, beta, move_score, max_not_min):
+        if not max_not_min:
+            v = min(v, move_score, key=lambda l: l['score'])
+            beta = min(beta, v['score'])
         else:
-            v = {'score': +inf}
-            for x in grid.get_free_columns():
-                new_grid = grid.clone_with_move_opponent(x, self.bot_id)
-                move_score = self._alpha_beta(new_grid, depth - 1, alpha, beta, True)
-                next_moves[x] = move_score
-                v = min(v, move_score, key=lambda l: l['score'])
-                beta = min(beta, v['score'])
-                if beta <= alpha:
-                    break
+            v = max(v, move_score, key=lambda l: l['score'])
+            alpha = max(alpha, v['score'])
 
-            return {'score': v['score'], 'depth': depth, 'next': next_moves}
+        return v, alpha, beta
 
     def _apply_leaf_heuristic(self, grid) -> int:
         x_co = grid.get_last_move()[0]

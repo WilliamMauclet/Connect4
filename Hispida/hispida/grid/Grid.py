@@ -86,7 +86,7 @@ class Grid:
         return self.columns[x][-1] is None
 
     @staticmethod
-    def _four_in_a_row(row):
+    def _four_in_a_row(row) -> str:
         seq = 1
         prev = None
         for tile in row:
@@ -131,10 +131,24 @@ class Grid:
                     return self._four_in_a_row(diagonal)
         return -1
 
-    def clone_with_move(self, move: int, player_id: str) -> 'Grid':
+    def clone_with_move(self, move: int, player_id: str, for_opponent=False) -> 'Grid':
         clone = self._clone()
-        clone.add_pawn(move, player_id)
+        if not for_opponent:
+            mover_id = player_id
+        else:
+            opponent_id = self._get_id_opponent(player_id)
+            if opponent_id:
+                mover_id = opponent_id
+            else:
+                raise Exception("No opponent id found")
+                # mover_id = 'random'
+        clone.add_pawn(move, mover_id)
         return clone
+
+    #def clone_with_move(self, move: int, player_id: str) -> 'Grid':
+    #    clone = self._clone()
+    #    clone.add_pawn(move, player_id)
+    #    return clone
 
     def clone_with_move_opponent(self, move: int, player_id: str) -> 'Grid':
         clone = self._clone()

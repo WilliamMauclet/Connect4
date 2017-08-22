@@ -14,9 +14,10 @@ run Games/MultiGame.py
 * Testing
 * Rework match-off module to determine best bot (configuration).
 * Complete type hinting for all non-protected methods.
-    * Re-work absent return types in grid: game_over, _four_in_a_row
+    * Re-work absent return types in grid: game_over, \_four_in_a_row
 * Delete JsonifierOfResults?
 * Better handling of player ending game => exception should be handled
+* Even if MinmaxBot sees it's going to lose: don't play randomly, but a move that will make it lose as late as possible.
 
 ### IDEAS
 * Give Bots integers as ids instead of just 'X' and 'O'
