@@ -10,11 +10,8 @@ run Games/MultiGame.py
 ### DOING
 
 ### TODO
-* Refactor MinmaxBot.
 * Testing
 * Rework match-off module to determine best bot (configuration).
-* Complete type hinting for all non-protected methods.
-    * Re-work absent return types in grid: game_over, \_four_in_a_row
 * Delete JsonifierOfResults?
 * Better handling of player ending game => exception should be handled
 * Even if MinmaxBot sees it's going to lose: don't play randomly, but a move that will make it lose as late as possible.
@@ -41,6 +38,8 @@ run Games/MultiGame.py
 * 2017/07/28: Type hinting for non-protected functions in Grid
 * 2017/08/20: MinmaxBot doesn't work. => It was.
 * 2017/08/20: MinmaxBot builds a minmax tree.
+* 2017/08/22: Refactor MinmaxBot.
+* 2017/08/22: Complete type hinting for return types in grid: game_over, \_four_in_a_row
 
 ### ABANDONED IDEAS
 * Bot accepts history of moves to machine learn

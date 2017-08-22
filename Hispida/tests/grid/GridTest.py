@@ -77,7 +77,7 @@ class GridTest(unittest.TestCase):
         for col in range(0, 7, 2):
             self.grid.add_pawn(col, 'x')
 
-        self.assertEqual(self.grid.game_over(), -1)
+        self.assertFalse(self.grid.game_over())
 
     def test_game_over_column(self):
         for _ in range(4):

@@ -58,12 +58,12 @@ class Grid:
             row = [self.columns[x][y] for x in range(7)]
             if self._four_in_a_row(row):
                 return self._four_in_a_row(row)
-        if self._check_all_diagonals_for_win() != -1:
+        if self._check_all_diagonals_for_win():
             return self._check_all_diagonals_for_win()
         if self.is_full():
             return "exaequo"
 
-        return -1
+        return ''
 
     def print_grid(self) -> None:
         print(self.get_state_string_representation())
@@ -116,7 +116,7 @@ class Grid:
             y += 1
         return row
 
-    def _check_all_diagonals_for_win(self):
+    def _check_all_diagonals_for_win(self) -> str:
         for y in range(6):
             diagonals = (self._get_right_up_diagonal(0, y), self._get_left_up_diagonal(6, y))
 
@@ -129,7 +129,7 @@ class Grid:
             for diagonal in diagonals:
                 if self._four_in_a_row(diagonal):
                     return self._four_in_a_row(diagonal)
-        return -1
+        return ''
 
     def clone_with_move(self, move: int, player_id: str, for_opponent=False) -> 'Grid':
         clone = self._clone()

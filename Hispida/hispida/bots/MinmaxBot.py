@@ -79,7 +79,7 @@ class MinmaxBot(FirstOrderBot):
     def _alpha_beta(self, grid, depth, alpha, beta, max_not_min):
         if depth == 0:
             return {'score': self._apply_leaf_heuristic(grid), 'depth': 0}
-        if grid.game_over() != -1:
+        if grid.game_over():
             return self._end_game_score(grid, depth)
 
         next_moves = {}
