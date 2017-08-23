@@ -174,7 +174,6 @@ def _run_test(bots, nr_of_games) -> dict:
     # 1 test (with bot-config-pair) = m games
 
     start = datetime.now().timestamp()
-    # TODO make run_games return (start, game_results, end) !!
     game_results = _run_games(nr_of_games, bots)
     end = datetime.now().timestamp()
 

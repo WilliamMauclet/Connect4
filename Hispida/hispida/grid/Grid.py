@@ -14,9 +14,8 @@ class Grid:
         for y in range(6):
             if self.columns[x][y] is None:
                 return y
-        return None  # TODO replace with other absent value?
+        return None
 
-    # TODO test OR replace with get_empty_top_index
     def get_filled_top_index(self, x: int) -> int:
         index = self.get_empty_top_index(x)
         if not index:
@@ -49,7 +48,6 @@ class Grid:
         for move in moves:
             self.add_pawn(move[0], move[1])
 
-    # TODO absent return type
     def game_over(self) -> str:
         for column in self.columns:
             if self._four_in_a_row(column):
