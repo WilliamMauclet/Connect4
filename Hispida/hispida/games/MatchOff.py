@@ -5,10 +5,11 @@ sys.path.insert(0, os.path.abspath("."))
 
 import random
 import json
-import time
-from time import localtime
+from time import time
 from datetime import datetime
-from hispida.utils import ProgressBar
+
+from hispida.utils.ProgressBar import ProgressBar
+from hispida.utils.TimeFormat import format_time, get_time
 
 from Grid import Grid
 from hispida.bots.MinmaxBot import MinmaxBot
@@ -56,34 +57,18 @@ def _get_class_name_player(player):
         return player.__class__.__name__
 
 
-# TODO put time formatters in utils class
-def _format_time(timestamp):
-    hours = timestamp // 3600
-    minutes = (timestamp % 3600) // 60
-    seconds = (timestamp % 60) // 1
-    return str(hours) + "h " + str(minutes) + "m " + str(seconds) + "s\n"
-
-
-def _get_time():
-    time_string = str(localtime()[1]) + "M" + \
-                  str(localtime()[2]) + "D_" + \
-                  str(localtime()[3]) + "h" + \
-                  str(localtime()[4]) + "m"
-    return time_string
-
-
 def _print_end_score_to_console(victories: dict, timestamp):
-    print(len(victories['games']) + " games played.\n")
+    print(str(len(victories['games'])) + " games played.\n")
     print("End score:\n")
     victories_json = json.dumps(victories, indent=4)
     print(victories_json)
-    print("\nDuration: " + _format_time(timestamp))
+    print("\nDuration: " + format_time(timestamp))
 
 
 def _print_end_score_to_file(victories: dict, timestamp, print_folder):
     victors = list(victories.keys())
     victor_names = [bot.__class__.__name__ for bot in victors if type(bot) != str]
-    file_name = print_folder + victor_names[0] + "_vs_" + victor_names[1] + "@" + _get_time() + ".txt"
+    file_name = print_folder + victor_names[0] + "_vs_" + victor_names[1] + "@" + get_time() + ".txt"
 
     writer = open(file_name, 'w')
     writer.write(str(STANDARD_NR_OF_GAMES) + " games played.\n")
@@ -91,7 +76,7 @@ def _print_end_score_to_file(victories: dict, timestamp, print_folder):
     for index in range(len(victors)):
         writer.write(_get_class_name_player(victors[index]) + " : " + str(victories.get(victors[index])) + "\n")
 
-    writer.write("\nDuration: " + _format_time(timestamp) + "\n")
+    writer.write("\nDuration: " + format_time(timestamp) + "\n")
 
     writer.write("Additional details bots:\n")
     for index in range(len(victors)):
@@ -122,9 +107,9 @@ def _run_one_game(bots) -> dict:
     i = 0
     while not grid.game_over() and not grid.is_full():
         i = (i + 1) % 2
-        start = time.time()
+        start = time()
         column = players[i].choose_move(grid)
-        end = time.time()
+        end = time()
         with open("test_round_results/times.txt", 'a') as writer:
             writer.write(str(players[i]) + " : " + str(end - start) + "\n")
         grid.add_pawn(column, players[i].bot_id)
@@ -135,11 +120,9 @@ def _run_one_game(bots) -> dict:
 
 
 def _run_games(nr_of_games, bots) -> list:
-    game_results = []
-    # TODO rename victories_dict?
-    victories_dict = {'exaequo': 0}
+    game_results, score_board = [], {'exaequo': 0}
     for bot in bots:
-        victories_dict[bot] = 0
+        score_board[bot] = 0
 
     sys.stdout.write("GAME:\n")
     for i in range(nr_of_games):
@@ -149,7 +132,7 @@ def _run_games(nr_of_games, bots) -> list:
 
         victor_id = game_results[-1]['winner']
         bot = _get_bot_from_id(bots, victor_id)
-        victories_dict[bot] = victories_dict[bot] + 1
+        score_board[bot] = score_board[bot] + 1
     return game_results
 
 
@@ -168,7 +151,7 @@ def _calculate_end_scores(game_results, bots):
     for game_result in game_results:
         scores[game_result['winner']] += 1
 
-    scores['winner'] = [_get_full_bot_description_from_id(bots, id) for id in _find_end_scores_winners(scores)]
+    scores['winner'] = [_get_full_bot_description_from_id(bots, bot_id) for bot_id in _find_end_scores_winners(scores)]
 
     return scores
 
@@ -181,7 +164,7 @@ def _test_result(game_results, bots, duration) -> dict:
                 'class': bot.__class__.__name__,
                 'configuration': bot.get_configuration()
             } for bot in bots],
-        'duration': _format_time(duration),
+        'duration': format_time(duration),
         'game': game_results,
         'end_scores': _calculate_end_scores(game_results, bots)
     }
@@ -244,9 +227,9 @@ def _test_round_result(test_results, start_time) -> dict:
     }
 
 
-def _print_to_file(file_name, json):
+def _print_to_file(file_name, json_file):
     with open(file_name, 'w') as writer:
-        writer.write(str(json))
+        writer.write(str(json_file))
 
 
 def run_test_test_round():
@@ -285,7 +268,6 @@ def run_test_round(file_name="TODO_RENAME.json"):
     # TODO test should resume where left off. => user calculate_Where_left_off NOT YET IMPLEMENTED !!!!!!!!!!!!!
     # e.g. count nr of lines in file and calculate modulo first range
 
-    from hispida.bots import MinmaxBot
     independent_variable = MinmaxBot('O')
     dependent_variable = MinmaxBot('X')
 
