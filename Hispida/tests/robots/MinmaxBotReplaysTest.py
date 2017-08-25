@@ -1,14 +1,13 @@
-import unittest
 # ast.literal_eval converts string representations into actual instances
 #  https://stackoverflow.com/a/1894296
-import ast
+import ast, unittest
 from Grid import Grid
 from MinmaxBot import MinmaxBot
 
 
 class MinmaxBotReplaysTest(unittest.TestCase):
     def setUp(self):
-        self.file_path = '/home/wmclt/Projects/Connect4/Hispida/docs/replays/minmaxBot_{}.txt'
+        self.file_path = '../../docs/replays/minmaxBot_{}.txt'
         self.minmaxBot_5 = MinmaxBot('B', depth=5)
         self.minmaxBot_7 = MinmaxBot('B', heuristic_opponent=0, heuristic_bot=0, depth=7)
         self.grid = Grid()

@@ -8,10 +8,11 @@ If you want to automatically let bots play a chosen number of times against each
 run Games/MultiGame.py
 
 ### DOING
+* Rework match-off module to determine best bot (configuration).
+    * Schema of final json output
 
 ### TODO
 * Testing
-* Rework match-off module to determine best bot (configuration).
 * Even if MinmaxBot sees it's going to lose: don't play randomly, but a move that will make it lose as late as possible.
 * Delete JsonifierOfResults?
 * Better handling of player ending game => exception should be handled

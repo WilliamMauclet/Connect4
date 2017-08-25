@@ -138,15 +138,9 @@ class Grid:
             if opponent_id:
                 mover_id = opponent_id
             else:
-                raise Exception("No opponent id found")
-                # mover_id = 'random'
+                mover_id = '%'  # random
         clone.add_pawn(move, mover_id)
         return clone
-
-    #def clone_with_move(self, move: int, player_id: str) -> 'Grid':
-    #    clone = self._clone()
-    #    clone.add_pawn(move, player_id)
-    #    return clone
 
     def clone_with_move_opponent(self, move: int, player_id: str) -> 'Grid':
         clone = self._clone()

@@ -151,7 +151,7 @@ class GridTest(unittest.TestCase):
         for _ in range(3):
             self.grid.add_pawn(5, 'y')
 
-        clone = self.grid.clone_with_move_opponent(3, 'y')
+        clone = self.grid.clone_with_move(3, 'y', for_opponent=True)
 
         for height in range(4):
             self.assertEqual(self.grid.columns[2][height], 'x')
