@@ -1,4 +1,4 @@
-import random, json, sys
+import random, json, sys, ast
 from time import time
 from datetime import datetime
 from collections import defaultdict
@@ -121,13 +121,7 @@ def _run_games(nr_of_games, bots) -> list:
     return game_results
 
 
-def _find_end_scores_winners(scores):
-    highest_score = max(scores.values())
-
-    return [score for score in scores if scores[score] == highest_score]
-
-
-def _calc_test_end_scores(game_results, bots):
+def _calc_match_end_scores(game_results, bots):
     scores = {
         'X': 0,
         'O': 0,
@@ -136,13 +130,14 @@ def _calc_test_end_scores(game_results, bots):
     for game_result in game_results:
         scores[game_result['winner']] += 1
 
-    # TODO re-write next line
-    scores['winners'] = [_get_full_bot_description_from_id(bots, bot_id) for bot_id in _find_end_scores_winners(scores)]
+    highest_score = max(scores.values())
+    scores['winner'] = [_get_full_bot_description_from_id(bots, bot_id) for bot_id in scores
+                        if scores[bot_id] == highest_score]
 
     return scores
 
 
-def _test_result(game_results, bots, duration) -> dict:
+def _match_result(game_results, bots, duration) -> dict:
     return {
         'bots':
             [{
@@ -152,19 +147,19 @@ def _test_result(game_results, bots, duration) -> dict:
             } for bot in bots],
         'duration': format_time(duration),
         'games': game_results,
-        'end_scores': _calc_test_end_scores(game_results, bots)
+        'end_scores': _calc_match_end_scores(game_results, bots)
     }
 
 
-def _run_test(bots, nr_of_games) -> dict:
-    """1 test (with bot-config-pair) = m games"""
+def _run_match(bots, nr_of_games) -> dict:
+    """1 match (with bot-config-pair) = m games"""
 
     start, game_results = datetime.now().timestamp(), _run_games(nr_of_games, bots)
-    test_duration = datetime.now().timestamp() - start
+    match_duration = datetime.now().timestamp() - start
 
-    test_json = _test_result(game_results, bots, test_duration)
-    _print_end_score_to_console(test_json, test_duration)
-    return test_json
+    match_json = _match_result(game_results, bots, match_duration)
+    _print_end_score_to_console(match_json, match_duration)
+    return match_json
 
 
 def _get_description_winner(winner: dict) -> str:
@@ -188,25 +183,26 @@ def _calculate_where_left_off(file_name) -> int:
 
 def match_off(bots, file_name="match_off.json", nr_of_games=30):
     """The given bots participate in a round-robin tournament to determine a ranking."""
-    test_number, total_number_of_tests = 0, len(bots) / 2 * (len(bots) - 1)
+    match_number, total_number_of_matches = 0, len(bots) * (len(bots) - 1) // 2
     left_off_line = _calculate_where_left_off(MATCH_OFF_FOLDER + file_name)
     for i, bot_i in enumerate(bots):
-        test_results = []
+        match_results = []
         for bot_j in bots[i + 1:]:
-            test_number += 1
-            if test_number < left_off_line:
+            match_number += 1
+            if match_number < left_off_line:
                 continue
-            sys.stdout.write("TEST {}/{}\n".format(test_number, int(total_number_of_tests)))
+            sys.stdout.write("TEST {}/{}\n".format(match_number, total_number_of_matches))
             bot_i.bot_id, bot_j.bot_id = 'X', 'O'
-            test_results.append(_run_test((bot_i, bot_j), nr_of_games=nr_of_games))
+            match_results.append(_run_match((bot_i, bot_j), nr_of_games=nr_of_games))
 
-        if test_results:
-            # save test results. 1 line per test result. TODO re-write this because messy.
+        if match_results:
+            # save match results. 1 line per match result. TODO re-write this because messy.
             with open(MATCH_OFF_FOLDER + file_name, 'a') as writer:
-                writer.write("\n{}".format(test_results))
+                writer.write("{}\n".format(match_results))
 
     # TODO transform separate results in one json
-    _match_off_results(file_name)
+    results = _match_off_results(total_number_of_matches, file_name)
+    pass
 
 
 def _competing_bots():
@@ -218,27 +214,29 @@ def _competing_bots():
 
 
 # TODO make schema of final json output, e.g.: time, winner, ranking, matches
-def _match_off_results(test_results, start_time) -> dict:
+def _match_off_results(total_number_of_matchs, file_name) -> dict:
+    matches = []
+    with open(MATCH_OFF_FOLDER + file_name, 'r') as reader:
+        for _ in range(total_number_of_matchs):
+            matches.append(ast.literal_eval(reader.readline()))  # un-jsonify? => use ast!
+
     return {
-        'time': start_time,
-        'tests': test_results,
-        'end_scores': _calc_match_off_end_scores(test_results)
+        'matches': matches,
+        'end_scores': _calc_match_off_end_scores(matches)
     }
 
 
-def _calc_match_off_end_scores(test_results):
+def _calc_match_off_end_scores(matches):
     # TODO re-use find_end_scores_winners?
-    scores = {}
+    scores = defaultdict(int)
 
-    for test_result in test_results:
-        winners = test_result['end_scores']['winner']
+    for match_results in matches:
+        for game_result in match_results:
+            winners = game_result['end_scores']['winner']
 
-        for winner in winners:
-            desc_winner = _get_description_winner(winner)
-            if desc_winner in scores:
+            for winner in winners:
+                desc_winner = _get_description_winner(winner)
                 scores[desc_winner] += 1
-            else:
-                scores[desc_winner] = 1
 
     import operator
     return sorted(scores.items(), key=operator.itemgetter(1), reverse=True)
@@ -251,17 +249,17 @@ def _calc_match_off_end_scores(test_results):
 #
 
 def ultimate_match_off():
-    """Define here the bots you want to test against each other. Use then the function match_off."""
-    bots, file_name = _competing_bots(), "test_1.txt"
+    """Define here the bots you want to match against each other. Use then the function match_off."""
+    bots, file_name = _competing_bots(), "match_off_1.txt"
     start_time = datetime.now().isoformat()
 
     match_off(bots, file_name=file_name, nr_of_games=2)
 
     with open(MATCH_OFF_FOLDER + file_name, 'r') as reader:
         st = reader.read().replace("\'", "\"").replace("\n", "")
-        test_results = json.loads(st)
+        match_off_results = json.loads(st)
     sys.stdout.write("\n\nRound-robin match-off done.")
-    results_json = json.dumps(_match_off_results(test_results, start_time), indent=4)
+    results_json = json.dumps(_match_off_results(match_off_results, start_time), indent=4)
     _print_to_file(MATCH_OFF_FOLDER + file_name, results_json)
 
 
