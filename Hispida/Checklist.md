@@ -6,6 +6,7 @@
 * Rework match-off module to determine best bot (configuration).
     * Schema of final json output
     * Don't save matches one line at a time: extend match-off json
+    * merge _calc_match_off_end_scores() and _calc_match_end_scores()
 
 ### TODO
 * Testing

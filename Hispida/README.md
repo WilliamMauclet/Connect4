@@ -24,16 +24,18 @@ GAME        = 1 game
 The output of the match-off is a json with the following structure:
 
 match-off
-|- [end_scores]
+|- [scores] 
 |- [bots_full_description]
 |- winner
 |- [matches]
 	|- time
 	|- winner
-	|- [end_scores]
+	|- [scores]
 	|- [games]
 		|- winner
 		|- grid_end_configuration
+		
+The structure of [scores] is: TODO
 
 ### CHECKLIST/TODO
 To see what has been done and still needs to be done (the TODO list), see the Checklist.md.
