@@ -11,6 +11,9 @@ class Bot:
     def get_configuration(self) -> dict:
         return {}
 
+    def get_descriptor(self) -> str:
+        return self.__class__.__name__
+
     def _is_id_opponent(self, bot_id: str) -> bool:
         return bot_id != '_' and bot_id != self.bot_id
 

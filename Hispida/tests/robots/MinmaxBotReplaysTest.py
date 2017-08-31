@@ -9,7 +9,7 @@ class MinmaxBotReplaysTest(unittest.TestCase):
     def setUp(self):
         self.file_path = '../../docs/replays/minmaxBot_{}.txt'
         self.minmaxBot_5 = MinmaxBot('B', depth=5)
-        self.minmaxBot_7 = MinmaxBot('B', heuristic_opponent=0, heuristic_bot=0, depth=7)
+        self.minmaxBot_7 = MinmaxBot('B', depth=7, heuristic_bot=0, heuristic_opponent=0)
         self.grid = Grid()
 
     def test_5_replay_1(self):

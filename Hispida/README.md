@@ -24,9 +24,9 @@ GAME        = 1 game
 The output of the match-off is a json with the following structure:
 
 match-off
-|- [scores] 
-|- [bots_full_description]
+|- [bots_full_description] ?
 |- winner
+|- [scores]
 |- [matches]
 	|- time
 	|- winner
@@ -36,6 +36,16 @@ match-off
 		|- grid_end_configuration
 		
 The structure of [scores] is: TODO
+{short_bot_id: score}
+BUT sortedDict?
+NOT list of (bot.short_name(), score)
+
+## Winner
+The winner of each level is determined as follows:
+
+* Game: the winner of the game. Exaequo if nobody won. =1
+* Match: the winner of the highest number of games. >=1
+* Match-off: the winner of the highers number of games over all the matches. >=1
 
 ### CHECKLIST/TODO
 To see what has been done and still needs to be done (the TODO list), see the Checklist.md.

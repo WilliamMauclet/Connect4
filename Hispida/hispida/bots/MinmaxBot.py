@@ -7,16 +7,15 @@ from FirstOrderBot import FirstOrderBot
 class MinmaxBot(FirstOrderBot):
     """Applies a minmax algorithm. Only 2n+1 iterations considered. should only work for values 2n+1."""
 
-    def __init__(self, bot_id,
-                 win_score=20, lose_score=-1, exaequo_score=0,
-                 heuristic_bot=2, heuristic_opponent=1, depth=5):
+    def __init__(self, bot_id, depth=5, win_score=20, lose_score=-1, exaequo_score=0,
+                 heuristic_bot=2, heuristic_opponent=1):
         super().__init__(bot_id)
+        self.depth = depth
         self.win_score = win_score
         self.lose_score = lose_score
         self.exaequo_score = exaequo_score
         self.heuristic_bot = heuristic_bot
         self.heuristic_opponent = heuristic_opponent
-        self.depth = depth
 
     def set_heuristic_params(self, heuristic_bot, heuristic_opponent):
         self.heuristic_bot = heuristic_bot
@@ -24,6 +23,18 @@ class MinmaxBot(FirstOrderBot):
 
     def get_configuration(self) -> dict:
         return self.__dict__
+
+    def get_descriptor(self) -> str:
+        descriptor = "{}:{}" + "/{}" * 5
+        return descriptor.format(
+            self.__class__.__name__,
+            self.depth,
+            self.win_score,
+            self.lose_score,
+            self.exaequo_score,
+            self.heuristic_bot,
+            self.heuristic_opponent
+        )
 
     def choose_move(self, grid) -> int:
         # First two checks speed up and make bot better.

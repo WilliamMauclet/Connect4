@@ -2,6 +2,8 @@ import random, json, sys, ast
 from time import time
 from datetime import datetime
 from collections import defaultdict
+
+from Bot import Bot
 from hispida.utils.ProgressBar import ProgressBar
 from hispida.utils.TimeFormat import format_time
 from Grid import Grid
@@ -20,27 +22,36 @@ from Grid import Grid
 
 
 def match_off(bots, file_path="../../docs/match_offs/match_off.json", nr_of_games=30):
-    """The given bots participate in a round-robin tournament to determine a ranking."""
-    match_number, total_number_of_matches = 0, len(bots) * (len(bots) - 1) // 2
+    """The given bots participate in a round-robin tournament to determine the best."""
+
+    planned_matches = _get_planned_matches(bots, file_path)
+    total_number_matches = len(bots) * (len(bots) - 1) // 2
+
+    for planned_match in planned_matches:
+        sys.stdout.write("TEST {}/{}\n".format(planned_match['number'], total_number_matches))
+        planned_match['i'].bot_id, planned_match['j'].bot_id = 'X', 'O'
+        match_result = _run_match((planned_match['i'], planned_match['j']), nr_of_games=nr_of_games)
+
+        if match_result:
+            with open(file_path, 'a') as writer:
+                writer.write("{}\n".format(match_result))  # TODO
+
+        results = _match_off_result(total_number_matches, file_path)
+        pass
+
+
+def _get_planned_matches(bots, file_path):
+    match_number, planned_matches = 0, []
     left_off_line = _calculate_where_left_off(file_path)
     for i, bot_i in enumerate(bots):
-        match_results = []
         for bot_j in bots[i + 1:]:
             match_number += 1
             if match_number < left_off_line:
                 continue
-            sys.stdout.write("TEST {}/{}\n".format(match_number, total_number_of_matches))
-            bot_i.bot_id, bot_j.bot_id = 'X', 'O'
-            match_results.append(_run_match((bot_i, bot_j), nr_of_games=nr_of_games))
 
-        if match_results:
-            # save match results. 1 line per match result. TODO re-write this because messy.
-            with open(file_path, 'a') as writer:
-                writer.write("{}\n".format(match_results))
+            planned_matches.append({'number': match_number, 'i': bot_i, 'j': bot_j})
 
-    # TODO transform separate results in one json
-    results = _match_off_results(total_number_of_matches, file_path)
-    pass
+    return planned_matches
 
 
 def _calculate_where_left_off(file_path) -> int:
@@ -51,40 +62,22 @@ def _calculate_where_left_off(file_path) -> int:
         return 0
 
 
-def _match_off_results(total_number_of_matches, file_path) -> dict:
+def _match_off_result(total_number_of_matches, file_path) -> dict:
     matches = []
     with open(file_path, 'r') as reader:
         for _ in range(total_number_of_matches):
-            matches.append(ast.literal_eval(reader.readline()))  # un-jsonify? => use ast!
+            matches.append(ast.literal_eval(reader.readline()))
+
+    scores = defaultdict(int)
+    for match_result in matches:
+        for bot_descr in match_result['scores']:
+            scores[bot_descr] += match_result['scores'][bot_descr]
 
     return {
-        'matches': matches,
-        'end_scores': _calc_match_off_end_scores(matches)
+        'winners': [bot_descr for bot_descr in scores if scores[bot_descr] == max(scores.values())],
+        'scores': scores,
+        'matches': matches
     }
-
-
-def _calc_match_off_end_scores(matches):
-    # TODO merge with _calc_match_end_scores
-    scores = defaultdict(int)
-
-    for match_results in matches:
-        for game_result in match_results:
-            winners = game_result['end_scores']['winner']
-
-            for winner in winners:
-                desc_winner = _get_description_winner(winner)
-                scores[desc_winner] += 1
-
-    import operator
-    return sorted(scores.items(), key=operator.itemgetter(1), reverse=True)
-    #  'scores': scores,
-    #  'ranking': sorted(scores, key= lambda score: scores[score])
-
-
-def _get_description_winner(winner: dict) -> str:
-    if winner == 'exaequo':
-        return 'exaequo'
-    return winner['class'] + ":" + str(winner['configuration'])
 
 
 def _run_match(bots, nr_of_games) -> dict:
@@ -94,7 +87,7 @@ def _run_match(bots, nr_of_games) -> dict:
     match_duration = datetime.now().timestamp() - start
 
     match_json = _match_result(game_results, bots, match_duration)
-    _print_end_score_to_console(match_json, match_duration)
+    _print_match_end_score(match_json, match_duration)
     return match_json
 
 
@@ -108,42 +101,22 @@ def _match_result(game_results, bots, duration) -> dict:
             } for bot in bots],
         'duration': format_time(duration),
         'games': game_results,
-        'end_scores': _calc_match_end_scores(game_results, bots)
+        'end_scores': _calc_match_end_scores(game_results)
     }
 
 
-def _calc_match_end_scores(game_results, bots):
-    # TODO merge with _calc_match_off_end_scores
-
-    scores = {
-        'X': 0,
-        'O': 0,
-        'exaequo': 0
-    }
+def _calc_match_end_scores(game_results):
+    scores = defaultdict(int)
     for game_result in game_results:
         scores[game_result['winner']] += 1
 
-    highest_score = max(scores.values())
-    scores['winner'] = [_get_full_bot_description_from_id(bots, bot_id) for bot_id in scores
-                        if scores[bot_id] == highest_score]
-
-    return scores
-
-
-# TODO: remove, use short_name of bot instead
-def _get_full_bot_description_from_id(bots, bot_id: str):
-    if bot_id == 'exaequo':
-        return 'exaequo'
-    for bot in bots:
-        if bot.bot_id == bot_id:
-            return {
-                'class': bot.__class__.__name__,
-                'configuration': bot.get_configuration()
-            }
+    return {
+        'winners': [bot_descr for bot_descr in scores if scores[bot_descr] == max(scores.values())],
+        'scores': scores
+    }
 
 
-# TODO: keep this?
-def _print_end_score_to_console(victories: dict, timestamp):
+def _print_match_end_score(victories: dict, timestamp):
     print("{} games played.\n".format(len(victories['games'])))
     print("End score:\n")
     victories_json = json.dumps(victories, indent=4)
@@ -162,7 +135,7 @@ def _run_games(nr_of_games, bots) -> list:
 
 def _run_one_game(bots) -> dict:
     grid = Grid()
-    players = [bot for bot in bots]  # clone
+    players = [bot for bot in bots]
     random.shuffle(players)
 
     i, progress = 0, ProgressBar()
@@ -175,11 +148,19 @@ def _run_one_game(bots) -> dict:
         grid.add_pawn(column, players[i].bot_id)
     progress.end()
 
-    return _game_result(grid)
+    return _game_result(grid, bots)
 
 
-def _game_result(grid) -> dict:
+def _game_result(grid, bots) -> dict:
     return {
-        'winner': grid.game_over(),
+        'winner': _get_bot_descriptor_from_id(bots, grid.game_over()),
         'end_configuration': grid.get_state_string_representation()
     }
+
+
+def _get_bot_descriptor_from_id(bots: [Bot], bot_id: str) -> str:
+    if bot_id == 'exaequo':
+        return 'exaequo'
+    for bot in bots:
+        if bot.bot_id == bot_id:
+            return bot.get_descriptor()

@@ -1,12 +1,6 @@
 ### DOING
-* Use short_name()
-    * Method in bots, gives full config of bot
-    * Use it in MatchOff
-    * Only detail full config in highest level json.
-* Rework match-off module to determine best bot (configuration).
-    * Schema of final json output
-    * Don't save matches one line at a time: extend match-off json
-    * merge _calc_match_off_end_scores() and _calc_match_end_scores()
+* Test match-off
+* Don't save matches one line at a time: extend match-off json?
 
 ### TODO
 * Testing
@@ -40,7 +34,10 @@
 * 2017/08/20: MinmaxBot builds a minmax tree.
 * 2017/08/22: Refactor MinmaxBot.
 * 2017/08/22: Complete type hinting for return types in grid: game_over, \_four_in_a_row
-* 2017/08$/29: In MatchOff: change "test" to "match"
+* 2017/08/29: In MatchOff: change "test" to "match"
+* 2017/08/31: Using Bot.get_descriptor() in MatchOff
+* 2017/08/31: Rework match-off to determine best bot. Final JSON output schema. Refactoring.
+
 
 ### ABANDONED IDEAS
 * Bot accepts history of moves to machine learn
