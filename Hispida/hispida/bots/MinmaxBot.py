@@ -7,8 +7,8 @@ from FirstOrderBot import FirstOrderBot
 class MinmaxBot(FirstOrderBot):
     """Applies a minmax algorithm. Only 2n+1 iterations considered. should only work for values 2n+1."""
 
-    def __init__(self, bot_id, depth=5, win_score=20, lose_score=-1, exaequo_score=0,
-                 heuristic_bot=2, heuristic_opponent=1):
+    def __init__(self, bot_id, depth=5, win_score=20, lose_score=-20, exaequo_score=0,
+                 heuristic_bot=1, heuristic_opponent=-3):
         super().__init__(bot_id)
         self.depth = depth
         self.win_score = win_score
@@ -66,7 +66,8 @@ class MinmaxBot(FirstOrderBot):
         }
         logging.log(logging.DEBUG, minmax_tree)
         if minmax_tree['best_score'] is -1:
-            print("Whatever I (={}) do, I will lose within {} turns with this board {}".format(
+            # TODO log
+            print("Whatever I (={}) do, I will lose within {} turns with this board \n{}".format(
                 self.bot_id,
                 self.depth / 2,
                 grid.get_state_string_representation()))

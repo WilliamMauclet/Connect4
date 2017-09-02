@@ -21,11 +21,17 @@ from Grid import Grid
 """
 
 
-def match_off(bots, file_path="../../docs/match_offs/match_off.json", nr_of_games=30):
+def match_off(bots, file_path="../../docs/match_offs/match_off_{}.json", test_number=0, nr_of_games=30):
     """The given bots participate in a round-robin tournament to determine the best."""
+    file_path = file_path.format(test_number)
 
     planned_matches = _get_planned_matches(bots, file_path)
     total_number_matches = len(bots) * (len(bots) - 1) // 2
+
+    # initialisation of matches
+    if planned_matches[0]['number'] == 1:
+        with open(file_path, "w") as writer:
+            writer.write("[]")
 
     for planned_match in planned_matches:
         sys.stdout.write("TEST {}/{}\n".format(planned_match['number'], total_number_matches))
@@ -33,15 +39,16 @@ def match_off(bots, file_path="../../docs/match_offs/match_off.json", nr_of_game
         match_result = _run_match((planned_match['i'], planned_match['j']), nr_of_games=nr_of_games)
 
         if match_result:
-            with open(file_path, 'a') as writer:
-                writer.write("{}\n".format(match_result))  # TODO
+            temp_match_results_list = ast.literal_eval(open(file_path).read())
+            temp_match_results_list.append(match_result)
+            open(file_path, "w").write(str(temp_match_results_list))
 
-        results = _match_off_result(total_number_matches, file_path)
-        pass
+    results = _match_off_result(file_path, test_number)
+    pass
 
 
 def _get_planned_matches(bots, file_path):
-    match_number, planned_matches = 0, []
+    match_number, planned_matches = -1, []
     left_off_line = _calculate_where_left_off(file_path)
     for i, bot_i in enumerate(bots):
         for bot_j in bots[i + 1:]:
@@ -57,27 +64,30 @@ def _get_planned_matches(bots, file_path):
 def _calculate_where_left_off(file_path) -> int:
     try:
         with open(file_path, 'r') as reader:
-            return reader.read().count("\n")
+            return len(ast.literal_eval(reader.read())) + 1
     except FileNotFoundError:
-        return 0
+        return 1
 
 
-def _match_off_result(total_number_of_matches, file_path) -> dict:
-    matches = []
+def _match_off_result(file_path, test_number) -> dict:
     with open(file_path, 'r') as reader:
-        for _ in range(total_number_of_matches):
-            matches.append(ast.literal_eval(reader.readline()))
+        matches = ast.literal_eval(reader.read())
 
     scores = defaultdict(int)
     for match_result in matches:
         for bot_descr in match_result['scores']:
             scores[bot_descr] += match_result['scores'][bot_descr]
 
-    return {
+    result = {
         'winners': [bot_descr for bot_descr in scores if scores[bot_descr] == max(scores.values())],
-        'scores': scores,
+        'scores': dict(scores),
         'matches': matches
     }
+
+    import json
+    open(file_path, "w").write(json.dumps(result, indent=4))
+
+    return result
 
 
 def _run_match(bots, nr_of_games) -> dict:
@@ -86,37 +96,25 @@ def _run_match(bots, nr_of_games) -> dict:
     start, game_results = datetime.now().timestamp(), _run_games(nr_of_games, bots)
     match_duration = datetime.now().timestamp() - start
 
-    match_json = _match_result(game_results, bots, match_duration)
+    match_json = _match_result(game_results, match_duration)
     _print_match_end_score(match_json, match_duration)
     return match_json
 
 
-def _match_result(game_results, bots, duration) -> dict:
-    return {
-        'bots':
-            [{
-                'id': bot.bot_id,
-                'class': bot.__class__.__name__,
-                'configuration': bot.get_configuration()
-            } for bot in bots],
-        'duration': format_time(duration),
-        'games': game_results,
-        'end_scores': _calc_match_end_scores(game_results)
-    }
-
-
-def _calc_match_end_scores(game_results):
+def _match_result(game_results, duration) -> dict:
     scores = defaultdict(int)
     for game_result in game_results:
         scores[game_result['winner']] += 1
 
     return {
         'winners': [bot_descr for bot_descr in scores if scores[bot_descr] == max(scores.values())],
-        'scores': scores
+        'scores': dict(scores),
+        'duration': format_time(duration),
+        'games': game_results,
     }
 
 
-def _print_match_end_score(victories: dict, timestamp):
+def _print_match_end_score(victories, timestamp):
     print("{} games played.\n".format(len(victories['games'])))
     print("End score:\n")
     victories_json = json.dumps(victories, indent=4)
@@ -142,9 +140,7 @@ def _run_one_game(bots) -> dict:
     while not grid.game_over() and not grid.is_full():
         progress.next()
         i = (i + 1) % 2
-        start, column, end = time(), players[i].choose_move(grid), time()
-        with open("../../docs/times/times.txt", 'a') as writer:
-            writer.write("{} : {}\n".format(players[i], end - start))
+        column = players[i].choose_move(grid)
         grid.add_pawn(column, players[i].bot_id)
     progress.end()
 

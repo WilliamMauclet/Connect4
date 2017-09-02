@@ -1,0 +1,2792 @@
+{
+    "winners": [
+        "exaequo"
+    ],
+    "matches": [
+        {
+            "duration": "0.0h 2.0m 36.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|_|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|X|O|X|_|_|_|_|\n|O|O|O|O|_|_|_|\n|X|O|O|X|_|X|_|\n|X|X|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|_|_|_|_|_|\n|_|X|_|O|_|_|_|\n|X|O|O|O|_|_|_|\n|O|O|X|X|_|_|_|\n|O|O|X|X|_|_|_|\n|X|X|O|X|_|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|X|O|O|O|O|\n|O|X|O|X|X|O|X|\n|X|X|O|O|O|X|X|\n|O|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|_|_|\n|X|_|_|_|_|_|_|\n|X|_|X|O|_|_|_|\n|O|O|O|X|_|_|_|\n|O|O|O|X|_|_|_|\n|O|X|O|X|X|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|_|_|_|_|_|\n|X|X|_|O|_|_|_|\n|O|O|O|X|_|_|_|\n|O|O|X|O|_|_|_|\n|O|O|X|X|_|_|X|\n|X|X|O|X|_|_|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|O|X|_|\n|O|O|O|_|O|O|_|\n|X|X|X|_|X|O|O|\n|O|O|O|O|X|X|X|\n|O|X|O|X|X|O|X|\n|O|X|X|X|O|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|O|_|_|_|\n|X|X|O|X|_|X|_|\n|O|O|X|X|O|X|_|\n|O|X|O|O|X|O|_|\n|O|O|O|X|O|X|_|\n|X|X|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|_|_|\n|_|_|_|_|_|_|_|\n|O|_|_|O|O|_|_|\n|O|_|X|X|X|X|_|\n|X|_|O|X|X|X|O|\n|O|O|O|X|X|O|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|_|_|_|_|_|\n|X|_|_|_|_|_|_|\n|X|X|_|O|_|X|_|\n|O|O|O|X|_|O|_|\n|O|O|X|O|_|O|_|\n|O|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|_|_|\n|X|_|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|O|O|O|_|_|_|X|\n|X|O|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|X|X|X|O|\n|X|X|X|O|O|O|X|\n|X|O|O|O|X|X|X|\n|O|X|X|O|O|O|X|\n|O|O|O|X|X|O|O|\n|O|X|X|X|O|O|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|_|_|_|_|_|\n|_|X|O|_|_|_|_|\n|_|O|X|_|X|O|_|\n|X|O|O|O|O|X|O|\n|O|O|X|X|X|O|X|\n|X|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|X|_|_|\n|O|O|X|X|O|X|_|\n|X|X|O|O|X|O|_|\n|O|O|O|X|O|X|_|\n|O|X|X|X|O|X|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|O|_|_|_|_|\n|O|_|O|_|_|_|X|\n|X|_|X|O|O|_|O|\n|O|_|O|X|X|X|X|\n|O|X|O|X|X|O|X|\n|O|O|O|X|X|O|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|X|O|_|_|X|_|_|\n|O|O|O|O|O|_|_|\n|X|O|X|X|X|_|_|\n|O|X|X|O|X|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|_|_|\n|X|_|X|_|_|O|_|\n|X|_|O|X|O|O|_|\n|O|_|O|O|X|X|_|\n|O|_|O|X|X|O|X|\n|O|X|X|O|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|_|_|_|_|\n|O|O|_|X|_|_|_|\n|X|O|_|O|_|_|_|\n|O|X|_|X|X|_|_|\n|O|O|X|X|X|X|_|\n|O|X|O|X|O|O|_|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|_|_|\n|_|_|_|_|_|_|_|\n|_|_|O|_|_|_|_|\n|O|X|O|O|_|X|_|\n|X|O|O|X|_|X|_|\n|O|X|O|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|X|_|X|\n|O|X|O|O|O|_|X|\n|X|O|X|X|O|X|O|\n|O|X|O|O|X|O|X|\n|O|O|O|X|X|O|X|\n|O|X|O|X|X|X|O|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|X|X|_|_|_|X|_|\n|X|O|_|_|_|O|O|\n|O|O|_|_|O|O|X|\n|O|X|X|O|X|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|_|_|_|_|\n|_|O|_|O|_|_|_|\n|_|O|O|X|_|_|_|\n|O|O|O|X|_|_|_|\n|O|X|X|X|_|_|_|\n|X|X|O|O|_|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|_|_|\n|_|_|_|_|_|_|_|\n|X|X|_|O|_|_|_|\n|O|O|O|X|_|_|_|\n|O|O|X|X|X|O|_|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|X|O|_|O|_|\n|X|_|O|O|X|X|X|\n|X|X|X|X|X|O|O|\n|O|O|X|O|O|X|X|\n|O|O|O|X|X|X|O|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|_|_|_|_|_|\n|_|O|_|_|X|_|_|\n|_|X|_|O|O|_|_|\n|O|O|O|X|X|_|_|\n|X|O|X|O|X|_|X|\n|O|O|X|X|O|_|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|X|_|_|X|_|\n|O|_|O|O|_|X|_|\n|X|X|O|O|_|X|O|\n|O|O|O|X|_|O|X|\n|O|X|X|O|_|O|X|\n|O|X|X|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|_|_|\n|_|_|_|_|_|_|_|\n|X|O|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|O|X|X|X|O|_|_|\n|O|X|X|O|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|_|O|_|_|_|\n|O|_|O|X|O|X|_|\n|O|O|O|X|X|X|_|\n|O|O|X|X|X|O|_|\n|X|X|O|O|X|O|_|\n|O|O|X|X|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|_|_|_|\n|O|O|_|X|_|_|_|\n|X|O|_|O|_|_|_|\n|O|X|X|X|X|_|_|\n|O|O|O|X|X|X|_|\n|O|X|X|X|O|O|_|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|X|O|O|_|_|_|_|\n|O|O|X|O|X|_|_|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|_|_|\n|_|_|_|_|_|_|_|\n|X|_|_|O|_|_|_|\n|O|O|O|X|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|X|O|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-20/0/0/-2"
+            ],
+            "scores": {
+                "MinmaxBot:5/20/-20/0/0/-2": 22,
+                "FirstOrderBot": 7,
+                "exaequo": 1
+            }
+        },
+        {
+            "duration": "0.0h 2.0m 52.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|_|_|\n|_|O|_|_|_|_|_|\n|_|O|_|_|_|O|_|\n|O|X|X|X|X|X|_|\n|O|O|O|X|O|X|X|\n|X|O|O|O|X|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|_|_|\n|_|O|_|_|_|_|_|\n|_|X|_|_|_|_|_|\n|_|O|_|_|_|_|_|\n|_|O|_|_|_|_|_|\n|X|O|O|X|X|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|X|_|\n|_|_|_|_|_|O|_|\n|_|_|_|_|_|X|O|\n|_|O|_|_|_|O|X|\n|O|X|X|_|O|O|X|\n|X|X|O|O|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|X|X|_|O|O|\n|O|X|O|X|_|X|X|\n|X|O|O|X|_|O|O|\n|O|X|X|O|_|O|X|\n|X|O|O|O|O|X|X|\n|O|X|X|O|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|X|_|_|_|_|\n|X|O|O|X|X|_|X|\n|O|X|O|O|O|O|O|\n|O|O|O|X|O|X|X|\n|O|O|X|O|X|X|X|\n|X|O|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|X|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|_|X|_|X|_|\n|O|O|X|X|X|X|O|\n|X|O|O|X|X|O|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|_|_|_|_|_|\n|_|O|_|_|_|_|_|\n|_|X|_|_|O|_|_|\n|O|O|X|O|X|_|_|\n|O|O|O|X|X|X|_|\n|X|O|X|X|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|X|X|_|\n|O|X|O|O|O|X|O|\n|X|O|X|X|X|O|X|\n|O|O|X|O|O|O|X|\n|X|X|O|X|X|O|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|O|_|_|X|\n|X|O|_|X|_|X|X|\n|O|X|O|O|_|O|O|\n|O|O|O|X|X|X|X|\n|O|O|X|O|O|X|X|\n|X|O|O|X|O|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|_|_|\n|_|O|_|_|_|_|_|\n|_|X|_|X|_|_|_|\n|_|O|_|O|_|_|_|\n|X|O|O|O|O|_|X|\n|X|O|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|O|_|O|X|_|_|\n|X|O|O|X|X|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|_|X|X|_|O|\n|O|O|_|O|O|O|X|\n|X|O|_|O|O|O|X|\n|O|O|_|O|O|X|X|\n|O|X|_|X|X|X|O|\n|X|O|_|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|_|_|_|_|_|\n|_|O|X|X|_|_|_|\n|_|X|O|O|O|_|_|\n|O|O|X|X|O|_|_|\n|O|O|X|X|O|X|X|\n|X|O|O|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|_|_|_|_|\n|_|O|O|_|_|_|_|\n|_|O|O|X|X|_|_|\n|_|X|X|O|X|_|_|\n|O|O|X|X|X|O|_|\n|O|O|O|X|X|O|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|_|O|_|_|_|\n|X|O|_|X|_|_|_|\n|O|X|X|O|_|_|_|\n|X|O|O|X|_|_|_|\n|O|O|X|X|X|O|_|\n|X|O|O|X|O|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|X|_|_|_|_|\n|O|O|O|O|_|_|_|\n|O|X|O|O|_|_|_|\n|O|O|X|X|_|_|_|\n|X|O|X|O|_|_|X|\n|X|O|X|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|O|_|X|_|\n|O|O|O|X|X|X|O|\n|X|O|X|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|_|_|_|_|_|\n|_|O|_|X|_|_|_|\n|O|X|X|X|X|X|_|\n|X|O|O|O|X|O|_|\n|X|O|X|X|O|O|X|\n|O|O|O|X|X|O|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|X|_|\n|_|_|_|_|_|X|_|\n|_|_|_|_|_|O|_|\n|_|_|_|_|_|X|_|\n|X|_|_|_|_|O|_|\n|X|_|X|O|O|O|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|X|O|_|X|_|\n|X|O|O|O|X|O|_|\n|O|O|X|O|O|X|_|\n|O|O|X|X|X|O|_|\n|O|X|O|O|X|O|X|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|_|_|X|\n|O|O|_|X|_|_|X|\n|X|X|_|O|_|O|O|\n|O|O|X|O|_|X|X|\n|O|O|O|X|O|X|X|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|_|_|\n|_|O|_|X|_|_|_|\n|_|X|_|O|_|_|_|\n|_|O|O|O|X|_|_|\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|X|X|O|\n|O|X|O|X|O|O|X|\n|X|X|O|O|X|X|O|\n|O|O|X|O|X|O|X|\n|O|X|X|O|X|O|X|\n|O|X|X|X|O|O|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|_|_|_|_|\n|_|O|_|X|_|_|_|\n|_|X|_|O|_|_|_|\n|_|O|O|O|O|_|_|\n|O|O|X|O|X|X|_|\n|X|O|X|X|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|X|O|_|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|X|O|_|O|_|\n|X|X|X|O|_|O|_|\n|X|X|O|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|_|_|_|_|_|\n|_|O|X|O|_|_|_|\n|X|X|O|O|_|_|_|\n|O|O|O|X|X|_|_|\n|O|O|O|X|O|X|X|\n|X|O|X|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|_|_|_|_|\n|_|O|_|_|_|_|_|\n|X|O|_|_|_|O|O|\n|O|X|_|_|O|X|X|\n|O|O|O|O|X|X|X|\n|O|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|O|_|O|_|_|\n|_|O|X|_|X|_|X|\n|_|O|O|O|O|_|O|\n|O|X|O|X|X|O|X|\n|O|O|X|O|X|X|X|\n|X|O|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|O|O|O|_|_|_|\n|O|X|X|X|_|_|X|\n|X|O|O|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|_|_|_|_|\n|_|O|_|_|_|_|_|\n|_|X|_|_|_|_|_|\n|_|O|_|_|_|_|_|\n|X|O|O|O|O|_|_|\n|X|O|X|X|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-1/0/1/-1"
+            ],
+            "scores": {
+                "FirstOrderBot": 10,
+                "MinmaxBot:5/20/-1/0/1/-1": 19,
+                "exaequo": 1
+            }
+        },
+        {
+            "duration": "0.0h 2.0m 23.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|O|_|_|X|_|_|_|\n|O|O|_|X|_|_|_|\n|X|X|_|O|X|_|O|\n|O|O|_|X|O|X|X|\n|O|O|_|X|X|O|X|\n|O|O|_|X|X|O|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|X|_|_|_|_|\n|O|_|X|_|_|_|X|\n|O|_|O|O|_|O|O|\n|O|X|O|O|_|X|X|\n|X|O|O|X|O|X|X|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|X|_|_|_|_|_|_|\n|O|X|_|X|_|_|_|\n|O|O|O|O|_|X|_|\n|O|O|X|X|X|O|X|\n|X|O|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|X|_|_|_|_|\n|O|_|X|_|X|_|_|\n|X|_|O|_|X|_|_|\n|O|_|O|_|O|_|_|\n|X|X|O|O|O|O|X|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|X|_|_|_|_|\n|O|O|O|_|_|_|X|\n|O|X|O|_|_|_|O|\n|X|O|O|O|_|_|X|\n|O|X|X|O|X|X|X|\n|O|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|X|X|X|_|O|\n|O|_|O|X|O|_|X|\n|X|_|O|O|O|O|O|\n|O|_|X|X|O|X|X|\n|O|O|O|X|X|X|O|\n|O|O|X|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|X|O|_|_|_|\n|X|_|X|X|_|_|_|\n|O|_|X|O|_|O|_|\n|X|_|O|O|O|X|_|\n|O|_|O|O|X|X|_|\n|X|_|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|O|X|O|X|X|O|\n|O|O|O|X|X|O|X|\n|O|X|O|X|O|X|X|\n|O|X|O|X|O|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|X|X|_|\n|O|X|O|O|X|X|_|\n|X|O|X|O|X|O|O|\n|O|X|O|X|O|X|X|\n|O|X|O|X|O|X|X|\n|O|O|O|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|X|X|_|\n|O|O|O|_|X|X|O|\n|X|X|X|O|O|O|X|\n|O|X|O|X|O|X|X|\n|O|O|O|X|O|X|X|\n|O|X|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|O|X|O|O|\n|O|O|_|X|O|X|X|\n|O|X|_|O|O|X|O|\n|X|O|O|X|O|X|X|\n|O|O|X|X|X|O|X|\n|O|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|O|X|O|_|_|_|_|\n|X|X|O|O|_|_|_|\n|O|X|X|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|X|_|_|_|\n|O|O|O|O|_|_|_|\n|O|X|X|X|O|_|_|\n|X|O|O|X|X|_|_|\n|O|X|X|X|O|_|X|\n|O|X|O|O|X|_|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|_|_|_|\n|O|X|O|O|_|_|X|\n|O|X|X|O|O|_|O|\n|X|O|O|O|X|O|X|\n|O|X|O|X|O|X|X|\n|X|X|O|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|O|O|_|_|_|\n|O|_|X|O|O|_|_|\n|O|_|O|O|X|X|_|\n|X|O|X|X|O|X|_|\n|O|X|O|X|X|O|X|\n|O|X|X|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|O|X|_|_|_|\n|O|O|O|X|_|_|_|\n|O|O|X|X|X|_|_|\n|X|X|O|O|O|O|O|\n|O|O|X|X|O|X|X|\n|O|X|O|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|O|_|_|_|\n|O|O|O|X|X|O|X|\n|O|X|O|X|X|X|O|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|_|_|_|_|_|_|_|\n|_|O|_|_|_|_|_|\n|X|X|_|O|_|_|_|\n|O|O|O|X|_|_|_|\n|O|O|X|O|X|X|X|\n|O|X|O|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|X|_|_|_|_|_|_|\n|O|_|O|O|_|O|_|\n|O|_|X|X|X|X|_|\n|O|_|O|X|O|X|X|\n|X|_|O|X|X|X|O|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|X|_|_|_|_|\n|O|_|X|_|_|_|X|\n|O|O|O|_|_|_|X|\n|O|X|O|O|_|_|O|\n|X|O|O|O|X|_|X|\n|O|O|X|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|X|X|_|O|_|_|O|\n|O|O|O|X|_|_|X|\n|O|O|X|X|_|_|X|\n|O|O|X|X|_|_|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|X|X|O|_|O|_|_|\n|O|O|X|_|X|_|X|\n|O|X|O|X|X|O|X|\n|O|X|O|X|X|X|O|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|X|_|_|_|_|\n|O|_|O|_|_|_|_|\n|O|X|X|X|_|_|O|\n|X|X|O|O|O|O|X|\n|O|O|O|X|X|O|X|\n|O|X|O|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|O|_|_|_|_|\n|X|_|X|_|_|_|_|\n|O|_|O|O|_|_|_|\n|O|X|X|X|X|_|_|\n|O|O|X|X|O|_|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|X|_|O|_|X|_|_|\n|O|_|X|_|O|_|_|\n|X|O|O|_|X|_|_|\n|O|O|O|O|X|_|_|\n|X|X|O|X|X|_|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|O|_|_|_|\n|O|O|O|X|X|X|O|\n|O|X|O|X|X|X|O|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|O|O|_|_|_|_|\n|O|O|X|O|X|X|_|\n|O|X|X|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|X|O|O|O|\n|X|X|O|O|O|X|X|\n|O|O|X|X|X|O|X|\n|X|X|O|X|X|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|_|X|_|_|_|_|\n|X|_|X|O|_|O|_|\n|O|O|O|X|_|X|_|\n|O|O|O|X|_|X|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|X|_|_|_|_|\n|O|_|X|X|_|_|_|\n|X|_|O|O|_|_|_|\n|O|O|O|O|X|_|_|\n|O|X|O|X|X|_|X|\n|O|O|X|X|O|_|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-1/0/1/0"
+            ],
+            "scores": {
+                "FirstOrderBot": 6,
+                "MinmaxBot:5/20/-1/0/1/0": 22,
+                "exaequo": 2
+            }
+        },
+        {
+            "duration": "0.0h 1.0m 40.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|X|O|X|X|X|O|O|\n|O|X|O|O|O|X|X|\n|O|O|O|X|O|O|O|\n|O|O|X|O|X|X|X|\n|X|O|X|X|X|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|O|O|O|_|_|_|\n|O|X|X|X|_|_|_|\n|O|X|X|O|X|_|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|X|_|_|_|_|\n|O|O|O|O|_|X|_|\n|X|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|X|X|X|O|X|_|\n|O|X|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|X|_|_|_|\n|O|O|X|X|_|_|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|X|X|X|O|_|_|O|\n|O|O|O|X|_|_|X|\n|O|O|X|O|_|_|X|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|X|X|X|\n|O|O|O|X|O|O|O|\n|O|X|O|O|O|X|X|\n|X|O|X|X|X|O|O|\n|O|O|X|O|X|X|X|\n|O|X|X|O|X|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|O|\n|O|O|O|O|_|_|X|\n|X|O|X|X|_|_|X|\n|O|X|X|O|_|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|O|O|O|O|_|_|_|\n|X|O|X|X|X|_|_|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|_|_|_|X|\n|X|X|_|_|O|_|O|\n|O|O|_|O|X|_|X|\n|O|O|O|X|X|_|X|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|X|_|_|X|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|_|O|_|\n|O|O|O|X|_|X|_|\n|X|O|X|O|X|O|X|\n|O|O|O|X|O|X|O|\n|O|X|X|X|O|X|X|\n|O|X|O|X|X|X|O|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|X|O|_|X|_|\n|X|O|O|X|_|O|_|\n|O|O|X|O|X|X|_|\n|X|O|O|X|O|X|O|\n|O|X|O|X|O|X|X|\n|O|X|O|X|X|O|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|_|_|\n|O|O|O|X|_|_|X|\n|X|O|O|O|_|O|O|\n|O|O|X|X|_|X|X|\n|O|X|X|O|_|X|X|\n|O|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|O|O|_|_|_|_|\n|O|O|X|O|X|X|_|\n|O|X|O|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|X|O|_|O|O|_|_|\n|O|O|_|X|X|X|X|\n|O|X|O|X|X|X|O|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|X|O|_|_|_|O|_|\n|O|O|O|_|_|X|_|\n|O|O|X|O|X|X|_|\n|O|X|X|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|O|X|O|O|\n|O|X|X|X|O|X|X|\n|O|O|O|X|X|X|O|\n|O|X|X|X|O|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|_|_|X|_|_|_|\n|X|X|O|O|O|O|_|\n|O|O|X|X|O|X|_|\n|O|X|O|X|X|X|O|\n|O|O|X|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|X|_|\n|O|O|_|_|_|X|_|\n|X|X|_|_|_|O|_|\n|O|O|O|O|_|X|_|\n|O|O|X|X|_|X|X|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|X|_|\n|O|_|_|_|_|X|_|\n|X|X|_|O|_|O|_|\n|O|O|O|X|_|X|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|X|X|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|O|O|_|_|_|_|\n|O|O|X|O|X|_|X|\n|O|X|O|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|_|_|O|_|_|_|\n|X|O|_|X|O|_|_|\n|O|O|_|X|X|_|_|\n|O|X|O|X|X|X|_|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|O|X|O|X|O|_|\n|O|O|O|X|X|X|_|\n|O|X|X|O|O|X|_|\n|X|X|O|O|X|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|O|_|O|_|X|_|\n|O|O|_|X|X|O|X|\n|O|X|O|X|O|X|X|\n|O|O|X|X|O|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|X|_|_|_|_|\n|O|_|X|_|_|_|_|\n|X|O|O|O|O|_|_|\n|O|X|X|O|X|_|_|\n|O|O|X|X|X|O|_|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|X|O|_|_|_|\n|O|O|O|X|_|X|_|\n|X|O|O|O|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|X|O|_|X|_|\n|O|X|X|O|_|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|X|_|O|_|_|_|_|\n|O|X|O|_|_|_|_|\n|O|O|X|X|X|_|X|\n|O|O|X|X|O|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|O|O|O|O|_|_|\n|O|O|X|X|X|_|_|\n|O|X|X|O|X|X|_|\n|O|X|O|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|X|X|X|_|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|O|X|X|O|_|\n|O|X|X|X|O|X|X|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|X|_|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|O|O|_|X|_|_|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-1/0/1/1"
+            ],
+            "scores": {
+                "FirstOrderBot": 8,
+                "exaequo": 3,
+                "MinmaxBot:5/20/-1/0/1/1": 19
+            }
+        },
+        {
+            "duration": "0.0h 1.0m 29.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|X|_|\n|O|_|_|_|_|X|_|\n|X|_|X|O|O|O|_|\n|O|O|O|O|X|X|_|\n|O|X|X|O|X|X|X|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|X|O|X|_|_|_|_|\n|O|O|O|_|_|_|_|\n|O|O|X|O|_|_|X|\n|O|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|X|_|X|O|O|_|_|\n|O|_|O|X|X|X|_|\n|O|_|O|X|X|X|O|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|X|O|_|O|_|_|_|\n|O|O|O|X|_|_|_|\n|O|O|X|X|O|X|X|\n|O|X|X|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|O|_|O|_|X|O|\n|O|O|_|X|O|X|X|\n|O|X|_|X|O|X|X|\n|O|X|_|O|X|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|X|O|X|_|_|O|_|\n|O|O|X|_|_|X|_|\n|O|X|X|X|O|X|_|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|X|X|_|O|_|_|_|\n|O|O|O|X|_|_|_|\n|O|O|X|X|X|O|_|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|_|_|_|O|_|_|\n|X|O|_|X|O|O|O|\n|O|X|_|X|O|X|X|\n|O|O|_|X|O|X|X|\n|O|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|O|O|O|O|_|_|_|\n|O|X|X|X|_|_|_|\n|X|O|X|X|_|_|_|\n|O|X|O|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|O|_|_|_|_|\n|O|_|O|X|_|_|_|\n|X|_|O|O|_|X|_|\n|O|_|X|X|O|X|_|\n|O|_|O|X|X|X|O|\n|O|X|O|X|X|X|O|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|X|_|\n|O|_|_|_|_|X|_|\n|X|_|X|O|_|O|O|\n|O|O|O|O|_|X|X|\n|O|X|X|X|O|X|X|\n|O|O|O|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|O|O|_|_|_|_|\n|O|O|X|O|X|X|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|X|_|_|O|_|_|_|\n|O|O|O|X|_|_|_|\n|O|X|X|X|X|_|_|\n|O|X|O|X|O|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|O|X|_|_|_|_|X|\n|X|O|_|_|_|O|O|\n|O|O|O|O|_|X|X|\n|O|O|X|X|_|X|X|\n|O|X|X|O|_|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|O|O|_|_|_|_|\n|O|O|X|O|X|_|_|\n|O|X|X|X|O|_|X|\n|O|O|X|X|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|O|_|O|_|O|X|\n|O|X|_|X|O|X|X|\n|O|X|O|X|X|X|O|\n|O|X|X|X|O|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|_|X|_|\n|O|X|O|_|_|X|_|\n|X|O|O|X|_|O|_|\n|O|O|X|O|X|X|_|\n|O|O|X|X|O|X|_|\n|O|X|X|O|X|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|_|O|O|O|X|\n|O|O|_|X|X|X|O|\n|O|O|_|X|X|O|X|\n|O|O|X|X|X|O|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|O|X|X|O|X|_|_|\n|O|X|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|_|O|_|_|O|\n|O|O|O|X|_|X|X|\n|O|O|X|O|_|X|X|\n|O|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|O|_|_|X|_|_|\n|X|X|O|_|O|_|_|\n|O|O|X|O|X|_|_|\n|O|X|X|O|X|_|X|\n|O|X|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|X|_|_|\n|O|_|_|_|X|_|_|\n|O|_|_|_|O|_|_|\n|X|X|_|_|X|_|_|\n|O|O|O|O|X|_|_|\n|O|X|X|O|X|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|O|O|X|O|_|\n|O|O|O|X|X|X|_|\n|O|X|X|O|X|X|_|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|X|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|X|X|_|O|O|_|_|\n|O|O|O|X|X|_|_|\n|O|O|X|O|X|X|X|\n|O|O|O|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|O|O|_|_|_|_|\n|O|X|X|X|X|_|_|\n|O|O|X|X|O|X|_|\n|O|X|X|O|X|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|O|_|_|_|\n|X|O|X|X|_|_|_|\n|O|X|X|O|O|X|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|X|_|\n|O|X|O|X|X|X|O|\n|O|O|X|X|X|O|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|X|_|_|X|_|_|\n|O|O|X|X|O|_|_|\n|O|O|X|O|X|_|_|\n|X|O|O|O|X|X|X|\n|O|X|O|X|X|O|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|O|_|_|_|_|_|_|\n|O|_|_|_|_|_|_|\n|X|O|O|_|_|_|_|\n|O|X|X|X|X|_|_|\n|O|O|O|X|X|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "FirstOrderBot"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|X|_|_|_|\n|X|O|O|O|O|_|_|\n|O|O|O|X|X|_|_|\n|O|X|O|X|X|_|_|\n|O|O|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-1/0/0/0"
+            ],
+            "scores": {
+                "FirstOrderBot": 13,
+                "MinmaxBot:5/20/-1/0/0/0": 17
+            }
+        },
+        {
+            "duration": "0.0h 3.0m 57.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|O|_|X|_|_|\n|X|O|X|_|O|_|_|\n|O|X|O|_|X|X|_|\n|X|O|X|_|O|O|_|\n|O|X|O|X|X|X|_|\n|X|O|O|X|O|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|O|_|X|_|_|\n|X|O|X|_|O|_|_|\n|O|X|O|_|X|X|_|\n|X|O|X|_|O|O|_|\n|O|X|O|X|X|X|_|\n|X|O|O|X|O|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|O|_|X|_|_|\n|X|O|X|_|O|_|_|\n|O|X|O|_|X|X|_|\n|X|O|X|_|O|O|_|\n|O|X|O|X|X|X|_|\n|X|O|O|X|O|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|O|_|X|_|_|\n|X|O|X|_|O|_|_|\n|O|X|O|_|X|X|_|\n|X|O|X|_|O|O|_|\n|O|X|O|X|X|X|_|\n|X|O|O|X|O|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|O|_|X|_|_|\n|X|O|X|_|O|_|_|\n|O|X|O|_|X|X|_|\n|X|O|X|_|O|O|_|\n|O|X|O|X|X|X|_|\n|X|O|O|X|O|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|O|_|X|_|_|\n|X|O|X|_|O|_|_|\n|O|X|O|_|X|X|_|\n|X|O|X|_|O|O|_|\n|O|X|O|X|X|X|_|\n|X|O|O|X|O|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|O|_|X|_|_|\n|X|O|X|_|O|_|_|\n|O|X|O|_|X|X|_|\n|X|O|X|_|O|O|_|\n|O|X|O|X|X|X|_|\n|X|O|O|X|O|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|O|_|X|_|_|\n|X|O|X|_|O|_|_|\n|O|X|O|_|X|X|_|\n|X|O|X|_|O|O|_|\n|O|X|O|X|X|X|_|\n|X|O|O|X|O|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|O|X|_|O|_|_|\n|O|X|O|_|X|_|_|\n|X|O|X|_|O|O|_|\n|O|X|O|_|X|X|_|\n|X|O|X|O|O|O|_|\n|O|X|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|O|_|X|_|_|\n|X|O|X|_|O|_|_|\n|O|X|O|_|X|X|_|\n|X|O|X|_|O|O|_|\n|O|X|O|X|X|X|_|\n|X|O|O|X|O|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|O|_|X|_|_|\n|X|O|X|_|O|_|_|\n|O|X|O|_|X|X|_|\n|X|O|X|_|O|O|_|\n|O|X|O|X|X|X|_|\n|X|O|O|X|O|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|O|_|X|_|_|\n|X|O|X|_|O|_|_|\n|O|X|O|_|X|X|_|\n|X|O|X|_|O|O|_|\n|O|X|O|X|X|X|_|\n|X|O|O|X|O|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|O|_|X|_|_|\n|X|O|X|_|O|_|_|\n|O|X|O|_|X|X|_|\n|X|O|X|_|O|O|_|\n|O|X|O|X|X|X|_|\n|X|O|O|X|O|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-20/0/0/-2"
+            ],
+            "scores": {
+                "MinmaxBot:5/20/-20/0/0/-2": 18,
+                "MinmaxBot:5/20/-20/0/1/-2": 12
+            }
+        },
+        {
+            "duration": "0.0h 5.0m 25.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|O|_|X|_|\n|O|O|X|X|_|O|_|\n|O|X|O|O|O|O|O|\n|X|O|X|X|X|O|X|\n|X|X|X|O|O|X|O|\n|X|O|X|X|X|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-1/0/1/-1"
+            ],
+            "scores": {
+                "MinmaxBot:5/20/-1/0/1/-1": 16,
+                "MinmaxBot:5/20/-20/0/1/-2": 14
+            }
+        },
+        {
+            "duration": "0.0h 4.0m 30.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|X|X|X|O|\n|O|X|X|O|O|O|X|\n|O|O|O|X|X|O|O|\n|X|X|O|X|O|X|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|X|X|X|O|\n|O|X|X|O|O|O|X|\n|O|O|O|X|X|O|O|\n|X|X|O|X|O|X|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|X|X|X|O|\n|O|X|X|O|O|O|X|\n|O|O|O|X|X|O|O|\n|X|X|O|X|O|X|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|X|X|X|O|\n|O|X|X|O|O|O|X|\n|O|O|O|X|X|O|O|\n|X|X|O|X|O|X|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|X|X|X|O|\n|O|X|X|O|O|O|X|\n|O|O|O|X|X|O|O|\n|X|X|O|X|O|X|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|X|X|X|O|\n|O|X|X|O|O|O|X|\n|O|O|O|X|X|O|O|\n|X|X|O|X|O|X|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|X|X|X|O|\n|O|X|X|O|O|O|X|\n|O|O|O|X|X|O|O|\n|X|X|O|X|O|X|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|X|X|X|O|\n|O|X|X|O|O|O|X|\n|O|O|O|X|X|O|O|\n|X|X|O|X|O|X|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|X|X|X|O|\n|O|X|X|O|O|O|X|\n|O|O|O|X|X|O|O|\n|X|X|O|X|O|X|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|X|X|X|O|\n|O|X|X|O|O|O|X|\n|O|O|O|X|X|O|O|\n|X|X|O|X|O|X|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|X|X|X|O|\n|O|X|X|O|O|O|X|\n|O|O|O|X|X|O|O|\n|X|X|O|X|O|X|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|X|X|X|O|\n|O|X|X|O|O|O|X|\n|O|O|O|X|X|O|O|\n|X|X|O|X|O|X|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|O|X|_|\n|X|X|_|O|O|O|_|\n|O|X|_|X|X|X|_|\n|O|O|_|O|O|X|_|\n|X|X|X|X|X|O|_|\n|O|X|O|O|O|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-20/0/1/-2"
+            ],
+            "scores": {
+                "exaequo": 12,
+                "MinmaxBot:5/20/-20/0/1/-2": 18
+            }
+        },
+        {
+            "duration": "0.0h 5.0m 52.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-20/0/1/-2"
+            ],
+            "scores": {
+                "MinmaxBot:5/20/-20/0/1/-2": 30
+            }
+        },
+        {
+            "duration": "0.0h 4.0m 3.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|O|_|\n|X|X|O|X|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|_|_|_|_|\n|X|O|_|_|_|_|_|\n|O|X|_|_|_|_|_|\n|O|O|_|_|_|_|_|\n|X|X|X|X|_|_|_|\n|O|X|O|X|_|_|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/1/-2"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-20/0/1/-2"
+            ],
+            "scores": {
+                "MinmaxBot:5/20/-20/0/1/-2": 30
+            }
+        },
+        {
+            "duration": "0.0h 6.0m 57.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|X|O|X|X|O|\n|O|O|O|X|O|O|X|\n|O|X|X|O|X|O|O|\n|X|O|O|X|O|O|X|\n|X|X|O|O|X|X|O|\n|X|O|X|X|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|X|O|X|X|O|\n|O|O|O|X|O|O|X|\n|O|X|X|O|X|O|O|\n|X|O|O|X|O|O|X|\n|X|X|O|O|X|X|O|\n|X|O|X|X|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|X|O|X|X|O|\n|O|O|O|X|O|O|X|\n|O|X|X|O|X|O|O|\n|X|O|O|X|O|O|X|\n|X|X|O|O|X|X|O|\n|X|O|X|X|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|X|O|X|X|O|\n|O|O|O|X|O|O|X|\n|O|X|X|O|X|O|O|\n|X|O|O|X|O|O|X|\n|X|X|O|O|X|X|O|\n|X|O|X|X|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|X|O|X|X|O|\n|O|O|O|X|O|O|X|\n|O|X|X|O|X|O|O|\n|X|O|O|X|O|O|X|\n|X|X|O|O|X|X|O|\n|X|O|X|X|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|X|O|X|X|O|\n|O|O|O|X|O|O|X|\n|O|X|X|O|X|O|O|\n|X|O|O|X|O|O|X|\n|X|X|O|O|X|X|O|\n|X|O|X|X|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|X|O|X|X|O|\n|O|O|O|X|O|O|X|\n|O|X|X|O|X|O|O|\n|X|O|O|X|O|O|X|\n|X|X|O|O|X|X|O|\n|X|O|X|X|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|X|O|X|X|O|\n|O|O|O|X|O|O|X|\n|O|X|X|O|X|O|O|\n|X|O|O|X|O|O|X|\n|X|X|O|O|X|X|O|\n|X|O|X|X|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|X|O|X|X|O|\n|O|O|O|X|O|O|X|\n|O|X|X|O|X|O|O|\n|X|O|O|X|O|O|X|\n|X|X|O|O|X|X|O|\n|X|O|X|X|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|X|O|X|X|O|\n|O|O|O|X|O|O|X|\n|O|X|X|O|X|O|O|\n|X|O|O|X|O|O|X|\n|X|X|O|O|X|X|O|\n|X|O|X|X|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|X|O|X|X|O|\n|O|O|O|X|O|O|X|\n|O|X|X|O|X|O|O|\n|X|O|O|X|O|O|X|\n|X|X|O|O|X|X|O|\n|X|O|X|X|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|X|O|X|X|O|\n|O|O|O|X|O|O|X|\n|O|X|X|O|X|O|O|\n|X|O|O|X|O|O|X|\n|X|X|O|O|X|X|O|\n|X|O|X|X|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|O|_|X|X|_|\n|X|X|O|_|O|O|_|\n|O|O|O|X|X|X|_|\n|O|O|X|O|O|X|_|\n|X|X|O|O|X|O|_|\n|X|O|X|X|X|O|_|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-20/0/0/-2"
+            ],
+            "scores": {
+                "MinmaxBot:5/20/-20/0/0/-2": 18,
+                "exaequo": 12
+            }
+        },
+        {
+            "duration": "0.0h 6.0m 2.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|_|X|X|X|_|\n|O|X|_|O|O|O|_|\n|O|O|_|X|X|O|_|\n|X|X|O|O|O|X|_|\n|O|X|X|O|X|X|_|\n|X|O|X|O|O|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|_|X|X|O|_|\n|X|O|_|X|O|X|_|\n|O|X|_|X|O|O|X|\n|O|O|_|O|X|O|O|\n|X|X|X|X|O|O|X|\n|O|X|O|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-20/0/0/-2",
+                "MinmaxBot:5/20/-1/0/1/0"
+            ],
+            "scores": {
+                "MinmaxBot:5/20/-20/0/0/-2": 15,
+                "MinmaxBot:5/20/-1/0/1/0": 15
+            }
+        },
+        {
+            "duration": "0.0h 5.0m 0.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                }
+            ],
+            "winners": [
+                "exaequo"
+            ],
+            "scores": {
+                "MinmaxBot:5/20/-20/0/0/-2": 13,
+                "exaequo": 17
+            }
+        },
+        {
+            "duration": "0.0h 4.0m 16.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|O|O|X|\n|X|O|O|X|X|X|O|\n|O|X|X|X|O|O|X|\n|O|O|O|X|X|X|O|\n|X|X|X|O|O|X|X|\n|O|X|O|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|O|_|O|O|_|\n|O|X|X|_|X|X|_|\n|O|O|O|X|O|O|_|\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|X|_|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-20/0/0/-2"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-20/0/0/-2"
+            ],
+            "scores": {
+                "MinmaxBot:5/20/-20/0/0/-2": 16,
+                "exaequo": 14
+            }
+        },
+        {
+            "duration": "0.0h 5.0m 47.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|_|X|_|O|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|_|X|O|_|_|\n|X|X|O|X|X|_|_|\n|O|X|X|X|O|X|_|\n|O|X|O|O|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|O|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|_|X|O|_|_|\n|X|X|O|X|X|_|_|\n|O|X|X|X|O|X|_|\n|O|X|O|O|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|O|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|_|X|O|_|_|\n|X|X|O|X|X|_|_|\n|O|X|X|X|O|X|_|\n|O|X|O|O|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|O|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|_|X|O|_|_|\n|X|X|O|X|X|_|_|\n|O|X|X|X|O|X|_|\n|O|X|O|O|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|O|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|_|X|O|_|_|\n|X|X|O|X|X|_|_|\n|O|X|X|X|O|X|_|\n|O|X|O|O|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|O|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|_|X|O|_|_|\n|X|X|O|X|X|_|_|\n|O|X|X|X|O|X|_|\n|O|X|O|O|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|O|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|_|X|O|_|_|\n|X|X|O|X|X|_|_|\n|O|X|X|X|O|X|_|\n|O|X|O|O|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|O|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|_|X|O|_|_|\n|X|X|O|X|X|_|_|\n|O|X|X|X|O|X|_|\n|O|X|O|O|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|O|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|_|X|O|_|_|\n|X|X|O|X|X|_|_|\n|O|X|X|X|O|X|_|\n|O|X|O|O|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|O|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|_|X|O|_|_|\n|X|X|O|X|X|_|_|\n|O|X|X|X|O|X|_|\n|O|X|O|O|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|O|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|_|X|O|_|_|\n|X|X|O|X|X|_|_|\n|O|X|X|X|O|X|_|\n|O|X|O|O|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|O|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|_|X|O|_|_|\n|X|X|O|X|X|_|_|\n|O|X|X|X|O|X|_|\n|O|X|O|O|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|O|_|_|_|_|_|\n|O|O|_|O|_|_|_|\n|X|X|X|X|_|O|_|\n|O|O|O|X|_|X|_|\n|O|X|O|X|_|X|_|\n|O|O|X|O|X|X|_|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                },
+                {
+                    "end_configuration": "_______________\n|_|X|_|O|_|_|_|\n|O|X|_|O|_|_|_|\n|O|O|_|X|O|_|_|\n|X|X|O|X|X|_|_|\n|O|X|X|X|O|X|_|\n|O|X|O|O|O|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/-1"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-1/0/1/-1"
+            ],
+            "scores": {
+                "MinmaxBot:5/20/-1/0/1/-1": 30
+            }
+        },
+        {
+            "duration": "0.0h 4.0m 52.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                }
+            ],
+            "winners": [
+                "exaequo"
+            ],
+            "scores": {
+                "exaequo": 18,
+                "MinmaxBot:5/20/-1/0/1/1": 12
+            }
+        },
+        {
+            "duration": "0.0h 7.0m 2.0s",
+            "winners": [
+                "exaequo",
+                "MinmaxBot:5/20/-1/0/1/1"
+            ],
+            "scores": {
+                "exaequo": 15,
+                "MinmaxBot:5/20/-1/0/1/1": 15
+            },
+            "games": [
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                }
+            ]
+        },
+        {
+            "duration": "0.0h 6.0m 46.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|X|O|X|O|X|O|\n|O|X|O|O|O|X|X|\n|X|O|O|X|X|O|O|\n|O|X|X|O|X|X|X|\n|O|X|O|X|O|X|O|\n|O|X|X|X|O|X|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|_|_|_|_|\n|O|O|X|O|_|_|_|\n|X|X|O|X|_|O|_|\n|O|O|X|X|_|X|_|\n|O|X|O|O|_|X|_|\n|O|O|O|X|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-1/0/0/0"
+            ],
+            "scores": {
+                "exaequo": 13,
+                "MinmaxBot:5/20/-1/0/0/0": 17
+            }
+        },
+        {
+            "duration": "0.0h 4.0m 39.0s",
+            "winners": [
+                "exaequo"
+            ],
+            "scores": {
+                "MinmaxBot:5/20/-1/0/1/0": 12,
+                "exaequo": 18
+            },
+            "games": [
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|X|\n|O|O|X|X|O|O|O|\n|X|X|O|O|X|X|X|\n|O|X|X|X|O|O|O|\n|X|O|X|O|X|X|X|\n|O|O|X|O|X|O|O|\n",
+                    "winner": "exaequo"
+                }
+            ]
+        },
+        {
+            "duration": "0.0h 4.0m 8.0s",
+            "games": [
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|O|\n|O|O|X|X|O|O|X|\n|X|X|O|O|X|X|O|\n|O|X|X|X|O|O|X|\n|X|O|X|O|X|X|O|\n|O|O|X|O|X|O|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|O|\n|O|O|X|X|O|O|X|\n|X|X|O|O|X|X|O|\n|O|X|X|X|O|O|X|\n|X|O|X|O|X|X|O|\n|O|O|X|O|X|O|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|O|\n|O|O|X|X|O|O|X|\n|X|X|O|O|X|X|O|\n|O|X|X|X|O|O|X|\n|X|O|X|O|X|X|O|\n|O|O|X|O|X|O|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|O|\n|O|O|X|X|O|O|X|\n|X|X|O|O|X|X|O|\n|O|X|X|X|O|O|X|\n|X|O|X|O|X|X|O|\n|O|O|X|O|X|O|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|O|\n|O|O|X|X|O|O|X|\n|X|X|O|O|X|X|O|\n|O|X|X|X|O|O|X|\n|X|O|X|O|X|X|O|\n|O|O|X|O|X|O|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|O|\n|O|O|X|X|O|O|X|\n|X|X|O|O|X|X|O|\n|O|X|X|X|O|O|X|\n|X|O|X|O|X|X|O|\n|O|O|X|O|X|O|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|O|\n|O|O|X|X|O|O|X|\n|X|X|O|O|X|X|O|\n|O|X|X|X|O|O|X|\n|X|O|X|O|X|X|O|\n|O|O|X|O|X|O|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|O|\n|O|O|X|X|O|O|X|\n|X|X|O|O|X|X|O|\n|O|X|X|X|O|O|X|\n|X|O|X|O|X|X|O|\n|O|O|X|O|X|O|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|O|X|X|O|\n|O|O|X|X|O|O|X|\n|X|X|O|O|X|X|O|\n|O|X|X|X|O|O|X|\n|X|O|X|O|X|X|O|\n|O|O|X|O|X|O|X|\n",
+                    "winner": "exaequo"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|_|_|_|_|\n|O|X|X|_|_|_|_|\n|O|O|O|X|_|_|_|\n|X|O|X|O|X|_|_|\n|O|X|X|O|O|O|X|\n|X|X|X|O|X|X|O|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/0"
+                }
+            ],
+            "winners": [
+                "MinmaxBot:5/20/-1/0/1/0"
+            ],
+            "scores": {
+                "MinmaxBot:5/20/-1/0/1/0": 21,
+                "exaequo": 9
+            }
+        },
+        {
+            "duration": "0.0h 2.0m 40.0s",
+            "winners": [
+                "MinmaxBot:5/20/-1/0/0/0"
+            ],
+            "scores": {
+                "MinmaxBot:5/20/-1/0/1/1": 13,
+                "MinmaxBot:5/20/-1/0/0/0": 17
+            },
+            "games": [
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|O|_|\n|X|X|O|O|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|O|X|X|O|O|\n|O|O|O|X|O|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|O|_|\n|X|X|O|O|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|O|X|X|O|O|\n|O|O|O|X|O|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|O|_|\n|X|X|O|O|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|O|X|X|O|O|\n|O|O|O|X|O|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|O|_|\n|X|X|O|O|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|O|X|X|O|O|\n|O|O|O|X|O|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|O|_|\n|X|X|O|O|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|O|X|X|O|O|\n|O|O|O|X|O|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|O|_|\n|X|X|O|O|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|O|X|X|O|O|\n|O|O|O|X|O|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|O|_|\n|X|X|O|O|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|O|X|X|O|O|\n|O|O|O|X|O|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|O|_|\n|X|X|O|O|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|O|X|X|O|O|\n|O|O|O|X|O|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|O|_|\n|X|X|O|O|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|O|X|X|O|O|\n|O|O|O|X|O|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|O|_|\n|X|X|O|O|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|O|X|X|O|O|\n|O|O|O|X|O|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|O|_|\n|X|X|O|O|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|O|X|X|O|O|\n|O|O|O|X|O|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|O|_|\n|X|X|O|O|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|O|X|X|O|O|\n|O|O|O|X|O|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|O|O|X|X|O|_|_|\n|X|X|O|O|X|_|_|\n|O|O|X|X|O|_|O|\n|X|X|O|O|X|_|X|\n|O|O|X|O|O|O|O|\n|X|X|X|O|X|X|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/0/0"
+                },
+                {
+                    "end_configuration": "_______________\n|X|X|O|O|X|X|_|\n|O|O|X|X|O|O|_|\n|X|X|O|O|X|X|X|\n|O|O|X|X|O|X|O|\n|X|X|O|X|X|O|O|\n|O|O|O|X|O|O|X|\n",
+                    "winner": "MinmaxBot:5/20/-1/0/1/1"
+                }
+            ]
+        }
+    ],
+    "scores": {
+        "exaequo": 135
+        "MinmaxBot:5/20/-20/0/1/-2": 104,
+        "MinmaxBot:5/20/-20/0/0/-2": 102,
+        "MinmaxBot:5/20/-1/0/1/0": 70,
+        "MinmaxBot:5/20/-1/0/1/-1": 65,
+        "MinmaxBot:5/20/-1/0/1/1": 59,
+        "MinmaxBot:5/20/-1/0/0/0": 51,
+        "FirstOrderBot": 44,
+    }
+}

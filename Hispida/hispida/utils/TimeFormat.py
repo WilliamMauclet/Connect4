@@ -5,7 +5,7 @@ def format_time(timestamp):
     hours = timestamp // 3600
     minutes = (timestamp % 3600) // 60
     seconds = (timestamp % 60) // 1
-    return str(hours) + "h " + str(minutes) + "m " + str(seconds) + "s\n"
+    return str(hours) + "h " + str(minutes) + "m " + str(seconds) + "s"
 
 
 def get_time():

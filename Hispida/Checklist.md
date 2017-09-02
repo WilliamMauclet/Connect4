@@ -1,17 +1,14 @@
 ### DOING
-* Test match-off
-* Don't save matches one line at a time: extend match-off json?
 
 ### TODO
 * Testing
+    * Test match-off
 * Even if MinmaxBot sees it's going to lose: don't play randomly, but a move that will make it lose as late as possible.
     * Also keep depth at turn of losing, so that the above can be known.
-* Delete JsonifierOfResults?
 * Better handling of player ending game => exception should be handled
-* MinmaxBot: shuffle moves_scores? => makes it less re-playable! :(
 
 ### IDEAS
-* Give Bots integers as ids instead of just 'X' and 'O'
+* MinmaxBot: shuffle moves_scores? => makes it less re-playable! :(
 * Create Game class with Grid and with 2 players(Bots or Bot/human) and resolve()
 
 ### DONE
@@ -37,6 +34,8 @@
 * 2017/08/29: In MatchOff: change "test" to "match"
 * 2017/08/31: Using Bot.get_descriptor() in MatchOff
 * 2017/08/31: Rework match-off to determine best bot. Final JSON output schema. Refactoring.
+* 2017/09/01: Don't save matches one line at a time: extend match-off json.
+* 2017/09/01: Delete JsonifierOfResults?
 
 
 ### ABANDONED IDEAS
