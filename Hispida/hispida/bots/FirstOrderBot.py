@@ -1,6 +1,6 @@
 import random
 
-from ZeroOrderBot import ZeroOrderBot
+from hispida.bots.ZeroOrderBot import ZeroOrderBot
 
 
 class FirstOrderBot(ZeroOrderBot):

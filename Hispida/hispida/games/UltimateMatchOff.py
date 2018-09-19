@@ -1,15 +1,15 @@
 import sys
 
-from FirstOrderBot import FirstOrderBot
+from hispida.bots.FirstOrderBot import FirstOrderBot
 from MatchOff import match_off
-from MinmaxBot import MinmaxBot
+from hispida.bots.MinmaxBot import MinmaxBot
 
 MATCH_OFF_FOLDER = "../../docs/match_offs/{}"
 
 
 def _ultimate_match_off():
     """Define here the bots you want to match against each other. Use then the function match_off."""
-    bots, file_path = _competing_bots(), MATCH_OFF_FOLDER.format("matches_{}.txt")
+    bots, file_path = _competing_bots(), MATCH_OFF_FOLDER.format("matches_{}.json")
     match_off(bots, file_path=file_path, test_number=5, nr_of_games=10)
     sys.stdout.write("\n\nRound-robin match-off done.")
 

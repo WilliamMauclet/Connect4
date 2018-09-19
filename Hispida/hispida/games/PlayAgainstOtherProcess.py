@@ -1,12 +1,10 @@
 import os
 import sys
+import socket
 
-sys.path.insert(0, os.path.abspath("."))
-
-from Grid import Grid
+from hispida.grid.Grid import Grid
 from hispida.bots.FirstOrderBot import FirstOrderBot as FirstBotClass
 from hispida.bots.MinmaxBot import MinmaxBot as SecondBotClass
-import socket
 from threading import Thread
 
 

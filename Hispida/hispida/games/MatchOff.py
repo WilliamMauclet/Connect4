@@ -3,10 +3,10 @@ from time import time
 from datetime import datetime
 from collections import defaultdict
 
-from Bot import Bot
+from hispida.bots.Bot import Bot
 from hispida.utils.ProgressBar import ProgressBar
 from hispida.utils.TimeFormat import format_time
-from Grid import Grid
+from hispida.grid.Grid import Grid
 
 """
     HIERARCHY

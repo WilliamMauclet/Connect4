@@ -1,7 +1,7 @@
 from math import inf
 import logging
 
-from FirstOrderBot import FirstOrderBot
+from hispida.bots.FirstOrderBot import FirstOrderBot
 
 
 class MinmaxBot(FirstOrderBot):

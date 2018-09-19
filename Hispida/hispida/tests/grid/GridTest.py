@@ -1,7 +1,6 @@
 import unittest
 
-from Grid import Grid
-
+from hispida.grid.Grid import Grid
 
 class GridTest(unittest.TestCase):
     def setUp(self):

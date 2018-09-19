@@ -1,6 +1,6 @@
 import random
 
-from Bot import Bot
+from hispida.bots.Bot import Bot
 
 
 class MinusFirstOrderBot(Bot):

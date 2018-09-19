@@ -1,8 +1,8 @@
 # ast.literal_eval converts string representations into actual instances
 #  https://stackoverflow.com/a/1894296
 import ast, unittest
-from Grid import Grid
-from MinmaxBot import MinmaxBot
+from hispida.grid.Grid import Grid
+from hispida.bots.MinmaxBot import MinmaxBot
 
 
 class MinmaxBotReplaysTest(unittest.TestCase):
