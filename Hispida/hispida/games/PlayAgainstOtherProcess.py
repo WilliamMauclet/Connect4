@@ -1,11 +1,11 @@
 import os
 import sys
 import socket
+from threading import Thread
 
 from hispida.grid.Grid import Grid
 from hispida.bots.FirstOrderBot import FirstOrderBot as FirstBotClass
 from hispida.bots.MinmaxBot import MinmaxBot as SecondBotClass
-from threading import Thread
 
 
 # TODO: testing

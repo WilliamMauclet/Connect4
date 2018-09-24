@@ -1,5 +1,5 @@
 ### DOING
-
+---
 ### TODO
 * Testing
     * Test match-off
@@ -7,10 +7,11 @@
     * Also keep depth at turn of losing, so that the above can be known.
 * Better handling of player ending game => exception should be handled
 
+---
 ### IDEAS
 * MinmaxBot: shuffle moves_scores? => makes it less re-playable! :(
 * Create Game class with Grid and with 2 players(Bots or Bot/human) and resolve()
-
+---
 ### DONE
 * 2017/03/05: Bots.
 * 2017/03/05: Use logger.
@@ -36,8 +37,7 @@
 * 2017/08/31: Rework match-off to determine best bot. Final JSON output schema. Refactoring.
 * 2017/09/01: Don't save matches one line at a time: extend match-off json.
 * 2017/09/01: Delete JsonifierOfResults?
-
-
+---
 ### ABANDONED IDEAS
 * Bot accepts history of moves to machine learn
 * First checks when choosing moves are make the bot play worse! => Don't do this ???? TODO
