@@ -13,3 +13,4 @@ name = "pypi"
 [dev-packages]
 
 pylint = "*"
+cached-property = "*"

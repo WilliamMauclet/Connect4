@@ -1,8 +1,6 @@
 import os
 import sys
 
-
-
 from hispida.bots.Bot import Bot
 from hispida.grid.Grid import Grid
 
@@ -17,8 +15,7 @@ def start():
     id_index = 0
     grid.print_grid()
     while not grid.game_over():
-        player_id = [HUMAN_PLAYER_ID, BOT_PLAYER_ID][id_index]
-        _accept_move(grid, player_id, bot)
+        _accept_move(grid, id_index, bot)
         grid.print_grid()
         id_index = (id_index + 1) % 2
         if grid.game_over():
@@ -64,13 +61,14 @@ def _choose_opponent() -> Bot:
         raise Exception("Did not recognise bot id: '" + inp + "'")
 
 
-def _accept_move(grid, player_id, bot):
-    if player_id == HUMAN_PLAYER_ID:
-        column = _accept_human_move(grid)
-    else:
+def _accept_move(grid, id_index, bot):
+    if id_index:
         column = bot.choose_move(grid)
-    print(_get_player_tag_from_id(player_id) + " played column: " + str(column + 1))
-    grid.add_pawn(column, player_id)
+    else:
+        column = _accept_human_move(grid)
+
+    print(["You", "Bot"][id_index] + " played column: " + str(column + 1))
+    grid.add_pawn(column, [HUMAN_PLAYER_ID, BOT_PLAYER_ID][id_index])
 
 
 def _accept_human_move(grid) -> int:
@@ -84,14 +82,7 @@ def _accept_human_move(grid) -> int:
     else:
         return int(inp) - 1
 
-
-def _get_player_tag_from_id(player_id):
-    if player_id == HUMAN_PLAYER_ID:
-        return "You"
-    else:
-        return "Bot"
-
-
+# TODO
 # change here if you want to get more messages.
 import logging
 
