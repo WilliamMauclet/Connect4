@@ -8,6 +8,9 @@ from hispida.utils.ProgressBar import ProgressBar
 from hispida.utils.TimeFormat import format_time
 from hispida.grid.Grid import Grid
 
+import sys
+sys.path.append('../.') 
+
 """
     HIERARCHY
     ---------

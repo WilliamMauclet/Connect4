@@ -1,5 +1,6 @@
 import os
 import sys
+sys.path.append('../.') 
 
 from hispida.bots.Bot import Bot
 from hispida.grid.Grid import Grid

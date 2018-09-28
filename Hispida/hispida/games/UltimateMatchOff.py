@@ -4,6 +4,9 @@ from hispida.bots.FirstOrderBot import FirstOrderBot
 from MatchOff import match_off
 from hispida.bots.MinmaxBot import MinmaxBot
 
+import sys
+sys.path.append('../.') 
+
 MATCH_OFF_FOLDER = "../../docs/match_offs/{}"
 
 

@@ -7,6 +7,9 @@ from hispida.grid.Grid import Grid
 from hispida.bots.FirstOrderBot import FirstOrderBot as FirstBotClass
 from hispida.bots.MinmaxBot import MinmaxBot as SecondBotClass
 
+import sys
+sys.path.append('../.') 
+
 
 # TODO: testing
 bot_ids = ['1', '2']
