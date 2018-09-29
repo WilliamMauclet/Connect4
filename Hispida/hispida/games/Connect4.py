@@ -22,7 +22,7 @@ def start():
         if grid.game_over():
             break
 
-    print(_get_player_tag_from_id(str(grid.game_over())) + " won, congrats!\n")
+    print([HUMAN_PLAYER_ID, BOT_PLAYER_ID][id_index] + " won, congrats!\n")
     print("Replay:\n")
     print(grid.logs)
 
