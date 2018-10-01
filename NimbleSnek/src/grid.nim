@@ -49,11 +49,11 @@ method get_state_string_representation*(self: Grid): string {.base.} =
         image = image & "\n|"
         for x in countup(0, 6):
             image = image & $self[x][y] & '|'
-    image = image & '\n'
+    image = image & "\n"
     return image
 
 method print*(self: Grid) {.base.} =
     echo self.get_state_string_representation()
 
-method game_over*(self: Grid): bool =
+method game_over*(self: Grid): bool {.base.}=
     return false

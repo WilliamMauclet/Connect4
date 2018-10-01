@@ -9,5 +9,9 @@
         "**/*.css",
         "**/*.scss",
         "**/*.nim"
+    ],
+    "editor.scrollBeyondLastLine": false,
+    "todohighlight.keywords": [
+        "TODO"
     ]
 }

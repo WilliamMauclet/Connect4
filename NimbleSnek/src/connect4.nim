@@ -1,5 +1,5 @@
 import grid, bot, player
-from strutils import parseInt
+from strutils import parseInt, isDigit
 
 # forward declaration
 proc accept_move(grid: var Grid, player_index: int, bot: Bot)
@@ -19,7 +19,7 @@ proc start() =
         grid.print()
         accept_move(grid, id_index, bot)
         id_index = (id_index+1) mod 2 
-        # TODO
+        # TODO: check if someone has won
         
 proc accept_move(grid: var Grid, player_index: int, bot: Bot) =
     var column: int
@@ -31,8 +31,12 @@ proc accept_move(grid: var Grid, player_index: int, bot: Bot) =
     grid.add_pawn(column, PLAYERS[player_index])
 
 proc accept_human_move(grid: Grid): int =
-    # TODO
     echo "Choose a move:"
-    return  parseInt(stdin.readLine())
+
+    var input = stdin.readLine()
+    while not(input.isDigit() and 0 < parseInt(input) and parseInt(input) <= 7):
+        echo "Please choose a correct move [1..7]"
+        input = stdin.readLine()
+    return parseInt(input) - 1
 
 start()
