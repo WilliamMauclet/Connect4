@@ -47,7 +47,8 @@ suite "Grid":
     var grid = new_grid()
     for i in 0..3:
       grid.add_pawn(2, X)
-    check grid.has_four_in_a_column(2).isNone()
+    check grid.has_four_in_a_column(2).isSome()
+    check grid.has_four_in_a_column(2).get() == X
 
   test "has_four_in_a_row #none":
     var grid = new_grid()
@@ -74,6 +75,18 @@ suite "Grid":
       grid.add_pawn(x, Y)
     check grid.has_four_in_a_row(0).isSome()
     check grid.has_four_in_a_row(0).get() == Y
+  
+  test "get_diagonal":
+    var grid = new_grid()
+    grid.add_pawn(5, X)
+    check grid.get_diagonal(0, 5) == @[ZERO, ZERO, ZERO, ZERO, ZERO, X]
+
+  test "get_anti_diagonal":
+    var grid = new_grid()
+    grid.add_pawn(0, Y)
+    grid.add_pawn(1, Y)
+    grid.add_pawn(1, X)
+    check grid.get_anti_diagonal(0, 0) == @[Y, X, ZERO, ZERO, ZERO, ZERO]
 
   test "game_over":
     check new_grid().game_over() == false
@@ -83,3 +96,8 @@ suite "Grid":
     check bool(1) == true
     echo "hey"
     echo("hey")
+  
+  test "sequence":
+    var sequ = @[9, 9, 9]
+    for i in sequ:
+      echo i

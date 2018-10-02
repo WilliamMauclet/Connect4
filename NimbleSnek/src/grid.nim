@@ -10,7 +10,6 @@ type
     Grid* = ref object of RootObj
         columns*:  array[WIDTH, Column]
 
-
 proc new_grid*():Grid =
     return Grid(
         columns: [
@@ -23,6 +22,7 @@ proc new_grid*():Grid =
             [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO]
         ] 
     )
+
 
 method `[]`* (self: Grid, x: int): Column {.base.} =
     result = self.columns[x]
@@ -55,31 +55,16 @@ method print*(self: Grid) {.base.} =
     echo self.get_state_string_representation()
 
 method game_over*(self: Grid): bool {.base.}=
-    result = false
+    return false #TODO
 
-method has_four_in_a_column*(self: Grid, x: int): Option[Player] {.base.} =
+proc is_in_grid*(x:int, y:int): bool =
+    return 0 <= x and x < WIDTH and 0 <= y and y < HEIGHT
+
+proc has_four_in_repetition(sequence: openArray[Player]): Option[Player] =
     var 
         previous: Player = ZERO
         nr_repetitions: int = 0
-    for y in 0..<HEIGHT:
-        var new_value = self[x][y] 
-        if new_value == ZERO:
-            return none(Player)
-        elif previous == new_value:
-            nr_repetitions += 1
-            if nr_repetitions == 4:
-                return some(previous)
-        else:
-            nr_repetitions = 0
-        previous = new_value
-    return none(Player)
-
-method has_four_in_a_row*(self: Grid, y: int): Option[Player] {.base.} =
-    var 
-        previous: Player = ZERO
-        nr_repetitions: int = 0
-    for x in 0..<WIDTH:
-        var new_value = self[x][y] 
+    for new_value in sequence:
         if new_value == ZERO or new_value != previous:
             nr_repetitions = 0
         else:
@@ -88,4 +73,48 @@ method has_four_in_a_row*(self: Grid, y: int): Option[Player] {.base.} =
                 return some(previous)
         previous = new_value
     return none(Player)
+
+method has_four_in_a_column*(self: Grid, x: int): Option[Player] {.base.} =
+    return has_four_in_repetition(self[x])
+
+method has_four_in_a_row*(self: Grid, y: int): Option[Player] {.base.} =
+    var row: seq[Player] = @[]
+    for x in 0..<WIDTH:
+        row &= self[x][y]
+    return has_four_in_repetition(row)
+
+method get_diagonal*(self: Grid, x: int, y: int): seq[Player] {.base.}=
+    var 
+        values: seq[Player] = @[]
+        xCo = x
+        yCo = y
+    while is_in_grid(xCo, yCo):
+        values &= self[xCo][yCo]
+        xCo += 1
+        yCo -= 1
+    return values
+
+method get_anti_diagonal*(self: Grid, x: int, y: int): seq[Player] {.base.}=
+    var 
+        values: seq[Player] = @[]
+        xCo = x
+        yCo = y
+    while is_in_grid(xCo, yCo):
+        values &= self[xCo][yCo]
+        xCo += 1
+        yCo += 1
+    return values
+
+method has_four_in_a_seq(self: Grid): Option[Player] =
+        for x in 0..<WIDTH:
+            var fiac = self.has_four_in_a_column(x)
+            if fiac.isSome():
+                return fiac
+        for y in 0..<HEIGHT:
+            var fiar = self.has_four_in_a_row(y)
+            if fiar.isSome():
+                return fiar
+        # for x in 
+
+        return none(Player)
 
