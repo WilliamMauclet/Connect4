@@ -33,6 +33,48 @@ suite "Grid":
     check "x" in grid.get_state_string_representation()
     check (not("y" in grid.get_state_string_representation()))
 
+  test "has_four_in_a_column #none":
+    var grid = new_grid()
+    check grid.has_four_in_a_column(2).isNone()
+
+  test "has_four_in_a_column #not_enough":
+    var grid = new_grid()
+    for i in 0..2:
+      grid.add_pawn(2, X)
+    check grid.has_four_in_a_column(2).isNone()
+
+  test "has_four_in_a_column #enough":
+    var grid = new_grid()
+    for i in 0..3:
+      grid.add_pawn(2, X)
+    check grid.has_four_in_a_column(2).isNone()
+
+  test "has_four_in_a_row #none":
+    var grid = new_grid()
+    check grid.has_four_in_a_row(0).isNone()
+
+    test "has_four_in_a_row #interleave":
+      var grid = new_grid()
+      grid.add_pawn(3, Y)
+      grid.add_pawn(3, X)
+      grid.add_pawn(3, Y)
+      grid.add_pawn(3, Y)
+      grid.add_pawn(3, Y)
+      check grid.has_four_in_a_row(0).isNone()
+      
+  test "has_four_in_a_row #not_enough":
+    var grid = new_grid()
+    for x in 2..4:
+      grid.add_pawn(x, Y)
+    check grid.has_four_in_a_row(0).isNone()
+  
+  test "has_four_in_a_row #enough":
+    var grid = new_grid()
+    for x in 2..5:
+      grid.add_pawn(x, Y)
+    check grid.has_four_in_a_row(0).isSome()
+    check grid.has_four_in_a_row(0).get() == Y
+
   test "game_over":
     check new_grid().game_over() == false
 

@@ -25,7 +25,7 @@ proc new_grid*():Grid =
     )
 
 method `[]`* (self: Grid, x: int): Column {.base.} =
-    return self.columns[x]
+    result = self.columns[x]
 
 method get_empty_top_index*(self: Grid, x: int): Option[int] {.base.} =
     for y in countup(0, HEIGHT-1):
@@ -49,11 +49,43 @@ method get_state_string_representation*(self: Grid): string {.base.} =
         image = image & "\n|"
         for x in countup(0, 6):
             image = image & $self[x][y] & '|'
-    image = image & "\n"
-    return image
+    result = image & "\n"
 
 method print*(self: Grid) {.base.} =
     echo self.get_state_string_representation()
 
 method game_over*(self: Grid): bool {.base.}=
-    return false
+    result = false
+
+method has_four_in_a_column*(self: Grid, x: int): Option[Player] {.base.} =
+    var 
+        previous: Player = ZERO
+        nr_repetitions: int = 0
+    for y in 0..<HEIGHT:
+        var new_value = self[x][y] 
+        if new_value == ZERO:
+            return none(Player)
+        elif previous == new_value:
+            nr_repetitions += 1
+            if nr_repetitions == 4:
+                return some(previous)
+        else:
+            nr_repetitions = 0
+        previous = new_value
+    return none(Player)
+
+method has_four_in_a_row*(self: Grid, y: int): Option[Player] {.base.} =
+    var 
+        previous: Player = ZERO
+        nr_repetitions: int = 0
+    for x in 0..<WIDTH:
+        var new_value = self[x][y] 
+        if new_value == ZERO or new_value != previous:
+            nr_repetitions = 0
+        else:
+            nr_repetitions += 1
+            if nr_repetitions == 3:
+                return some(previous)
+        previous = new_value
+    return none(Player)
+
