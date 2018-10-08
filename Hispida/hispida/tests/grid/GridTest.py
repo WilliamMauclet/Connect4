@@ -93,7 +93,7 @@ class GridTest(unittest.TestCase):
     def test_game_over_diagonal(self):
         fillers = iter(range(99))
         for col in range(4):
-            for height in range(col):
+            for _ in range(col):
                 self.grid.add_pawn(col, next(fillers))
             self.grid.add_pawn(col, 'x')
 

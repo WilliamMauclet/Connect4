@@ -1,9 +1,12 @@
 import os
 import sys
-sys.path.append('../.') 
+import time
+
+sys.path.insert(0, os.path.abspath('.'))
 
 from hispida.bots.Bot import Bot
 from hispida.grid.Grid import Grid
+from hispida.utils.TimeFormat import format_time
 
 
 def start():
@@ -56,7 +59,7 @@ def _choose_opponent() -> Bot:
     elif inp == '2':
         print("\nThis game is against an opponent using a minmax algorithm with alpha-beta pruning.\n")
         from hispida.bots.MinmaxBot import MinmaxBot
-        bot = MinmaxBot(BOT_PLAYER_ID, depth=7, heuristic_bot=1, heuristic_opponent=-3)
+        bot = MinmaxBot(BOT_PLAYER_ID, depth=9, heuristic_bot=1, heuristic_opponent=-3)
         return bot
     else:
         raise Exception("Did not recognise bot id: '" + inp + "'")
@@ -64,7 +67,9 @@ def _choose_opponent() -> Bot:
 
 def _accept_move(grid, id_index, bot):
     if id_index:
+        timestamp = time.time()
         column = bot.choose_move(grid)
+        print("Computing time: ", format_time(time.time() - timestamp))
     else:
         column = _accept_human_move(grid)
 

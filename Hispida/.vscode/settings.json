@@ -1,11 +1,11 @@
 {
-    "python.pythonPath": "C:\\Users\\Zeegroen\\.virtualenvs\\Hispida-t0xNd9iP\\Scripts\\python.exe",
+    "python.pythonPath": "/home/wmclt/.virtualenvs/Hispida-mfzP-2Ei/bin/python",
     "python.unitTest.unittestArgs": [
         "-v",
         "-s",
         "./tests",
         "-p",
-        "*Test.py"
+        "**/*Test.py"
     ],
     "python.unitTest.unittestEnabled": true,
     "python.linting.enabled": true
