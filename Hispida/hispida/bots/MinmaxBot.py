@@ -1,6 +1,7 @@
 from math import inf
 import logging
 
+from multiprocess.pool import Pool 
 from hispida.bots.FirstOrderBot import FirstOrderBot
 
 
@@ -46,11 +47,18 @@ class MinmaxBot(FirstOrderBot):
             return self._choose_move_with_minmax(grid)
 
     def _choose_move_with_minmax(self, grid) -> int:
+
+        def _do_it(free_column):
+            new_grid = grid.clone_with_move(free_column, self.bot_id)
+            return {'col': free_column, 'val': self._alpha_beta(new_grid, self.depth - 1, -inf, +inf, True)}
+
+        free_columns = [x for x in grid.get_free_columns()]
+        pool = Pool(len(free_columns))
+        
         # Like max iteration except must remember move.
         moves_scores = {}
-        for x in grid.get_free_columns():
-            new_grid = grid.clone_with_move(x, self.bot_id)
-            moves_scores[x] = self._alpha_beta(new_grid, self.depth - 1, -inf, +inf, True)
+        for result in pool.map(_do_it, free_columns):
+            moves_scores[result['col']] = result['val'] 
 
         best_move = max(moves_scores, key=lambda move: moves_scores[move]['score'])
 

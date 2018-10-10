@@ -1,16 +1,12 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [packages]
-
 "unittest2" = "*"
-
+multiprocess = "*"
 
 [dev-packages]
-
 pylint = "*"
 cached-property = "*"
