@@ -16,14 +16,12 @@ def start():
     print("To exit the game press Q + ENTER\n"
           "Please make the first move")
 
-    id_index = 0
+    id_index = 1
     grid.print_grid()
     while not grid.game_over():
+        id_index = (id_index + 1) % 2
         _accept_move(grid, id_index, bot)
         grid.print_grid()
-        id_index = (id_index + 1) % 2
-        if grid.game_over():
-            break
 
     print([HUMAN_PLAYER_ID, BOT_PLAYER_ID][id_index] + " won, congrats!\n")
     print("Replay:\n")
