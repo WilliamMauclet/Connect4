@@ -14,12 +14,14 @@ proc start() =
     echo "\nWelcome to a new game of Connect 4\n"
     var bot = new_bot(Y)
 
-    var id_index = 0
+    var id_index = 1
+    grid.print()
     while not grid.game_over():
-        grid.print()
-        accept_move(grid, id_index, bot)
         id_index = (id_index+1) mod 2 
-        # TODO: check if someone has won
+        accept_move(grid, id_index, bot)
+        grid.print()
+    
+    echo PLAYER_INVOCS[id_index] & " won, congrats!\n"
         
 proc accept_move(grid: var Grid, player_index: int, bot: Bot) =
     var column: int

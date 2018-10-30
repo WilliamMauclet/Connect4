@@ -54,11 +54,9 @@ method get_state_string_representation*(self: Grid): string {.base.} =
 method print*(self: Grid) {.base.} =
     echo self.get_state_string_representation()
 
-method game_over*(self: Grid): bool {.base.}=
-    return false #TODO
-
 proc is_in_grid*(x:int, y:int): bool =
-    return 0 <= x and x < WIDTH and 0 <= y and y < HEIGHT
+    var valid = 0 <= x and x < WIDTH and 0 <= y and y < HEIGHT
+    return valid
 
 proc has_four_in_repetition(sequence: openArray[Player]): Option[Player] =
     var 
@@ -83,7 +81,7 @@ method has_four_in_a_row*(self: Grid, y: int): Option[Player] {.base.} =
         row &= self[x][y]
     return has_four_in_repetition(row)
 
-method get_diagonal*(self: Grid, x: int, y: int): seq[Player] {.base.}=
+method get_diagonal(self: Grid, x: int, y: int, y_incr: int): seq[Player] {.base.} =
     var 
         values: seq[Player] = @[]
         xCo = x
@@ -91,21 +89,16 @@ method get_diagonal*(self: Grid, x: int, y: int): seq[Player] {.base.}=
     while is_in_grid(xCo, yCo):
         values &= self[xCo][yCo]
         xCo += 1
-        yCo -= 1
+        yCo = yCo + y_incr
     return values
 
-method get_anti_diagonal*(self: Grid, x: int, y: int): seq[Player] {.base.}=
-    var 
-        values: seq[Player] = @[]
-        xCo = x
-        yCo = y
-    while is_in_grid(xCo, yCo):
-        values &= self[xCo][yCo]
-        xCo += 1
-        yCo += 1
-    return values
+method get_diagonal_down*(self: Grid, x: int, y: int): seq[Player] {.base.} =
+    return self.get_diagonal(x, y, -1)
 
-method has_four_in_a_seq(self: Grid): Option[Player] =
+method get_diagonal_up*(self: Grid, x: int, y: int): seq[Player] {.base.}=
+    return self.get_diagonal(x, y, 1)
+
+method has_winner*(self: Grid): Option[Player] {.base.} =
         for x in 0..<WIDTH:
             var fiac = self.has_four_in_a_column(x)
             if fiac.isSome():
@@ -114,7 +107,24 @@ method has_four_in_a_seq(self: Grid): Option[Player] =
             var fiar = self.has_four_in_a_row(y)
             if fiar.isSome():
                 return fiar
-        # for x in 
+        for y in 0..<HEIGHT-3:
+            var fiad = has_four_in_repetition(self.get_diagonal_up(0, y))
+            if fiad.isSome():
+                return fiad
+        for y in 3..<HEIGHT:
+            var fiad = has_four_in_repetition(self.get_diagonal_down(0, y))
+            if fiad.isSome():
+                return fiad
+        for x in 0..<WIDTH-3:
+            var fiad = has_four_in_repetition(self.get_diagonal_down(x, HEIGHT-1))
+            if fiad.isSome():
+                return fiad
+        for x in 1..<WIDTH-3:
+            var fiad = has_four_in_repetition(self.get_diagonal_up(x, 0))
+            if fiad.isSome():
+                return fiad
 
         return none(Player)
 
+method game_over*(self: Grid): bool {.base.}=
+    return self.has_winner().isSome()
