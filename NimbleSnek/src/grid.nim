@@ -13,14 +13,14 @@ type
 proc new_grid*():Grid =
     return Grid(
         columns: [
-            [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO], 
-            [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO], 
-            [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO], 
-            [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO], 
-            [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO], 
-            [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO], 
+            [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO],
+            [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO],
+            [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO],
+            [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO],
+            [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO],
+            [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO],
             [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO]
-        ] 
+        ]
     )
 
 
