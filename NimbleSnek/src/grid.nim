@@ -2,8 +2,8 @@ from player import Player, X, Y, ZERO
 import options
 
 const
-    HEIGHT = 6
-    WIDTH = 7
+    HEIGHT* = 6
+    WIDTH* = 7
 
 type
     Column = array[HEIGHT, Player]
@@ -24,24 +24,24 @@ proc new_grid*():Grid =
     )
 
 
-method `[]`* (self: Grid, x: int): Column {.base.} =
+method `[]`* (self:Grid, x:int):Column {.base.} =
     result = self.columns[x]
 
-method get_empty_top_index*(self: Grid, x: int): Option[int] {.base.} =
+method get_empty_top_index*(self:Grid, x:int):Option[int] {.base.} =
     for y in countup(0, HEIGHT-1):
         if self.columns[x][y] == ZERO:
             return some(y)
     return none(int)
 
-method add_pawn*(self: var Grid, x: int, player: Player) {.base.} =
-    let opt_y: Option[int] = self.get_empty_top_index(x)
+method add_pawn*(self: var Grid, x:int, player:Player) {.base.} =
+    let opt_y:Option[int] = self.get_empty_top_index(x)
     if opt_y.isSome():
         let y = opt_y.get()
         self.columns[x][y] = player
     else:
         raise newException(ArithmeticError, "Tried to add a pawn in a full column.")
 
-method get_state_string_representation*(self: Grid): string {.base.} =
+method get_state_string_representation*(self:Grid):string {.base.} =
     var image = ""
     for x in countup(1, 15):
         image = image & "_"
@@ -51,17 +51,17 @@ method get_state_string_representation*(self: Grid): string {.base.} =
             image = image & $self[x][y] & '|'
     result = image & "\n"
 
-method print*(self: Grid) {.base.} =
+method print*(self:Grid) {.base.} =
     echo self.get_state_string_representation()
 
 proc is_in_grid*(x:int, y:int): bool =
     var valid = 0 <= x and x < WIDTH and 0 <= y and y < HEIGHT
     return valid
 
-proc has_four_in_repetition(sequence: openArray[Player]): Option[Player] =
+proc has_four_in_repetition(sequence:openArray[Player]):Option[Player] =
     var 
-        previous: Player = ZERO
-        nr_repetitions: int = 0
+        previous:Player = ZERO
+        nr_repetitions:int = 0
     for new_value in sequence:
         if new_value == ZERO or new_value != previous:
             nr_repetitions = 0
@@ -72,33 +72,33 @@ proc has_four_in_repetition(sequence: openArray[Player]): Option[Player] =
         previous = new_value
     return none(Player)
 
-method has_four_in_a_column*(self: Grid, x: int): Option[Player] {.base.} =
+method has_four_in_a_column*(self:Grid, x:int):Option[Player] {.base.} =
     return has_four_in_repetition(self[x])
 
-method has_four_in_a_row*(self: Grid, y: int): Option[Player] {.base.} =
-    var row: seq[Player] = @[]
+method has_four_in_a_row*(self:Grid, y:int):Option[Player] {.base.} =
+    var row:seq[Player] = @[]
     for x in 0..<WIDTH:
         row &= self[x][y]
     return has_four_in_repetition(row)
 
-method get_diagonal(self: Grid, x: int, y: int, y_incr: int): seq[Player] {.base.} =
+method get_diagonal(self:Grid, x:int, y:int, y_incr:int):seq[Player] {.base.} =
     var 
-        values: seq[Player] = @[]
+        values:seq[Player] = @[]
         xCo = x
         yCo = y
     while is_in_grid(xCo, yCo):
         values &= self[xCo][yCo]
         xCo += 1
         yCo = yCo + y_incr
-    return values
+    return values   
 
-method get_diagonal_down*(self: Grid, x: int, y: int): seq[Player] {.base.} =
+method get_diagonal_down*(self:Grid, x:int, y:int):seq[Player] {.base.} =
     return self.get_diagonal(x, y, -1)
 
-method get_diagonal_up*(self: Grid, x: int, y: int): seq[Player] {.base.}=
+method get_diagonal_up*(self:Grid, x:int, y:int):seq[Player] {.base.} =
     return self.get_diagonal(x, y, 1)
 
-method has_winner*(self: Grid): Option[Player] {.base.} =
+method has_winner*(self:Grid):Option[Player] {.base.} =
         for x in 0..<WIDTH:
             var fiac = self.has_four_in_a_column(x)
             if fiac.isSome():
@@ -126,5 +126,31 @@ method has_winner*(self: Grid): Option[Player] {.base.} =
 
         return none(Player)
 
-method game_over*(self: Grid): bool {.base.}=
+method get_open_columns*(self:Grid):seq[int] {.base.} =
+    result = @[]
+    for x in 0..<WIDTH:
+        if self[x][HEIGHT-1] == ZERO:
+            result &= x
+    return result
+
+method is_full*(self:Grid):bool {.base.} =
+    return self.get_open_columns().len == 0
+
+method clone(self:Grid):Grid {.base.} =
+    var grid_clone = new_grid()
+    for x in 0..<WIDTH:
+        for y in 0..<HEIGHT:
+            var pawn = self[x][y]
+            if pawn == ZERO:
+                break
+            else:
+                grid_clone.add_pawn(x, pawn)
+    return grid_clone
+    
+method clone_for_move*(self:Grid, move:int, player:Player):Grid {.base.} =
+    var grid_clone = self.clone()
+    grid_clone.add_pawn(move, player)
+    return grid_clone
+
+method game_over*(self:Grid): bool {.base.} =
     return self.has_winner().isSome()

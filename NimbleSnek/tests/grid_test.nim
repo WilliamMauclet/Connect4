@@ -1,6 +1,18 @@
 import unittest, grid, player, options, strutils
 
+proc fill_columns(grid:var Grid, player:Player, columns:varargs[int]) =
+  for column in columns:
+    for i in 0..<HEIGHT:
+      grid.add_pawn(column, player)
+
 suite "Grid":
+  var 
+    grid: Grid
+
+  setup:
+    grid = new_grid()
+
+
   test "get_empty_top_index":
     check new_grid().get_empty_top_index(4).get() == 0
 
@@ -9,53 +21,44 @@ suite "Grid":
   #   check new_grid().get_empty_top_index(4).get() == 5
 
   test "check initialization":
-    let grid = new_grid()
     check grid.columns[4][2] == ZERO
   
   test "check column getter":
     check new_grid()[4][3] == ZERO
 
   test "add_pawn":
-    var grid = new_grid()
     grid.add_pawn(2, X)
     check grid[2][0] == X
 
   test "add_pawn twice":
-    var grid = new_grid()
     grid.add_pawn(2, Y)
     grid.add_pawn(2, X)
     check grid[2][0] == Y
     check grid[2][1] == X
 
   test "get_state_string_representation":
-    var grid = new_grid()
     grid.add_pawn(2, X)
     check "x" in grid.get_state_string_representation()
     check (not("y" in grid.get_state_string_representation()))
 
   test "has_four_in_a_column #none":
-    var grid = new_grid()
     check grid.has_four_in_a_column(2).isNone()
 
   test "has_four_in_a_column #not_enough":
-    var grid = new_grid()
     for i in 0..2:
       grid.add_pawn(2, X)
     check grid.has_four_in_a_column(2).isNone()
 
   test "has_four_in_a_column #enough":
-    var grid = new_grid()
     for i in 0..3:
       grid.add_pawn(2, X)
     check grid.has_four_in_a_column(2).isSome()
     check grid.has_four_in_a_column(2).get() == X
 
   test "has_four_in_a_row #none":
-    var grid = new_grid()
     check grid.has_four_in_a_row(0).isNone()
 
     test "has_four_in_a_row #interleave":
-      var grid = new_grid()
       grid.add_pawn(3, Y)
       grid.add_pawn(3, X)
       grid.add_pawn(3, Y)
@@ -64,32 +67,27 @@ suite "Grid":
       check grid.has_four_in_a_row(0).isNone()
       
   test "has_four_in_a_row #not_enough":
-    var grid = new_grid()
     for x in 2..4:
       grid.add_pawn(x, Y)
     check grid.has_four_in_a_row(0).isNone()
   
   test "has_four_in_a_row #enough":
-    var grid = new_grid()
     for x in 2..5:
       grid.add_pawn(x, Y)
     check grid.has_four_in_a_row(0).isSome()
     check grid.has_four_in_a_row(0).get() == Y
   
   test "get_diagonal_down":
-    var grid = new_grid()
     grid.add_pawn(5, X)
     check grid.get_diagonal_down(0, 5) == @[ZERO, ZERO, ZERO, ZERO, ZERO, X]
 
   test "get_diagonal_up #complex":
-    var grid = new_grid()
     grid.add_pawn(0, Y)
     grid.add_pawn(1, Y)
     grid.add_pawn(1, X)
     check grid.get_diagonal_up(0, 0) == @[Y, X, ZERO, ZERO, ZERO, ZERO]
 
   test "has_winner (no)":
-    var grid = new_grid()
     grid.add_pawn(0, X)
     grid.add_pawn(4, Y)
     grid.add_pawn(4, Y)
@@ -97,7 +95,6 @@ suite "Grid":
     check grid.has_winner().isNone()
   
   test "has_winner (Y,up)":
-    var grid = new_grid()
     grid.add_pawn(4, Y)
     grid.add_pawn(4, Y)
     grid.add_pawn(4, Y)
@@ -105,7 +102,6 @@ suite "Grid":
     check grid.has_winner().get() == Y
 
   test "has_winner (X,right)":
-    var grid = new_grid()
     grid.add_pawn(2, X)
     grid.add_pawn(3, X)
     grid.add_pawn(4, X)
@@ -113,7 +109,6 @@ suite "Grid":
     check grid.has_winner().get() == X
 
   test "has_winner (X,diagonal up)":
-    var grid = new_grid()
     grid.add_pawn(1, X)
     grid.add_pawn(2, Y)
     grid.add_pawn(2, X)
@@ -127,7 +122,6 @@ suite "Grid":
     check grid.has_winner().get() == X
 
   test "has_winner (X,diagonal down)":
-    var grid = new_grid()
     grid.add_pawn(1, X)
     grid.add_pawn(1, Y)
     grid.add_pawn(1, X)
@@ -142,16 +136,19 @@ suite "Grid":
  
   test "game_over":
     check new_grid().game_over() == false
-
-  test "test":
-    check bool(0) == false
-    check bool(1) == true
-    check pred(2) == 1
-    check succ(3) == 4
-    echo "hey"
-    echo("hey")
   
-  test "sequence":
-    var sequ = @[9, 9, 9]
-    for i in sequ:
-      echo i
+  test "get_open_columns":
+    fill_columns(grid, X, 0, 1, 4, 5)
+
+    check grid.get_open_columns() == @[2, 3, 6]
+
+  test "is_full":
+    fill_columns(grid, X, 0, 1, 2, 3, 4, 5, 6)
+
+    check grid.is_full()
+    
+  test "clone_for_move":
+    var grid_clone = grid.clone_for_move(3, X)
+
+    check grid[3][0] == ZERO
+    check grid_clone[3][0] == X
