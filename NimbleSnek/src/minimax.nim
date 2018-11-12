@@ -1,10 +1,11 @@
 import tables
 import grid 
 import player
+import times
 
 from random import nil
 
-const DEPTH = 7
+const DEPTH = 9
 const INFINITY = 1_000_000_000
 
 proc end_game_score(max_not_min:bool, depth:int):int =
@@ -48,7 +49,7 @@ proc alpha_beta(player:Player, grid:Grid, depth:int, prev_alpha:int, prev_beta:i
 
 proc find_best_move*(grid:Grid, player:Player):int =
     var 
-        best_move = -1
+        best_moves:seq[int] = @[]
         best_score = -INFINITY
 
     for x in grid.get_open_columns():
@@ -57,11 +58,14 @@ proc find_best_move*(grid:Grid, player:Player):int =
         echo "move " & $x & " gives a score of " & $move_result
 
         if move_result > best_score:
-            best_move = x
+            best_moves = @[x] 
             best_score = move_result 
-    
-    if best_move == -1:
-        echo "no best move found by bot!"
-        return random.random(7)
-    else:
-        return best_move
+        elif move_result == best_score:
+            best_moves &= x
+
+    echo "with max score of: " & $best_score & " best moves: " & $best_moves
+    if best_moves.len == 7:
+        echo "### no best move found by bor!"
+
+    random.randomize(to_int(cpu_time()))
+    return random.random(best_moves)

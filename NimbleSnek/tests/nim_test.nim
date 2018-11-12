@@ -1,4 +1,4 @@
-import unittest, grid, player, options, strutils
+import unittest, grid, player, options, strutils, random
 
 proc add_one(v: var int) =
     v += 1
@@ -30,17 +30,19 @@ suite "Nim":
             j = i
         add_one(i)
         check j == 1
-        check i == 2
+        doAssert i == 2
 
     test "strutils.DIGITS":
         check strutils.isDigit("2")
-        check (not(strutils.isDigit("k")))
+        doAssert (not(strutils.isDigit("k")))
     
     test "boolean expression":
         var x = 5
         check 0 < x and x <= 6
 
-    test "tables":
-        var a = {1:"a", 2:"b"}
-        check false #TODO:
+    test "random.random":
+        random.randomize(92)
+        for x in 0..<20:
+            echo $random.random(7)
+        check true
     
