@@ -5,24 +5,29 @@ import times
 
 from random import nil
 
-const DEPTH = 9
+const DEPTH = 7
 const INFINITY = 1_000_000_000
+
+const DEPTH_FACTOR = 50
+
+# TODO write issue on https://github.com/rainglow/vscode/issues/new
 
 proc end_game_score(max_not_min:bool, depth:int):int =
     if max_not_min:
         # here the game is won when it's a max turn: hence negative
-        return -5*depth # depth decreases: the sooner, the higher 
+        return -DEPTH_FACTOR*depth # depth decreases: the sooner, the higher 
     else:
-        return 5*depth
+        return DEPTH_FACTOR*depth
 
 proc alpha_beta(player:Player, grid:Grid, depth:int, prev_alpha:int, prev_beta:int, max_not_min:bool):int =
-    # grid.print()
     if grid.game_over():
         return end_game_score(max_not_min, depth)
+    if grid.is_full():
+        return 0 
+    if depth == 0:
+        # if you get here, then there hasn't been a winner by the time we're at depth 0
+        return grid.heuristic(player)
 
-    if depth == 0 or grid.is_full(): # TODO: or grid is a terminal grid 
-        # TODO: if you get here, then there hasn't been a winner by the time we're at depth 0
-        return 0 # TODO: the heuristic value in grid
     if max_not_min:
         var 
             value = -INFINITY # -infinite
@@ -44,9 +49,6 @@ proc alpha_beta(player:Player, grid:Grid, depth:int, prev_alpha:int, prev_beta:i
                 break # alpha cut-off
         return value
 
-#(* Initial call *)
-#alphabeta(origin, depth, −∞, +∞, TRUE)
-
 proc find_best_move*(grid:Grid, player:Player):int =
     var 
         best_moves:seq[int] = @[]
@@ -58,14 +60,14 @@ proc find_best_move*(grid:Grid, player:Player):int =
         echo "move " & $x & " gives a score of " & $move_result
 
         if move_result > best_score:
-            best_moves = @[x] 
+            best_moves = @[x]
             best_score = move_result 
         elif move_result == best_score:
             best_moves &= x
 
     echo "with max score of: " & $best_score & " best moves: " & $best_moves
     if best_moves.len == 7:
-        echo "### no best move found by bor!"
+        echo "### no best move found by bot!"
 
     random.randomize(to_int(cpu_time()))
     return random.random(best_moves)

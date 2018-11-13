@@ -1,4 +1,4 @@
-import unittest, grid, player, options, strutils, random
+import unittest, strutils, grid, player, options, random, sequtils
 
 proc add_one(v: var int) =
     v += 1
@@ -33,8 +33,8 @@ suite "Nim":
         doAssert i == 2
 
     test "strutils.DIGITS":
-        check strutils.isDigit("2")
-        doAssert (not(strutils.isDigit("k")))
+        check isDigit("2")
+        doAssert (not(isDigit("k")))
     
     test "boolean expression":
         var x = 5
@@ -46,3 +46,16 @@ suite "Nim":
             echo $random.random(7)
         check true
     
+    test "count":
+        let
+            s = @[1, 2, 2, 3, 2, 4, 2]
+            c = s.count(2)
+        assert c == 4
+
+    test "concat":
+        let
+            s1 = @[1, 2, 3]
+            s2 = @[4, 5]
+            s3 = @[6, 7]
+            total = concat(s1, s2, s3)
+        assert total == @[1, 2, 3, 4, 5, 6, 7]

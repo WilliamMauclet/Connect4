@@ -1,9 +1,10 @@
-from player import Player, X, Y, ZERO
-import options
+from player import Player, X, Y, ZERO, get_other
+import options, sequtils
 
 const
     HEIGHT* = 6
     WIDTH* = 7
+    HEURISTIC_FACTOR* = 10
 
 type
     Column = array[HEIGHT, Player]
@@ -75,11 +76,14 @@ proc has_four_in_repetition(sequence:openArray[Player]):Option[Player] =
 method has_four_in_a_column*(self:Grid, x:int):Option[Player] {.base.} =
     return has_four_in_repetition(self[x])
 
-method has_four_in_a_row*(self:Grid, y:int):Option[Player] {.base.} =
-    var row:seq[Player] = @[]
+method get_row(self:Grid, y:int):array[WIDTH, Player] =
+    var row:array[WIDTH, Player]
     for x in 0..<WIDTH:
-        row &= self[x][y]
-    return has_four_in_repetition(row)
+        row[x] = self[x][y]
+    return row
+
+method has_four_in_a_row*(self:Grid, y:int):Option[Player] {.base.} =
+    return has_four_in_repetition(self.get_row(y))
 
 method get_diagonal(self:Grid, x:int, y:int, y_incr:int):seq[Player] {.base.} =
     var 
@@ -92,46 +96,84 @@ method get_diagonal(self:Grid, x:int, y:int, y_incr:int):seq[Player] {.base.} =
         yCo = yCo + y_incr
     return values   
 
-method get_diagonal_down*(self:Grid, x:int, y:int):seq[Player] {.base.} =
+method get_diagonal_down(self:Grid, x:int, y:int):seq[Player] {.base.} =
     return self.get_diagonal(x, y, -1)
 
-method get_diagonal_up*(self:Grid, x:int, y:int):seq[Player] {.base.} =
+method get_diagonal_up(self:Grid, x:int, y:int):seq[Player] {.base.} =
     return self.get_diagonal(x, y, 1)
 
+method get_diagonals(self:Grid):seq[seq[Player]] {.base.} =
+    return result # TODO implement and use in has_winner
+
 method has_winner*(self:Grid):Option[Player] {.base.} =
-        for x in 0..<WIDTH:
-            var fiac = self.has_four_in_a_column(x)
-            if fiac.isSome():
-                return fiac
-        for y in 0..<HEIGHT:
-            var fiar = self.has_four_in_a_row(y)
-            if fiar.isSome():
-                return fiar
-        for y in 0..<HEIGHT-3:
-            var fiad = has_four_in_repetition(self.get_diagonal_up(0, y))
-            if fiad.isSome():
-                return fiad
-        for y in 3..<HEIGHT:
-            var fiad = has_four_in_repetition(self.get_diagonal_down(0, y))
-            if fiad.isSome():
-                return fiad
-        for x in 0..<WIDTH-3:
-            var fiad = has_four_in_repetition(self.get_diagonal_down(x, HEIGHT-1))
-            if fiad.isSome():
-                return fiad
-        for x in 1..<WIDTH-3:
-            var fiad = has_four_in_repetition(self.get_diagonal_up(x, 0))
-            if fiad.isSome():
-                return fiad
+    for x in 0..<WIDTH:
+        var fiac = self.has_four_in_a_column(x)
+        if fiac.isSome():
+            return fiac
+    for y in 0..<HEIGHT:
+        var fiar = self.has_four_in_a_row(y)
+        if fiar.isSome():
+            return fiar
+    for y in 0..<HEIGHT-3:
+        var fiad = has_four_in_repetition(self.get_diagonal_up(0, y))
+        if fiad.isSome():
+            return fiad
+    for y in 3..<HEIGHT:
+        var fiad = has_four_in_repetition(self.get_diagonal_down(0, y))
+        if fiad.isSome():
+            return fiad
+    for x in 0..<WIDTH-3:
+        var fiad = has_four_in_repetition(self.get_diagonal_down(x, HEIGHT-1))
+        if fiad.isSome():
+            return fiad
+    for x in 1..<WIDTH-3:
+        var fiad = has_four_in_repetition(self.get_diagonal_up(x, 0))
+        if fiad.isSome():
+            return fiad
 
-        return none(Player)
+    return none(Player)
 
+# TODO rename to 'get_open_column_indices'
 method get_open_columns*(self:Grid):seq[int] {.base.} =
     result = @[]
     for x in 0..<WIDTH:
         if self[x][HEIGHT-1] == ZERO:
             result &= x
     return result
+
+proc heuristic_4_seq(player:Player, sequence:openArray[Player]):int =
+    var 
+        factor:int
+        heuristic_val:int
+    if sequence.contains(player) and sequence.contains(get_other(player)):
+        return 0
+    if not sequence.contains(player) and not sequence.contains(get_other(player)):
+        return 0
+    if sequence.contains(player):
+        return sequence.count(player)-1 * HEURISTIC_FACTOR
+    else:
+        return sequence.count(get_other(player))-1 * HEURISTIC_FACTOR * -1
+    
+
+proc heuristic_full_seq(player:Player, sequence:openArray[Player]):int =
+    var heur_sum = 0
+    for x in 0..sequence.len-4:
+        heur_sum += heuristic_4_seq(player, sequence[x..x+3])
+    return heur_sum
+
+
+method heuristic*(self:Grid, player:Player):int {.base.} =
+    # count {3*same}+{empty} in 4-seqs
+    # multiply with 10
+    # positive if player, negative if other player
+    # same with 2+2empty in 4-seqs
+    # but multiplied with 5
+    var heur_sum = 0
+    for x in self.get_open_columns():
+        heur_sum += heuristic_full_seq(player, self[x])
+    for y in 0..<HEIGHT:
+        heur_sum += heuristic_full_seq(player, self.get_row(y))
+    return heur_sum # TODO: diagonals!
 
 method is_full*(self:Grid):bool {.base.} =
     return self.get_open_columns().len == 0
