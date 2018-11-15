@@ -10,8 +10,6 @@ const INFINITY = 1_000_000_000
 
 const DEPTH_FACTOR = 50
 
-# TODO write issue on https://github.com/rainglow/vscode/issues/new
-
 proc end_game_score(max_not_min:bool, depth:int):int =
     if max_not_min:
         # here the game is won when it's a max turn: hence negative
@@ -32,7 +30,7 @@ proc alpha_beta(player:Player, grid:Grid, depth:int, prev_alpha:int, prev_beta:i
         var 
             value = -INFINITY # -infinite
             alpha = prev_alpha
-        for move in grid.get_open_columns():
+        for move in grid.get_open_column_indices():
             value = max(value, alpha_beta(get_other(player), grid.clone_for_move(move, player), depth-1, alpha, prev_beta, false))
             alpha = max(alpha, value)
             if alpha >= prev_beta:
@@ -42,7 +40,7 @@ proc alpha_beta(player:Player, grid:Grid, depth:int, prev_alpha:int, prev_beta:i
         var
             value = INFINITY # +infinite
             beta = prev_beta
-        for move in grid.get_open_columns():
+        for move in grid.get_open_column_indices():
             value = min(value, alpha_beta(get_other(player), grid.clone_for_move(move, player), depth-1, prev_alpha, beta, true))
             beta = min(beta, value)
             if prev_alpha >= beta :
@@ -54,7 +52,7 @@ proc find_best_move*(grid:Grid, player:Player):int =
         best_moves:seq[int] = @[]
         best_score = -INFINITY
 
-    for x in grid.get_open_columns():
+    for x in grid.get_open_column_indices():
         var move_result = alpha_beta(get_other(player), grid.clone_for_move(x, player), DEPTH-1, -INFINITY, INFINITY, false)
         
         echo "move " & $x & " gives a score of " & $move_result
@@ -70,4 +68,4 @@ proc find_best_move*(grid:Grid, player:Player):int =
         echo "### no best move found by bot!"
 
     random.randomize(to_int(cpu_time()))
-    return random.random(best_moves)
+    return random.rand(best_moves)

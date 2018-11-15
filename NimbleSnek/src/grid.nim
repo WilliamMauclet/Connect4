@@ -7,13 +7,10 @@ const
     HEURISTIC_FACTOR* = 10
 
 type
-    Column = array[HEIGHT, Player]
-    Grid* = ref object of RootObj
-        columns*:  array[WIDTH, Column]
+    Grid* = array[WIDTH, array[HEIGHT, Player]]
 
 proc new_grid*():Grid =
-    return Grid(
-        columns: [
+    return [
             [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO],
             [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO],
             [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO],
@@ -22,27 +19,22 @@ proc new_grid*():Grid =
             [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO],
             [ZERO, ZERO, ZERO, ZERO, ZERO, ZERO]
         ]
-    )
 
-
-method `[]`* (self:Grid, x:int):Column {.base.} =
-    result = self.columns[x]
-
-method get_empty_top_index*(self:Grid, x:int):Option[int] {.base.} =
+proc get_empty_top_index*(self:Grid, x:int):Option[int] =
     for y in countup(0, HEIGHT-1):
-        if self.columns[x][y] == ZERO:
+        if self[x][y] == ZERO:
             return some(y)
     return none(int)
 
-method add_pawn*(self: var Grid, x:int, player:Player) {.base.} =
+proc add_pawn*(self: var Grid, x:int, player:Player) =
     let opt_y:Option[int] = self.get_empty_top_index(x)
     if opt_y.isSome():
         let y = opt_y.get()
-        self.columns[x][y] = player
+        self[x][y] = player
     else:
         raise newException(ArithmeticError, "Tried to add a pawn in a full column.")
 
-method get_state_string_representation*(self:Grid):string {.base.} =
+proc get_state_string_representation*(self:Grid):string =
     var image = ""
     for x in countup(1, 15):
         image = image & "_"
@@ -52,7 +44,7 @@ method get_state_string_representation*(self:Grid):string {.base.} =
             image = image & $self[x][y] & '|'
     result = image & "\n"
 
-method print*(self:Grid) {.base.} =
+proc print*(self:Grid) =
     echo self.get_state_string_representation()
 
 proc is_in_grid*(x:int, y:int): bool =
@@ -73,19 +65,31 @@ proc has_four_in_repetition(sequence:openArray[Player]):Option[Player] =
         previous = new_value
     return none(Player)
 
-method has_four_in_a_column*(self:Grid, x:int):Option[Player] {.base.} =
+proc has_four_in_a_column*(self:Grid, x:int):Option[Player] =
     return has_four_in_repetition(self[x])
 
-method get_row(self:Grid, y:int):array[WIDTH, Player] =
+proc get_columns(self:Grid):array[WIDTH,array[HEIGHT,Player]] =
+    var columns:array[WIDTH,array[HEIGHT,Player]]
+    for x in 0..<WIDTH:
+        columns[x] = self[x]
+    return columns
+
+proc get_row(self:Grid, y:int):array[WIDTH, Player] =
     var row:array[WIDTH, Player]
     for x in 0..<WIDTH:
         row[x] = self[x][y]
     return row
 
-method has_four_in_a_row*(self:Grid, y:int):Option[Player] {.base.} =
+proc has_four_in_a_row*(self:Grid, y:int):Option[Player] =
     return has_four_in_repetition(self.get_row(y))
 
-method get_diagonal(self:Grid, x:int, y:int, y_incr:int):seq[Player] {.base.} =
+proc get_rows(self:Grid):array[HEIGHT,array[WIDTH, Player]] =
+    var rows:array[HEIGHT,array[WIDTH, Player]]
+    for y in 0..<HEIGHT:
+        rows[y] = self.get_row(y)
+    return rows
+
+proc get_diagonal(self:Grid, x:int, y:int, y_incr:int):seq[Player] =
     var 
         values:seq[Player] = @[]
         xCo = x
@@ -96,45 +100,78 @@ method get_diagonal(self:Grid, x:int, y:int, y_incr:int):seq[Player] {.base.} =
         yCo = yCo + y_incr
     return values   
 
-method get_diagonal_down(self:Grid, x:int, y:int):seq[Player] {.base.} =
+proc get_diagonal_down*(self:Grid, x:int, y:int):seq[Player] =
     return self.get_diagonal(x, y, -1)
 
-method get_diagonal_up(self:Grid, x:int, y:int):seq[Player] {.base.} =
+proc get_down_diagonals(self:Grid):array[6,seq[Player]] =
+    var 
+        down_diagonals: array[6, seq[Player]]
+        index = 0
+    for y in 3..<HEIGHT:
+        down_diagonals[index] = self.get_diagonal_down(0, y)
+        index += 1
+    for x in 1..<WIDTH-3:
+        down_diagonals[index] = self.get_diagonal_down(x, HEIGHT-1)
+        index += 1
+    return down_diagonals
+
+proc get_diagonal_up*(self:Grid, x:int, y:int):seq[Player] =
     return self.get_diagonal(x, y, 1)
 
-method get_diagonals(self:Grid):seq[seq[Player]] {.base.} =
-    return result # TODO implement and use in has_winner
-
-method has_winner*(self:Grid):Option[Player] {.base.} =
-    for x in 0..<WIDTH:
-        var fiac = self.has_four_in_a_column(x)
-        if fiac.isSome():
-            return fiac
-    for y in 0..<HEIGHT:
-        var fiar = self.has_four_in_a_row(y)
-        if fiar.isSome():
-            return fiar
+proc get_up_diagonals(self:Grid):array[6,seq[Player]] =
+    var 
+        up_diagonals: array[6, seq[Player]]
+        index = 0
     for y in 0..<HEIGHT-3:
-        var fiad = has_four_in_repetition(self.get_diagonal_up(0, y))
-        if fiad.isSome():
-            return fiad
-    for y in 3..<HEIGHT:
-        var fiad = has_four_in_repetition(self.get_diagonal_down(0, y))
-        if fiad.isSome():
-            return fiad
-    for x in 0..<WIDTH-3:
-        var fiad = has_four_in_repetition(self.get_diagonal_down(x, HEIGHT-1))
-        if fiad.isSome():
-            return fiad
+        up_diagonals[index] = self.get_diagonal_up(0, y) 
+        index += 1
     for x in 1..<WIDTH-3:
-        var fiad = has_four_in_repetition(self.get_diagonal_up(x, 0))
-        if fiad.isSome():
-            return fiad
+        up_diagonals[index] = self.get_diagonal_up(x, 0)
+        index += 1
+    return up_diagonals
+
+proc get_diagonals(self:Grid):array[12,seq[Player]] =
+    var 
+        diagonals:array[12,seq[Player]]
+        index = 0
+    let
+        up_diagonals = self.get_up_diagonals()
+        down_diagonals = self.get_down_diagonals()
+    for index in 0..<6:
+        diagonals[index] = up_diagonals[index]
+    for index in 6..<12:
+        diagonals[index] = down_diagonals[index-6]
+    return diagonals
+
+proc get_sequences(self:Grid):array[25,seq[Player]] =
+    let 
+        diagonals = self.get_diagonals()
+        columns = self.get_columns()
+        rows = self.get_rows()
+    var 
+        seqs:array[25,seq[Player]]
+        index = 0
+    for column in columns:
+        seqs[index] = @column
+        index += 1
+    for row in rows:
+        seqs[index] = @row
+        index += 1
+    for diagonal in diagonals:
+        seqs[index] = diagonal
+        index += 1
+    return seqs
+
+
+proc has_winner*(self:Grid):Option[Player] =
+    for sequence in self.get_sequences():
+        var fias = has_four_in_repetition(sequence)
+        if fias.isSome():
+            return fias
 
     return none(Player)
 
-# TODO rename to 'get_open_column_indices'
-method get_open_columns*(self:Grid):seq[int] {.base.} =
+proc get_open_column_indices*(self:Grid):seq[int] =
     result = @[]
     for x in 0..<WIDTH:
         if self[x][HEIGHT-1] == ZERO:
@@ -162,23 +199,25 @@ proc heuristic_full_seq(player:Player, sequence:openArray[Player]):int =
     return heur_sum
 
 
-method heuristic*(self:Grid, player:Player):int {.base.} =
+proc heuristic*(self:Grid, player:Player):int =
     # count {3*same}+{empty} in 4-seqs
     # multiply with 10
     # positive if player, negative if other player
     # same with 2+2empty in 4-seqs
     # but multiplied with 5
     var heur_sum = 0
-    for x in self.get_open_columns():
-        heur_sum += heuristic_full_seq(player, self[x])
-    for y in 0..<HEIGHT:
-        heur_sum += heuristic_full_seq(player, self.get_row(y))
+    # for x in self.get_open_column_indices():
+    #     heur_sum += heuristic_full_seq(player, self[x])
+    # for y in 0..<HEIGHT:
+    #     heur_sum += heuristic_full_seq(player, self.get_row(y))
+    for sequence in self.get_sequences():
+        heur_sum += heuristic_full_seq(player, sequence)
     return heur_sum # TODO: diagonals!
 
-method is_full*(self:Grid):bool {.base.} =
-    return self.get_open_columns().len == 0
+proc is_full*(self:Grid):bool =
+    return self.get_open_column_indices().len == 0
 
-method clone(self:Grid):Grid {.base.} =
+proc clone(self:Grid):Grid =
     var grid_clone = new_grid()
     for x in 0..<WIDTH:
         for y in 0..<HEIGHT:
@@ -189,10 +228,10 @@ method clone(self:Grid):Grid {.base.} =
                 grid_clone.add_pawn(x, pawn)
     return grid_clone
     
-method clone_for_move*(self:Grid, move:int, player:Player):Grid {.base.} =
+proc clone_for_move*(self:Grid, move:int, player:Player):Grid =
     var grid_clone = self.clone()
     grid_clone.add_pawn(move, player)
     return grid_clone
 
-method game_over*(self:Grid): bool {.base.} =
+proc game_over*(self:Grid): bool =
     return self.has_winner().isSome()

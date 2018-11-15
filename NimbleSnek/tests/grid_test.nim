@@ -12,7 +12,6 @@ suite "Grid":
   setup:
     grid = new_grid()
 
-
   test "get_empty_top_index":
     check new_grid().get_empty_top_index(4).get() == 0
 
@@ -21,7 +20,7 @@ suite "Grid":
   #   check new_grid().get_empty_top_index(4).get() == 5
 
   test "check initialization":
-    check grid.columns[4][2] == ZERO
+    check grid[4][2] == ZERO
   
   test "check column getter":
     check new_grid()[4][3] == ZERO
@@ -133,14 +132,14 @@ suite "Grid":
     grid.add_pawn(3, X)
     grid.add_pawn(4, X)
     check grid.has_winner().get() == X
- 
+        
   test "game_over":
     check new_grid().game_over() == false
   
-  test "get_open_columns":
+  test "get_open_column_indices":
     fill_columns(grid, X, 0, 1, 4, 5)
 
-    check grid.get_open_columns() == @[2, 3, 6]
+    check grid.get_open_column_indices() == @[2, 3, 6]
 
   test "is_full":
     fill_columns(grid, X, 0, 1, 2, 3, 4, 5, 6)

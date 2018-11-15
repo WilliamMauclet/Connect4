@@ -59,3 +59,22 @@ suite "Nim":
             s3 = @[6, 7]
             total = concat(s1, s2, s3)
         assert total == @[1, 2, 3, 4, 5, 6, 7]
+    
+    test "concat arrays":
+        let 
+            a = @[1, 2, 3]
+            b = @[4, 5, 6]
+        var c: seq[int]
+        c = concat(a, b)
+
+        assert c == @[1, 2, 3, 4, 5, 6]
+
+    test "array indices":
+        var arr:array[3,int]
+        for i in 0..2:
+            arr[i] = i + 3
+        assert arr == [3, 4, 5]
+
+    test "array to seq":
+        var arr = [1, 2, 3]
+        assert @arr == @[1, 2, 3]
