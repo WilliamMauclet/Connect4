@@ -1,19 +1,16 @@
-import tables
-import grid 
-import player
-import times
+import tables, times, random
+import grid, player, heuristic
 
-from random import nil
-
-const DEPTH = 7
-const INFINITY = 1_000_000_000
-
-const DEPTH_FACTOR = 50
+const 
+    DEPTH = 7
+    INFINITY = 1_000_000_000
+    DEPTH_FACTOR = 10
 
 proc end_game_score(max_not_min:bool, depth:int):int =
+    # depth decreases: the sooner, the higher
     if max_not_min:
         # here the game is won when it's a max turn: hence negative
-        return -DEPTH_FACTOR*depth # depth decreases: the sooner, the higher 
+        return -DEPTH_FACTOR*depth 
     else:
         return DEPTH_FACTOR*depth
 
@@ -23,7 +20,6 @@ proc alpha_beta(player:Player, grid:Grid, depth:int, prev_alpha:int, prev_beta:i
     if grid.is_full():
         return 0 
     if depth == 0:
-        # if you get here, then there hasn't been a winner by the time we're at depth 0
         return grid.heuristic(player)
 
     if max_not_min:
@@ -55,17 +51,16 @@ proc find_best_move*(grid:Grid, player:Player):int =
     for x in grid.get_open_column_indices():
         var move_result = alpha_beta(get_other(player), grid.clone_for_move(x, player), DEPTH-1, -INFINITY, INFINITY, false)
         
-        echo "move " & $x & " gives a score of " & $move_result
-
+        # echo "move " & $x & " gives a score of " & $move_result
         if move_result > best_score:
             best_moves = @[x]
             best_score = move_result 
         elif move_result == best_score:
             best_moves &= x
 
-    echo "with max score of: " & $best_score & " best moves: " & $best_moves
+    # echo "with max score of: " & $best_score & " best moves: " & $best_moves
     if best_moves.len == 7:
-        echo "### no best move found by bot!"
+        echo "@@@ no best move found by bot!"
 
     random.randomize(to_int(cpu_time()))
     return random.rand(best_moves)

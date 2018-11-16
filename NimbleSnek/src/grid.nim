@@ -4,7 +4,6 @@ import options, sequtils
 const
     HEIGHT* = 6
     WIDTH* = 7
-    HEURISTIC_FACTOR* = 10
 
 type
     Grid* = array[WIDTH, array[HEIGHT, Player]]
@@ -143,7 +142,7 @@ proc get_diagonals(self:Grid):array[12,seq[Player]] =
         diagonals[index] = down_diagonals[index-6]
     return diagonals
 
-proc get_sequences(self:Grid):array[25,seq[Player]] =
+proc get_sequences*(self:Grid):array[25,seq[Player]] =
     let 
         diagonals = self.get_diagonals()
         columns = self.get_columns()
@@ -177,42 +176,6 @@ proc get_open_column_indices*(self:Grid):seq[int] =
         if self[x][HEIGHT-1] == ZERO:
             result &= x
     return result
-
-proc heuristic_4_seq(player:Player, sequence:openArray[Player]):int =
-    var 
-        factor:int
-        heuristic_val:int
-    if sequence.contains(player) and sequence.contains(get_other(player)):
-        return 0
-    if not sequence.contains(player) and not sequence.contains(get_other(player)):
-        return 0
-    if sequence.contains(player):
-        return sequence.count(player)-1 * HEURISTIC_FACTOR
-    else:
-        return sequence.count(get_other(player))-1 * HEURISTIC_FACTOR * -1
-    
-
-proc heuristic_full_seq(player:Player, sequence:openArray[Player]):int =
-    var heur_sum = 0
-    for x in 0..sequence.len-4:
-        heur_sum += heuristic_4_seq(player, sequence[x..x+3])
-    return heur_sum
-
-
-proc heuristic*(self:Grid, player:Player):int =
-    # count {3*same}+{empty} in 4-seqs
-    # multiply with 10
-    # positive if player, negative if other player
-    # same with 2+2empty in 4-seqs
-    # but multiplied with 5
-    var heur_sum = 0
-    # for x in self.get_open_column_indices():
-    #     heur_sum += heuristic_full_seq(player, self[x])
-    # for y in 0..<HEIGHT:
-    #     heur_sum += heuristic_full_seq(player, self.get_row(y))
-    for sequence in self.get_sequences():
-        heur_sum += heuristic_full_seq(player, sequence)
-    return heur_sum # TODO: diagonals!
 
 proc is_full*(self:Grid):bool =
     return self.get_open_column_indices().len == 0
