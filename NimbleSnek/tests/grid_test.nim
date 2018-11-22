@@ -41,21 +41,21 @@ suite "Grid":
     check (not("y" in grid.get_state_string_representation()))
 
   test "has_four_in_a_column #none":
-    check grid.has_four_in_a_column(2).isNone()
+    check grid.has_winner().isNone()
 
   test "has_four_in_a_column #not_enough":
     for i in 0..2:
       grid.add_pawn(2, X)
-    check grid.has_four_in_a_column(2).isNone()
+    check grid.has_winner().isNone()
 
   test "has_four_in_a_column #enough":
     for i in 0..3:
       grid.add_pawn(2, X)
-    check grid.has_four_in_a_column(2).isSome()
-    check grid.has_four_in_a_column(2).get() == X
+    check grid.has_winner().isSome()
+    check grid.has_winner().get() == X
 
   test "has_four_in_a_row #none":
-    check grid.has_four_in_a_row(0).isNone()
+    check grid.has_winner().isNone()
 
     test "has_four_in_a_row #interleave":
       grid.add_pawn(3, Y)
@@ -63,18 +63,18 @@ suite "Grid":
       grid.add_pawn(3, Y)
       grid.add_pawn(3, Y)
       grid.add_pawn(3, Y)
-      check grid.has_four_in_a_row(0).isNone()
+      check grid.has_winner().isNone()
       
   test "has_four_in_a_row #not_enough":
     for x in 2..4:
       grid.add_pawn(x, Y)
-    check grid.has_four_in_a_row(0).isNone()
+    check grid.has_winner().isNone()
   
   test "has_four_in_a_row #enough":
     for x in 2..5:
       grid.add_pawn(x, Y)
-    check grid.has_four_in_a_row(0).isSome()
-    check grid.has_four_in_a_row(0).get() == Y
+    check grid.has_winner().isSome()
+    check grid.has_winner().get() == Y
   
   test "get_diagonal_down":
     grid.add_pawn(5, X)

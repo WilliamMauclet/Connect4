@@ -64,9 +64,6 @@ proc has_four_in_repetition(sequence:openArray[Player]):Option[Player] =
         previous = new_value
     return none(Player)
 
-proc has_four_in_a_column*(self:Grid, x:int):Option[Player] =
-    return has_four_in_repetition(self[x])
-
 proc get_columns(self:Grid):array[WIDTH,array[HEIGHT,Player]] =
     var columns:array[WIDTH,array[HEIGHT,Player]]
     for x in 0..<WIDTH:
@@ -78,9 +75,6 @@ proc get_row(self:Grid, y:int):array[WIDTH, Player] =
     for x in 0..<WIDTH:
         row[x] = self[x][y]
     return row
-
-proc has_four_in_a_row*(self:Grid, y:int):Option[Player] =
-    return has_four_in_repetition(self.get_row(y))
 
 proc get_rows(self:Grid):array[HEIGHT,array[WIDTH, Player]] =
     var rows:array[HEIGHT,array[WIDTH, Player]]
@@ -160,7 +154,6 @@ proc get_sequences*(self:Grid):array[25,seq[Player]] =
         seqs[index] = diagonal
         index += 1
     return seqs
-
 
 proc has_winner*(self:Grid):Option[Player] =
     for sequence in self.get_sequences():

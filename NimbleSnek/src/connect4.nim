@@ -32,12 +32,17 @@ proc accept_move(grid: var Grid, player_index: int, bot: Bot) =
     echo PLAYER_INVOCS[player_index] & " played column: " & $(column+1)
     grid.add_pawn(column, PLAYERS[player_index])
 
+proc is_valid_input(grid:Grid, input:TaintedString):bool =
+    return input.isDigit() and 
+        0 < parseInt(input) and 
+        parseInt(input) <= 7 and grid.get_open_column_indices.contains(parseInt(input))
+
 proc accept_human_move(grid: Grid): int =
     echo "Choose a move:"
 
     var input = stdin.readLine()
-    while not(input.isDigit() and 0 < parseInt(input) and parseInt(input) <= 7):
-        echo "Please choose a correct move [1..7]"
+    while not(is_valid_input(grid, input)):
+        echo "Please choose a correct move from " & $grid.get_open_column_indices()
         input = stdin.readLine()
     return parseInt(input) - 1
 
