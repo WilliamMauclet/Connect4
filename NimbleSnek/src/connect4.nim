@@ -35,7 +35,7 @@ proc accept_move(grid: var Grid, player_index: int, bot: Bot) =
 proc is_valid_input(grid:Grid, input:TaintedString):bool =
     return input.isDigit() and 
         0 < parseInt(input) and 
-        parseInt(input) <= 7 and grid.get_open_column_indices.contains(parseInt(input))
+        parseInt(input) <= 7 and grid.get_open_column_indices.contains(parseInt(input)-1)
 
 proc accept_human_move(grid: Grid): int =
     echo "Choose a move:"
